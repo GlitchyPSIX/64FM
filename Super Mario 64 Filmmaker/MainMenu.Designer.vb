@@ -70,6 +70,7 @@ Partial Class MainMenu
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.AboutSM64FMToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExpandOrRetract = New System.Windows.Forms.PictureBox()
+        Me.btnChat = New System.Windows.Forms.PictureBox()
         Me.StatusStrip1.SuspendLayout()
         CType(Me.ImgPrw, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnSC, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -82,6 +83,7 @@ Partial Class MainMenu
         CType(Me.btnCC, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip.SuspendLayout()
         CType(Me.ExpandOrRetract, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnChat, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'OpenFileDlg
@@ -94,7 +96,7 @@ Partial Class MainMenu
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AppVer, Me.ToolStripStatusLabel1})
         Me.StatusStrip1.Location = New System.Drawing.Point(0, 577)
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(531, 22)
+        Me.StatusStrip1.Size = New System.Drawing.Size(532, 22)
         Me.StatusStrip1.SizingGrip = False
         Me.StatusStrip1.TabIndex = 19
         '
@@ -232,7 +234,7 @@ Partial Class MainMenu
         Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.SettingsToolStripMenuItem, Me.HelpToolStripMenuItem})
         Me.MenuStrip.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip.Name = "MenuStrip"
-        Me.MenuStrip.Size = New System.Drawing.Size(531, 24)
+        Me.MenuStrip.Size = New System.Drawing.Size(532, 24)
         Me.MenuStrip.TabIndex = 27
         Me.MenuStrip.Text = "MenuStrip2"
         '
@@ -448,12 +450,23 @@ Partial Class MainMenu
         Me.ExpandOrRetract.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ExpandOrRetract.BackColor = System.Drawing.Color.Transparent
         Me.ExpandOrRetract.Image = Global.Filmmaker.My.Resources.Resources.Expand
-        Me.ExpandOrRetract.Location = New System.Drawing.Point(493, 290)
+        Me.ExpandOrRetract.Location = New System.Drawing.Point(494, 290)
         Me.ExpandOrRetract.Name = "ExpandOrRetract"
         Me.ExpandOrRetract.Size = New System.Drawing.Size(38, 80)
         Me.ExpandOrRetract.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.ExpandOrRetract.TabIndex = 28
         Me.ExpandOrRetract.TabStop = False
+        '
+        'btnChat
+        '
+        Me.btnChat.BackColor = System.Drawing.Color.Transparent
+        Me.btnChat.Image = Global.Filmmaker.My.Resources.Resources.IM
+        Me.btnChat.Location = New System.Drawing.Point(541, 82)
+        Me.btnChat.Name = "btnChat"
+        Me.btnChat.Size = New System.Drawing.Size(151, 160)
+        Me.btnChat.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.btnChat.TabIndex = 23
+        Me.btnChat.TabStop = False
         '
         'MainMenu
         '
@@ -462,13 +475,14 @@ Partial Class MainMenu
         Me.BackColor = System.Drawing.Color.Red
         Me.BackgroundImage = Global.Filmmaker.My.Resources.Resources.Background
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(531, 599)
+        Me.ClientSize = New System.Drawing.Size(532, 599)
         Me.Controls.Add(Me.ExpandOrRetract)
         Me.Controls.Add(Me.WelcomeLabel)
         Me.Controls.Add(Me.ImgPrw)
         Me.Controls.Add(Me.btnSC)
         Me.Controls.Add(Me.btnCHT)
         Me.Controls.Add(Me.btnWorkshop)
+        Me.Controls.Add(Me.btnChat)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.btnSV)
         Me.Controls.Add(Me.btnFRPS)
@@ -500,6 +514,7 @@ Partial Class MainMenu
         Me.MenuStrip.ResumeLayout(False)
         Me.MenuStrip.PerformLayout()
         CType(Me.ExpandOrRetract, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnChat, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -550,5 +565,6 @@ Partial Class MainMenu
     Friend WithEvents AboutSM64FMToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ImportSpecialPackToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ExpandOrRetract As System.Windows.Forms.PictureBox
+    Friend WithEvents btnChat As System.Windows.Forms.PictureBox
 
 End Class

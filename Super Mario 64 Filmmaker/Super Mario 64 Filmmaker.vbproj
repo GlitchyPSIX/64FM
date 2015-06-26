@@ -66,7 +66,8 @@
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <Prefer32Bit>false</Prefer32Bit>
     <CodeAnalysisRuleSet>..\GlitchysRules.ruleset</CodeAnalysisRuleSet>
-    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisIgnoreGeneratedCode>false</CodeAnalysisIgnoreGeneratedCode>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -89,6 +90,10 @@
   <ItemGroup>
     <Reference Include="Ionic.Zip">
       <HintPath>..\..\..\..\..\..\..\..\Users\GlitchyPSIX\Downloads\Ionic.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="IrcClient, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Downloads\IRCVB\IrcClient.dll</HintPath>
     </Reference>
     <Reference Include="MetroProgressBar">
       <HintPath>..\..\..\..\..\Downloads\MetroProgressBar\MetroProgressBar\bin\Debug\MetroProgressBar.dll</HintPath>
@@ -152,6 +157,18 @@
       <DependentUpon>BGSelector.vb</DependentUpon>
     </Compile>
     <Compile Include="BGSelector.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chat.Designer.vb">
+      <DependentUpon>Chat.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Chat.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChatPM.Designer.vb">
+      <DependentUpon>ChatPM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ChatPM.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="cheatEssentials.Designer.vb">
@@ -247,6 +264,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BGSelector.resx">
       <DependentUpon>BGSelector.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chat.resx">
+      <DependentUpon>Chat.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChatPM.resx">
+      <DependentUpon>ChatPM.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="cheatEssentials.resx">
       <DependentUpon>cheatEssentials.vb</DependentUpon>
@@ -417,6 +440,23 @@
     <None Include="Resources\WebHelp.png" />
     <None Include="Resources\Expand.png" />
     <None Include="Resources\Retract.png" />
+    <None Include="Resources\IM.png" />
+    <None Include="Resources\Critical.wav" />
+    <None Include="Resources\Explosion.wav" />
+    <None Include="Resources\Explode.png" />
+    <None Include="Resources\Nudge.png" />
+    <None Include="Resources\frozen.wav" />
+    <None Include="Resources\Gotcha.wav" />
+    <None Include="Resources\HighScore.wav" />
+    <None Include="Resources\Idea.wav" />
+    <None Include="Resources\Message.wav" />
+    <None Include="Resources\No.wav" />
+    <None Include="Resources\Question.wav" />
+    <None Include="Resources\Surprise.wav" />
+    <None Include="Resources\Yes.wav" />
+    <None Include="Resources\froze.png" />
+    <None Include="Resources\Connected.wav" />
+    <None Include="Resources\Disconnect.wav" />
     <Content Include="SM64FMNormal.ico" />
   </ItemGroup>
   <ItemGroup>

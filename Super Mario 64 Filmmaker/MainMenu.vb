@@ -114,6 +114,10 @@ Public Class MainMenu
         extractSel.Show()
     End Sub
 
+    Private Sub ShowChat(sender As System.Object, e As System.EventArgs) Handles btnChat.Click
+        Chat.Show()
+    End Sub
+
     Private Sub btnWorkshop_Click_1(sender As Object, e As EventArgs) Handles btnWorkshop.Click
         ' Coming from Super_Mario_64_Filmmaker.Extractor, loads the OpenFileDialog to search a ZIP to extract. I have to change the extensions.
         LoadAndDecompress("Project64", ".fmcht", "Super Mario 64 Filmmaker Cheat File (*.fmcht)|*.fmcht|Project64 Cheat File (*.cht)|*.cht")
