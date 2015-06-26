@@ -62,4 +62,8 @@ Public Class SplashScreen1
         My.Settings.Name = ""
         My.Settings.Image = ""
     End Sub
+
+    Private Sub progressbar1_Click(sender As Object, e As EventArgs) Handles progressbar1.Click
+        Percentage = 99
+    End Sub
 End Class
