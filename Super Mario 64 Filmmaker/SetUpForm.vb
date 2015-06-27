@@ -32,11 +32,15 @@ Public Class SetUpForm
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        My.Settings.Name = NameBox.Text 'Make M.S.Name have what it said in the TextBox called NameBox
-        My.Settings.Image = ImageS ' Set the ImageS Placeholder to M.S.Image
-        My.Settings.FavColor = ColorZ
-        MainMenu.Show() 'Show the main menu
-        Me.Close() 'Say goodbye
+        If NameBox.Text = "" Or ImageS = "" Then
+            MsgBox("Fill Everything, if you please.")
+        Else
+            My.Settings.Name = NameBox.Text 'Make M.S.Name have what it said in the TextBox called NameBox
+            My.Settings.Image = ImageS ' Set the ImageS Placeholder to M.S.Image
+            My.Settings.FavColor = ColorZ
+            MainMenu.Show() 'Show the main menu
+            Me.Close() 'Say goodbye
+        End If
     End Sub
 
     Private Sub NameBox_TextChanged(sender As Object, e As EventArgs) Handles NameBox.TextChanged
