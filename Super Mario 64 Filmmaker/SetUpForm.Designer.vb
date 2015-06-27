@@ -38,6 +38,7 @@ Partial Class SetUpForm
         Me.ImgPrw = New System.Windows.Forms.PictureBox()
         Me.ColorSelector = New System.Windows.Forms.ColorDialog()
         Me.SetBackground = New System.Windows.Forms.Timer(Me.components)
+        Me.NameLabel = New System.Windows.Forms.Label()
         CType(Me.NotHaali, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.NotHaali.Panel1.SuspendLayout()
         Me.NotHaali.Panel2.SuspendLayout()
@@ -49,7 +50,7 @@ Partial Class SetUpForm
         '
         Me.NickLabel.AutoSize = True
         Me.NickLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.NickLabel.Location = New System.Drawing.Point(35, 18)
+        Me.NickLabel.Location = New System.Drawing.Point(26, 20)
         Me.NickLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.NickLabel.Name = "NickLabel"
         Me.NickLabel.Size = New System.Drawing.Size(205, 18)
@@ -60,7 +61,7 @@ Partial Class SetUpForm
         '
         Me.ImageLabel.AutoSize = True
         Me.ImageLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ImageLabel.Location = New System.Drawing.Point(43, 135)
+        Me.ImageLabel.Location = New System.Drawing.Point(37, 135)
         Me.ImageLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.ImageLabel.Name = "ImageLabel"
         Me.ImageLabel.Size = New System.Drawing.Size(174, 18)
@@ -119,7 +120,7 @@ Partial Class SetUpForm
         '
         Me.ColorLabel.AutoSize = True
         Me.ColorLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ColorLabel.Location = New System.Drawing.Point(49, 74)
+        Me.ColorLabel.Location = New System.Drawing.Point(38, 75)
         Me.ColorLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.ColorLabel.Name = "ColorLabel"
         Me.ColorLabel.Size = New System.Drawing.Size(164, 18)
@@ -163,6 +164,7 @@ Partial Class SetUpForm
         '
         Me.NotHaali.Panel2.BackgroundImage = Global.Filmmaker.My.Resources.Resources.Background2
         Me.NotHaali.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.NotHaali.Panel2.Controls.Add(Me.NameLabel)
         Me.NotHaali.Panel2.Controls.Add(Me.ImgPrw)
         Me.NotHaali.Panel2.Controls.Add(Me.MyNameIsLabel)
         Me.NotHaali.Size = New System.Drawing.Size(505, 338)
@@ -181,7 +183,7 @@ Partial Class SetUpForm
         'BGLabel
         '
         Me.BGLabel.AutoSize = True
-        Me.BGLabel.Location = New System.Drawing.Point(45, 197)
+        Me.BGLabel.Location = New System.Drawing.Point(38, 199)
         Me.BGLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.BGLabel.Name = "BGLabel"
         Me.BGLabel.Size = New System.Drawing.Size(166, 18)
@@ -205,6 +207,16 @@ Partial Class SetUpForm
         'SetBackground
         '
         '
+        'NameLabel
+        '
+        Me.NameLabel.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.NameLabel.Location = New System.Drawing.Point(3, 256)
+        Me.NameLabel.Name = "NameLabel"
+        Me.NameLabel.Size = New System.Drawing.Size(231, 49)
+        Me.NameLabel.TabIndex = 7
+        Me.NameLabel.Text = "(Name will be displayed here)"
+        Me.NameLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
         'SetUpForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 18.0!)
@@ -216,7 +228,7 @@ Partial Class SetUpForm
         Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.MaximizeBox = False
         Me.Name = "SetUpForm"
-        Me.Text = "Greeting Set Up"
+        Me.Text = "Set Up User Details"
         Me.NotHaali.Panel1.ResumeLayout(False)
         Me.NotHaali.Panel1.PerformLayout()
         Me.NotHaali.Panel2.ResumeLayout(False)
@@ -242,4 +254,5 @@ Partial Class SetUpForm
     Friend WithEvents BGLabel As System.Windows.Forms.Label
     Friend WithEvents SelBGBTN As System.Windows.Forms.Button
     Friend WithEvents SetBackground As System.Windows.Forms.Timer
+    Friend WithEvents NameLabel As System.Windows.Forms.Label
 End Class

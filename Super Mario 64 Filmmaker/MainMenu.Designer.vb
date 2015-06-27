@@ -96,7 +96,7 @@ Partial Class MainMenu
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AppVer, Me.ToolStripStatusLabel1})
         Me.StatusStrip1.Location = New System.Drawing.Point(0, 577)
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(532, 22)
+        Me.StatusStrip1.Size = New System.Drawing.Size(531, 22)
         Me.StatusStrip1.SizingGrip = False
         Me.StatusStrip1.TabIndex = 19
         '
@@ -120,7 +120,7 @@ Partial Class MainMenu
         'ImgPrw
         '
         Me.ImgPrw.BackColor = System.Drawing.Color.Transparent
-        Me.ImgPrw.Location = New System.Drawing.Point(30, 73)
+        Me.ImgPrw.Location = New System.Drawing.Point(38, 73)
         Me.ImgPrw.Name = "ImgPrw"
         Me.ImgPrw.Size = New System.Drawing.Size(107, 112)
         Me.ImgPrw.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -222,7 +222,7 @@ Partial Class MainMenu
         Me.WelcomeLabel.BackColor = System.Drawing.Color.Transparent
         Me.WelcomeLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.WelcomeLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.WelcomeLabel.Location = New System.Drawing.Point(37, 188)
+        Me.WelcomeLabel.Location = New System.Drawing.Point(22, 188)
         Me.WelcomeLabel.Name = "WelcomeLabel"
         Me.WelcomeLabel.Size = New System.Drawing.Size(119, 20)
         Me.WelcomeLabel.TabIndex = 25
@@ -234,7 +234,7 @@ Partial Class MainMenu
         Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.SettingsToolStripMenuItem, Me.HelpToolStripMenuItem})
         Me.MenuStrip.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip.Name = "MenuStrip"
-        Me.MenuStrip.Size = New System.Drawing.Size(532, 24)
+        Me.MenuStrip.Size = New System.Drawing.Size(531, 24)
         Me.MenuStrip.TabIndex = 27
         Me.MenuStrip.Text = "MenuStrip2"
         '
@@ -450,7 +450,7 @@ Partial Class MainMenu
         Me.ExpandOrRetract.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ExpandOrRetract.BackColor = System.Drawing.Color.Transparent
         Me.ExpandOrRetract.Image = Global.Filmmaker.My.Resources.Resources.Expand
-        Me.ExpandOrRetract.Location = New System.Drawing.Point(494, 290)
+        Me.ExpandOrRetract.Location = New System.Drawing.Point(493, 290)
         Me.ExpandOrRetract.Name = "ExpandOrRetract"
         Me.ExpandOrRetract.Size = New System.Drawing.Size(38, 80)
         Me.ExpandOrRetract.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -475,7 +475,7 @@ Partial Class MainMenu
         Me.BackColor = System.Drawing.Color.Red
         Me.BackgroundImage = Global.Filmmaker.My.Resources.Resources.Background
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(532, 599)
+        Me.ClientSize = New System.Drawing.Size(531, 599)
         Me.Controls.Add(Me.ExpandOrRetract)
         Me.Controls.Add(Me.WelcomeLabel)
         Me.Controls.Add(Me.ImgPrw)

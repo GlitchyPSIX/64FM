@@ -98,7 +98,7 @@ Public Class MainMenu
         ElseIf My.Settings.Background = 7 Then
             Me.BackgroundImage = My.Resources.Background7
         End If
-        ImgPrw.BackColor = My.Settings.FavColor
+        ImgPrw.BackColor = Color.Transparent
         ImgPrw.Image = Image.FromFile(My.Settings.Image)
         WelcomeLabel.Text = ("Welcome Back," + vbCrLf + My.Settings.Name)
         AppVer.Text = "Super Mario 64 Filmmaker BETA Version " + Application.ProductVersion.ToString + " Build No. " + My.Settings.Build.ToString
@@ -141,12 +141,17 @@ Public Class MainMenu
         Dim Expand As New Transition(New TransitionType_Acceleration(800))
         Retract.add(Me, "Width", 547)
         Expand.add(Me, "Width", 757)
-        If FormWidth < 547 Or FormWidth > 547 Then
+        If FormWidth > 547 Then
             Retract.run()
             Me.ExpandOrRetract.Image = My.Resources.Expand
         Else
             Expand.run()
             Me.ExpandOrRetract.Image = My.Resources.Retract
         End If
+    End Sub
+
+    Private Sub ProfileToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ProfileToolStripMenuItem.Click
+        Me.Hide()
+        SetUpForm.Show()
     End Sub
 End Class

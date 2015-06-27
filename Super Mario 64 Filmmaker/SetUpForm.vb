@@ -36,7 +36,7 @@ Public Class SetUpForm
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         If NameBox.Text = "" Or ImageS = "" Then
-            MsgBox("Please fill all forms before continuing.")
+            MsgBox("Please fill out all forms before continuing.")
         Else
             My.Settings.Name = NameBox.Text 'Make M.S.Name have what it said in the TextBox called NameBox
             My.Settings.Image = ImageS ' Set the ImageS Placeholder to M.S.Image
@@ -48,7 +48,7 @@ Public Class SetUpForm
     End Sub
 
     Private Sub NameBox_TextChanged(sender As Object, e As EventArgs) Handles NameBox.TextChanged
-        MyNameIsLabel.Text = "Hello there!" + vbCrLf + "My name is" + vbCrLf + NameBox.Text
+        NameLabel.Text = NameBox.Text
     End Sub
 
     Private Sub PickColor_Click(sender As Object, e As EventArgs) Handles PickColor.Click
