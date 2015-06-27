@@ -72,6 +72,19 @@ Public Class SetUpForm
     Private Sub SetUpForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         SetBackground.Interval = 500
         SetBackground.Enabled = True
+        NameBox.Text = My.Settings.Name
+        NameLabel.Text = My.Settings.Name
+        Try
+            ImgPrw.Image = Image.FromFile(My.Settings.Image) 'Set the image to a preview Picture Box called ImgPrw
+            ImageS = My.Settings.Image
+        Catch ex As Exception
+            MsgBox("Unable to load the file. Maybe it was deleted?") 'Exception
+        End Try
+        ColorZ = My.Settings.FavColor
+        Dim Panel2Fade As New Transition(New TransitionType_EaseInEaseOut(800))
+        Panel2Fade.add(Me.NotHaali.Panel2, "BackColor", ColorZ)
+        Panel2Fade.add(Me.ImgPrw, "BackColor", ColorZ)
+        Panel2Fade.run()
     End Sub
 
     Private Sub SelBGBTN_Click(sender As Object, e As EventArgs) Handles SelBGBTN.Click
