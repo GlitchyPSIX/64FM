@@ -1,11 +1,11 @@
 ﻿Imports System.Text
-Imports System.Diagnostics.ConditionalAttribute
 Imports Transitions
 Imports System.IO
 
 Public Class SetUpForm
     Dim ImageS As String 'Same as above, but for My.Settings.Image
     Dim ColorZ As System.Drawing.Color 'Yay! technicolor variable!
+
     Public Sub SelImgBtn_Click(sender As Object, e As EventArgs) Handles SelImgBtn.Click
         Dim OpenFileDlg As New OpenFileDialog
         OpenFileDlg.FileName = "" ' Default file name
@@ -42,6 +42,7 @@ Public Class SetUpForm
             My.Settings.Image = ImageS ' Set the ImageS Placeholder to M.S.Image
             My.Settings.FavColor = ColorZ
             My.Settings.Save()
+            MainMenu.ApplyProfileSettings()
             MainMenu.Show() 'Show the main menu
             Me.Close() 'Say goodbye
         End If

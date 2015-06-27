@@ -22,6 +22,7 @@
 '------------------------------------------------------------------------------------------------------------------------------------
 '!krow snoitcnuf niatrec erehw gnichraes nuf evaH .saera niatrec ni tceffe ...emos evah ereht gniyal snoitcnuf emoS :GGE RETSAE
 '.gnihtrmos ...reggirt ot bv.uneMniaM ni ()dlroWolleH esU :eno wonk uoy tel lliw I
+
 Imports System.Web
 Imports System.IO
 Imports System.Text
@@ -33,56 +34,19 @@ Imports Filmmaker.HelloMatey
 
 Public Class MainMenu
 
-    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        'Search the recorder and start it
-        Try
-            Process.Start(Application.StartupPath & "\Engine\Fraps.exe")
-        Catch ex As Exception
-            MsgBox("Couldn't find the required file... Is SM64FM correctly installed?")
-        End Try
-    End Sub
-
-    Private Sub btnGame_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        'Search PJ64 and start it
-        Try
-            Process.Start(Application.StartupPath & "\Engine\PJ64.exe")
-        Catch ex As Exception
-            MsgBox("Couldn't find the required file... Is SM64FM correctly installed?")
-        End Try
-    End Sub
-
-    Private Sub Button7_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        'Show "GlitchyPSIX's Essentials"
-        glitchyessentials.Show()
-        Me.Hide()
-    End Sub
-
-    Private Sub btnCHT_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCHT.Click
-        'Show Cheat Search Mode Select
-        cheatModeSel.Show()
-    End Sub
-
-    Private Sub Button5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        'Search Color Code Suite and start it
-        Try
-            Process.Start(Application.StartupPath & "\Engine\CCGEN.exe")
-        Catch ex As Exception
-            MsgBox("Couldn't find the required file... Is SM64FM correctly installed?")
-        End Try
-    End Sub
-
-    Private Sub btnSC_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSC.Click
-        'Do nothing... for now
-    End Sub
-
-    Private Sub btnEXT_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        'Show Extras Menu
-        extractSel.Show()
-    End Sub
-
     Private Sub MainMenu_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        AddHandler AboutSM64FMToolStripMenuItem.Click, AddressOf AboutBox.Show
+        If Debug Then
+            HelloWorld()
+        End If
         'Set the "Custom Settings" feature
-        HelloWorld()
+        ApplyProfileSettings()
+        AppVer.Text = "Super Mario 64 Filmmaker BETA Version " + Application.ProductVersion.ToString + " Build No. " + My.Settings.Build.ToString
+        TenthOfASecond.Interval = 100
+        TenthOfASecond.Start()
+    End Sub
+
+    Public Sub ApplyProfileSettings()
         If My.Settings.Background = 1 Then
             Me.BackgroundImage = My.Resources.Background
         ElseIf My.Settings.Background = 2 Then
@@ -101,38 +65,86 @@ Public Class MainMenu
         ImgPrw.BackColor = Color.Transparent
         ImgPrw.Image = Image.FromFile(My.Settings.Image)
         WelcomeLabel.Text = ("Welcome Back," + vbCrLf + My.Settings.Name)
-        AppVer.Text = "Super Mario 64 Filmmaker BETA Version " + Application.ProductVersion.ToString + " Build No. " + My.Settings.Build.ToString
         Me.BackColor = My.Settings.FavColor
-    End Sub
-    Private Sub ToolStripStatusLabel1_Click(sender As System.Object, e As System.EventArgs) Handles ToolStripStatusLabel1.Click
-        'Link not working - Leaded to the donation site
-        Process.Start("http://sm64fm.pe.hu/donatenow.html")
+        Me.Refresh()
     End Sub
 
-    Private Sub PictureBox1_Click(sender As System.Object, e As System.EventArgs) Handles PictureBox1.Click
-        ' THere is something wrong and don't worry, I will erase it
+    Private Sub btnSV_Click(sender As Object, e As EventArgs) Handles btnSV.Click
+        'Search for Sony Vegas and start it
+        Try
+            Process.Start(Application.StartupPath & "\Engine\veg100.exe")
+        Catch ex As Exception
+            MsgBox("Couldn't find the required file... Is SM64FM correctly installed?")
+        End Try
+    End Sub
+
+    Private Sub btnFRPS_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnFRPS.Click
+        'Search for the recorder and start it
+        Try
+            Process.Start(Application.StartupPath & "\Engine\Fraps.exe")
+        Catch ex As Exception
+            MsgBox("Couldn't find the required file... Is SM64FM correctly installed?")
+        End Try
+    End Sub
+
+    Private Sub btnGame_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnGame.Click
+        'Search for PJ64 and start it
+        Try
+            Process.Start(Application.StartupPath & "\Engine\PJ64.exe")
+        Catch ex As Exception
+            MsgBox("Couldn't find the required file... Is SM64FM correctly installed?")
+        End Try
+    End Sub
+
+    Private Sub btnEssentials_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+        'Show "GlitchyPSIX's Essentials"
+        glitchyessentials.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub btnCHT_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCHT.Click
+        'Show Cheat Search Mode Select
+        cheatModeSel.Show()
+    End Sub
+
+    Private Sub btnCC_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCC.Click
+        'Search for Color Code Suite and start it
+        Try
+            Process.Start(Application.StartupPath & "\Engine\CCGEN.exe")
+        Catch ex As Exception
+            MsgBox("Couldn't find the required file... Is SM64FM correctly installed?")
+        End Try
+    End Sub
+
+    Private Sub btnSC_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSC.Click
+        'Do nothing... for now
+    End Sub
+
+    Private Sub btnEXT_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEXT.Click
+        'Show Extras Menu
         extractSel.Show()
+    End Sub
+
+    Private Sub ToolStripStatusLabel1_Click(sender As System.Object, e As System.EventArgs) Handles ToolStripStatusLabel1.Click
+        'Link not working - Will lead to the donation site
+        Process.Start("http://sm64fm.pe.hu/donatenow.html")
     End Sub
 
     Private Sub ShowChat(sender As System.Object, e As System.EventArgs) Handles btnChat.Click
         Chat.Show()
     End Sub
 
-    Private Sub btnWorkshop_Click_1(sender As Object, e As EventArgs) Handles btnWorkshop.Click
+    Private Sub btnWorkshop_Click(sender As Object, e As EventArgs) Handles btnWorkshop.Click
         ' Coming from Super_Mario_64_Filmmaker.Extractor, loads the OpenFileDialog to search a ZIP to extract. I have to change the extensions.
         LoadAndDecompress("Project64", ".fmcht", "Super Mario 64 Filmmaker Cheat File (*.fmcht)|*.fmcht|Project64 Cheat File (*.cht)|*.cht")
     End Sub
 
     Private Sub ImgPrw_Click(sender As Object, e As EventArgs) Handles ImgPrw.Click
-        ' This will open Settings window... I haven't even designed it yet...
+        ' This will open the Settings window... I haven't even designed it yet...
     End Sub
 
     Private Sub LoadAddonImporterToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LoadAddonImporterToolStripMenuItem.Click
-
-    End Sub
-
-    Private Sub AboutSM64FMToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutSM64FMToolStripMenuItem.Click
-        AboutBox.Show()
+        'Does nothing for now
     End Sub
 
     Private Sub ExpandOrRetract_Click(sender As Object, e As EventArgs) Handles ExpandOrRetract.Click
@@ -154,4 +166,6 @@ Public Class MainMenu
         Me.Hide()
         SetUpForm.Show()
     End Sub
+
+
 End Class

@@ -35,10 +35,10 @@ Partial Class SetUpForm
         Me.NotHaali = New System.Windows.Forms.SplitContainer()
         Me.SelBGBTN = New System.Windows.Forms.Button()
         Me.BGLabel = New System.Windows.Forms.Label()
+        Me.NameLabel = New System.Windows.Forms.Label()
         Me.ImgPrw = New System.Windows.Forms.PictureBox()
         Me.ColorSelector = New System.Windows.Forms.ColorDialog()
         Me.SetBackground = New System.Windows.Forms.Timer(Me.components)
-        Me.NameLabel = New System.Windows.Forms.Label()
         CType(Me.NotHaali, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.NotHaali.Panel1.SuspendLayout()
         Me.NotHaali.Panel2.SuspendLayout()
@@ -190,6 +190,16 @@ Partial Class SetUpForm
         Me.BGLabel.TabIndex = 9
         Me.BGLabel.Text = "Select your Background"
         '
+        'NameLabel
+        '
+        Me.NameLabel.BackColor = System.Drawing.Color.Transparent
+        Me.NameLabel.Location = New System.Drawing.Point(3, 256)
+        Me.NameLabel.Name = "NameLabel"
+        Me.NameLabel.Size = New System.Drawing.Size(231, 49)
+        Me.NameLabel.TabIndex = 7
+        Me.NameLabel.Text = "(Name will be displayed here)"
+        Me.NameLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
         'ImgPrw
         '
         Me.ImgPrw.BackColor = System.Drawing.Color.Transparent
@@ -206,16 +216,6 @@ Partial Class SetUpForm
         '
         'SetBackground
         '
-        '
-        'NameLabel
-        '
-        Me.NameLabel.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.NameLabel.Location = New System.Drawing.Point(3, 256)
-        Me.NameLabel.Name = "NameLabel"
-        Me.NameLabel.Size = New System.Drawing.Size(231, 49)
-        Me.NameLabel.TabIndex = 7
-        Me.NameLabel.Text = "(Name will be displayed here)"
-        Me.NameLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'SetUpForm
         '

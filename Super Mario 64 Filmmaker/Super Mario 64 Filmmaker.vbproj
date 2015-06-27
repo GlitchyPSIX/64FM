@@ -200,7 +200,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="NativeMethods.vb" />
     <Compile Include="preferences.Designer.vb">
       <DependentUpon>preferences.vb</DependentUpon>
     </Compile>

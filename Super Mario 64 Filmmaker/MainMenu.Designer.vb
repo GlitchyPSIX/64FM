@@ -33,7 +33,7 @@ Partial Class MainMenu
         Me.btnSC = New System.Windows.Forms.PictureBox()
         Me.btnCHT = New System.Windows.Forms.PictureBox()
         Me.btnWorkshop = New System.Windows.Forms.PictureBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.btnEXT = New System.Windows.Forms.PictureBox()
         Me.btnSV = New System.Windows.Forms.PictureBox()
         Me.btnFRPS = New System.Windows.Forms.PictureBox()
         Me.btnGame = New System.Windows.Forms.PictureBox()
@@ -76,7 +76,7 @@ Partial Class MainMenu
         CType(Me.btnSC, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnCHT, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnWorkshop, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnEXT, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnSV, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnFRPS, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnGame, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -113,6 +113,7 @@ Partial Class MainMenu
         Me.ToolStripStatusLabel1.BackColor = System.Drawing.Color.Black
         Me.ToolStripStatusLabel1.ForeColor = System.Drawing.Color.Blue
         Me.ToolStripStatusLabel1.IsLink = True
+        Me.ToolStripStatusLabel1.LinkColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
         Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(55, 17)
         Me.ToolStripStatusLabel1.Text = "Donate :)"
@@ -120,7 +121,7 @@ Partial Class MainMenu
         'ImgPrw
         '
         Me.ImgPrw.BackColor = System.Drawing.Color.Transparent
-        Me.ImgPrw.Location = New System.Drawing.Point(38, 73)
+        Me.ImgPrw.Location = New System.Drawing.Point(28, 73)
         Me.ImgPrw.Name = "ImgPrw"
         Me.ImgPrw.Size = New System.Drawing.Size(107, 112)
         Me.ImgPrw.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -161,16 +162,16 @@ Partial Class MainMenu
         Me.btnWorkshop.TabIndex = 20
         Me.btnWorkshop.TabStop = False
         '
-        'PictureBox1
+        'btnEXT
         '
-        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox1.Image = Global.Filmmaker.My.Resources.Resources.Extras
-        Me.PictureBox1.Location = New System.Drawing.Point(326, 82)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(151, 160)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 23
-        Me.PictureBox1.TabStop = False
+        Me.btnEXT.BackColor = System.Drawing.Color.Transparent
+        Me.btnEXT.Image = Global.Filmmaker.My.Resources.Resources.Extras
+        Me.btnEXT.Location = New System.Drawing.Point(326, 82)
+        Me.btnEXT.Name = "btnEXT"
+        Me.btnEXT.Size = New System.Drawing.Size(151, 160)
+        Me.btnEXT.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.btnEXT.TabIndex = 23
+        Me.btnEXT.TabStop = False
         '
         'btnSV
         '
@@ -222,7 +223,7 @@ Partial Class MainMenu
         Me.WelcomeLabel.BackColor = System.Drawing.Color.Transparent
         Me.WelcomeLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.WelcomeLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.WelcomeLabel.Location = New System.Drawing.Point(22, 188)
+        Me.WelcomeLabel.Location = New System.Drawing.Point(24, 188)
         Me.WelcomeLabel.Name = "WelcomeLabel"
         Me.WelcomeLabel.Size = New System.Drawing.Size(119, 20)
         Me.WelcomeLabel.TabIndex = 25
@@ -483,7 +484,7 @@ Partial Class MainMenu
         Me.Controls.Add(Me.btnCHT)
         Me.Controls.Add(Me.btnWorkshop)
         Me.Controls.Add(Me.btnChat)
-        Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.btnEXT)
         Me.Controls.Add(Me.btnSV)
         Me.Controls.Add(Me.btnFRPS)
         Me.Controls.Add(Me.btnGame)
@@ -506,7 +507,7 @@ Partial Class MainMenu
         CType(Me.btnSC, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnCHT, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnWorkshop, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnEXT, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnSV, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnFRPS, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnGame, System.ComponentModel.ISupportInitialize).EndInit()
@@ -530,7 +531,7 @@ Partial Class MainMenu
     Friend WithEvents btnCC As System.Windows.Forms.PictureBox
     Friend WithEvents AppVer As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents ToolStripStatusLabel1 As System.Windows.Forms.ToolStripStatusLabel
-    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
+    Friend WithEvents btnEXT As System.Windows.Forms.PictureBox
     Friend WithEvents TenthOfASecond As System.Windows.Forms.Timer
     Friend WithEvents ImgPrw As System.Windows.Forms.PictureBox
     Friend WithEvents WelcomeLabel As System.Windows.Forms.Label

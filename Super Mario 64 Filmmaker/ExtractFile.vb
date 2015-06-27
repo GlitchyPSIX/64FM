@@ -1,5 +1,6 @@
 ﻿Imports System.Text
 Imports Ionic.Zip
+
 Public Class Extractor
     Public Shared Function LoadAndDecompress(ByVal FileName As String, ByVal Extension As String, ByVal Filter As String)
         Dim OpenFileDlg As New OpenFileDialog
