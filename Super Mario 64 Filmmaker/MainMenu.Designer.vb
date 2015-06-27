@@ -28,7 +28,7 @@ Partial Class MainMenu
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.AppVer = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.HalfASecond = New System.Windows.Forms.Timer(Me.components)
+        Me.TenthOfASecond = New System.Windows.Forms.Timer(Me.components)
         Me.ImgPrw = New System.Windows.Forms.PictureBox()
         Me.btnSC = New System.Windows.Forms.PictureBox()
         Me.btnCHT = New System.Windows.Forms.PictureBox()
@@ -220,11 +220,11 @@ Partial Class MainMenu
         '
         Me.WelcomeLabel.AutoSize = True
         Me.WelcomeLabel.BackColor = System.Drawing.Color.Transparent
-        Me.WelcomeLabel.Font = New System.Drawing.Font("Roboto Condensed Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.WelcomeLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.WelcomeLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.WelcomeLabel.Location = New System.Drawing.Point(37, 188)
         Me.WelcomeLabel.Name = "WelcomeLabel"
-        Me.WelcomeLabel.Size = New System.Drawing.Size(101, 21)
+        Me.WelcomeLabel.Size = New System.Drawing.Size(119, 20)
         Me.WelcomeLabel.TabIndex = 25
         Me.WelcomeLabel.Text = "Welcome Back,"
         Me.WelcomeLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -531,7 +531,7 @@ Partial Class MainMenu
     Friend WithEvents AppVer As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents ToolStripStatusLabel1 As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
-    Friend WithEvents HalfASecond As System.Windows.Forms.Timer
+    Friend WithEvents TenthOfASecond As System.Windows.Forms.Timer
     Friend WithEvents ImgPrw As System.Windows.Forms.PictureBox
     Friend WithEvents WelcomeLabel As System.Windows.Forms.Label
     Friend WithEvents MenuStrip As System.Windows.Forms.MenuStrip

@@ -1,15 +1,16 @@
 ﻿Imports System.Text
+Imports System.Diagnostics.ConditionalAttribute
 Imports Transitions
 Imports System.IO
 
 Public Class SetUpForm
-    Dim ImageS As String 'Same as avobe, but for My.Settings.Image
+    Dim ImageS As String 'Same as above, but for My.Settings.Image
     Dim ColorZ As System.Drawing.Color 'Yay! technicolor variable!
     Public Sub SelImgBtn_Click(sender As Object, e As EventArgs) Handles SelImgBtn.Click
         Dim OpenFileDlg As New OpenFileDialog
         OpenFileDlg.FileName = "" ' Default file name
         OpenFileDlg.DefaultExt = "" ' Default file extension
-        OpenFileDlg.Filter = "JPEG files (*.jpg)|*.jpg|PNG files (*.gif)|*.png|All files (*.*)|*.*"
+        OpenFileDlg.Filter = "PNG files (*.png)|*.png|JPEG files (*.jpg)|*.jpg|All files (*.*)|*.*"
         OpenFileDlg.Multiselect = False
         OpenFileDlg.RestoreDirectory = True
         Dim PressedButton As Boolean = DialogResult.OK
@@ -23,7 +24,9 @@ Public Class SetUpForm
                     MsgBox("Unable to load the file. Maybe it was deleted?") 'Exception
                 End Try
                 ImageS = OpenFileDlg.FileName 'Set the placeholder variable for Image.
-                MsgBox(ImageS) 'DEBUG FEATURE: Check if everything worked, by showing the image's path.
+                If Debug Then
+                    MsgBox(ImageS) 'DEBUG FEATURE: Check if everything worked, by showing the image's path.
+                End If
                 'Nothing
             End If
         Else
@@ -33,11 +36,12 @@ Public Class SetUpForm
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         If NameBox.Text = "" Or ImageS = "" Then
-            MsgBox("Fill Everything, if you please.")
+            MsgBox("Please fill all forms before continuing.")
         Else
             My.Settings.Name = NameBox.Text 'Make M.S.Name have what it said in the TextBox called NameBox
             My.Settings.Image = ImageS ' Set the ImageS Placeholder to M.S.Image
             My.Settings.FavColor = ColorZ
+            My.Settings.Save()
             MainMenu.Show() 'Show the main menu
             Me.Close() 'Say goodbye
         End If
@@ -52,7 +56,7 @@ Public Class SetUpForm
         ColorSelector.ShowDialog()
         If DialogResult.OK Then
             If ColorSelector.Color.R < 49 And ColorSelector.Color.G < 49 And ColorSelector.Color.B < 49 And ColorSelector.Color = Color.Black Or ColorSelector.Color.ToKnownColor.ToString.Contains("Dark") Then
-                MsgBox("Erm... No black/dark colors. You couldn't see the text...")
+                MsgBox("Sorry, no black/dark colors. You wouldn't be able to see the text...")
             Else
                 Panel2Fade.add(Me.NotHaali.Panel2, "BackColor", ColorSelector.Color)
                 Panel2Fade.add(Me.ImgPrw, "BackColor", ColorSelector.Color)

@@ -5,7 +5,8 @@ Public Class Chat
     Dim Frozen As Boolean
     Dim FlashForm As New Transition(New TransitionType_Flash(9, 800))
     Dim userlist As IrcClient.oUserList
-    Private Function ShakeVeryGently()
+
+    Private Sub ShakeVeryGently()
         'Thanks to LeSaN
         'Easy code to make a form shake
 
@@ -13,13 +14,13 @@ Public Class Chat
 
         While a < 15 'Starting a "while loop"
 
-            'Setting our form's X position to 20 'pixels to right from it's current position.            
+            'Setting our form's X position to 20 pixels to right from its current position.            
             Me.Location = New Point(Me.Location.X, Me.Location.Y + 10)
 
-            'Telling a program to sleep for 50 miliseconds before 'continuing
+            'Telling a program to sleep for 50 miliseconds before continuing
             System.Threading.Thread.Sleep(10)
 
-            'Setting our form's X position to 20 'pixels to left from it's current position.
+            'Setting our form's X position to 20 pixels to left from its current position.
             Me.Location = New Point(Me.Location.X, Me.Location.Y - 10)
 
             'Telling a program to sleep for 50 miliseconds before continuing            
@@ -28,9 +29,9 @@ Public Class Chat
             a += 1 'Increasing integer "a" by 1 after each loop
 
         End While
-    End Function
+    End Sub
 
-    Private Function ShakeGently()
+    Private Sub ShakeGently()
         'Thanks to LeSaN
         'Easy code to make a form shake
 
@@ -38,13 +39,13 @@ Public Class Chat
 
         While a < 10 'Starting a "while loop"
 
-            'Setting our form's X position to 20 'pixels to right from it's current position.            
+            'Setting our form's X position to 20 'pixels to right from its current position.            
             Me.Location = New Point(Me.Location.X + 20, Me.Location.Y)
 
-            'Telling a program to sleep for 50 miliseconds before 'continuing
+            'Telling a program to sleep for 50 miliseconds before continuing
             System.Threading.Thread.Sleep(50)
 
-            'Setting our form's X position to 20 'pixels to left from it's current position.
+            'Setting our form's X position to 20 'pixels to left from its current position.
             Me.Location = New Point(Me.Location.X - 20, Me.Location.Y)
 
             'Telling a program to sleep for 50 miliseconds before continuing            
@@ -53,9 +54,9 @@ Public Class Chat
             a += 1 'Increasing integer "a" by 1 after each loop
 
         End While
-    End Function
+    End Sub
 
-    Private Function ShakeViolently()
+    Private Sub ShakeViolently()
         'Thanks to LeSaN
         'Easy code to make a form shake
 
@@ -63,25 +64,25 @@ Public Class Chat
 
         While A < 10 'Starting a "while loop"
 
-            'Setting our form's X position to 20 'pixels to right from it's current position.            
+            'Setting our form's X position to 20 pixels to right from its current position.            
             Me.Location = New Point(Me.Location.X - 20, Me.Location.Y - 30)
 
-            'Telling a program to sleep for 50 miliseconds before 'continuing
+            'Telling a program to sleep for 50 miliseconds before continuing
             System.Threading.Thread.Sleep(30)
 
-            'Setting our form's X position to 20 'pixels to left from it's current position.
+            'Setting our form's X position to 20 pixels to left from its current position.
             Me.Location = New Point(Me.Location.X + 40, Me.Location.Y + 60)
 
             'Telling a program to sleep for 50 miliseconds before continuing            
             System.Threading.Thread.Sleep(30)
 
-            'Setting our form's X position to 20 'pixels to right from it's current position.            
+            'Setting our form's X position to 20 pixels to right from its current position.            
             Me.Location = New Point(Me.Location.X + 20, Me.Location.Y + 30)
 
-            'Telling a program to sleep for 50 miliseconds before 'continuing
+            'Telling a program to sleep for 50 miliseconds before continuing
             System.Threading.Thread.Sleep(30)
 
-            'Setting our form's X position to 20 'pixels to left from it's current position.
+            'Setting our form's X position to 20 pixels to left from its current position.
             Me.Location = New Point(Me.Location.X - 40, Me.Location.Y - 60)
 
             'Telling a program to sleep for 50 miliseconds before continuing            
@@ -90,20 +91,19 @@ Public Class Chat
             A += 1 'Increasing integer "a" by 1 after each loop
 
         End While
-    End Function
+    End Sub
 
     Private Sub btnConnect_Click(sender As System.Object, e As System.EventArgs) Handles btnGoLive.Click
-        irc = New IrcClient("irc.servercentral.net", 6669)
+        irc = New IrcClient("irc.mibbit.com", 6667)
         irc.Nick = My.Settings.Name
         irc.Connect()
         My.Computer.Audio.Play(My.Resources.Connected, AudioPlayMode.Background)
         btnGoDead.Enabled = True
         btnGoLive.Enabled = False
         rtbLog.Clear()
-        Nudge.Enabled = True
-        Explode.Enabled = True
+        btnNudge.Enabled = True
+        btnExplode.Enabled = True
     End Sub
-
 
     Private Sub btnSend_Click(sender As System.Object, e As System.EventArgs) Handles btnSend.Click
         If tbMessage.Text.StartsWith("$buzzer") Then
@@ -133,7 +133,7 @@ Public Class Chat
     End Sub
 
     Private Sub tbMessage_KeyDown(sender As System.Object, e As System.Windows.Forms.KeyEventArgs) Handles tbMessage.KeyDown
-        If e.KeyCode = Keys.Enter Then
+        If e.KeyCode = Keys.Enter And btnSend.Enabled = True Then
             btnSend.PerformClick()
         End If
     End Sub
@@ -225,9 +225,15 @@ Public Class Chat
     End Sub
 
     Private Sub irc_OnConnect() Handles irc.OnConnect
-        rtbLog.AppendText("Connected!" & vbNewLine)
+        rtbLog.AppendText("Connected to server!" & vbNewLine)
         irc.JoinChannel("#SM64FM")
+        tbMessage.Enabled = True
+        btnGoDead.Enabled = True
         btnSend.Enabled = True
+        ExplosionCooldownControl.Interval = 1000
+        BuzzerCooldownControl.Interval = 1000
+        ExplosionCooldownControl.Start()
+        BuzzerCooldownControl.Start()
     End Sub
 
     Private Sub irc_ServerMessage(message As String) Handles irc.ServerMessage
@@ -243,29 +249,38 @@ Public Class Chat
     Private Sub Chat_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         RefreshList.Interval = 500
         RefreshList.Start()
-        ExplosionCooldownControl.Interval = 1000
-        BuzzerCooldownControl.Interval = 1000
-        ExplosionCooldownControl.Start()
-        BuzzerCooldownControl.Start()
+        tbMessage.Enabled = False
+        btnExplode.Enabled = False
+        btnGoDead.Enabled = False
+        btnNudge.Enabled = False
+        btnSend.Enabled = False
         lbNick.Text = "Your nickname is:" + vbCrLf + My.Settings.Name
-        BuzzerTooltip.SetToolTip(Nudge, "Throws a buzz that inflicts a gentle nudge in the whole room you're chatting on, avoiding everyone from typing. (Cooldown 6s)")
-        ExplosionToolTip.SetToolTip(Explode, "Throws an explosion that inflicts a severily big nudge in the whole room you're chatting on, avoiding everyone from typing. (Cooldown 20s)")
+        BuzzerTooltip.SetToolTip(btnNudge, "Throws a buzz that inflicts a gentle nudge in the whole room you're chatting on, avoiding everyone from typing. (Cooldown 6s)")
+        ExplosionToolTip.SetToolTip(btnExplode, "Throws an explosion that inflicts a severily big nudge in the whole room you're chatting on, avoiding everyone from typing. (Cooldown 20s)")
     End Sub
+
     Private Sub btnGoDead_Click(sender As Object, e As EventArgs) Handles btnGoDead.Click
         My.Computer.Audio.Play(My.Resources.Disconnect, AudioPlayMode.Background)
+        lstUsers.Items.Clear()
         irc.Disconnect()
         rtbLog.Clear()
+        ExplosionCooldownControl.Stop()
+        BuzzerCooldownControl.Stop()
+        tbMessage.Enabled = False
+        btnSend.Enabled = False
+        btnNudge.Enabled = False
+        btnExplode.Enabled = False
         btnGoDead.Enabled = False
         btnGoLive.Enabled = True
     End Sub
 
-    Private Sub Nudge_Click(sender As Object, e As EventArgs) Handles Nudge.Click
+    Private Sub Nudge_Click(sender As Object, e As EventArgs) Handles btnNudge.Click
         tbMessage.Text = "$buzzer"
         btnSend.PerformClick()
         NudgeCooldown.Value = 0
     End Sub
 
-    Private Sub Explode_Click(sender As Object, e As EventArgs) Handles Explode.Click
+    Private Sub Explode_Click(sender As Object, e As EventArgs) Handles btnExplode.Click
         tbMessage.Text = "$explosion"
         btnSend.PerformClick()
         ExplodeCooldown.Value = 0
@@ -274,13 +289,13 @@ Public Class Chat
     Private Sub BuzzerCooldownControl_Tick(sender As Object, e As EventArgs) Handles BuzzerCooldownControl.Tick
         If Frozen = False Then
             If NudgeCooldown.Value < 6 Then
-                Nudge.Enabled = False
+                btnNudge.Enabled = False
                 NudgeCooldown.Value += 1
             ElseIf NudgeCooldown.Value = 6 Then
-                Nudge.Enabled = True
+                btnNudge.Enabled = True
             End If
         ElseIf Frozen = True Then
-            Nudge.Enabled = False
+            btnNudge.Enabled = False
             NudgeCooldown.Value = 0
         End If
     End Sub
@@ -288,13 +303,13 @@ Public Class Chat
     Private Sub ExplosionCooldownControl_Tick(sender As Object, e As EventArgs) Handles ExplosionCooldownControl.Tick
         If Frozen = False Then
             If ExplodeCooldown.Value < 20 Then
-                Explode.Enabled = False
+                btnExplode.Enabled = False
                 ExplodeCooldown.Value += 1
             ElseIf ExplodeCooldown.Value = 20 Then
-                Explode.Enabled = True
+                btnExplode.Enabled = True
             End If
         ElseIf Frozen = True Then
-            Explode.Enabled = False
+            btnExplode.Enabled = False
             ExplodeCooldown.Value = 0
         End If
     End Sub

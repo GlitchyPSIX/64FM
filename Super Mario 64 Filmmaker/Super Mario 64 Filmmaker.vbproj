@@ -9,7 +9,7 @@
     <OutputType>WinExe</OutputType>
     <StartupObject>Filmmaker.My.MyApplication</StartupObject>
     <RootNamespace>Filmmaker</RootNamespace>
-    <AssemblyName>sm64fm</AssemblyName>
+    <AssemblyName>SM64FM</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
@@ -58,7 +58,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Actual Enviroment\Deb\</OutputPath>
-    <DocumentationFile>sm64fm.xml</DocumentationFile>
+    <DocumentationFile>SM64FM.xml</DocumentationFile>
     <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42353,42354,42355</NoWarn>
     <WarningsAsErrors>42025</WarningsAsErrors>
     <PlatformTarget>x86</PlatformTarget>
@@ -75,7 +75,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Actual Enviroment\Rel\</OutputPath>
-    <DocumentationFile>sm64fm.xml</DocumentationFile>
+    <DocumentationFile>SM64FM.xml</DocumentationFile>
     <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42353,42354,42355</NoWarn>
     <WarningsAsErrors>42025</WarningsAsErrors>
     <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
@@ -89,14 +89,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Ionic.Zip">
-      <HintPath>..\..\..\..\..\..\..\..\Users\GlitchyPSIX\Downloads\Ionic.Zip.dll</HintPath>
+      <HintPath>.\Ionic.Zip.dll</HintPath>
     </Reference>
-    <Reference Include="IrcClient, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Downloads\IRCVB\IrcClient.dll</HintPath>
-    </Reference>
-    <Reference Include="MetroProgressBar">
-      <HintPath>..\..\..\..\..\Downloads\MetroProgressBar\MetroProgressBar\bin\Debug\MetroProgressBar.dll</HintPath>
+    <Reference Include="IrcClient">
+      <HintPath>.\IrcClient.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -118,7 +114,7 @@
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
     <Reference Include="WinFormsTransitions">
-      <HintPath>..\..\..\..\..\Downloads\TRANSITIONSCODE\Transitions\Transitions\bin\Release\WinFormsTransitions.dll</HintPath>
+      <HintPath>.\WinFormsTransitions.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -190,6 +186,7 @@
     <Compile Include="extractSel.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Globals.vb" />
     <Compile Include="HelloWorld.vb" />
     <Compile Include="MainMenu.vb">
       <SubType>Form</SubType>

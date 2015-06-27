@@ -5,6 +5,10 @@ Public Class SplashScreen1
     'This will be checked lotsa times.
     Dim Percentage As Integer = 0
     Private Sub SplashScreen1_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        'If the program is compiled in DEBUG mode, then enable the "Debug" flag in Globals.vb
+#If DEBUG Then
+        Debug = True
+#End If
         'Start the timer and make every tick be half a second.
         PercentagedTime.Interval = 500
         PercentagedTime.Start()
@@ -59,8 +63,10 @@ Public Class SplashScreen1
 
     Private Sub TitleLabel_Click(sender As Object, e As EventArgs) Handles TitleLabel.Click
         'DEBUG FEATURE: Reset "Custom Greeting" data.
-        My.Settings.Name = ""
-        My.Settings.Image = ""
+        If Debug Then
+            My.Settings.Name = ""
+            My.Settings.Image = ""
+        End If
     End Sub
 
     Private Sub progressbar1_Click(sender As Object, e As EventArgs) Handles progressbar1.Click

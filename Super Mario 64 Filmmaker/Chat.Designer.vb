@@ -37,14 +37,16 @@ Partial Class Chat
         Me.BuzzerCooldownControl = New System.Windows.Forms.Timer(Me.components)
         Me.ExplosionCooldownControl = New System.Windows.Forms.Timer(Me.components)
         Me.RefreshList = New System.Windows.Forms.Timer(Me.components)
-        Me.Explode = New System.Windows.Forms.Button()
-        Me.Nudge = New System.Windows.Forms.Button()
+        Me.btnExplode = New System.Windows.Forms.Button()
+        Me.btnNudge = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'rtbLog
         '
         Me.rtbLog.Location = New System.Drawing.Point(12, 12)
         Me.rtbLog.Name = "rtbLog"
+        Me.rtbLog.ReadOnly = True
         Me.rtbLog.Size = New System.Drawing.Size(465, 373)
         Me.rtbLog.TabIndex = 0
         Me.rtbLog.Text = ""
@@ -53,7 +55,7 @@ Partial Class Chat
         '
         Me.lstUsers.FormattingEnabled = True
         Me.lstUsers.Items.AddRange(New Object() {" "})
-        Me.lstUsers.Location = New System.Drawing.Point(480, 12)
+        Me.lstUsers.Location = New System.Drawing.Point(480, 28)
         Me.lstUsers.Name = "lstUsers"
         Me.lstUsers.Size = New System.Drawing.Size(105, 290)
         Me.lstUsers.TabIndex = 1
@@ -81,7 +83,7 @@ Partial Class Chat
         'lbNick
         '
         Me.lbNick.BackColor = System.Drawing.Color.Transparent
-        Me.lbNick.Location = New System.Drawing.Point(483, 305)
+        Me.lbNick.Location = New System.Drawing.Point(484, 321)
         Me.lbNick.Name = "lbNick"
         Me.lbNick.Size = New System.Drawing.Size(97, 40)
         Me.lbNick.TabIndex = 3
@@ -144,29 +146,38 @@ Partial Class Chat
         'ExplosionCooldownControl
         '
         '
-        'Explode
+        'btnExplode
         '
-        Me.Explode.BackColor = System.Drawing.Color.Transparent
-        Me.Explode.BackgroundImage = Global.Filmmaker.My.Resources.Resources.Explode
-        Me.Explode.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.Explode.Enabled = False
-        Me.Explode.Location = New System.Drawing.Point(42, 418)
-        Me.Explode.Name = "Explode"
-        Me.Explode.Size = New System.Drawing.Size(30, 29)
-        Me.Explode.TabIndex = 7
-        Me.Explode.UseVisualStyleBackColor = False
+        Me.btnExplode.BackColor = System.Drawing.Color.Transparent
+        Me.btnExplode.BackgroundImage = Global.Filmmaker.My.Resources.Resources.Explode
+        Me.btnExplode.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btnExplode.Enabled = False
+        Me.btnExplode.Location = New System.Drawing.Point(42, 418)
+        Me.btnExplode.Name = "btnExplode"
+        Me.btnExplode.Size = New System.Drawing.Size(30, 29)
+        Me.btnExplode.TabIndex = 7
+        Me.btnExplode.UseVisualStyleBackColor = False
         '
-        'Nudge
+        'btnNudge
         '
-        Me.Nudge.BackColor = System.Drawing.Color.Transparent
-        Me.Nudge.BackgroundImage = Global.Filmmaker.My.Resources.Resources.Nudge
-        Me.Nudge.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.Nudge.Enabled = False
-        Me.Nudge.Location = New System.Drawing.Point(12, 391)
-        Me.Nudge.Name = "Nudge"
-        Me.Nudge.Size = New System.Drawing.Size(28, 29)
-        Me.Nudge.TabIndex = 7
-        Me.Nudge.UseVisualStyleBackColor = False
+        Me.btnNudge.BackColor = System.Drawing.Color.Transparent
+        Me.btnNudge.BackgroundImage = Global.Filmmaker.My.Resources.Resources.Nudge
+        Me.btnNudge.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btnNudge.Enabled = False
+        Me.btnNudge.Location = New System.Drawing.Point(12, 391)
+        Me.btnNudge.Name = "btnNudge"
+        Me.btnNudge.Size = New System.Drawing.Size(28, 29)
+        Me.btnNudge.TabIndex = 7
+        Me.btnNudge.UseVisualStyleBackColor = False
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(477, 12)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(74, 13)
+        Me.Label1.TabIndex = 9
+        Me.Label1.Text = "Current Users:"
         '
         'Chat
         '
@@ -174,10 +185,11 @@ Partial Class Chat
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(597, 475)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.ExplodeCooldown)
         Me.Controls.Add(Me.NudgeCooldown)
-        Me.Controls.Add(Me.Explode)
-        Me.Controls.Add(Me.Nudge)
+        Me.Controls.Add(Me.btnExplode)
+        Me.Controls.Add(Me.btnNudge)
         Me.Controls.Add(Me.tbMessage)
         Me.Controls.Add(Me.btnSend)
         Me.Controls.Add(Me.lbNick)
@@ -188,6 +200,7 @@ Partial Class Chat
         Me.Name = "Chat"
         Me.Text = "Chat"
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents rtbLog As System.Windows.Forms.RichTextBox
@@ -197,8 +210,8 @@ Partial Class Chat
     Friend WithEvents lbNick As System.Windows.Forms.Label
     Friend WithEvents btnSend As System.Windows.Forms.Button
     Friend WithEvents tbMessage As System.Windows.Forms.RichTextBox
-    Friend WithEvents Nudge As System.Windows.Forms.Button
-    Friend WithEvents Explode As System.Windows.Forms.Button
+    Friend WithEvents btnNudge As System.Windows.Forms.Button
+    Friend WithEvents btnExplode As System.Windows.Forms.Button
     Friend WithEvents BuzzerTooltip As System.Windows.Forms.ToolTip
     Friend WithEvents ExplosionToolTip As System.Windows.Forms.ToolTip
     Friend WithEvents NudgeCooldown As System.Windows.Forms.ProgressBar
@@ -206,4 +219,5 @@ Partial Class Chat
     Friend WithEvents BuzzerCooldownControl As System.Windows.Forms.Timer
     Friend WithEvents ExplosionCooldownControl As System.Windows.Forms.Timer
     Friend WithEvents RefreshList As System.Windows.Forms.Timer
+    Friend WithEvents Label1 As System.Windows.Forms.Label
 End Class

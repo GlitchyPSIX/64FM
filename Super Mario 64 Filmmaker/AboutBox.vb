@@ -13,8 +13,7 @@
         AssignedTo.Text = "Registered under the nickname of " + My.Settings.Name + " in the computer called " + My.Computer.Name.ToString + " with the OS called " + My.Computer.Info.OSFullName + "(" + My.Computer.Info.OSPlatform + " " + My.Computer.Info.OSVersion + ")"
     End Sub
 
-    Private Sub OKButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    Private Sub OKButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OKButton.Click
         Me.Close()
     End Sub
-
 End Class
