@@ -89,14 +89,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Ionic.Zip">
-      <HintPath>..\..\..\..\..\..\..\..\Users\GlitchyPSIX\Downloads\Ionic.Zip.dll</HintPath>
+      <HintPath>.\Ionic.Zip.dll</HintPath>
     </Reference>
-    <Reference Include="IrcClient, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Downloads\IRCVB\IrcClient.dll</HintPath>
-    </Reference>
-    <Reference Include="MetroProgressBar">
-      <HintPath>..\..\..\..\..\Downloads\MetroProgressBar\MetroProgressBar\bin\Debug\MetroProgressBar.dll</HintPath>
+    <Reference Include="IrcClient">
+      <HintPath>.\IrcClient.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -118,7 +114,7 @@
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
     <Reference Include="WinFormsTransitions">
-      <HintPath>..\..\..\..\..\Downloads\TRANSITIONSCODE\Transitions\Transitions\bin\Release\WinFormsTransitions.dll</HintPath>
+      <HintPath>.\WinFormsTransitions.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -190,6 +186,7 @@
     <Compile Include="extractSel.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Globals.vb" />
     <Compile Include="HelloWorld.vb" />
     <Compile Include="MainMenu.vb">
       <SubType>Form</SubType>
@@ -203,7 +200,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="NativeMethods.vb" />
     <Compile Include="preferences.Designer.vb">
       <DependentUpon>preferences.vb</DependentUpon>
     </Compile>

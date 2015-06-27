@@ -35,6 +35,7 @@ Partial Class SetUpForm
         Me.NotHaali = New System.Windows.Forms.SplitContainer()
         Me.SelBGBTN = New System.Windows.Forms.Button()
         Me.BGLabel = New System.Windows.Forms.Label()
+        Me.NameLabel = New System.Windows.Forms.Label()
         Me.ImgPrw = New System.Windows.Forms.PictureBox()
         Me.ColorSelector = New System.Windows.Forms.ColorDialog()
         Me.SetBackground = New System.Windows.Forms.Timer(Me.components)
@@ -48,28 +49,28 @@ Partial Class SetUpForm
         'NickLabel
         '
         Me.NickLabel.AutoSize = True
-        Me.NickLabel.Font = New System.Drawing.Font("Roboto Condensed Light", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.NickLabel.Location = New System.Drawing.Point(35, 18)
+        Me.NickLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.NickLabel.Location = New System.Drawing.Point(26, 20)
         Me.NickLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.NickLabel.Name = "NickLabel"
-        Me.NickLabel.Size = New System.Drawing.Size(176, 20)
+        Me.NickLabel.Size = New System.Drawing.Size(205, 18)
         Me.NickLabel.TabIndex = 0
         Me.NickLabel.Text = "Please tell me your nickname:"
         '
         'ImageLabel
         '
         Me.ImageLabel.AutoSize = True
-        Me.ImageLabel.Font = New System.Drawing.Font("Roboto Condensed Light", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ImageLabel.Location = New System.Drawing.Point(43, 135)
+        Me.ImageLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ImageLabel.Location = New System.Drawing.Point(37, 135)
         Me.ImageLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.ImageLabel.Name = "ImageLabel"
-        Me.ImageLabel.Size = New System.Drawing.Size(151, 20)
+        Me.ImageLabel.Size = New System.Drawing.Size(174, 18)
         Me.ImageLabel.TabIndex = 1
         Me.ImageLabel.Text = "Select your profile image:"
         '
         'SelImgBtn
         '
-        Me.SelImgBtn.Font = New System.Drawing.Font("Roboto Condensed Light", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SelImgBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SelImgBtn.Location = New System.Drawing.Point(56, 160)
         Me.SelImgBtn.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.SelImgBtn.Name = "SelImgBtn"
@@ -83,7 +84,7 @@ Partial Class SetUpForm
         Me.NameBox.Location = New System.Drawing.Point(29, 43)
         Me.NameBox.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.NameBox.Name = "NameBox"
-        Me.NameBox.Size = New System.Drawing.Size(189, 27)
+        Me.NameBox.Size = New System.Drawing.Size(189, 24)
         Me.NameBox.TabIndex = 4
         Me.NameBox.WordWrap = False
         '
@@ -93,7 +94,7 @@ Partial Class SetUpForm
         '
         'Button1
         '
-        Me.Button1.Font = New System.Drawing.Font("Roboto Condensed Light", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.Location = New System.Drawing.Point(74, 287)
         Me.Button1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Button1.Name = "Button1"
@@ -106,29 +107,29 @@ Partial Class SetUpForm
         '
         Me.MyNameIsLabel.AutoSize = True
         Me.MyNameIsLabel.BackColor = System.Drawing.Color.Transparent
-        Me.MyNameIsLabel.Font = New System.Drawing.Font("Roboto Condensed Light", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MyNameIsLabel.Location = New System.Drawing.Point(80, 220)
+        Me.MyNameIsLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MyNameIsLabel.Location = New System.Drawing.Point(75, 220)
         Me.MyNameIsLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.MyNameIsLabel.Name = "MyNameIsLabel"
-        Me.MyNameIsLabel.Size = New System.Drawing.Size(82, 40)
+        Me.MyNameIsLabel.Size = New System.Drawing.Size(88, 36)
         Me.MyNameIsLabel.TabIndex = 6
-        Me.MyNameIsLabel.Text = "Hello there! " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "My name is..."
+        Me.MyNameIsLabel.Text = "Hello there! " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "My name is:"
         Me.MyNameIsLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'ColorLabel
         '
         Me.ColorLabel.AutoSize = True
-        Me.ColorLabel.Font = New System.Drawing.Font("Roboto Condensed Light", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ColorLabel.Location = New System.Drawing.Point(49, 74)
+        Me.ColorLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ColorLabel.Location = New System.Drawing.Point(38, 75)
         Me.ColorLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.ColorLabel.Name = "ColorLabel"
-        Me.ColorLabel.Size = New System.Drawing.Size(137, 20)
+        Me.ColorLabel.Size = New System.Drawing.Size(164, 18)
         Me.ColorLabel.TabIndex = 7
         Me.ColorLabel.Text = "What is your fav. color?"
         '
         'PickColor
         '
-        Me.PickColor.Font = New System.Drawing.Font("Roboto Condensed Light", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PickColor.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.PickColor.Location = New System.Drawing.Point(73, 99)
         Me.PickColor.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.PickColor.Name = "PickColor"
@@ -163,6 +164,7 @@ Partial Class SetUpForm
         '
         Me.NotHaali.Panel2.BackgroundImage = Global.Filmmaker.My.Resources.Resources.Background2
         Me.NotHaali.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.NotHaali.Panel2.Controls.Add(Me.NameLabel)
         Me.NotHaali.Panel2.Controls.Add(Me.ImgPrw)
         Me.NotHaali.Panel2.Controls.Add(Me.MyNameIsLabel)
         Me.NotHaali.Size = New System.Drawing.Size(505, 338)
@@ -181,12 +183,22 @@ Partial Class SetUpForm
         'BGLabel
         '
         Me.BGLabel.AutoSize = True
-        Me.BGLabel.Location = New System.Drawing.Point(45, 197)
+        Me.BGLabel.Location = New System.Drawing.Point(38, 199)
         Me.BGLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.BGLabel.Name = "BGLabel"
-        Me.BGLabel.Size = New System.Drawing.Size(142, 20)
+        Me.BGLabel.Size = New System.Drawing.Size(166, 18)
         Me.BGLabel.TabIndex = 9
         Me.BGLabel.Text = "Select your Background"
+        '
+        'NameLabel
+        '
+        Me.NameLabel.BackColor = System.Drawing.Color.Transparent
+        Me.NameLabel.Location = New System.Drawing.Point(3, 256)
+        Me.NameLabel.Name = "NameLabel"
+        Me.NameLabel.Size = New System.Drawing.Size(231, 49)
+        Me.NameLabel.TabIndex = 7
+        Me.NameLabel.Text = "(Name will be displayed here)"
+        Me.NameLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'ImgPrw
         '
@@ -207,16 +219,16 @@ Partial Class SetUpForm
         '
         'SetUpForm
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 20.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 18.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(505, 338)
         Me.Controls.Add(Me.NotHaali)
-        Me.Font = New System.Drawing.Font("Roboto Condensed Light", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.MaximizeBox = False
         Me.Name = "SetUpForm"
-        Me.Text = "Greeting Set Up"
+        Me.Text = "Set Up User Details"
         Me.NotHaali.Panel1.ResumeLayout(False)
         Me.NotHaali.Panel1.PerformLayout()
         Me.NotHaali.Panel2.ResumeLayout(False)
@@ -242,4 +254,5 @@ Partial Class SetUpForm
     Friend WithEvents BGLabel As System.Windows.Forms.Label
     Friend WithEvents SelBGBTN As System.Windows.Forms.Button
     Friend WithEvents SetBackground As System.Windows.Forms.Timer
+    Friend WithEvents NameLabel As System.Windows.Forms.Label
 End Class

@@ -1,5 +1,5 @@
 ﻿Class HelloMatey
-    Public Shared Function HelloWorld()
+    Public Shared Sub HelloWorld()
         If Form.ActiveForm Is MainMenu Then
             Console.WriteLine("Hola Mundo! :D")
             Console.WriteLine("That means Hello world! :D in Spanish, my main language")
@@ -8,5 +8,5 @@
         Else
             'NOPE.
         End If
-    End Function
+    End Sub
 End Class

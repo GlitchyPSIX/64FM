@@ -28,12 +28,12 @@ Partial Class MainMenu
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.AppVer = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.HalfASecond = New System.Windows.Forms.Timer(Me.components)
+        Me.TenthOfASecond = New System.Windows.Forms.Timer(Me.components)
         Me.ImgPrw = New System.Windows.Forms.PictureBox()
         Me.btnSC = New System.Windows.Forms.PictureBox()
         Me.btnCHT = New System.Windows.Forms.PictureBox()
         Me.btnWorkshop = New System.Windows.Forms.PictureBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.btnEXT = New System.Windows.Forms.PictureBox()
         Me.btnSV = New System.Windows.Forms.PictureBox()
         Me.btnFRPS = New System.Windows.Forms.PictureBox()
         Me.btnGame = New System.Windows.Forms.PictureBox()
@@ -76,7 +76,7 @@ Partial Class MainMenu
         CType(Me.btnSC, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnCHT, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnWorkshop, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnEXT, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnSV, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnFRPS, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnGame, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -96,7 +96,7 @@ Partial Class MainMenu
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AppVer, Me.ToolStripStatusLabel1})
         Me.StatusStrip1.Location = New System.Drawing.Point(0, 577)
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(532, 22)
+        Me.StatusStrip1.Size = New System.Drawing.Size(531, 22)
         Me.StatusStrip1.SizingGrip = False
         Me.StatusStrip1.TabIndex = 19
         '
@@ -113,6 +113,7 @@ Partial Class MainMenu
         Me.ToolStripStatusLabel1.BackColor = System.Drawing.Color.Black
         Me.ToolStripStatusLabel1.ForeColor = System.Drawing.Color.Blue
         Me.ToolStripStatusLabel1.IsLink = True
+        Me.ToolStripStatusLabel1.LinkColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
         Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(55, 17)
         Me.ToolStripStatusLabel1.Text = "Donate :)"
@@ -120,7 +121,7 @@ Partial Class MainMenu
         'ImgPrw
         '
         Me.ImgPrw.BackColor = System.Drawing.Color.Transparent
-        Me.ImgPrw.Location = New System.Drawing.Point(30, 73)
+        Me.ImgPrw.Location = New System.Drawing.Point(28, 73)
         Me.ImgPrw.Name = "ImgPrw"
         Me.ImgPrw.Size = New System.Drawing.Size(107, 112)
         Me.ImgPrw.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -161,16 +162,16 @@ Partial Class MainMenu
         Me.btnWorkshop.TabIndex = 20
         Me.btnWorkshop.TabStop = False
         '
-        'PictureBox1
+        'btnEXT
         '
-        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox1.Image = Global.Filmmaker.My.Resources.Resources.Extras
-        Me.PictureBox1.Location = New System.Drawing.Point(326, 82)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(151, 160)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 23
-        Me.PictureBox1.TabStop = False
+        Me.btnEXT.BackColor = System.Drawing.Color.Transparent
+        Me.btnEXT.Image = Global.Filmmaker.My.Resources.Resources.Extras
+        Me.btnEXT.Location = New System.Drawing.Point(326, 82)
+        Me.btnEXT.Name = "btnEXT"
+        Me.btnEXT.Size = New System.Drawing.Size(151, 160)
+        Me.btnEXT.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.btnEXT.TabIndex = 23
+        Me.btnEXT.TabStop = False
         '
         'btnSV
         '
@@ -220,11 +221,11 @@ Partial Class MainMenu
         '
         Me.WelcomeLabel.AutoSize = True
         Me.WelcomeLabel.BackColor = System.Drawing.Color.Transparent
-        Me.WelcomeLabel.Font = New System.Drawing.Font("Roboto Condensed Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.WelcomeLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.WelcomeLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.WelcomeLabel.Location = New System.Drawing.Point(37, 188)
+        Me.WelcomeLabel.Location = New System.Drawing.Point(24, 188)
         Me.WelcomeLabel.Name = "WelcomeLabel"
-        Me.WelcomeLabel.Size = New System.Drawing.Size(101, 21)
+        Me.WelcomeLabel.Size = New System.Drawing.Size(119, 20)
         Me.WelcomeLabel.TabIndex = 25
         Me.WelcomeLabel.Text = "Welcome Back,"
         Me.WelcomeLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -234,7 +235,7 @@ Partial Class MainMenu
         Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.SettingsToolStripMenuItem, Me.HelpToolStripMenuItem})
         Me.MenuStrip.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip.Name = "MenuStrip"
-        Me.MenuStrip.Size = New System.Drawing.Size(532, 24)
+        Me.MenuStrip.Size = New System.Drawing.Size(531, 24)
         Me.MenuStrip.TabIndex = 27
         Me.MenuStrip.Text = "MenuStrip2"
         '
@@ -450,7 +451,7 @@ Partial Class MainMenu
         Me.ExpandOrRetract.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ExpandOrRetract.BackColor = System.Drawing.Color.Transparent
         Me.ExpandOrRetract.Image = Global.Filmmaker.My.Resources.Resources.Expand
-        Me.ExpandOrRetract.Location = New System.Drawing.Point(494, 290)
+        Me.ExpandOrRetract.Location = New System.Drawing.Point(493, 290)
         Me.ExpandOrRetract.Name = "ExpandOrRetract"
         Me.ExpandOrRetract.Size = New System.Drawing.Size(38, 80)
         Me.ExpandOrRetract.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -475,7 +476,7 @@ Partial Class MainMenu
         Me.BackColor = System.Drawing.Color.Red
         Me.BackgroundImage = Global.Filmmaker.My.Resources.Resources.Background
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(532, 599)
+        Me.ClientSize = New System.Drawing.Size(531, 599)
         Me.Controls.Add(Me.ExpandOrRetract)
         Me.Controls.Add(Me.WelcomeLabel)
         Me.Controls.Add(Me.ImgPrw)
@@ -483,7 +484,7 @@ Partial Class MainMenu
         Me.Controls.Add(Me.btnCHT)
         Me.Controls.Add(Me.btnWorkshop)
         Me.Controls.Add(Me.btnChat)
-        Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.btnEXT)
         Me.Controls.Add(Me.btnSV)
         Me.Controls.Add(Me.btnFRPS)
         Me.Controls.Add(Me.btnGame)
@@ -506,7 +507,7 @@ Partial Class MainMenu
         CType(Me.btnSC, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnCHT, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnWorkshop, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnEXT, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnSV, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnFRPS, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnGame, System.ComponentModel.ISupportInitialize).EndInit()
@@ -530,8 +531,8 @@ Partial Class MainMenu
     Friend WithEvents btnCC As System.Windows.Forms.PictureBox
     Friend WithEvents AppVer As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents ToolStripStatusLabel1 As System.Windows.Forms.ToolStripStatusLabel
-    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
-    Friend WithEvents HalfASecond As System.Windows.Forms.Timer
+    Friend WithEvents btnEXT As System.Windows.Forms.PictureBox
+    Friend WithEvents TenthOfASecond As System.Windows.Forms.Timer
     Friend WithEvents ImgPrw As System.Windows.Forms.PictureBox
     Friend WithEvents WelcomeLabel As System.Windows.Forms.Label
     Friend WithEvents MenuStrip As System.Windows.Forms.MenuStrip
