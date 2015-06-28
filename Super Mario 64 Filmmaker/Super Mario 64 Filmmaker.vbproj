@@ -453,6 +453,7 @@
     <None Include="Resources\froze.png" />
     <None Include="Resources\Connected.wav" />
     <None Include="Resources\Disconnect.wav" />
+    <None Include="Resources\DeepFreeze.wav" />
     <Content Include="SM64FMNormal.ico" />
   </ItemGroup>
   <ItemGroup>
