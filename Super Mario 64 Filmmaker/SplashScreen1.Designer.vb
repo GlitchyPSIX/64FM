@@ -25,9 +25,7 @@ Partial Class SplashScreen1
         Me.components = New System.ComponentModel.Container()
         Me.TitleLabel = New System.Windows.Forms.Label()
         Me.StatusLabel = New System.Windows.Forms.Label()
-        Me.PercentageLabel = New System.Windows.Forms.Label()
         Me.PercentagedTime = New System.Windows.Forms.Timer(Me.components)
-        Me.ProgressLabel = New System.Windows.Forms.Label()
         Me.progressbar1 = New System.Windows.Forms.PictureBox()
         CType(Me.progressbar1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -45,38 +43,16 @@ Partial Class SplashScreen1
         'StatusLabel
         '
         Me.StatusLabel.AutoSize = True
-        Me.StatusLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.StatusLabel.Font = New System.Drawing.Font("Roboto Condensed Light", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.StatusLabel.ForeColor = System.Drawing.Color.White
         Me.StatusLabel.Location = New System.Drawing.Point(68, 263)
         Me.StatusLabel.Name = "StatusLabel"
-        Me.StatusLabel.Size = New System.Drawing.Size(95, 25)
+        Me.StatusLabel.Size = New System.Drawing.Size(85, 28)
         Me.StatusLabel.TabIndex = 3
-        Me.StatusLabel.Text = "Loading:"
-        '
-        'PercentageLabel
-        '
-        Me.PercentageLabel.AutoSize = True
-        Me.PercentageLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PercentageLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.PercentageLabel.Location = New System.Drawing.Point(153, 265)
-        Me.PercentageLabel.Name = "PercentageLabel"
-        Me.PercentageLabel.Size = New System.Drawing.Size(35, 24)
-        Me.PercentageLabel.TabIndex = 4
-        Me.PercentageLabel.Text = "0%"
+        Me.StatusLabel.Text = "Welcome"
         '
         'PercentagedTime
         '
-        '
-        'ProgressLabel
-        '
-        Me.ProgressLabel.AutoSize = True
-        Me.ProgressLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ProgressLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.ProgressLabel.Location = New System.Drawing.Point(194, 265)
-        Me.ProgressLabel.Name = "ProgressLabel"
-        Me.ProgressLabel.Size = New System.Drawing.Size(176, 24)
-        Me.ProgressLabel.TabIndex = 4
-        Me.ProgressLabel.Text = "Loading Main Script"
         '
         'progressbar1
         '
@@ -95,8 +71,6 @@ Partial Class SplashScreen1
         Me.BackColor = System.Drawing.Color.Red
         Me.ClientSize = New System.Drawing.Size(496, 303)
         Me.ControlBox = False
-        Me.Controls.Add(Me.ProgressLabel)
-        Me.Controls.Add(Me.PercentageLabel)
         Me.Controls.Add(Me.StatusLabel)
         Me.Controls.Add(Me.TitleLabel)
         Me.Controls.Add(Me.progressbar1)
@@ -113,8 +87,6 @@ Partial Class SplashScreen1
     Friend WithEvents TitleLabel As System.Windows.Forms.Label
     Friend WithEvents progressbar1 As System.Windows.Forms.PictureBox
     Friend WithEvents StatusLabel As System.Windows.Forms.Label
-    Friend WithEvents PercentageLabel As System.Windows.Forms.Label
     Friend WithEvents PercentagedTime As System.Windows.Forms.Timer
-    Friend WithEvents ProgressLabel As System.Windows.Forms.Label
 
 End Class
