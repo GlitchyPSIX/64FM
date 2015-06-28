@@ -29,25 +29,6 @@ Public Class SplashScreen1
     End Sub
 
     Private Sub PercentagedTime_Tick(sender As Object, e As EventArgs) Handles PercentagedTime.Tick
-        'In every tick, say the percentage, making the Percentage Integer a string, and adding a "%"
-        PercentageLabel.Text = Percentage.ToString + "%"
-        'After certain "Percentage", change interval of the PercentagedTime Timer and change the String
-        If Percentage >= 25 Then
-            ProgressLabel.Text = "Loading UI"
-            PercentagedTime.Interval = 25
-        End If
-        If Percentage >= 50 Then
-            PercentagedTime.Interval = 50
-            ProgressLabel.Text = "Loading UI Images"
-        End If
-        If Percentage >= 75 Then
-            PercentagedTime.Interval = 100
-            ProgressLabel.Text = "Deploying Addons"
-        End If
-        If Percentage >= 80 Then
-            PercentagedTime.Interval = 75
-            ProgressLabel.Text = "Creating Windows"
-        End If
         If Percentage < 100 Then
             Percentage = Percentage + 1
         ElseIf Percentage = 100 Then

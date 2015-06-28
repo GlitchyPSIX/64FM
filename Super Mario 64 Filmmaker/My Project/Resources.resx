@@ -349,4 +349,7 @@
   <data name="Punch" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Punch.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="DeepFreeze" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DeepFreeze.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

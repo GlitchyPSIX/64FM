@@ -103,11 +103,23 @@ Namespace My
         
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("36")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("37")>  _
         Public ReadOnly Property Build() As Integer
             Get
                 Return CType(Me("Build"),Integer)
             End Get
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Frozen() As Boolean
+            Get
+                Return CType(Me("Frozen"),Boolean)
+            End Get
+            Set
+                Me("Frozen") = value
+            End Set
         End Property
     End Class
 End Namespace
