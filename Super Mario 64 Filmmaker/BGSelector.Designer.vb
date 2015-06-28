@@ -118,9 +118,9 @@ Partial Class BGSelector
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(46, 137)
+        Me.Label1.Location = New System.Drawing.Point(42, 137)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(59, 20)
+        Me.Label1.Size = New System.Drawing.Size(68, 18)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Classical"
         '
@@ -129,43 +129,43 @@ Partial Class BGSelector
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(185, 137)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(44, 20)
+        Me.Label2.Size = New System.Drawing.Size(49, 18)
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "Faded"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(321, 137)
+        Me.Label3.Location = New System.Drawing.Point(306, 137)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(60, 20)
+        Me.Label3.Size = New System.Drawing.Size(69, 18)
         Me.Label3.TabIndex = 3
         Me.Label3.Text = "Harmony"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(452, 137)
+        Me.Label4.Location = New System.Drawing.Point(444, 139)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(64, 20)
+        Me.Label4.Size = New System.Drawing.Size(76, 18)
         Me.Label4.TabIndex = 4
         Me.Label4.Text = "Skysoarer"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(42, 297)
+        Me.Label5.Location = New System.Drawing.Point(36, 296)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(67, 20)
+        Me.Label5.Size = New System.Drawing.Size(80, 18)
         Me.Label5.TabIndex = 5
         Me.Label5.Text = "Clockwork"
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(258, 297)
+        Me.Label6.Location = New System.Drawing.Point(254, 297)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(50, 20)
+        Me.Label6.Size = New System.Drawing.Size(56, 18)
         Me.Label6.TabIndex = 6
         Me.Label6.Text = "Loveup"
         '
@@ -174,15 +174,15 @@ Partial Class BGSelector
         Me.Label7.AutoSize = True
         Me.Label7.Location = New System.Drawing.Point(452, 297)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(56, 20)
+        Me.Label7.Size = New System.Drawing.Size(61, 18)
         Me.Label7.TabIndex = 7
         Me.Label7.Text = "Starlight"
         '
         'BGSelector
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 20.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 18.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(563, 331)
+        Me.ClientSize = New System.Drawing.Size(558, 331)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label5)
@@ -197,7 +197,7 @@ Partial Class BGSelector
         Me.Controls.Add(Me.Loveup)
         Me.Controls.Add(Me.Clockwork)
         Me.Controls.Add(Me.Classic)
-        Me.Font = New System.Drawing.Font("Roboto Condensed Light", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
         Me.Name = "BGSelector"
         Me.Text = "Select your background"

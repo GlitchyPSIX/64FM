@@ -151,14 +151,22 @@ Public Class MainMenu
         Dim FormWidth As Integer = Me.Width
         Dim Retract As New Transition(New TransitionType_Deceleration(800))
         Dim Expand As New Transition(New TransitionType_Acceleration(800))
-        Retract.add(Me, "Width", 547)
-        Expand.add(Me, "Width", 757)
-        If FormWidth > 547 Then
+        Retract.add(Me, "Width", 535)
+        Expand.add(Me, "Width", 755)
+        If FormWidth > 535 Then
             Retract.run()
             Me.ExpandOrRetract.Image = My.Resources.Expand
+            'For x = 0 To 11
+            '    Me.Width = 755 - (x * 20)
+            '    Me.Refresh()
+            'Next
         Else
             Expand.run()
             Me.ExpandOrRetract.Image = My.Resources.Retract
+            'For x = 0 To 11
+            '    Me.Width = 535 + (x * 20)
+            '    Me.Refresh()
+            'Next
         End If
     End Sub
 
@@ -166,6 +174,4 @@ Public Class MainMenu
         Me.Hide()
         SetUpForm.Show()
     End Sub
-
-
 End Class
