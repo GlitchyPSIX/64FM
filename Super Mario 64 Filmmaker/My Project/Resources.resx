@@ -337,4 +337,16 @@
   <data name="Disconnect" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Disconnect.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="Crit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Crit.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="GiveCrit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GiveCrit.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Hit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Hit.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Punch" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Punch.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

@@ -242,6 +242,15 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         '''</summary>
+        Friend ReadOnly Property Crit() As System.IO.UnmanagedMemoryStream
+            Get
+                Return ResourceManager.GetStream("Crit", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        '''</summary>
         Friend ReadOnly Property Critical() As System.IO.UnmanagedMemoryStream
             Get
                 Return ResourceManager.GetStream("Critical", resourceCulture)
@@ -366,6 +375,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        '''</summary>
+        Friend ReadOnly Property GiveCrit() As System.IO.UnmanagedMemoryStream
+            Get
+                Return ResourceManager.GetStream("GiveCrit", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
         Friend ReadOnly Property Glitch() As System.Drawing.Bitmap
@@ -410,6 +428,15 @@ Namespace My.Resources
         Friend ReadOnly Property HighScore() As System.IO.UnmanagedMemoryStream
             Get
                 Return ResourceManager.GetStream("HighScore", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        '''</summary>
+        Friend ReadOnly Property Hit() As System.IO.UnmanagedMemoryStream
+            Get
+                Return ResourceManager.GetStream("Hit", resourceCulture)
             End Get
         End Property
         
@@ -597,6 +624,15 @@ Namespace My.Resources
             Get
                 Dim obj As Object = ResourceManager.GetObject("ProjectSF", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        '''</summary>
+        Friend ReadOnly Property Punch() As System.IO.UnmanagedMemoryStream
+            Get
+                Return ResourceManager.GetStream("Punch", resourceCulture)
             End Get
         End Property
         

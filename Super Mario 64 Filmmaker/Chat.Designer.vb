@@ -25,8 +25,16 @@ Partial Class Chat
         Me.components = New System.ComponentModel.Container()
         Me.rtbLog = New System.Windows.Forms.RichTextBox()
         Me.lstUsers = New System.Windows.Forms.ListBox()
-        Me.btnGoLive = New System.Windows.Forms.Button()
-        Me.btnGoDead = New System.Windows.Forms.Button()
+        Me.UserContextStrip = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.PMToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.FreezeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DirectBuzzToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PunchToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SecretToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.KickToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.btnConnect = New System.Windows.Forms.Button()
+        Me.btnDisconnect = New System.Windows.Forms.Button()
         Me.lbNick = New System.Windows.Forms.Label()
         Me.btnSend = New System.Windows.Forms.Button()
         Me.tbMessage = New System.Windows.Forms.RichTextBox()
@@ -36,10 +44,9 @@ Partial Class Chat
         Me.ExplodeCooldown = New System.Windows.Forms.ProgressBar()
         Me.BuzzerCooldownControl = New System.Windows.Forms.Timer(Me.components)
         Me.ExplosionCooldownControl = New System.Windows.Forms.Timer(Me.components)
-        Me.RefreshList = New System.Windows.Forms.Timer(Me.components)
         Me.btnExplode = New System.Windows.Forms.Button()
         Me.btnNudge = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.UserContextStrip.SuspendLayout()
         Me.SuspendLayout()
         '
         'rtbLog
@@ -53,37 +60,86 @@ Partial Class Chat
         '
         'lstUsers
         '
+        Me.lstUsers.ContextMenuStrip = Me.UserContextStrip
         Me.lstUsers.FormattingEnabled = True
         Me.lstUsers.Items.AddRange(New Object() {" "})
-        Me.lstUsers.Location = New System.Drawing.Point(480, 28)
+        Me.lstUsers.Location = New System.Drawing.Point(480, 12)
         Me.lstUsers.Name = "lstUsers"
         Me.lstUsers.Size = New System.Drawing.Size(105, 290)
         Me.lstUsers.TabIndex = 1
         '
-        'btnGoLive
+        'UserContextStrip
         '
-        Me.btnGoLive.BackColor = System.Drawing.Color.Transparent
-        Me.btnGoLive.Location = New System.Drawing.Point(480, 378)
-        Me.btnGoLive.Name = "btnGoLive"
-        Me.btnGoLive.Size = New System.Drawing.Size(105, 29)
-        Me.btnGoLive.TabIndex = 2
-        Me.btnGoLive.Text = "Go Online"
-        Me.btnGoLive.UseVisualStyleBackColor = False
+        Me.UserContextStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PMToolStripMenuItem, Me.FreezeToolStripMenuItem, Me.ToolStripMenuItem1, Me.DirectBuzzToolStripMenuItem, Me.PunchToolStripMenuItem, Me.SecretToolStripMenuItem, Me.KickToolStripMenuItem})
+        Me.UserContextStrip.Name = "UserContextStrip"
+        Me.UserContextStrip.Size = New System.Drawing.Size(133, 158)
         '
-        'btnGoDead
+        'PMToolStripMenuItem
         '
-        Me.btnGoDead.BackColor = System.Drawing.Color.Transparent
-        Me.btnGoDead.Location = New System.Drawing.Point(480, 413)
-        Me.btnGoDead.Name = "btnGoDead"
-        Me.btnGoDead.Size = New System.Drawing.Size(105, 29)
-        Me.btnGoDead.TabIndex = 2
-        Me.btnGoDead.Text = "Go Offline"
-        Me.btnGoDead.UseVisualStyleBackColor = False
+        Me.PMToolStripMenuItem.Name = "PMToolStripMenuItem"
+        Me.PMToolStripMenuItem.Size = New System.Drawing.Size(132, 22)
+        Me.PMToolStripMenuItem.Text = "PM"
+        '
+        'FreezeToolStripMenuItem
+        '
+        Me.FreezeToolStripMenuItem.Name = "FreezeToolStripMenuItem"
+        Me.FreezeToolStripMenuItem.Size = New System.Drawing.Size(132, 22)
+        Me.FreezeToolStripMenuItem.Text = "Freeze"
+        '
+        'ToolStripMenuItem1
+        '
+        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(132, 22)
+        Me.ToolStripMenuItem1.Text = "Unfreeze"
+        '
+        'DirectBuzzToolStripMenuItem
+        '
+        Me.DirectBuzzToolStripMenuItem.Name = "DirectBuzzToolStripMenuItem"
+        Me.DirectBuzzToolStripMenuItem.Size = New System.Drawing.Size(132, 22)
+        Me.DirectBuzzToolStripMenuItem.Text = "Direct Buzz"
+        '
+        'PunchToolStripMenuItem
+        '
+        Me.PunchToolStripMenuItem.Name = "PunchToolStripMenuItem"
+        Me.PunchToolStripMenuItem.Size = New System.Drawing.Size(132, 22)
+        Me.PunchToolStripMenuItem.Text = "Punch"
+        '
+        'SecretToolStripMenuItem
+        '
+        Me.SecretToolStripMenuItem.Name = "SecretToolStripMenuItem"
+        Me.SecretToolStripMenuItem.Size = New System.Drawing.Size(132, 22)
+        Me.SecretToolStripMenuItem.Text = "Secret!"
+        '
+        'KickToolStripMenuItem
+        '
+        Me.KickToolStripMenuItem.Name = "KickToolStripMenuItem"
+        Me.KickToolStripMenuItem.Size = New System.Drawing.Size(132, 22)
+        Me.KickToolStripMenuItem.Text = "Kick"
+        '
+        'btnConnect
+        '
+        Me.btnConnect.BackColor = System.Drawing.Color.Transparent
+        Me.btnConnect.Location = New System.Drawing.Point(480, 378)
+        Me.btnConnect.Name = "btnConnect"
+        Me.btnConnect.Size = New System.Drawing.Size(105, 29)
+        Me.btnConnect.TabIndex = 2
+        Me.btnConnect.Text = "Go Online"
+        Me.btnConnect.UseVisualStyleBackColor = False
+        '
+        'btnDisconnect
+        '
+        Me.btnDisconnect.BackColor = System.Drawing.Color.Transparent
+        Me.btnDisconnect.Location = New System.Drawing.Point(480, 413)
+        Me.btnDisconnect.Name = "btnDisconnect"
+        Me.btnDisconnect.Size = New System.Drawing.Size(105, 29)
+        Me.btnDisconnect.TabIndex = 2
+        Me.btnDisconnect.Text = "Go Offline"
+        Me.btnDisconnect.UseVisualStyleBackColor = False
         '
         'lbNick
         '
         Me.lbNick.BackColor = System.Drawing.Color.Transparent
-        Me.lbNick.Location = New System.Drawing.Point(484, 321)
+        Me.lbNick.Location = New System.Drawing.Point(483, 305)
         Me.lbNick.Name = "lbNick"
         Me.lbNick.Size = New System.Drawing.Size(97, 40)
         Me.lbNick.TabIndex = 3
@@ -94,9 +150,9 @@ Partial Class Chat
         '
         Me.btnSend.BackColor = System.Drawing.Color.Transparent
         Me.btnSend.Enabled = False
-        Me.btnSend.Location = New System.Drawing.Point(409, 448)
+        Me.btnSend.Location = New System.Drawing.Point(480, 448)
         Me.btnSend.Name = "btnSend"
-        Me.btnSend.Size = New System.Drawing.Size(68, 20)
+        Me.btnSend.Size = New System.Drawing.Size(105, 80)
         Me.btnSend.TabIndex = 5
         Me.btnSend.Text = "Send"
         Me.btnSend.UseVisualStyleBackColor = False
@@ -104,9 +160,11 @@ Partial Class Chat
         'tbMessage
         '
         Me.tbMessage.Location = New System.Drawing.Point(12, 448)
+        Me.tbMessage.MaxLength = 1000
         Me.tbMessage.Multiline = False
         Me.tbMessage.Name = "tbMessage"
-        Me.tbMessage.Size = New System.Drawing.Size(391, 20)
+        Me.tbMessage.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedHorizontal
+        Me.tbMessage.Size = New System.Drawing.Size(465, 80)
         Me.tbMessage.TabIndex = 6
         Me.tbMessage.Text = ""
         '
@@ -125,7 +183,7 @@ Partial Class Chat
         Me.NudgeCooldown.Location = New System.Drawing.Point(46, 396)
         Me.NudgeCooldown.Maximum = 6
         Me.NudgeCooldown.Name = "NudgeCooldown"
-        Me.NudgeCooldown.Size = New System.Drawing.Size(391, 20)
+        Me.NudgeCooldown.Size = New System.Drawing.Size(421, 20)
         Me.NudgeCooldown.Style = System.Windows.Forms.ProgressBarStyle.Continuous
         Me.NudgeCooldown.TabIndex = 8
         Me.NudgeCooldown.Value = 6
@@ -170,22 +228,12 @@ Partial Class Chat
         Me.btnNudge.TabIndex = 7
         Me.btnNudge.UseVisualStyleBackColor = False
         '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(477, 12)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(74, 13)
-        Me.Label1.TabIndex = 9
-        Me.Label1.Text = "Current Users:"
-        '
         'Chat
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(597, 475)
-        Me.Controls.Add(Me.Label1)
+        Me.ClientSize = New System.Drawing.Size(597, 540)
         Me.Controls.Add(Me.ExplodeCooldown)
         Me.Controls.Add(Me.NudgeCooldown)
         Me.Controls.Add(Me.btnExplode)
@@ -193,20 +241,20 @@ Partial Class Chat
         Me.Controls.Add(Me.tbMessage)
         Me.Controls.Add(Me.btnSend)
         Me.Controls.Add(Me.lbNick)
-        Me.Controls.Add(Me.btnGoDead)
-        Me.Controls.Add(Me.btnGoLive)
+        Me.Controls.Add(Me.btnDisconnect)
+        Me.Controls.Add(Me.btnConnect)
         Me.Controls.Add(Me.lstUsers)
         Me.Controls.Add(Me.rtbLog)
         Me.Name = "Chat"
         Me.Text = "Chat"
+        Me.UserContextStrip.ResumeLayout(False)
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
     Friend WithEvents rtbLog As System.Windows.Forms.RichTextBox
     Friend WithEvents lstUsers As System.Windows.Forms.ListBox
-    Friend WithEvents btnGoLive As System.Windows.Forms.Button
-    Friend WithEvents btnGoDead As System.Windows.Forms.Button
+    Friend WithEvents btnConnect As System.Windows.Forms.Button
+    Friend WithEvents btnDisconnect As System.Windows.Forms.Button
     Friend WithEvents lbNick As System.Windows.Forms.Label
     Friend WithEvents btnSend As System.Windows.Forms.Button
     Friend WithEvents tbMessage As System.Windows.Forms.RichTextBox
@@ -218,6 +266,12 @@ Partial Class Chat
     Friend WithEvents ExplodeCooldown As System.Windows.Forms.ProgressBar
     Friend WithEvents BuzzerCooldownControl As System.Windows.Forms.Timer
     Friend WithEvents ExplosionCooldownControl As System.Windows.Forms.Timer
-    Friend WithEvents RefreshList As System.Windows.Forms.Timer
-    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents UserContextStrip As System.Windows.Forms.ContextMenuStrip
+    Friend WithEvents PMToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents FreezeToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents DirectBuzzToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents PunchToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents SecretToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents KickToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class
