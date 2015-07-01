@@ -33,7 +33,7 @@ Partial Class SplashScreen1
         '
         'TitleLabel
         '
-        Me.TitleLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 48.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TitleLabel.Font = New System.Drawing.Font("Segoe UI", 36.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TitleLabel.ForeColor = System.Drawing.Color.Red
         Me.TitleLabel.Location = New System.Drawing.Point(194, 9)
         Me.TitleLabel.Name = "TitleLabel"

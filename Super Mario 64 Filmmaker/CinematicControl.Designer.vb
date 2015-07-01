@@ -35,7 +35,6 @@ Partial Class CinematicControl
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.AboutMenu = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.HelpToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.SettingsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RetainAnimationSwapsMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.UndoPreviousAnimationSwapsMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -56,6 +55,9 @@ Partial Class CinematicControl
         Me.PrecisionCamControls = New System.Windows.Forms.GroupBox()
         Me.PrecisionStatusLabel = New System.Windows.Forms.Label()
         Me.b_PrecisionPlusOne = New System.Windows.Forms.Button()
+        Me.WarnTooltip = New System.Windows.Forms.ToolTip(Me.components)
+        Me.InfoTooltip = New System.Windows.Forms.ToolTip(Me.components)
+        Me.ErrorTooltip = New System.Windows.Forms.ToolTip(Me.components)
         Me.MenuStrip1.SuspendLayout()
         Me.NormalCamControls.SuspendLayout()
         Me.AnimSwapControls.SuspendLayout()
@@ -69,6 +71,8 @@ Partial Class CinematicControl
         Me.b_Freeze.Size = New System.Drawing.Size(137, 23)
         Me.b_Freeze.TabIndex = 0
         Me.b_Freeze.Text = "Freeze Camera"
+        Me.InfoTooltip.SetToolTip(Me.b_Freeze, "Freezes the camera. Can move the head inside the Castle, but doesn't allow C-move" & _
+        "ments.")
         Me.b_Freeze.UseVisualStyleBackColor = True
         '
         'b_Unfreeze
@@ -78,6 +82,8 @@ Partial Class CinematicControl
         Me.b_Unfreeze.Size = New System.Drawing.Size(147, 23)
         Me.b_Unfreeze.TabIndex = 1
         Me.b_Unfreeze.Text = "Unfreeze Camera"
+        Me.InfoTooltip.SetToolTip(Me.b_Unfreeze, "Unfreezes the camera that has been freezed.")
+        Me.WarnTooltip.SetToolTip(Me.b_Unfreeze, "This cannot unfreeze Soft Camera Freeze Method.")
         Me.b_Unfreeze.UseVisualStyleBackColor = True
         '
         'b_ChangeCameraType
@@ -87,6 +93,8 @@ Partial Class CinematicControl
         Me.b_ChangeCameraType.Size = New System.Drawing.Size(145, 23)
         Me.b_ChangeCameraType.TabIndex = 2
         Me.b_ChangeCameraType.Text = "Change Camera Type"
+        Me.InfoTooltip.SetToolTip(Me.b_ChangeCameraType, "Changes the camera type.")
+        Me.WarnTooltip.SetToolTip(Me.b_ChangeCameraType, "Unexpected things may happed Outside Castle.")
         Me.b_ChangeCameraType.UseVisualStyleBackColor = True
         '
         'BaseAddressLabel
@@ -137,7 +145,7 @@ Partial Class CinematicControl
         '
         'AboutMenu
         '
-        Me.AboutMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AboutMenuItem, Me.HelpToolStripMenuItem1})
+        Me.AboutMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AboutMenuItem})
         Me.AboutMenu.Name = "AboutMenu"
         Me.AboutMenu.Size = New System.Drawing.Size(52, 20)
         Me.AboutMenu.Text = "About"
@@ -148,13 +156,6 @@ Partial Class CinematicControl
         Me.AboutMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.A), System.Windows.Forms.Keys)
         Me.AboutMenuItem.Size = New System.Drawing.Size(314, 22)
         Me.AboutMenuItem.Text = "About Advanced Cinematic Control..."
-        '
-        'HelpToolStripMenuItem1
-        '
-        Me.HelpToolStripMenuItem1.Enabled = False
-        Me.HelpToolStripMenuItem1.Name = "HelpToolStripMenuItem1"
-        Me.HelpToolStripMenuItem1.Size = New System.Drawing.Size(297, 22)
-        Me.HelpToolStripMenuItem1.Text = "Help..."
         '
         'SettingsToolStripMenuItem
         '
@@ -222,6 +223,7 @@ Partial Class CinematicControl
         Me.ComboBox2.Name = "ComboBox2"
         Me.ComboBox2.Size = New System.Drawing.Size(441, 21)
         Me.ComboBox2.TabIndex = 13
+        Me.InfoTooltip.SetToolTip(Me.ComboBox2, "...This one.")
         '
         'Label6
         '
@@ -243,6 +245,7 @@ Partial Class CinematicControl
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(441, 21)
         Me.ComboBox1.TabIndex = 11
+        Me.InfoTooltip.SetToolTip(Me.ComboBox1, "Changes the scope animation to replace with... (Look Below)")
         '
         'Label7
         '
@@ -262,6 +265,8 @@ Partial Class CinematicControl
         Me.b_SoftFreeze.Size = New System.Drawing.Size(128, 23)
         Me.b_SoftFreeze.TabIndex = 14
         Me.b_SoftFreeze.Text = "Soft-Freeze Camera"
+        Me.InfoTooltip.SetToolTip(Me.b_SoftFreeze, "Freezes the camera in a way that C-buttons can control movement too.")
+        Me.WarnTooltip.SetToolTip(Me.b_SoftFreeze, "Mixing with Freeze won't do anything.")
         Me.b_SoftFreeze.UseVisualStyleBackColor = True
         '
         'b_SoftUnfreeze
@@ -272,6 +277,8 @@ Partial Class CinematicControl
         Me.b_SoftUnfreeze.Size = New System.Drawing.Size(128, 23)
         Me.b_SoftUnfreeze.TabIndex = 14
         Me.b_SoftUnfreeze.Text = "Soft-Unfreeze Camera"
+        Me.InfoTooltip.SetToolTip(Me.b_SoftUnfreeze, "Unfreezes the camera frozen by Soft Freeze.")
+        Me.WarnTooltip.SetToolTip(Me.b_SoftUnfreeze, "Cannot soft unfreeze camera if it has been Freezed (Not Softfreezed).")
         Me.b_SoftUnfreeze.UseVisualStyleBackColor = True
         '
         'Label5
@@ -355,6 +362,21 @@ Partial Class CinematicControl
         Me.b_PrecisionPlusOne.Text = "Precision Mode Disabled"
         Me.b_PrecisionPlusOne.UseVisualStyleBackColor = True
         '
+        'WarnTooltip
+        '
+        Me.WarnTooltip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Warning
+        Me.WarnTooltip.ToolTipTitle = "ATTENTION:"
+        '
+        'InfoTooltip
+        '
+        Me.InfoTooltip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Warning
+        Me.InfoTooltip.ToolTipTitle = "This..."
+        '
+        'ErrorTooltip
+        '
+        Me.ErrorTooltip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.[Error]
+        Me.ErrorTooltip.ToolTipTitle = "WAIT!"
+        '
         'CinematicControl
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -394,7 +416,6 @@ Partial Class CinematicControl
     Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
     Friend WithEvents AboutMenu As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AboutMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents HelpToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ComboBox2 As System.Windows.Forms.ComboBox
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
@@ -415,5 +436,8 @@ Partial Class CinematicControl
     Friend WithEvents PrecisionCamControls As System.Windows.Forms.GroupBox
     Friend WithEvents PrecisionStatusLabel As System.Windows.Forms.Label
     Friend WithEvents b_PrecisionPlusOne As System.Windows.Forms.Button
+    Friend WithEvents InfoTooltip As System.Windows.Forms.ToolTip
+    Friend WithEvents WarnTooltip As System.Windows.Forms.ToolTip
+    Friend WithEvents ErrorTooltip As System.Windows.Forms.ToolTip
 
 End Class

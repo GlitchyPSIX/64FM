@@ -185,6 +185,12 @@
     <Compile Include="cheatModeSel.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ExceptionUnhandledForm.Designer.vb">
+      <DependentUpon>ExceptionUnhandledForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ExceptionUnhandledForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ExtractFile.vb" />
     <Compile Include="extractSel.Designer.vb">
       <DependentUpon>extractSel.vb</DependentUpon>
@@ -290,6 +296,9 @@
     <EmbeddedResource Include="cheatModeSel.resx">
       <DependentUpon>cheatModeSel.vb</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExceptionUnhandledForm.resx">
+      <DependentUpon>ExceptionUnhandledForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="extractSel.resx">
       <DependentUpon>extractSel.vb</DependentUpon>
@@ -477,6 +486,9 @@
     <None Include="Resources\M64MM2 Icon.png" />
     <None Include="Resources\ACC.png" />
     <None Include="Resources\LoadingBalls.gif" />
+    <None Include="Resources\Exception.png" />
+    <None Include="Resources\Injector2.png" />
+    <None Include="Resources\ACC1.png" />
     <Content Include="SM64FMNormal.ico" />
   </ItemGroup>
   <ItemGroup>

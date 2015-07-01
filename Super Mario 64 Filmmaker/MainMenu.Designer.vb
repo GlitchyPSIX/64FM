@@ -117,8 +117,8 @@ Partial Class MainMenu
         Me.ToolStripStatusLabel1.IsLink = True
         Me.ToolStripStatusLabel1.LinkColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
-        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(55, 17)
-        Me.ToolStripStatusLabel1.Text = "Donate :)"
+        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(45, 17)
+        Me.ToolStripStatusLabel1.Text = "HitGub"
         '
         'ImgPrw
         '
@@ -474,7 +474,7 @@ Partial Class MainMenu
         'btnCinema
         '
         Me.btnCinema.BackColor = System.Drawing.Color.Transparent
-        Me.btnCinema.Image = Global.Filmmaker.My.Resources.Resources.M64MM2_Icon
+        Me.btnCinema.Image = Global.Filmmaker.My.Resources.Resources.ACC1
         Me.btnCinema.Location = New System.Drawing.Point(541, 248)
         Me.btnCinema.Name = "btnCinema"
         Me.btnCinema.Size = New System.Drawing.Size(151, 160)
