@@ -71,6 +71,7 @@ Partial Class MainMenu
         Me.AboutSM64FMToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExpandOrRetract = New System.Windows.Forms.PictureBox()
         Me.btnChat = New System.Windows.Forms.PictureBox()
+        Me.btnCinema = New System.Windows.Forms.PictureBox()
         Me.StatusStrip1.SuspendLayout()
         CType(Me.ImgPrw, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnSC, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -84,6 +85,7 @@ Partial Class MainMenu
         Me.MenuStrip.SuspendLayout()
         CType(Me.ExpandOrRetract, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnChat, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnCinema, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'OpenFileDlg
@@ -469,6 +471,17 @@ Partial Class MainMenu
         Me.btnChat.TabIndex = 23
         Me.btnChat.TabStop = False
         '
+        'btnCinema
+        '
+        Me.btnCinema.BackColor = System.Drawing.Color.Transparent
+        Me.btnCinema.Image = Global.Filmmaker.My.Resources.Resources.M64MM2_Icon
+        Me.btnCinema.Location = New System.Drawing.Point(541, 248)
+        Me.btnCinema.Name = "btnCinema"
+        Me.btnCinema.Size = New System.Drawing.Size(151, 160)
+        Me.btnCinema.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.btnCinema.TabIndex = 29
+        Me.btnCinema.TabStop = False
+        '
         'MainMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -477,6 +490,7 @@ Partial Class MainMenu
         Me.BackgroundImage = Global.Filmmaker.My.Resources.Resources.Background
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(519, 639)
+        Me.Controls.Add(Me.btnCinema)
         Me.Controls.Add(Me.ExpandOrRetract)
         Me.Controls.Add(Me.WelcomeLabel)
         Me.Controls.Add(Me.ImgPrw)
@@ -516,6 +530,7 @@ Partial Class MainMenu
         Me.MenuStrip.PerformLayout()
         CType(Me.ExpandOrRetract, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnChat, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnCinema, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -567,5 +582,6 @@ Partial Class MainMenu
     Friend WithEvents ImportSpecialPackToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ExpandOrRetract As System.Windows.Forms.PictureBox
     Friend WithEvents btnChat As System.Windows.Forms.PictureBox
+    Friend WithEvents btnCinema As System.Windows.Forms.PictureBox
 
 End Class

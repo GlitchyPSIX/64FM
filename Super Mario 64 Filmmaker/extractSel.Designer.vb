@@ -132,7 +132,7 @@ Partial Class extractSel
         Me.MinimizeBox = False
         Me.Name = "extractSel"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Select What to extract."
+        Me.Text = "Select what to extract"
         Me.TopMost = True
         Me.ResumeLayout(False)
 
