@@ -159,7 +159,7 @@ Public Class Chat
                 Dim User As String = Split(DirectSubjectResult, " ")(0)
                 If User = "" Or User = " " Then
                     My.Computer.Audio.Play(My.Resources.No, AudioPlayMode.Background)
-                    rtbLog.AppendText("You cooled a bit the air inside this chatroom." + vbNewLine)
+                    rtbLog.AppendText("You cooled the air a bit inside this chatroom." + vbNewLine)
                 Else
                     rtbLog.AppendText(irc.Nick + " froze " + User + "!" + vbNewLine)
                 End If
@@ -174,9 +174,9 @@ Public Class Chat
                 Dim User As String = Split(DirectSubjectResult, " ")(0)
                 If User = "" Or User = " " Then
                     My.Computer.Audio.Play(My.Resources.No, AudioPlayMode.Background)
-                    rtbLog.AppendText("You warmed a bit the air inside this chatroom." + vbNewLine)
+                    rtbLog.AppendText("You warmed the air a bit inside this chatroom." + vbNewLine)
                 Else
-                    rtbLog.AppendText(irc.Nick + " unfreezed " + User + "!" + vbNewLine)
+                    rtbLog.AppendText(irc.Nick + " unfroze " + User + "!" + vbNewLine)
                 End If
                 tbMessage.Clear()
                 tbMessage.Focus()
