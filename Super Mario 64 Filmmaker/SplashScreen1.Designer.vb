@@ -23,6 +23,7 @@ Partial Class SplashScreen1
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SplashScreen1))
         Me.TitleLabel = New System.Windows.Forms.Label()
         Me.StatusLabel = New System.Windows.Forms.Label()
         Me.PercentagedTime = New System.Windows.Forms.Timer(Me.components)
@@ -32,7 +33,7 @@ Partial Class SplashScreen1
         '
         'TitleLabel
         '
-        Me.TitleLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 48.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TitleLabel.Font = New System.Drawing.Font("Segoe UI", 36.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TitleLabel.ForeColor = System.Drawing.Color.Red
         Me.TitleLabel.Location = New System.Drawing.Point(194, 9)
         Me.TitleLabel.Name = "TitleLabel"
@@ -43,11 +44,11 @@ Partial Class SplashScreen1
         'StatusLabel
         '
         Me.StatusLabel.AutoSize = True
-        Me.StatusLabel.Font = New System.Drawing.Font("Roboto Condensed Light", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.StatusLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.StatusLabel.ForeColor = System.Drawing.Color.White
         Me.StatusLabel.Location = New System.Drawing.Point(68, 263)
         Me.StatusLabel.Name = "StatusLabel"
-        Me.StatusLabel.Size = New System.Drawing.Size(85, 28)
+        Me.StatusLabel.Size = New System.Drawing.Size(101, 25)
         Me.StatusLabel.TabIndex = 3
         Me.StatusLabel.Text = "Welcome"
         '
@@ -56,7 +57,7 @@ Partial Class SplashScreen1
         '
         'progressbar1
         '
-        Me.progressbar1.Image = Global.Filmmaker.My.Resources.Resources._301
+        Me.progressbar1.Image = Global.Filmmaker.My.Resources.Resources.LoadingBalls
         Me.progressbar1.Location = New System.Drawing.Point(12, 245)
         Me.progressbar1.Name = "progressbar1"
         Me.progressbar1.Size = New System.Drawing.Size(50, 46)
@@ -75,6 +76,7 @@ Partial Class SplashScreen1
         Me.Controls.Add(Me.TitleLabel)
         Me.Controls.Add(Me.progressbar1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "SplashScreen1"

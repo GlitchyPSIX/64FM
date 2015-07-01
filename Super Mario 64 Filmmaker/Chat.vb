@@ -656,47 +656,47 @@ Public Class Chat
         End If
     End Sub
     Private Sub PMToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PMToolStripMenuItem.Click
-        tbMessage.Text = ("$pm " + lstUsers.SelectedItem.ToString + " ")
+        tbMessage.Text = ("$pm " + lstUsers.SelectedItem.ToString.TrimStart("@") + " ")
     End Sub
 
     Private Sub FreezeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FreezeToolStripMenuItem.Click
         If btnSend.Enabled = True Then
-            tbMessage.Text = ("$freeze " + lstUsers.SelectedItem.ToString)
+            tbMessage.Text = ("$freeze " + lstUsers.SelectedItem.ToString.TrimStart("@"))
             btnSend.PerformClick()
         End If
     End Sub
 
     Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem1.Click
         If btnSend.Enabled = True Then
-            tbMessage.Text = ("$unfreeze " + lstUsers.SelectedItem.ToString)
+            tbMessage.Text = ("$unfreeze " + lstUsers.SelectedItem.ToString.TrimStart("@"))
             btnSend.PerformClick()
         End If
     End Sub
 
     Private Sub DirectBuzzToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DirectBuzzToolStripMenuItem.Click
         If btnSend.Enabled = True Then
-            tbMessage.Text = ("$directbuzz " + lstUsers.SelectedItem.ToString)
+            tbMessage.Text = ("$directbuzz " + lstUsers.SelectedItem.ToString.TrimStart("@"))
             btnSend.PerformClick()
         End If
     End Sub
 
     Private Sub PunchToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PunchToolStripMenuItem.Click
         If btnSend.Enabled = True Then
-            tbMessage.Text = ("$punch " + lstUsers.SelectedItem.ToString)
+            tbMessage.Text = ("$punch " + lstUsers.SelectedItem.ToString.TrimStart("@"))
             btnSend.PerformClick()
         End If
     End Sub
 
     Private Sub SecretToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SecretToolStripMenuItem.Click
         If btnSend.Enabled = True Then
-            tbMessage.Text = ("$wombocombo " + lstUsers.SelectedItem.ToString)
+            tbMessage.Text = ("$wombocombo " + lstUsers.SelectedItem.ToString.TrimStart("@"))
             btnSend.PerformClick()
         End If
     End Sub
 
     Private Sub KickToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles KickToolStripMenuItem.Click
         If btnSend.Enabled = True Then
-            tbMessage.Text = ("$kick " + lstUsers.SelectedItem.ToString)
+            tbMessage.Text = ("$kick " + lstUsers.SelectedItem.ToString.TrimStart("@"))
             btnSend.PerformClick()
         End If
     End Sub

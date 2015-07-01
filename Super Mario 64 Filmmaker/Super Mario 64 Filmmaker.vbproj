@@ -136,6 +136,12 @@
     <Compile Include="AboutBox.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="AboutCinematicControl.Designer.vb">
+      <DependentUpon>AboutCinematicControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AboutCinematicControl.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="AddonLoginForm.Designer.vb">
       <DependentUpon>AddonLoginForm.vb</DependentUpon>
     </Compile>
@@ -179,6 +185,12 @@
     <Compile Include="cheatModeSel.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ExceptionUnhandledForm.Designer.vb">
+      <DependentUpon>ExceptionUnhandledForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ExceptionUnhandledForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ExtractFile.vb" />
     <Compile Include="extractSel.Designer.vb">
       <DependentUpon>extractSel.vb</DependentUpon>
@@ -188,6 +200,12 @@
     </Compile>
     <Compile Include="Globals.vb" />
     <Compile Include="HelloWorld.vb" />
+    <Compile Include="CinematicControl.Designer.vb">
+      <DependentUpon>CinematicControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CinematicControl.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MainMenu.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -228,6 +246,7 @@
     <Compile Include="PreparingThings.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ReadWritingMemory.vb" />
     <Compile Include="Settings.vb" />
     <Compile Include="SetUpForm.Designer.vb">
       <DependentUpon>SetUpForm.vb</DependentUpon>
@@ -252,6 +271,9 @@
     <EmbeddedResource Include="AboutBox.resx">
       <DependentUpon>AboutBox.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AboutCinematicControl.resx">
+      <DependentUpon>AboutCinematicControl.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddonLoginForm.resx">
       <DependentUpon>AddonLoginForm.vb</DependentUpon>
     </EmbeddedResource>
@@ -275,9 +297,15 @@
       <DependentUpon>cheatModeSel.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="ExceptionUnhandledForm.resx">
+      <DependentUpon>ExceptionUnhandledForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="extractSel.resx">
       <DependentUpon>extractSel.vb</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CinematicControl.resx">
+      <DependentUpon>CinematicControl.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="preferences.resx">
       <DependentUpon>preferences.vb</DependentUpon>
@@ -373,6 +401,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="animation_data.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="LaL.ico" />
     <None Include="app.config" />
     <None Include="My Project\app.manifest">
@@ -402,8 +433,6 @@
     <None Include="Resources\CC.png" />
     <None Include="Resources\SC.png" />
     <None Include="Resources\SM64FMNormalIntro.png" />
-    <None Include="Resources\LoadingBalls.GIF" />
-    <None Include="Resources\301.GIF" />
     <None Include="Resources\Bugged.png" />
     <None Include="Resources\Flying.png" />
     <None Include="Resources\Glitch.png" />
@@ -454,6 +483,12 @@
     <None Include="Resources\Connected.wav" />
     <None Include="Resources\Disconnect.wav" />
     <None Include="Resources\DeepFreeze.wav" />
+    <None Include="Resources\M64MM2 Icon.png" />
+    <None Include="Resources\ACC.png" />
+    <None Include="Resources\LoadingBalls.gif" />
+    <None Include="Resources\Exception.png" />
+    <None Include="Resources\Injector2.png" />
+    <None Include="Resources\ACC1.png" />
     <Content Include="SM64FMNormal.ico" />
   </ItemGroup>
   <ItemGroup>

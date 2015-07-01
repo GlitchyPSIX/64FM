@@ -125,9 +125,14 @@ Public Class MainMenu
         extractSel.Show()
     End Sub
 
+    Private Sub btnCinema_Click(sender As Object, e As EventArgs) Handles btnCinema.Click
+        Dim CinematicForm As New CinematicControl()
+        CinematicForm.Show()
+    End Sub
+
     Private Sub ToolStripStatusLabel1_Click(sender As System.Object, e As System.EventArgs) Handles ToolStripStatusLabel1.Click
-        'Link not working - Will lead to the donation site
-        Process.Start("http://sm64fm.pe.hu/donatenow.html")
+        'Link (Not from Hyrule) Working. HitGub
+        Process.Start("http://starlight-project.github.io/SM64FM")
     End Sub
 
     Private Sub ShowChat(sender As System.Object, e As System.EventArgs) Handles btnChat.Click
@@ -174,4 +179,5 @@ Public Class MainMenu
         Me.Hide()
         SetUpForm.Show()
     End Sub
+
 End Class

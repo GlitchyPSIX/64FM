@@ -1,6 +1,5 @@
 ﻿Imports Transitions 'Helps me a lot.
 Imports System.IO
-
 Public Class SplashScreen1
     'This will be checked lotsa times.
     Dim Percentage As Integer = 0
