@@ -59,7 +59,7 @@ Public Class SetUpForm
             If ColorSelector.Color.R < 49 And ColorSelector.Color.G < 49 And ColorSelector.Color.B < 49 And ColorSelector.Color = Color.Black Or ColorSelector.Color.ToKnownColor.ToString.Contains("Dark") Then
                 MsgBox("Sorry, no black/dark colors. You wouldn't be able to see the text...")
             Else
-                Panel2Fade.add(Me.NotHaali.Panel2, "BackColor", ColorSelector.Color)
+                Panel2Fade.add(Me.PanelControl.Panel2, "BackColor", ColorSelector.Color)
                 Panel2Fade.add(Me.ImgPrw, "BackColor", ColorSelector.Color)
                 ColorZ = ColorSelector.Color
                 Panel2Fade.run()
@@ -70,10 +70,9 @@ Public Class SetUpForm
     End Sub
 
     Private Sub SetUpForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        SetBackground.Interval = 500
-        SetBackground.Enabled = True
         NameBox.Text = My.Settings.Name
         NameLabel.Text = My.Settings.Name
+        SetBackground()
         Try
             ImgPrw.Image = Image.FromFile(My.Settings.Image) 'Set the image to a preview Picture Box called ImgPrw
             ImageS = My.Settings.Image
@@ -82,7 +81,7 @@ Public Class SetUpForm
         End Try
         ColorZ = My.Settings.FavColor
         Dim Panel2Fade As New Transition(New TransitionType_EaseInEaseOut(800))
-        Panel2Fade.add(Me.NotHaali.Panel2, "BackColor", ColorZ)
+        Panel2Fade.add(Me.PanelControl.Panel2, "BackColor", ColorZ)
         Panel2Fade.add(Me.ImgPrw, "BackColor", ColorZ)
         Panel2Fade.run()
     End Sub
@@ -91,21 +90,23 @@ Public Class SetUpForm
         BGSelector.Show()
     End Sub
 
-    Private Sub SetBackground_Tick(sender As Object, e As EventArgs) Handles SetBackground.Tick
+    Public Sub SetBackground()
         If My.Settings.Background = 1 Then
-            NotHaali.Panel2.BackgroundImage = My.Resources.Background
+            PanelControl.Panel2.BackgroundImage = My.Resources.Background
         ElseIf My.Settings.Background = 2 Then
-            NotHaali.Panel2.BackgroundImage = My.Resources.Background2
+            PanelControl.Panel2.BackgroundImage = My.Resources.Background2
         ElseIf My.Settings.Background = 3 Then
-            NotHaali.Panel2.BackgroundImage = My.Resources.Background3
+            PanelControl.Panel2.BackgroundImage = My.Resources.Background3
         ElseIf My.Settings.Background = 4 Then
-            NotHaali.Panel2.BackgroundImage = My.Resources.Background4
+            PanelControl.Panel2.BackgroundImage = My.Resources.Background4
         ElseIf My.Settings.Background = 5 Then
-            NotHaali.Panel2.BackgroundImage = My.Resources.Background5
+            PanelControl.Panel2.BackgroundImage = My.Resources.Background5
         ElseIf My.Settings.Background = 6 Then
-            NotHaali.Panel2.BackgroundImage = My.Resources.Background6
+            PanelControl.Panel2.BackgroundImage = My.Resources.Background6
         ElseIf My.Settings.Background = 7 Then
-            NotHaali.Panel2.BackgroundImage = My.Resources.Background7
+            PanelControl.Panel2.BackgroundImage = My.Resources.Background7
+        Else
+            PanelControl.Panel2.BackgroundImage = My.Resources.Background
         End If
     End Sub
 End Class

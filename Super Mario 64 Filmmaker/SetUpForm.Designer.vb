@@ -22,7 +22,6 @@ Partial Class SetUpForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Me.NickLabel = New System.Windows.Forms.Label()
         Me.ImageLabel = New System.Windows.Forms.Label()
         Me.SelImgBtn = New System.Windows.Forms.Button()
@@ -32,17 +31,16 @@ Partial Class SetUpForm
         Me.MyNameIsLabel = New System.Windows.Forms.Label()
         Me.ColorLabel = New System.Windows.Forms.Label()
         Me.PickColor = New System.Windows.Forms.Button()
-        Me.NotHaali = New System.Windows.Forms.SplitContainer()
+        Me.PanelControl = New System.Windows.Forms.SplitContainer()
         Me.SelBGBTN = New System.Windows.Forms.Button()
         Me.BGLabel = New System.Windows.Forms.Label()
         Me.NameLabel = New System.Windows.Forms.Label()
         Me.ImgPrw = New System.Windows.Forms.PictureBox()
         Me.ColorSelector = New System.Windows.Forms.ColorDialog()
-        Me.SetBackground = New System.Windows.Forms.Timer(Me.components)
-        CType(Me.NotHaali, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.NotHaali.Panel1.SuspendLayout()
-        Me.NotHaali.Panel2.SuspendLayout()
-        Me.NotHaali.SuspendLayout()
+        CType(Me.PanelControl, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PanelControl.Panel1.SuspendLayout()
+        Me.PanelControl.Panel2.SuspendLayout()
+        Me.PanelControl.SuspendLayout()
         CType(Me.ImgPrw, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -138,38 +136,38 @@ Partial Class SetUpForm
         Me.PickColor.Text = "Pick Me!"
         Me.PickColor.UseVisualStyleBackColor = True
         '
-        'NotHaali
+        'PanelControl
         '
-        Me.NotHaali.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.NotHaali.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.NotHaali.FixedPanel = System.Windows.Forms.FixedPanel.Panel1
-        Me.NotHaali.IsSplitterFixed = True
-        Me.NotHaali.Location = New System.Drawing.Point(0, 0)
-        Me.NotHaali.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.NotHaali.Name = "NotHaali"
+        Me.PanelControl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PanelControl.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.PanelControl.FixedPanel = System.Windows.Forms.FixedPanel.Panel1
+        Me.PanelControl.IsSplitterFixed = True
+        Me.PanelControl.Location = New System.Drawing.Point(0, 0)
+        Me.PanelControl.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.PanelControl.Name = "PanelControl"
         '
-        'NotHaali.Panel1
+        'PanelControl.Panel1
         '
-        Me.NotHaali.Panel1.Controls.Add(Me.SelBGBTN)
-        Me.NotHaali.Panel1.Controls.Add(Me.BGLabel)
-        Me.NotHaali.Panel1.Controls.Add(Me.SelImgBtn)
-        Me.NotHaali.Panel1.Controls.Add(Me.ColorLabel)
-        Me.NotHaali.Panel1.Controls.Add(Me.PickColor)
-        Me.NotHaali.Panel1.Controls.Add(Me.NameBox)
-        Me.NotHaali.Panel1.Controls.Add(Me.Button1)
-        Me.NotHaali.Panel1.Controls.Add(Me.NickLabel)
-        Me.NotHaali.Panel1.Controls.Add(Me.ImageLabel)
+        Me.PanelControl.Panel1.Controls.Add(Me.SelBGBTN)
+        Me.PanelControl.Panel1.Controls.Add(Me.BGLabel)
+        Me.PanelControl.Panel1.Controls.Add(Me.SelImgBtn)
+        Me.PanelControl.Panel1.Controls.Add(Me.ColorLabel)
+        Me.PanelControl.Panel1.Controls.Add(Me.PickColor)
+        Me.PanelControl.Panel1.Controls.Add(Me.NameBox)
+        Me.PanelControl.Panel1.Controls.Add(Me.Button1)
+        Me.PanelControl.Panel1.Controls.Add(Me.NickLabel)
+        Me.PanelControl.Panel1.Controls.Add(Me.ImageLabel)
         '
-        'NotHaali.Panel2
+        'PanelControl.Panel2
         '
-        Me.NotHaali.Panel2.BackgroundImage = Global.Filmmaker.My.Resources.Resources.Background2
-        Me.NotHaali.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.NotHaali.Panel2.Controls.Add(Me.NameLabel)
-        Me.NotHaali.Panel2.Controls.Add(Me.ImgPrw)
-        Me.NotHaali.Panel2.Controls.Add(Me.MyNameIsLabel)
-        Me.NotHaali.Size = New System.Drawing.Size(505, 338)
-        Me.NotHaali.SplitterDistance = 254
-        Me.NotHaali.TabIndex = 9
+        Me.PanelControl.Panel2.BackgroundImage = Global.Filmmaker.My.Resources.Resources.Background2
+        Me.PanelControl.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PanelControl.Panel2.Controls.Add(Me.NameLabel)
+        Me.PanelControl.Panel2.Controls.Add(Me.ImgPrw)
+        Me.PanelControl.Panel2.Controls.Add(Me.MyNameIsLabel)
+        Me.PanelControl.Size = New System.Drawing.Size(505, 338)
+        Me.PanelControl.SplitterDistance = 254
+        Me.PanelControl.TabIndex = 9
         '
         'SelBGBTN
         '
@@ -214,27 +212,24 @@ Partial Class SetUpForm
         Me.ImgPrw.TabIndex = 2
         Me.ImgPrw.TabStop = False
         '
-        'SetBackground
-        '
-        '
         'SetUpForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 18.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(505, 338)
-        Me.Controls.Add(Me.NotHaali)
+        Me.Controls.Add(Me.PanelControl)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.MaximizeBox = False
         Me.Name = "SetUpForm"
         Me.Text = "Set Up User Details"
-        Me.NotHaali.Panel1.ResumeLayout(False)
-        Me.NotHaali.Panel1.PerformLayout()
-        Me.NotHaali.Panel2.ResumeLayout(False)
-        Me.NotHaali.Panel2.PerformLayout()
-        CType(Me.NotHaali, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.NotHaali.ResumeLayout(False)
+        Me.PanelControl.Panel1.ResumeLayout(False)
+        Me.PanelControl.Panel1.PerformLayout()
+        Me.PanelControl.Panel2.ResumeLayout(False)
+        Me.PanelControl.Panel2.PerformLayout()
+        CType(Me.PanelControl, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PanelControl.ResumeLayout(False)
         CType(Me.ImgPrw, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -249,10 +244,9 @@ Partial Class SetUpForm
     Friend WithEvents MyNameIsLabel As System.Windows.Forms.Label
     Friend WithEvents ColorLabel As System.Windows.Forms.Label
     Friend WithEvents PickColor As System.Windows.Forms.Button
-    Friend WithEvents NotHaali As System.Windows.Forms.SplitContainer
+    Friend WithEvents PanelControl As System.Windows.Forms.SplitContainer
     Friend WithEvents ColorSelector As System.Windows.Forms.ColorDialog
     Friend WithEvents BGLabel As System.Windows.Forms.Label
     Friend WithEvents SelBGBTN As System.Windows.Forms.Button
-    Friend WithEvents SetBackground As System.Windows.Forms.Timer
     Friend WithEvents NameLabel As System.Windows.Forms.Label
 End Class
