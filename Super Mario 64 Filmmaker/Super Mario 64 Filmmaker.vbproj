@@ -91,8 +91,9 @@
     <Reference Include="Ionic.Zip">
       <HintPath>.\Ionic.Zip.dll</HintPath>
     </Reference>
-    <Reference Include="IrcClient">
-      <HintPath>.\IrcClient.dll</HintPath>
+    <Reference Include="IrcClient, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Downloads\IRCVB\IrcClient.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -170,9 +171,7 @@
     <Compile Include="ChatPM.Designer.vb">
       <DependentUpon>ChatPM.vb</DependentUpon>
     </Compile>
-    <Compile Include="ChatPM.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="ChatPM.vb" />
     <Compile Include="cheatEssentials.Designer.vb">
       <DependentUpon>cheatEssentials.vb</DependentUpon>
     </Compile>
@@ -217,6 +216,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="NotiForm.Designer.vb">
+      <DependentUpon>NotiForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NotiForm.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="preferences.Designer.vb">
       <DependentUpon>preferences.vb</DependentUpon>
@@ -306,6 +311,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CinematicControl.resx">
       <DependentUpon>CinematicControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NotiForm.resx">
+      <DependentUpon>NotiForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="preferences.resx">
       <DependentUpon>preferences.vb</DependentUpon>

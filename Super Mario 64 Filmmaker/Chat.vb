@@ -3,9 +3,9 @@ Imports Transitions
 Public Class Chat
     Public WithEvents irc As IrcClient
     Dim Frozen As Boolean
-    Dim userlist As IrcClient.oUserList
     Dim DirectSubjectResult As String ' Direct Command Controller
 
+#Region "Shakes"
     Private Sub ShakeVeryGently(Speed As Integer) 'lel forgot to edit this commentary
         'Thanks to LeSaN
         'Easy code to make a form shake
@@ -109,6 +109,7 @@ Public Class Chat
         My.Computer.Audio.Play(My.Resources.Crit, AudioPlayMode.Background)
         ShakeViolently(30)
     End Sub
+#End Region
 
     Private Sub btnConnect_Click(sender As System.Object, e As System.EventArgs) Handles btnConnect.Click
         irc = New IrcClient("irc.mibbit.com", 6667)
@@ -510,41 +511,41 @@ Public Class Chat
                     End If
                 End If
             End If
+        Else
+            If Message.ToString.Contains(":O") Or Message.ToString.Contains("!?") Then
+                My.Computer.Audio.Play(My.Resources.Surprise, AudioPlayMode.Background)
+                rtbLog.AppendText(User + ":" & vbTab + Message & vbNewLine)
+                rtbLog.ScrollToCaret()
+            ElseIf Message.ToString.Contains("Idea!") Or Message.ToString.Contains("idea") Or Message.ToString.Contains("!") Then
+                My.Computer.Audio.Play(My.Resources.Idea, AudioPlayMode.Background)
+                rtbLog.AppendText(User + ":" & vbTab + Message & vbNewLine)
+                rtbLog.ScrollToCaret()
+            ElseIf Message.ToString.Contains("?") Then
+                My.Computer.Audio.Play(My.Resources.Question, AudioPlayMode.Background)
+                rtbLog.AppendText(User + ":" & vbTab + Message & vbNewLine)
+                rtbLog.ScrollToCaret()
+            ElseIf Message.ToString.Contains("Well done!") Or Message.ToString.Contains("nice") Then
+                My.Computer.Audio.Play(My.Resources.HighScore, AudioPlayMode.Background)
+                rtbLog.AppendText(User + ":" & vbTab + Message & vbNewLine)
+                rtbLog.ScrollToCaret()
+            ElseIf Message.ToString.Contains("yes") Or Message.ToString.Contains("yup") Or Message.ToString.Contains("Yup") Or Message.ToString.Contains("Yes") Then
+                My.Computer.Audio.Play(My.Resources.Yes, AudioPlayMode.Background)
+                rtbLog.AppendText(User + ":" & vbTab + Message & vbNewLine)
+                rtbLog.ScrollToCaret()
+            ElseIf Message.ToString.StartsWith("no") Or Message.ToString.Contains(" nope") Or Message.ToString.Contains(" Nope") Or Message.ToString.Contains("No.") Then
+                My.Computer.Audio.Play(My.Resources.No, AudioPlayMode.Background)
+                rtbLog.AppendText(User + ":" & vbTab + Message & vbNewLine)
+                rtbLog.ScrollToCaret()
+            ElseIf Message.ToString.Contains("Oh!") Or Message.ToString.Contains("I see") Or Message.ToString.Contains("Ooh!") Or Message.ToString.Contains("Yes!") Then
+                My.Computer.Audio.Play(My.Resources.Gotcha, AudioPlayMode.Background)
+                rtbLog.AppendText(User + ":" & vbTab + Message & vbNewLine)
+                rtbLog.ScrollToCaret()
             Else
-                If Message.ToString.Contains(":O") Or Message.ToString.Contains("!?") Then
-                    My.Computer.Audio.Play(My.Resources.Surprise, AudioPlayMode.Background)
-                    rtbLog.AppendText(User + ":" & vbTab + Message & vbNewLine)
-                    rtbLog.ScrollToCaret()
-                ElseIf Message.ToString.Contains("Idea!") Or Message.ToString.Contains("idea") Or Message.ToString.Contains("!") Then
-                    My.Computer.Audio.Play(My.Resources.Idea, AudioPlayMode.Background)
-                    rtbLog.AppendText(User + ":" & vbTab + Message & vbNewLine)
-                    rtbLog.ScrollToCaret()
-                ElseIf Message.ToString.Contains("?") Then
-                    My.Computer.Audio.Play(My.Resources.Question, AudioPlayMode.Background)
-                    rtbLog.AppendText(User + ":" & vbTab + Message & vbNewLine)
-                    rtbLog.ScrollToCaret()
-                ElseIf Message.ToString.Contains("Well done!") Or Message.ToString.Contains("nice") Then
-                    My.Computer.Audio.Play(My.Resources.HighScore, AudioPlayMode.Background)
-                    rtbLog.AppendText(User + ":" & vbTab + Message & vbNewLine)
-                    rtbLog.ScrollToCaret()
-                ElseIf Message.ToString.Contains("yes") Or Message.ToString.Contains("yup") Or Message.ToString.Contains("Yup") Or Message.ToString.Contains("Yes") Then
-                    My.Computer.Audio.Play(My.Resources.Yes, AudioPlayMode.Background)
-                    rtbLog.AppendText(User + ":" & vbTab + Message & vbNewLine)
-                    rtbLog.ScrollToCaret()
-                ElseIf Message.ToString.StartsWith("no") Or Message.ToString.Contains(" nope") Or Message.ToString.Contains(" Nope") Or Message.ToString.Contains("No.") Then
-                    My.Computer.Audio.Play(My.Resources.No, AudioPlayMode.Background)
-                    rtbLog.AppendText(User + ":" & vbTab + Message & vbNewLine)
-                    rtbLog.ScrollToCaret()
-                ElseIf Message.ToString.Contains("Oh!") Or Message.ToString.Contains("I see") Or Message.ToString.Contains("Ooh!") Or Message.ToString.Contains("Yes!") Then
-                    My.Computer.Audio.Play(My.Resources.Gotcha, AudioPlayMode.Background)
-                    rtbLog.AppendText(User + ":" & vbTab + Message & vbNewLine)
-                    rtbLog.ScrollToCaret()
-                Else
-                    My.Computer.Audio.Play(My.Resources.Message, AudioPlayMode.Background)
-                    rtbLog.AppendText(User + ":" & vbTab + Message & vbNewLine)
-                    rtbLog.ScrollToCaret()
-                End If
+                My.Computer.Audio.Play(My.Resources.Message, AudioPlayMode.Background)
+                rtbLog.AppendText(User + ":" & vbTab + Message & vbNewLine)
+                rtbLog.ScrollToCaret()
             End If
+        End If
     End Sub
 
     Private Sub tbMessage_KeyDown(sender As System.Object, e As System.Windows.Forms.KeyEventArgs) Handles tbMessage.KeyDown
@@ -561,14 +562,19 @@ Public Class Chat
         If User = "IRC" Then
             'LALALALALA I DONT WANT TO HEAR AN IRC BOT XD
         Else
-            rtbLog.AppendText("(From " + User + " to " + irc.Nick + ")" & vbTab & Message + vbNewLine)
+            If Me.WindowState = FormWindowState.Minimized Or ActiveForm Is Me = False Then
+                Dim Notif As New NotiForm(User, Message)
+                Notif.Show()
+            Else
+                rtbLog.AppendText("(From " + User + " to " + irc.Nick + ")" & vbTab & Message + vbNewLine)
+            End If
         End If
     End Sub
 
     Private Sub irc_UserJoin(Channel As String, User As String) Handles irc.UserJoined
         My.Computer.Audio.Play(My.Resources.Connected, AudioPlayMode.Background)
         rtbLog.AppendText(User + " has joined the chatroom." + vbNewLine)
-        lstUsers.Items.Add(User)
+        lstUsers.Items.Add(User.Trim("@"))
     End Sub
 
     Private Sub irc_UserLeave(Channel As String, User As String) Handles irc.UserLeft

@@ -29,7 +29,6 @@ Partial Class ChatPM
         '
         'btnSend
         '
-        Me.btnSend.Enabled = False
         Me.btnSend.Location = New System.Drawing.Point(346, 408)
         Me.btnSend.Name = "btnSend"
         Me.btnSend.Size = New System.Drawing.Size(68, 23)
