@@ -163,10 +163,12 @@
 
     Public Function ReadByte(ByVal ProcessName As String, ByVal Address As Integer, Optional ByVal nsize As Integer = 1) As Byte()
         Dim hProcess As IntPtr = GetEmuProcess("Project64")
-        If hProcess = Nothing Then Exit Function
-
         Dim hAddress As Integer
         Dim vBuffer(0) As Byte
+        If hProcess = Nothing Then
+            Return vBuffer
+            Exit Function
+        End If
 
         hAddress = Address
         ReadProcessMemory4(hProcess, hAddress, vBuffer, nsize, 0)

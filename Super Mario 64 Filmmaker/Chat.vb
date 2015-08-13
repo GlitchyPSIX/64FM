@@ -4,6 +4,7 @@ Public Class Chat
     Public WithEvents irc As IrcClient
     Dim Frozen As Boolean
     Dim DirectSubjectResult As String ' Direct Command Controller
+    Public EmbedURI As String
 
 #Region "Shakes"
     Private Sub ShakeVeryGently(Speed As Integer) 'lel forgot to edit this commentary
@@ -511,41 +512,67 @@ Public Class Chat
                     End If
                 End If
             End If
-        Else
-            If Message.ToString.Contains(":O") Or Message.ToString.Contains("!?") Then
-                My.Computer.Audio.Play(My.Resources.Surprise, AudioPlayMode.Background)
-                rtbLog.AppendText(User + ":" & vbTab + Message & vbNewLine)
-                rtbLog.ScrollToCaret()
-            ElseIf Message.ToString.Contains("Idea!") Or Message.ToString.Contains("idea") Or Message.ToString.Contains("!") Then
-                My.Computer.Audio.Play(My.Resources.Idea, AudioPlayMode.Background)
-                rtbLog.AppendText(User + ":" & vbTab + Message & vbNewLine)
-                rtbLog.ScrollToCaret()
-            ElseIf Message.ToString.Contains("?") Then
-                My.Computer.Audio.Play(My.Resources.Question, AudioPlayMode.Background)
-                rtbLog.AppendText(User + ":" & vbTab + Message & vbNewLine)
-                rtbLog.ScrollToCaret()
-            ElseIf Message.ToString.Contains("Well done!") Or Message.ToString.Contains("nice") Then
-                My.Computer.Audio.Play(My.Resources.HighScore, AudioPlayMode.Background)
-                rtbLog.AppendText(User + ":" & vbTab + Message & vbNewLine)
-                rtbLog.ScrollToCaret()
-            ElseIf Message.ToString.Contains("yes") Or Message.ToString.Contains("yup") Or Message.ToString.Contains("Yup") Or Message.ToString.Contains("Yes") Then
-                My.Computer.Audio.Play(My.Resources.Yes, AudioPlayMode.Background)
-                rtbLog.AppendText(User + ":" & vbTab + Message & vbNewLine)
-                rtbLog.ScrollToCaret()
-            ElseIf Message.ToString.StartsWith("no") Or Message.ToString.Contains(" nope") Or Message.ToString.Contains(" Nope") Or Message.ToString.Contains("No.") Then
-                My.Computer.Audio.Play(My.Resources.No, AudioPlayMode.Background)
-                rtbLog.AppendText(User + ":" & vbTab + Message & vbNewLine)
-                rtbLog.ScrollToCaret()
-            ElseIf Message.ToString.Contains("Oh!") Or Message.ToString.Contains("I see") Or Message.ToString.Contains("Ooh!") Or Message.ToString.Contains("Yes!") Then
-                My.Computer.Audio.Play(My.Resources.Gotcha, AudioPlayMode.Background)
-                rtbLog.AppendText(User + ":" & vbTab + Message & vbNewLine)
-                rtbLog.ScrollToCaret()
-            Else
-                My.Computer.Audio.Play(My.Resources.Message, AudioPlayMode.Background)
-                rtbLog.AppendText(User + ":" & vbTab + Message & vbNewLine)
-                rtbLog.ScrollToCaret()
+        ElseIf Message.StartsWith("$64tube ") Then
+            Dim URL As String
+            URL = Message.Replace("$64tube ", "")
+            If URL.ToString.Contains("http://youtube.com/watch?v=") Or URL.ToString.Contains("youtube.com/watch?v=") Or URL.ToString.Contains("www.youtube.com/watch?v=") Or URL.ToString.Contains("http://youtu.be/") Or URL.ToString.Contains("www.youtu.be/") Or URL.ToString.Contains("youtu.be/") Then
+                Dim Preemptive, Step1, Step2, Step3, Step4 As String
+                Dim VideoIDAndName As String()
+                Preemptive = URL.Replace("https://", "")
+                Step1 = Preemptive.Replace("http://", "")
+                Step2 = Step1.Replace("www.", "")
+                Step3 = Step2.Replace("youtube.com/watch?v=", "")
+                Step4 = Step3.Replace("youtu.be/", "")
+                VideoIDAndName = Split(Step4, " ", 2)
+                _64Tube.Show()
+                _64Tube.VideoPlayer.Source = New Uri("http://youtube.com/embed/" + VideoIDAndName(0))
+                Try
+                    rtbLog.AppendText(User + " sent a video: " + VideoIDAndName(1) & vbNewLine)
+                    rtbLog.ScrollToCaret()
+                    _64Tube.VideoHistory.Items.Add(VideoIDAndName(1) + " ( from " + User + " )" + " (<->) " + VideoIDAndName(0))
+                    _64Tube.Text = VideoIDAndName(1) + " ( from " + User + " )"
+                Catch ex As Exception
+                    rtbLog.AppendText(User + " sent a video and didn't use a title for it." & vbNewLine)
+                    rtbLog.ScrollToCaret()
+                    _64Tube.VideoHistory.Items.Add("[NO TITLE]" + " ( from " + User + ")" + " (<->) " + VideoIDAndName(0))
+                    _64Tube.Text = "[NO TITLE]" + " ( from " + User + ")"
+                End Try
             End If
-        End If
+            Else
+                If Message.ToString.Contains(":O") Or Message.ToString.Contains("!?") Then
+                    My.Computer.Audio.Play(My.Resources.Surprise, AudioPlayMode.Background)
+                    rtbLog.AppendText(User + ":" & vbTab + Message & vbNewLine)
+                    rtbLog.ScrollToCaret()
+                ElseIf Message.ToString.Contains("Idea!") Or Message.ToString.Contains("idea") Or Message.ToString.Contains("!") Then
+                    My.Computer.Audio.Play(My.Resources.Idea, AudioPlayMode.Background)
+                    rtbLog.AppendText(User + ":" & vbTab + Message & vbNewLine)
+                    rtbLog.ScrollToCaret()
+                ElseIf Message.ToString.Contains("?") Then
+                    My.Computer.Audio.Play(My.Resources.Question, AudioPlayMode.Background)
+                    rtbLog.AppendText(User + ":" & vbTab + Message & vbNewLine)
+                    rtbLog.ScrollToCaret()
+                ElseIf Message.ToString.Contains("Well done!") Or Message.ToString.Contains("nice") Then
+                    My.Computer.Audio.Play(My.Resources.HighScore, AudioPlayMode.Background)
+                    rtbLog.AppendText(User + ":" & vbTab + Message & vbNewLine)
+                    rtbLog.ScrollToCaret()
+                ElseIf Message.ToString.Contains("yes") Or Message.ToString.Contains("yup") Or Message.ToString.Contains("Yup") Or Message.ToString.Contains("Yes") Then
+                    My.Computer.Audio.Play(My.Resources.Yes, AudioPlayMode.Background)
+                    rtbLog.AppendText(User + ":" & vbTab + Message & vbNewLine)
+                    rtbLog.ScrollToCaret()
+                ElseIf Message.ToString.StartsWith("no") Or Message.ToString.Contains(" nope") Or Message.ToString.Contains(" Nope") Or Message.ToString.Contains("No.") Then
+                    My.Computer.Audio.Play(My.Resources.No, AudioPlayMode.Background)
+                    rtbLog.AppendText(User + ":" & vbTab + Message & vbNewLine)
+                    rtbLog.ScrollToCaret()
+                ElseIf Message.ToString.Contains("Oh!") Or Message.ToString.Contains("I see") Or Message.ToString.Contains("Ooh!") Or Message.ToString.Contains("Yes!") Then
+                    My.Computer.Audio.Play(My.Resources.Gotcha, AudioPlayMode.Background)
+                    rtbLog.AppendText(User + ":" & vbTab + Message & vbNewLine)
+                    rtbLog.ScrollToCaret()
+                Else
+                    My.Computer.Audio.Play(My.Resources.Message, AudioPlayMode.Background)
+                    rtbLog.AppendText(User + ":" & vbTab + Message & vbNewLine)
+                    rtbLog.ScrollToCaret()
+                End If
+            End If
     End Sub
 
     Private Sub tbMessage_KeyDown(sender As System.Object, e As System.Windows.Forms.KeyEventArgs) Handles tbMessage.KeyDown

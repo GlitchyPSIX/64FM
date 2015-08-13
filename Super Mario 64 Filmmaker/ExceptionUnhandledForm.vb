@@ -8,7 +8,7 @@
 
     End Sub
     Private Sub ExceptionUnhandledForm_Load(sender As Object, ex As System.EventArgs) Handles MyBase.Load
-        Me.BackColor = Color.RoyalBlue
+        Me.BackColor = My.Settings.FavColor
         Me.BackgroundImage = My.Resources.froze ' I will make a "Crackled Down" one
         rtbException.AppendText("OS: " + My.Computer.Info.OSFullName + vbNewLine + vbNewLine)
         rtbException.AppendText(UnhandledExceptionString)

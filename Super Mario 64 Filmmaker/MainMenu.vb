@@ -35,10 +35,6 @@ Imports Filmmaker.HelloMatey
 Public Class MainMenu
 
     Private Sub MainMenu_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        AddHandler AboutSM64FMToolStripMenuItem.Click, AddressOf AboutBox.Show
-        If Debug Then
-            HelloWorld()
-        End If
         'Set the "Custom Settings" feature
         ApplyProfileSettings()
         AppVer.Text = "Super Mario 64 Filmmaker BETA Version " + Application.ProductVersion.ToString + " Build No. " + My.Settings.Build.ToString
