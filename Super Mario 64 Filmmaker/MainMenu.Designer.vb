@@ -287,7 +287,7 @@ Partial Class MainMenu
         Me.ProfileToolStripMenuItem.Name = "ProfileToolStripMenuItem"
         Me.ProfileToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
             Or System.Windows.Forms.Keys.P), System.Windows.Forms.Keys)
-        Me.ProfileToolStripMenuItem.Size = New System.Drawing.Size(207, 22)
+        Me.ProfileToolStripMenuItem.Size = New System.Drawing.Size(206, 22)
         Me.ProfileToolStripMenuItem.Text = "Profile"
         '
         'AddonsToolStripMenuItem
@@ -296,7 +296,7 @@ Partial Class MainMenu
         Me.AddonsToolStripMenuItem.Name = "AddonsToolStripMenuItem"
         Me.AddonsToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
             Or System.Windows.Forms.Keys.A), System.Windows.Forms.Keys)
-        Me.AddonsToolStripMenuItem.Size = New System.Drawing.Size(207, 22)
+        Me.AddonsToolStripMenuItem.Size = New System.Drawing.Size(206, 22)
         Me.AddonsToolStripMenuItem.Text = "Addons"
         '
         'SonyVegasToolStripMenuItem1
@@ -305,7 +305,7 @@ Partial Class MainMenu
         Me.SonyVegasToolStripMenuItem1.Name = "SonyVegasToolStripMenuItem1"
         Me.SonyVegasToolStripMenuItem1.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
             Or System.Windows.Forms.Keys.V), System.Windows.Forms.Keys)
-        Me.SonyVegasToolStripMenuItem1.Size = New System.Drawing.Size(207, 22)
+        Me.SonyVegasToolStripMenuItem1.Size = New System.Drawing.Size(206, 22)
         Me.SonyVegasToolStripMenuItem1.Text = "Sony Vegas"
         '
         'Project64ToolStripMenuItem1
@@ -314,7 +314,7 @@ Partial Class MainMenu
         Me.Project64ToolStripMenuItem1.Name = "Project64ToolStripMenuItem1"
         Me.Project64ToolStripMenuItem1.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
             Or System.Windows.Forms.Keys.G), System.Windows.Forms.Keys)
-        Me.Project64ToolStripMenuItem1.Size = New System.Drawing.Size(207, 22)
+        Me.Project64ToolStripMenuItem1.Size = New System.Drawing.Size(206, 22)
         Me.Project64ToolStripMenuItem1.Text = "Project64"
         '
         'RecorderToolStripMenuItem1
@@ -323,7 +323,7 @@ Partial Class MainMenu
         Me.RecorderToolStripMenuItem1.Name = "RecorderToolStripMenuItem1"
         Me.RecorderToolStripMenuItem1.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
             Or System.Windows.Forms.Keys.R), System.Windows.Forms.Keys)
-        Me.RecorderToolStripMenuItem1.Size = New System.Drawing.Size(207, 22)
+        Me.RecorderToolStripMenuItem1.Size = New System.Drawing.Size(206, 22)
         Me.RecorderToolStripMenuItem1.Text = "Recorder"
         '
         'HelpToolStripMenuItem
