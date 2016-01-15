@@ -9,7 +9,7 @@
     <OutputType>WinExe</OutputType>
     <StartupObject>Filmmaker.My.MyApplication</StartupObject>
     <RootNamespace>Filmmaker</RootNamespace>
-    <AssemblyName>sm64fm</AssemblyName>
+    <AssemblyName>64fm</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
@@ -58,7 +58,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Actual Enviroment\Deb\</OutputPath>
-    <DocumentationFile>sm64fm.xml</DocumentationFile>
+    <DocumentationFile>64fm.xml</DocumentationFile>
     <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42353,42354,42355</NoWarn>
     <WarningsAsErrors>42025</WarningsAsErrors>
     <PlatformTarget>x86</PlatformTarget>
@@ -75,7 +75,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Actual Enviroment\Rel\</OutputPath>
-    <DocumentationFile>sm64fm.xml</DocumentationFile>
+    <DocumentationFile>64fm.xml</DocumentationFile>
     <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42353,42354,42355</NoWarn>
     <WarningsAsErrors>42025</WarningsAsErrors>
     <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
@@ -93,7 +93,7 @@
     </Reference>
     <Reference Include="IrcClient, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Downloads\IRCVB\IrcClient.dll</HintPath>
+      <HintPath>.\IrcClient.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
