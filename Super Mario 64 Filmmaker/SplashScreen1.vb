@@ -8,23 +8,17 @@ Public Class SplashScreen1
 #If DEBUG Then
         Debug = True
 #End If
-        'Start the timer and make every tick be half a second.
+        'Start the timer and make every tick be less than a second.
         PercentagedTime.Interval = 50
         PercentagedTime.Start()
         'Declare the transition for the TitleLabel
         Dim t1 As New Transition(New TransitionType_EaseInEaseOut(1000))
         Dim t2 As New Transition(New TransitionType_Linear(800))
-        Dim t3 As New Transition(New TransitionType_EaseInEaseOut(900))
-        Dim t4 As New Transition(New TransitionType_EaseInEaseOut(100))
         t2.add(TitleLabel, "ForeColor", Color.White)
-        t1.add(TitleLabel, "Left", 20)
-        t3.add(progressbar1, "Left", 10)
-        t4.add(StatusLabel, "Left", 60)
+        t1.add(TitleLabel, "Top", 20)
         'Run transitions
         t1.run()
         t2.run()
-        t3.run()
-        t4.run()
     End Sub
 
     Private Sub PercentagedTime_Tick(sender As Object, e As EventArgs) Handles PercentagedTime.Tick

@@ -3,7 +3,6 @@ Imports System.IO
 
 Public Class CinematicControl
     Private Declare Function GetKeyPress Lib "user32" Alias "GetAsyncKeyState" (ByVal key As Integer) As Integer
-
     Private ChangeCamera As Boolean = False
     Private CameraUnfrozen As Boolean = True
     Private PrecisionStage As Byte = 0
@@ -48,7 +47,6 @@ Public Class CinematicControl
         AddHandler b_ChangeCameraType.Click, AddressOf ChangeCameraType
         AddHandler b_SoftFreeze.Click, AddressOf SoftFreeze
         AddHandler b_SoftUnfreeze.Click, AddressOf SoftUnfreeze
-        AddHandler AboutMenuItem.Click, AddressOf AboutCinematicControl.ShowDialog
         AddHandler ForceCameraPresetMenuItem.Click, AddressOf ForceCameraPreset
         AddHandler Timer1.Tick, AddressOf Main
 
@@ -372,7 +370,7 @@ Public Class CinematicControl
         RetainAnimationSwapsMenuItem.CheckState = CheckState.Unchecked
     End Sub
 
-    Private Sub MainForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub CinematicControl_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Timer1.Interval = 100 'Make the timer tick every tenth of a second, to avoid unneccesary CPU use in some processors.
         Timer1.Start()
     End Sub
@@ -388,7 +386,7 @@ Public Class CinematicControl
     ''' Enables Precision Mode
     ''' </summary>
     ''' <param name="Reclick">True or false - Is a button reclick?</param>
-    Private Function PrecisionModeOn(ByVal Reclick As Boolean)
+    Private Sub PrecisionModeOn(ByVal Reclick As Boolean)
         If Reclick = False Then
             PrecisionStatusLabel.Text = "Camera position locked. Click the button below to lock camera rotation."
             NormalCamControls.Enabled = False
@@ -406,21 +404,21 @@ Public Class CinematicControl
             SoftFreeze()
             WriteInteger("Project64", Base + &H33C848, &H60000000)
         End If
-    End Function
+    End Sub
     ''' <summary>
     ''' Locks the angle of the camera in C-Up mode.
     ''' </summary>
-    Private Function LockAngle()
+    Private Sub LockAngle()
         PrecisionStatusLabel.Text = "Camera completely locked. Press the button below to re-adjust camera angle." + vbCrLf + "To disable precision mode, uncheck Settings -> Enable Precision Mode"
         Freeze()
         b_PrecisionPlusOne.Text = "Unlock Camera Rotation"
         PrecisionStage = 2
-    End Function
+    End Sub
     ''' <summary>
     ''' Turns off Precision Mode
     ''' </summary>
     ''' <param name="Hard">True or False - Hard shutdown. Does not enable any buttons/unfreeze the camera</param>
-    Private Function PrecisionModeOff(ByVal Hard As Boolean)
+    Private Sub PrecisionModeOff(ByVal Hard As Boolean)
         If Hard = False Then
             NormalCamControls.Enabled = True
             b_PrecisionPlusOne.Enabled = False
@@ -435,7 +433,7 @@ Public Class CinematicControl
             PrecisionStage = 0
             PrecisionModeMenuItem.Checked = False
         End If
-    End Function
+    End Sub
 
     Private Sub PrecisionCameraModeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PrecisionModeMenuItem.Click
         If PrecisionModeMenuItem.Checked = False Then

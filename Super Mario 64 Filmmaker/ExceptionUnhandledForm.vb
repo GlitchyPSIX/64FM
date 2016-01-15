@@ -15,7 +15,7 @@
     End Sub
 
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles IssueTrackerLink.LinkClicked
-        Process.Start("https://github.com/Starlight-Project/SM64FM/issues/new")
+        Process.Start("http://sm64fm.officialytr.com/forum/forumdisplay.php?fid=25")
     End Sub
 
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
