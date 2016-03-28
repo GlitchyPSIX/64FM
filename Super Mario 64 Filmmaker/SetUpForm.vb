@@ -46,24 +46,21 @@ Public Class SetUpForm
             Tooltipo.ToolTipTitle = "???"
             Tooltipo.ToolTipIcon = ToolTipIcon.Error
             Tooltipo.Show(String.Empty, NameLabel)
-            Tooltipo.Show("you seem upset.
-            Come and fill the forms please", NameLabel)
-        ElseIf ImageS = ""
+            Tooltipo.Show("you seem upset.\nCome and fill the forms please", NameLabel)
+        ElseIf ImageS = ""Then
             NameLabel.Text = NameBox.Text
             NameLabel.ForeColor = Color.Red
             Tooltipo.ToolTipTitle = "???"
             Tooltipo.ToolTipIcon = ToolTipIcon.Error
             Tooltipo.Show(String.Empty, ImgPrw)
-            Tooltipo.Show("show us your face
-Please put in an image.", NameLabel)
-        ElseIf NameBox.Text = ""
+            Tooltipo.Show("show us your face\nPlease put in an image.", NameLabel)
+        ElseIf NameBox.Text = ""Then
             NameLabel.Text = NameBox.Text
             NameLabel.ForeColor = Color.Red
             Tooltipo.ToolTipTitle = "???"
             Tooltipo.ToolTipIcon = ToolTipIcon.Error
             Tooltipo.Show(String.Empty, NameLabel)
-            Tooltipo.Show("NaN
-Please tell us your nickname.", NameLabel)
+            Tooltipo.Show("NaN\nPlease tell us your nickname.", NameLabel)
         Else
             My.Settings.Name = NameBox.Text 'Make M.S.Name have what it said in the TextBox called NameBox
             My.Settings.Image = ImageS ' Set the ImageS Placeholder to M.S.Image
@@ -150,9 +147,5 @@ Please tell us your nickname.", NameLabel)
         Else
             PanelControl.Panel2.BackgroundImage = My.Resources.Background
         End If
-    End Sub
-
-    Private Sub PanelControl_Panel2_Paint(sender As Object, e As PaintEventArgs) Handles PanelControl.Panel2.Paint
-
     End Sub
 End Class

@@ -50,8 +50,9 @@ Partial Class SetUpForm
         'NickLabel
         '
         Me.NickLabel.AutoSize = True
+        Me.NickLabel.BackColor = System.Drawing.Color.Transparent
         Me.NickLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.NickLabel.Location = New System.Drawing.Point(67, 16)
+        Me.NickLabel.Location = New System.Drawing.Point(66, 16)
         Me.NickLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.NickLabel.Name = "NickLabel"
         Me.NickLabel.Size = New System.Drawing.Size(205, 18)
@@ -61,8 +62,9 @@ Partial Class SetUpForm
         'ImageLabel
         '
         Me.ImageLabel.AutoSize = True
+        Me.ImageLabel.BackColor = System.Drawing.Color.Transparent
         Me.ImageLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ImageLabel.Location = New System.Drawing.Point(85, 127)
+        Me.ImageLabel.Location = New System.Drawing.Point(84, 127)
         Me.ImageLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.ImageLabel.Name = "ImageLabel"
         Me.ImageLabel.Size = New System.Drawing.Size(174, 18)
@@ -72,7 +74,7 @@ Partial Class SetUpForm
         'SelImgBtn
         '
         Me.SelImgBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SelImgBtn.Location = New System.Drawing.Point(109, 150)
+        Me.SelImgBtn.Location = New System.Drawing.Point(108, 150)
         Me.SelImgBtn.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.SelImgBtn.Name = "SelImgBtn"
         Me.SelImgBtn.Size = New System.Drawing.Size(122, 31)
@@ -82,7 +84,7 @@ Partial Class SetUpForm
         '
         'NameBox
         '
-        Me.NameBox.Location = New System.Drawing.Point(70, 39)
+        Me.NameBox.Location = New System.Drawing.Point(69, 39)
         Me.NameBox.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.NameBox.Name = "NameBox"
         Me.NameBox.Size = New System.Drawing.Size(189, 24)
@@ -96,7 +98,7 @@ Partial Class SetUpForm
         'Button1
         '
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(131, 246)
+        Me.Button1.Location = New System.Drawing.Point(130, 246)
         Me.Button1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(78, 35)
@@ -120,8 +122,9 @@ Partial Class SetUpForm
         'ColorLabel
         '
         Me.ColorLabel.AutoSize = True
+        Me.ColorLabel.BackColor = System.Drawing.Color.Transparent
         Me.ColorLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ColorLabel.Location = New System.Drawing.Point(85, 68)
+        Me.ColorLabel.Location = New System.Drawing.Point(84, 68)
         Me.ColorLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.ColorLabel.Name = "ColorLabel"
         Me.ColorLabel.Size = New System.Drawing.Size(164, 18)
@@ -131,7 +134,7 @@ Partial Class SetUpForm
         'PickColor
         '
         Me.PickColor.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PickColor.Location = New System.Drawing.Point(126, 91)
+        Me.PickColor.Location = New System.Drawing.Point(125, 91)
         Me.PickColor.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.PickColor.Name = "PickColor"
         Me.PickColor.Size = New System.Drawing.Size(90, 31)
@@ -176,7 +179,7 @@ Partial Class SetUpForm
         Me.ImgPrw.BackgroundImage = Global.Filmmaker.My.Resources.Resources.Background3
         Me.ImgPrw.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.ImgPrw.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.ImgPrw.Location = New System.Drawing.Point(113, 14)
+        Me.ImgPrw.Location = New System.Drawing.Point(109, 14)
         Me.ImgPrw.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.ImgPrw.Name = "ImgPrw"
         Me.ImgPrw.Size = New System.Drawing.Size(118, 121)
@@ -197,7 +200,8 @@ Partial Class SetUpForm
         'BGLabel
         '
         Me.BGLabel.AutoSize = True
-        Me.BGLabel.Location = New System.Drawing.Point(85, 186)
+        Me.BGLabel.BackColor = System.Drawing.Color.Transparent
+        Me.BGLabel.Location = New System.Drawing.Point(84, 186)
         Me.BGLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.BGLabel.Name = "BGLabel"
         Me.BGLabel.Size = New System.Drawing.Size(166, 18)
@@ -206,7 +210,7 @@ Partial Class SetUpForm
         '
         'SelBGBTN
         '
-        Me.SelBGBTN.Location = New System.Drawing.Point(94, 207)
+        Me.SelBGBTN.Location = New System.Drawing.Point(93, 207)
         Me.SelBGBTN.Name = "SelBGBTN"
         Me.SelBGBTN.Size = New System.Drawing.Size(155, 31)
         Me.SelBGBTN.TabIndex = 10
