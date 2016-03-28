@@ -127,8 +127,8 @@
   <data name="Expand" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Expand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Vegas12" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Vegas12.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Background8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\background8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Retract" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Retract.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -154,9 +154,6 @@
   <data name="ACC" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ACC.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Vegas11" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Vegas11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Explode" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Explode.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -171,9 +168,6 @@
   </data>
   <data name="Idea" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Idea.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="SM64FM_Pro_Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\SM64FM-Pro-Logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Background4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Background4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -214,6 +208,9 @@
   <data name="ProjectSF" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ProjectSF.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ACC1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ACC1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Frozen" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\frozen.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -238,8 +235,8 @@
   <data name="VFX" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\VFX.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="AlysiusFilmmaker" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\AlysiusFilmmaker.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Background6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Glitch" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Glitch.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -259,9 +256,6 @@
   <data name="Surprise" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Surprise.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="Action" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Action.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="FR4PS" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FR4PS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -273,9 +267,6 @@
   </data>
   <data name="IM" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IM.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CC" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\CC.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="WebHelp" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\WebHelp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -292,8 +283,8 @@
   <data name="M64MM2_Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\M64MM2 Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Background6" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Background6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="CC" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CC.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="About" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\About.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -361,7 +352,7 @@
   <data name="Background7" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Background7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ACC1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ACC1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="64networklogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\64networklogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

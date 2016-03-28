@@ -23,6 +23,7 @@ Partial Class Chat
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Chat))
         Me.rtbLog = New System.Windows.Forms.RichTextBox()
         Me.lstUsers = New System.Windows.Forms.ListBox()
         Me.UserContextStrip = New System.Windows.Forms.ContextMenuStrip(Me.components)
@@ -245,8 +246,9 @@ Partial Class Chat
         Me.Controls.Add(Me.btnConnect)
         Me.Controls.Add(Me.lstUsers)
         Me.Controls.Add(Me.rtbLog)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Chat"
-        Me.Text = "Chat"
+        Me.Text = "64Messenger"
         Me.UserContextStrip.ResumeLayout(False)
         Me.ResumeLayout(False)
 

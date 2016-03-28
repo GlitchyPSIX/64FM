@@ -29,7 +29,7 @@ Public Class SplashScreen1
                 SetUpForm.Show()
                 Me.Close()
             Else
-                MainMenu.Show()
+                IntegrationForm.Show()
                 Me.Close()
             End If
         End If

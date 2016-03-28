@@ -22,6 +22,7 @@ Partial Class BGSelector
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(BGSelector))
         Me.Skysoarer = New System.Windows.Forms.PictureBox()
         Me.Harmony = New System.Windows.Forms.PictureBox()
         Me.Fade = New System.Windows.Forms.PictureBox()
@@ -198,6 +199,7 @@ Partial Class BGSelector
         Me.Controls.Add(Me.Clockwork)
         Me.Controls.Add(Me.Classic)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
         Me.Name = "BGSelector"
         Me.Text = "Select your background"

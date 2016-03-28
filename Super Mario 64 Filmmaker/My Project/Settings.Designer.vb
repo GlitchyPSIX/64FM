@@ -121,6 +121,30 @@ Namespace My
                 Me("Frozen") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property lastUsername() As String
+            Get
+                Return CType(Me("lastUsername"),String)
+            End Get
+            Set
+                Me("lastUsername") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property lastPassword() As String
+            Get
+                Return CType(Me("lastPassword"),String)
+            End Get
+            Set
+                Me("lastPassword") = value
+            End Set
+        End Property
     End Class
 End Namespace
 
