@@ -29,17 +29,13 @@ Imports System.Runtime.InteropServices
 Imports Ionic.Zip
 Imports Transitions
 Imports Filmmaker.Extractor 'This is a class xD
-Imports Filmmaker.HelloMatey
 
 Public Class MainMenu
 
     Private Sub MainMenu_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        If Debug Then
-            HelloWorld()
-        End If
         'Set the "Custom Settings" feature
         ApplyProfileSettings()
-        AppVer.Text = "Super Mario 64 Filmmaker BETA Version " + Application.ProductVersion.ToString + " Build No. " + My.Settings.Build.ToString
+        AppVer.Text = "64Filmmaker BETA " + Application.ProductVersion.ToString + " Build No. " + My.Settings.Build.ToString
         TenthOfASecond.Interval = 100
         TenthOfASecond.Start()
     End Sub
@@ -59,6 +55,8 @@ Public Class MainMenu
             Me.BackgroundImage = My.Resources.Background6
         ElseIf My.Settings.Background = 7 Then
             Me.BackgroundImage = My.Resources.Background7
+        ElseIf My.Settings.Background = 8 Then
+            Me.BackgroundImage = My.Resources.Background8
         End If
         ImgPrw.BackColor = Color.Transparent
         ImgPrw.Image = Image.FromFile(My.Settings.Image)
@@ -105,7 +103,7 @@ Public Class MainMenu
         cheatModeSel.Show()
     End Sub
 
-    Private Sub btnCC_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCC.Click
+    Private Sub btnCC_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         'Search for Color Code Suite and start it
         Try
             Process.Start(Application.StartupPath & "\Engine\CCGEN.exe")
@@ -124,7 +122,7 @@ Public Class MainMenu
     End Sub
 
     Private Sub btnCinema_Click(sender As Object, e As EventArgs) Handles btnCinema.Click
-        Dim CinematicForm As New CinematicControl()
+        Dim CinematicForm As New MainForm()
         CinematicForm.Show()
     End Sub
 

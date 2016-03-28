@@ -40,7 +40,7 @@
             UnhandledExceptionString = ex.ToString
             ExceptionUnhandledForm.Show()
             MainMenu.Close()
-            CinematicControl.Close()
+            MainForm.Close()
             Chat.Close()
         End Sub
 
