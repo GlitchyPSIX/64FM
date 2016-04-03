@@ -38,14 +38,14 @@ Partial Class extractSel
         Me.Label1.ForeColor = System.Drawing.Color.Black
         Me.Label1.Location = New System.Drawing.Point(318, 39)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(121, 44)
+        Me.Label1.Size = New System.Drawing.Size(154, 76)
         Me.Label1.TabIndex = 19
-        Me.Label1.Text = "These will be extracted to their own folder in the SM64 Filmmaker folder."
+        Me.Label1.Text = "These will be extracted to their own folder in the 64Filmmaker folder."
         '
         'btnShowPath
         '
         Me.btnShowPath.ForeColor = System.Drawing.Color.Black
-        Me.btnShowPath.Location = New System.Drawing.Point(318, 86)
+        Me.btnShowPath.Location = New System.Drawing.Point(338, 81)
         Me.btnShowPath.Name = "btnShowPath"
         Me.btnShowPath.Size = New System.Drawing.Size(114, 34)
         Me.btnShowPath.TabIndex = 20
@@ -67,7 +67,7 @@ Partial Class extractSel
         'btnWLD
         '
         Me.btnWLD.BackColor = System.Drawing.Color.Transparent
-        Me.btnWLD.BackgroundImage = Global.Filmmaker.My.Resources.Resources.AlysiusFilmmaker
+        Me.btnWLD.BackgroundImage = Global.Filmmaker.My.Resources.Resources.CHK
         Me.btnWLD.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.btnWLD.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnWLD.Location = New System.Drawing.Point(164, 194)

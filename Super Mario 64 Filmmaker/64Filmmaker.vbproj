@@ -1,0 +1,574 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DE7C7E67-2A31-49F1-8983-A418DDC063B4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Filmmaker.My.MyApplication</StartupObject>
+    <RootNamespace>Filmmaker</RootNamespace>
+    <AssemblyName>64fm</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <ApplicationIcon>64filmmaker.ico</ApplicationIcon>
+    <SignManifests>false</SignManifests>
+    <SignAssembly>false</SignAssembly>
+    <ManifestCertificateThumbprint>67F95E9398B761427EF35D4A4020C1E1E4907152</ManifestCertificateThumbprint>
+    <ManifestKeyFile>
+    </ManifestKeyFile>
+    <GenerateManifests>true</GenerateManifests>
+    <TargetZone>LocalIntranet</TargetZone>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>true</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <SupportUrl>http:\\starlightproject.url.ph</SupportUrl>
+    <MinimumRequiredVersion>0.0.1.0</MinimumRequiredVersion>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>0.0.1.%2a</ApplicationVersion>
+    <UseApplicationTrust>true</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Actual Enviroment\Deb\</OutputPath>
+    <DocumentationFile>64fm.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42353,42354,42355</NoWarn>
+    <WarningsAsErrors>42025</WarningsAsErrors>
+    <PlatformTarget>x86</PlatformTarget>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <Prefer32Bit>false</Prefer32Bit>
+    <CodeAnalysisRuleSet>..\GlitchysRules.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisIgnoreGeneratedCode>false</CodeAnalysisIgnoreGeneratedCode>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Actual Enviroment\Rel\</OutputPath>
+    <DocumentationFile>64fm.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42353,42354,42355</NoWarn>
+    <WarningsAsErrors>42025</WarningsAsErrors>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Super Mario 64 Filmmaker_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DelaySign>false</DelaySign>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ionic.Zip">
+      <HintPath>.\Ionic.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="IrcClient, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\IrcClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WinFormsTransitions">
+      <HintPath>.\WinFormsTransitions.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutBox.Designer.vb">
+      <DependentUpon>AboutBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AboutBox.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutCinematicControl.Designer.vb">
+      <DependentUpon>AboutCinematicControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AboutCinematicControl.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutForm.Designer.vb">
+      <DependentUpon>AboutForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AboutForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddonLoginForm.Designer.vb">
+      <DependentUpon>AddonLoginForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AddonLoginForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="animCodeGen.Designer.vb">
+      <DependentUpon>animCodeGen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="animCodeGen.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="BGSelector.Designer.vb">
+      <DependentUpon>BGSelector.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BGSelector.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chat.Designer.vb">
+      <DependentUpon>Chat.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Chat.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChatPM.Designer.vb">
+      <DependentUpon>ChatPM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ChatPM.vb" />
+    <Compile Include="cheatEssentials.Designer.vb">
+      <DependentUpon>cheatEssentials.vb</DependentUpon>
+    </Compile>
+    <Compile Include="cheatEssentials.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cheatModeSel.Designer.vb">
+      <DependentUpon>cheatModeSel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="cheatModeSel.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CinematicControl.Designer.vb">
+      <DependentUpon>CinematicControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CinematicControl.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ColorCodeCopyPasteForm.Designer.vb">
+      <DependentUpon>ColorCodeCopyPasteForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ColorCodeCopyPasteForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ColorCodeStudio.Designer.vb">
+      <DependentUpon>ColorCodeStudio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ColorCodeStudio.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExceptionUnhandledForm.Designer.vb">
+      <DependentUpon>ExceptionUnhandledForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ExceptionUnhandledForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExportCCForm.Designer.vb">
+      <DependentUpon>ExportCCForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ExportCCForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExtractFile.vb" />
+    <Compile Include="extractSel.Designer.vb">
+      <DependentUpon>extractSel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="extractSel.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IntegrationForm.Designer.vb">
+      <DependentUpon>IntegrationForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="IntegrationForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Globals.vb" />
+    <Compile Include="HelloWorld.vb" />
+    <Compile Include="MainMenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainMenu.Designer.vb">
+      <DependentUpon>MainMenu.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MemDebugForm.Designer.vb">
+      <DependentUpon>MemDebugForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MemDebugForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="NotiForm.Designer.vb">
+      <DependentUpon>NotiForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NotiForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="preferences.Designer.vb">
+      <DependentUpon>preferences.vb</DependentUpon>
+    </Compile>
+    <Compile Include="preferences.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="editStepForm.Designer.vb">
+      <DependentUpon>editStepForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="editStepForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="PreparingThings.Designer.vb">
+      <DependentUpon>PreparingThings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PreparingThings.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReadWritingMemory.vb" />
+    <Compile Include="Settings.vb" />
+    <Compile Include="SetUpForm.Designer.vb">
+      <DependentUpon>SetUpForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SetUpForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SplashScreen1.Designer.vb">
+      <DependentUpon>SplashScreen1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SplashScreen1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="webCheatSearch.Designer.vb">
+      <DependentUpon>webCheatSearch.vb</DependentUpon>
+    </Compile>
+    <Compile Include="webCheatSearch.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AboutBox.resx">
+      <DependentUpon>AboutBox.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AboutCinematicControl.resx">
+      <DependentUpon>AboutCinematicControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AboutForm.resx">
+      <DependentUpon>AboutForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddonLoginForm.resx">
+      <DependentUpon>AddonLoginForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="animCodeGen.resx">
+      <DependentUpon>animCodeGen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BGSelector.resx">
+      <DependentUpon>BGSelector.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chat.resx">
+      <DependentUpon>Chat.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChatPM.resx">
+      <DependentUpon>ChatPM.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cheatEssentials.resx">
+      <DependentUpon>cheatEssentials.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cheatModeSel.resx">
+      <DependentUpon>cheatModeSel.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CinematicControl.resx">
+      <DependentUpon>CinematicControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ColorCodeCopyPasteForm.resx">
+      <DependentUpon>ColorCodeCopyPasteForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ColorCodeStudio.resx">
+      <DependentUpon>ColorCodeStudio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExceptionUnhandledForm.resx">
+      <DependentUpon>ExceptionUnhandledForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExportCCForm.resx">
+      <DependentUpon>ExportCCForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="extractSel.resx">
+      <DependentUpon>extractSel.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IntegrationForm.resx">
+      <DependentUpon>IntegrationForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MemDebugForm.resx">
+      <DependentUpon>MemDebugForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NotiForm.resx">
+      <DependentUpon>NotiForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="preferences.resx">
+      <DependentUpon>preferences.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainMenu.resx">
+      <DependentUpon>MainMenu.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="editStepForm.resx">
+      <DependentUpon>editStepForm.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PreparingThings.resx">
+      <DependentUpon>PreparingThings.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SetUpForm.resx">
+      <DependentUpon>SetUpForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SplashScreen1.resx">
+      <DependentUpon>SplashScreen1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="webCheatSearch.resx">
+      <DependentUpon>webCheatSearch.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\DataSources\AddonLoginForm.datasource" />
+    <None Include="My Project\DataSources\animCodeGen.datasource" />
+    <None Include="My Project\DataSources\cheatEssentials.datasource" />
+    <None Include="My Project\DataSources\cheatModeSel.datasource" />
+    <None Include="My Project\DataSources\extractSel.datasource" />
+    <None Include="My Project\DataSources\glitchyessentials.datasource" />
+    <None Include="My Project\DataSources\MainMenu.datasource" />
+    <None Include="My Project\DataSources\preferences.datasource" />
+    <None Include="My Project\DataSources\SplashScreen1.datasource" />
+    <None Include="My Project\DataSources\Super_Mario_64_Filmmaker.My.MyApplication.datasource" />
+    <None Include="My Project\DataSources\webCheatSearch.datasource" />
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Super Mario 64 Filmmaker_TemporaryKey.pfx" />
+    <None Include="SuPerMarioSixtyFouRFilmMaKer.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="64filmmaker.ico" />
+    <None Include="app.config" />
+    <None Include="My Project\app.manifest">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="My Project\DataSources\Super_Mario_64_Filmmaker.My.MySettings.datasource" />
+    <None Include="Resources\Action.png" />
+    <None Include="Resources\AlysiusFilmmaker.png" />
+    <None Include="Resources\CHK.png" />
+    <None Include="Resources\CHT.png" />
+    <None Include="Resources\Extras.png" />
+    <None Include="Resources\FR4PS.png" />
+    <None Include="Resources\OST.png" />
+    <None Include="Resources\PJ6A.png" />
+    <None Include="Resources\SFX.png" />
+    <None Include="Resources\SM64FM-Logo.png" />
+    <None Include="Resources\SM64FM-Pro-Logo.png" />
+    <None Include="Resources\Vegas10.png" />
+    <None Include="Resources\Vegas11.png" />
+    <None Include="Resources\Vegas12.png" />
+    <None Include="Resources\VFX.png" />
+    <None Include="Resources\ADD.png" />
+    <None Include="Resources\DELADD.png" />
+    <None Include="Resources\LIADD.png" />
+    <None Include="Resources\LOADD.png" />
+    <None Include="Resources\ACG.png" />
+    <None Include="Resources\CC.png" />
+    <None Include="Resources\SC.png" />
+    <None Include="Resources\SM64FMNormalIntro.png" />
+    <None Include="Resources\Bugged.png" />
+    <None Include="Resources\Flying.png" />
+    <None Include="Resources\Glitch.png" />
+    <None Include="Resources\MoveRoute.png" />
+    <None Include="Resources\Multipart.png" />
+    <None Include="Resources\OK.png" />
+    <None Include="Resources\Death.png" />
+    <None Include="Resources\Hang.png" />
+    <None Include="Resources\Hold.png" />
+    <None Include="Resources\Jump.png" />
+    <None Include="Resources\YouDontSay.png" />
+    <None Include="Resources\Background.png" />
+    <None Include="Resources\Background2.png" />
+    <None Include="Resources\Background3.png" />
+    <None Include="Resources\Background4.png" />
+    <None Include="Resources\Background5.png" />
+    <None Include="Resources\Background6.png" />
+    <None Include="Resources\Background7.png" />
+    <None Include="Resources\About.png" />
+    <None Include="Resources\Addon.png" />
+    <None Include="Resources\Guides.png" />
+    <None Include="Resources\LoadAddon.png" />
+    <None Include="Resources\LoadCheatSht.png" />
+    <None Include="Resources\LoadSpecialPkg.png" />
+    <None Include="Resources\ProjectSF.png" />
+    <None Include="Resources\Recorder.png" />
+    <None Include="Resources\Tutorials.png" />
+    <None Include="Resources\User.png" />
+    <None Include="Resources\Vegas.png" />
+    <None Include="Resources\WebHelp.png" />
+    <None Include="Resources\Expand.png" />
+    <None Include="Resources\Retract.png" />
+    <None Include="Resources\IM.png" />
+    <None Include="Resources\Critical.wav" />
+    <None Include="Resources\Explosion.wav" />
+    <None Include="Resources\Explode.png" />
+    <None Include="Resources\Nudge.png" />
+    <None Include="Resources\frozen.wav" />
+    <None Include="Resources\Gotcha.wav" />
+    <None Include="Resources\HighScore.wav" />
+    <None Include="Resources\Idea.wav" />
+    <None Include="Resources\Message.wav" />
+    <None Include="Resources\No.wav" />
+    <None Include="Resources\Question.wav" />
+    <None Include="Resources\Surprise.wav" />
+    <None Include="Resources\Yes.wav" />
+    <None Include="Resources\froze.png" />
+    <None Include="Resources\Connected.wav" />
+    <None Include="Resources\Disconnect.wav" />
+    <None Include="Resources\DeepFreeze.wav" />
+    <None Include="Resources\M64MM2 Icon.png" />
+    <None Include="Resources\ACC.png" />
+    <None Include="Resources\LoadingBalls.gif" />
+    <None Include="Resources\Exception.png" />
+    <None Include="Resources\Injector2.png" />
+    <None Include="Resources\ACC1.png" />
+    <None Include="Resources\background8.png" />
+    <None Include="Resources\64networklogo.png" />
+    <Content Include="SM64FMNormal.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <FileAssociation Include=".fma">
+      <Visible>False</Visible>
+      <Description>Filmmaker Addon</Description>
+      <Progid>01247</Progid>
+      <DefaultIcon>SM64FMNormal.ico</DefaultIcon>
+    </FileAssociation>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="M64MM2\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

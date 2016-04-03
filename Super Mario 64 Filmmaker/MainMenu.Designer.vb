@@ -37,7 +37,6 @@ Partial Class MainMenu
         Me.btnSV = New System.Windows.Forms.PictureBox()
         Me.btnFRPS = New System.Windows.Forms.PictureBox()
         Me.btnGame = New System.Windows.Forms.PictureBox()
-        Me.btnCC = New System.Windows.Forms.PictureBox()
         Me.WelcomeLabel = New System.Windows.Forms.Label()
         Me.MenuStrip = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -81,7 +80,6 @@ Partial Class MainMenu
         CType(Me.btnSV, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnFRPS, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnGame, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnCC, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip.SuspendLayout()
         CType(Me.ExpandOrRetract, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnChat, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -107,8 +105,8 @@ Partial Class MainMenu
         Me.AppVer.BackColor = System.Drawing.Color.Black
         Me.AppVer.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.AppVer.Name = "AppVer"
-        Me.AppVer.Size = New System.Drawing.Size(63, 17)
-        Me.AppVer.Text = "SM64FM ;)"
+        Me.AppVer.Size = New System.Drawing.Size(102, 17)
+        Me.AppVer.Text = "64Filmmaker FTW"
         '
         'ToolStripStatusLabel1
         '
@@ -123,9 +121,9 @@ Partial Class MainMenu
         'ImgPrw
         '
         Me.ImgPrw.BackColor = System.Drawing.Color.Transparent
-        Me.ImgPrw.Location = New System.Drawing.Point(28, 73)
+        Me.ImgPrw.Location = New System.Drawing.Point(34, 69)
         Me.ImgPrw.Name = "ImgPrw"
-        Me.ImgPrw.Size = New System.Drawing.Size(107, 112)
+        Me.ImgPrw.Size = New System.Drawing.Size(112, 112)
         Me.ImgPrw.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.ImgPrw.TabIndex = 24
         Me.ImgPrw.TabStop = False
@@ -208,24 +206,13 @@ Partial Class MainMenu
         Me.btnGame.TabIndex = 18
         Me.btnGame.TabStop = False
         '
-        'btnCC
-        '
-        Me.btnCC.BackColor = System.Drawing.Color.Transparent
-        Me.btnCC.Image = Global.Filmmaker.My.Resources.Resources.CC
-        Me.btnCC.Location = New System.Drawing.Point(326, 248)
-        Me.btnCC.Name = "btnCC"
-        Me.btnCC.Size = New System.Drawing.Size(151, 160)
-        Me.btnCC.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.btnCC.TabIndex = 22
-        Me.btnCC.TabStop = False
-        '
         'WelcomeLabel
         '
         Me.WelcomeLabel.AutoSize = True
         Me.WelcomeLabel.BackColor = System.Drawing.Color.Transparent
         Me.WelcomeLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.WelcomeLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.WelcomeLabel.Location = New System.Drawing.Point(24, 188)
+        Me.WelcomeLabel.Location = New System.Drawing.Point(30, 184)
         Me.WelcomeLabel.Name = "WelcomeLabel"
         Me.WelcomeLabel.Size = New System.Drawing.Size(119, 20)
         Me.WelcomeLabel.TabIndex = 25
@@ -446,7 +433,7 @@ Partial Class MainMenu
         Me.AboutSM64FMToolStripMenuItem.Image = Global.Filmmaker.My.Resources.Resources.About
         Me.AboutSM64FMToolStripMenuItem.Name = "AboutSM64FMToolStripMenuItem"
         Me.AboutSM64FMToolStripMenuItem.Size = New System.Drawing.Size(189, 22)
-        Me.AboutSM64FMToolStripMenuItem.Text = "About SM64FM..."
+        Me.AboutSM64FMToolStripMenuItem.Text = "About 64Filmmaker..."
         '
         'ExpandOrRetract
         '
@@ -475,7 +462,7 @@ Partial Class MainMenu
         '
         Me.btnCinema.BackColor = System.Drawing.Color.Transparent
         Me.btnCinema.Image = Global.Filmmaker.My.Resources.Resources.ACC1
-        Me.btnCinema.Location = New System.Drawing.Point(541, 248)
+        Me.btnCinema.Location = New System.Drawing.Point(326, 248)
         Me.btnCinema.Name = "btnCinema"
         Me.btnCinema.Size = New System.Drawing.Size(151, 160)
         Me.btnCinema.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -502,7 +489,6 @@ Partial Class MainMenu
         Me.Controls.Add(Me.btnSV)
         Me.Controls.Add(Me.btnFRPS)
         Me.Controls.Add(Me.btnGame)
-        Me.Controls.Add(Me.btnCC)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.MenuStrip)
         Me.DoubleBuffered = True
@@ -525,7 +511,6 @@ Partial Class MainMenu
         CType(Me.btnSV, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnFRPS, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnGame, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnCC, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip.ResumeLayout(False)
         Me.MenuStrip.PerformLayout()
         CType(Me.ExpandOrRetract, System.ComponentModel.ISupportInitialize).EndInit()
@@ -543,7 +528,6 @@ Partial Class MainMenu
     Friend WithEvents StatusStrip1 As System.Windows.Forms.StatusStrip
     Friend WithEvents btnWorkshop As System.Windows.Forms.PictureBox
     Friend WithEvents btnSC As System.Windows.Forms.PictureBox
-    Friend WithEvents btnCC As System.Windows.Forms.PictureBox
     Friend WithEvents AppVer As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents ToolStripStatusLabel1 As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents btnEXT As System.Windows.Forms.PictureBox

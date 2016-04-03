@@ -1,6 +1,7 @@
 ﻿Imports System.Text
 Imports Transitions
 Imports System.IO
+Imports System.Text.RegularExpressions
 
 Public Class SetUpForm
     Dim ImageS As String 'Same as above, but for My.Settings.Image
@@ -25,7 +26,11 @@ Public Class SetUpForm
                 End Try
                 ImageS = OpenFileDlg.FileName 'Set the placeholder variable for Image.
                 If Debug Then
-                    MsgBox(ImageS) 'DEBUG FEATURE: Check if everything worked, by showing the image's path.
+                    Tooltipo.ToolTipTitle = "Image's path:"
+                    Tooltipo.ToolTipIcon = ToolTipIcon.Info
+                    Tooltipo.UseAnimation = True
+                    Tooltipo.Show(String.Empty, SelImgBtn)
+                    Tooltipo.Show(ImageS, SelImgBtn) 'DEBUG FEATURE: Check if everything worked, by showing the image's path.
                 End If
                 'Nothing
             End If
@@ -35,8 +40,27 @@ Public Class SetUpForm
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        If NameBox.Text = "" Or ImageS = "" Then
-            MsgBox("Please fill out all forms before continuing.")
+        If NameBox.Text = "" And ImageS = "" Then
+            NameLabel.Text = NameBox.Text
+            NameLabel.ForeColor = Color.Red
+            Tooltipo.ToolTipTitle = "???"
+            Tooltipo.ToolTipIcon = ToolTipIcon.Error
+            Tooltipo.Show(String.Empty, NameLabel)
+            Tooltipo.Show("you seem upset.\nCome and fill the forms please", NameLabel)
+        ElseIf ImageS = ""Then
+            NameLabel.Text = NameBox.Text
+            NameLabel.ForeColor = Color.Red
+            Tooltipo.ToolTipTitle = "???"
+            Tooltipo.ToolTipIcon = ToolTipIcon.Error
+            Tooltipo.Show(String.Empty, ImgPrw)
+            Tooltipo.Show("show us your face\nPlease put in an image.", NameLabel)
+        ElseIf NameBox.Text = ""Then
+            NameLabel.Text = NameBox.Text
+            NameLabel.ForeColor = Color.Red
+            Tooltipo.ToolTipTitle = "???"
+            Tooltipo.ToolTipIcon = ToolTipIcon.Error
+            Tooltipo.Show(String.Empty, NameLabel)
+            Tooltipo.Show("NaN\nPlease tell us your nickname.", NameLabel)
         Else
             My.Settings.Name = NameBox.Text 'Make M.S.Name have what it said in the TextBox called NameBox
             My.Settings.Image = ImageS ' Set the ImageS Placeholder to M.S.Image
@@ -49,23 +73,36 @@ Public Class SetUpForm
     End Sub
 
     Private Sub NameBox_TextChanged(sender As Object, e As EventArgs) Handles NameBox.TextChanged
-        NameLabel.Text = NameBox.Text
+        If Regex.IsMatch(NameBox.Text, "^[A-Za-z0-9]+$") Then
+            NameLabel.Text = NameBox.Text
+            NameLabel.ForeColor = Color.Black
+        ElseIf NameBox.Text = ""
+            NameLabel.Text = NameBox.Text
+            My.Computer.Audio.Play(My.Resources.Message, AudioPlayMode.Background)
+            Tooltipo.ToolTipTitle = "Empty name"
+            Tooltipo.ToolTipIcon = ToolTipIcon.Info
+            Tooltipo.Show(String.Empty, NameLabel)
+        Else
+            My.Computer.Audio.Play(My.Resources.Idea, AudioPlayMode.Background)
+            NameLabel.Text = NameBox.Text
+            NameLabel.ForeColor = Color.Red
+            Tooltipo.ToolTipTitle = "Hey, look here."
+            Tooltipo.ToolTipIcon = ToolTipIcon.Error
+            Tooltipo.Show(String.Empty, NameLabel)
+            Tooltipo.Show("Please refrain from using characters that aren't allowed, like !, "", @ or the Space key.", NameLabel)
+        End If
     End Sub
 
     Private Sub PickColor_Click(sender As Object, e As EventArgs) Handles PickColor.Click
         Dim Panel2Fade As New Transition(New TransitionType_EaseInEaseOut(800))
         ColorSelector.ShowDialog()
         If DialogResult.OK Then
-            If ColorSelector.Color.R < 49 And ColorSelector.Color.G < 49 And ColorSelector.Color.B < 49 And ColorSelector.Color = Color.Black Or ColorSelector.Color.ToKnownColor.ToString.Contains("Dark") Then
-                MsgBox("Sorry, no black/dark colors. You wouldn't be able to see the text...")
-            Else
-                Panel2Fade.add(Me.PanelControl.Panel2, "BackColor", ColorSelector.Color)
-                Panel2Fade.add(Me.ImgPrw, "BackColor", ColorSelector.Color)
-                ColorZ = ColorSelector.Color
-                Panel2Fade.run()
-            End If
+            Panel2Fade.add(Me.PanelControl.Panel2, "BackColor", ColorSelector.Color)
+            Panel2Fade.add(Me.ImgPrw, "BackColor", ColorSelector.Color)
+            ColorZ = ColorSelector.Color
+            Panel2Fade.run()
         Else
-            MsgBox("Canceled? Awww...")
+            MsgBox("Cancelled? Awww...")
         End If
     End Sub
 
@@ -105,6 +142,8 @@ Public Class SetUpForm
             PanelControl.Panel2.BackgroundImage = My.Resources.Background6
         ElseIf My.Settings.Background = 7 Then
             PanelControl.Panel2.BackgroundImage = My.Resources.Background7
+        ElseIf My.Settings.Background = 8 Then
+            PanelControl.Panel2.BackgroundImage = My.Resources.Background8
         Else
             PanelControl.Panel2.BackgroundImage = My.Resources.Background
         End If

@@ -10,17 +10,17 @@ Imports System.Runtime.InteropServices
 
 ' Revisar los valores de los atributos del ensamblado
 
-<Assembly: AssemblyTitle("Super Mario 64 Filmmaker")> 
+<Assembly: AssemblyTitle("64Filmmaker")>
 <Assembly: AssemblyDescription("Super Mario 64 Movie Making software.")> 
-<Assembly: AssemblyCompany("Starlight Project")> 
-<Assembly: AssemblyProduct("Super Mario 64 Filmmaker")> 
-<Assembly: AssemblyCopyright("Copyright ©  2015 Starlight Project")> 
+<Assembly: AssemblyCompany("Starlight Project")>
+<Assembly: AssemblyProduct("64Filmmaker")>
+<Assembly: AssemblyCopyright("Copyright ©  2014-2016 Starlight Project")>
 <Assembly: AssemblyTrademark("")> 
 
 <Assembly: ComVisible(True)> 
 
 'El siguiente GUID sirve como identificador de typelib si este proyecto se expone a COM
-<Assembly: Guid("5639b16e-b7b6-412b-ac03-b0e7dc905e39")> 
+<Assembly: Guid("5639b16e-b7b6-412b-ac03-b0e7dc905e39")>
 
 ' La información de versión de un ensamblado consta de los cuatro valores siguientes:
 '
@@ -33,7 +33,7 @@ Imports System.Runtime.InteropServices
 ' mediante el asterisco ('*'), como se muestra a continuación:
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("0.0.0.26")> 
-<Assembly: AssemblyFileVersion("0.0.0.26")> 
+<Assembly: AssemblyVersion("0.0.0.48")>
+<Assembly: AssemblyFileVersion("0.0.0.48")>
 
 <Assembly: NeutralResourcesLanguageAttribute("en-US")> 
