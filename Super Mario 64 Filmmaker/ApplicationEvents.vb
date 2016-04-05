@@ -26,11 +26,11 @@
         End Sub
         'One of the global exceptions we are catching is not thread safe, 
         'so we need to make it thread safe first.
-        Private Delegate Sub SafeApplicationThreadException(ByVal sender As Object, _
+        Private Delegate Sub SafeApplicationThreadException(ByVal sender As Object,
             ByVal e As Threading.ThreadExceptionEventArgs)
 
         Private Sub MyApplication_StartupNextInstance(sender As Object, e As ApplicationServices.StartupNextInstanceEventArgs) Handles Me.StartupNextInstance
-            MsgBox("SM64FM Is already running.")
+
         End Sub
 
         Private Sub ExceptionHandler(ByVal ex As Exception)
@@ -39,12 +39,12 @@
             ShakeVeryGently(10)
             UnhandledExceptionString = ex.ToString
             ExceptionUnhandledForm.Show()
-            MainMenu.Close()
             MainForm.Close()
+            MainMenu.Close()
             Chat.Close()
         End Sub
 
-        Private Sub MyApplication_Startup(ByVal sender As Object, _
+        Private Sub MyApplication_Startup(ByVal sender As Object,
     ByVal e As Microsoft.VisualBasic.ApplicationServices.StartupEventArgs) Handles Me.Startup
 
             'There are three places to catch all global unhandled exceptions:
@@ -53,17 +53,18 @@
             'MyApplication.UnhandledException event.
             AddHandler AppDomain.CurrentDomain.UnhandledException, AddressOf AppDomain_UnhandledException
             AddHandler System.Windows.Forms.Application.ThreadException, AddressOf app_ThreadException
-
+            ' --------------------------------
+            Settings.Upgrade()
         End Sub
 
-        Private Sub app_ThreadException(ByVal sender As Object, _
+        Private Sub app_ThreadException(ByVal sender As Object,
     ByVal e As Threading.ThreadExceptionEventArgs)
 
             'This is not thread safe, so make it thread safe.
             If MainForm.InvokeRequired Then
                 ' Invoke back to the main thread
                 UnhandledExceptionString = e.ToString
-                MainForm.Invoke(New SafeApplicationThreadException(AddressOf app_ThreadException), _
+                MainForm.Invoke(New SafeApplicationThreadException(AddressOf app_ThreadException),
                     New Object() {sender, e})
             Else
                 ExceptionHandler(e.Exception)
@@ -71,10 +72,33 @@
 
         End Sub
 
-        Private Sub AppDomain_UnhandledException(ByVal sender As Object, _
+        Private Sub AppDomain_UnhandledException(ByVal sender As Object,
      ByVal e As UnhandledExceptionEventArgs)
             ExceptionHandler(DirectCast(e.ExceptionObject, Exception))
 
+        End Sub
+
+        Protected Overrides Sub OnShutdown() Handles Me.Shutdown
+            Dim Response As DialogResult = MsgBox("You're sure you want to exit 64Filmmaker?", MsgBoxStyle.YesNo + MsgBoxStyle.Exclamation, "You're sure?")
+            If Response = DialogResult.No Then
+                'no
+            ElseIf Response = DialogResult.Yes Then
+                For Each p As Process In Process.GetProcessesByName("project64")
+                    p.Kill()
+                Next
+                For Each p As Process In Process.GetProcessesByName((My.Settings.VideoEditorPath).Trim(Computer.FileSystem.SpecialDirectories.ToString))
+                    p.Kill()
+                Next
+                For Each p As Process In Process.GetProcessesByName((My.Settings.AudioEditorPath).Trim(Computer.FileSystem.SpecialDirectories.ToString))
+                    p.Kill()
+                Next
+                My.Settings.Save()
+                End
+            End If
+        End Sub
+
+        Public Sub gtfo()
+            OnShutdown()
         End Sub
     End Class
 End Namespace

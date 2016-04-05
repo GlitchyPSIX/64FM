@@ -1,4 +1,4 @@
-﻿'Welcome to my code... the Main Code in SM64FM.
+﻿'Welcome to my code... the Main Code in 64FM, formerly SM64FM.
 'It was started in 2014 under the same name, but with a whole different UI and Icon.
 'Both based in what was Source Filmmaker. (The name stays!)
 'The old icon and a screenshot from the old interface can be found laying there in the resources.
@@ -17,6 +17,8 @@
 'and I hope I, and other developers help the whole SM64 Community, aswell other ... "mateys".
 'If you are reading this, you are a developer. Just by the fact I have enough trust in you,
 'to lend ya my code, means you're a really good person, or I saw something very nice in you.
+'Hold up just a second, I put this in Github! Means I have trust in everyone who has this code! :P
+'LOL, doesn't matter a lot actually--
 'Thanks for reading this, and now let's begin.
 '© Starlight Project 2014-2016, All Rights Reserved.
 '------------------------------------------------------------------------------------------------------------------------------------
@@ -29,13 +31,13 @@ Imports System.Runtime.InteropServices
 Imports Ionic.Zip
 Imports Transitions
 Imports Filmmaker.Extractor 'This is a class xD
+Imports System.ComponentModel
 
 Public Class MainMenu
-
     Private Sub MainMenu_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         'Set the "Custom Settings" feature
         ApplyProfileSettings()
-        AppVer.Text = "64Filmmaker BETA " + Application.ProductVersion.ToString + " Build No. " + My.Settings.Build.ToString
+        AppVer.Text = "64Filmmaker v" + Application.ProductVersion.ToString + " (ALPHA) | Build Date: " + My.Settings.BuildDate.ToString
         TenthOfASecond.Interval = 100
         TenthOfASecond.Start()
     End Sub
@@ -60,36 +62,47 @@ Public Class MainMenu
         End If
         ImgPrw.BackColor = Color.Transparent
         ImgPrw.Image = Image.FromFile(My.Settings.Image)
-        WelcomeLabel.Text = ("Welcome Back," + vbCrLf + My.Settings.Name)
+        WelcomeLabel.Text = ("Welcome back," + vbCrLf + My.Settings.Name)
         Me.BackColor = My.Settings.FavColor
         Me.Refresh()
     End Sub
 
     Private Sub btnSV_Click(sender As Object, e As EventArgs) Handles btnSV.Click
-        'Search for Sony Vegas and start it
-        Try
-            Process.Start(Application.StartupPath & "\Engine\veg100.exe")
-        Catch ex As Exception
-            MsgBox("Couldn't find the required file... Is SM64FM correctly installed?")
-        End Try
+        'Search for the video editor and start it
+        If My.Settings.VideoEditorPath = "" Or My.Settings.RecorderPath = "" Then
+            frmSoftwareForm.Show()
+        Else
+            Dim VEProcess As Process = Process.Start(My.Settings.VideoEditorPath)
+        End If
     End Sub
 
     Private Sub btnFRPS_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnFRPS.Click
         'Search for the recorder and start it
-        Try
-            Process.Start(Application.StartupPath & "\Engine\Fraps.exe")
-        Catch ex As Exception
-            MsgBox("Couldn't find the required file... Is SM64FM correctly installed?")
-        End Try
+        If My.Settings.VideoEditorPath = "" Or My.Settings.RecorderPath = "" Then
+            frmSoftwareForm.Show()
+        Else
+            Dim REProcess As Process = Process.Start(My.Settings.RecorderPath)
+
+        End If
     End Sub
 
-    Private Sub btnGame_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnGame.Click
+    Private Shared Sub btnGame_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnGame.Click
         'Search for PJ64 and start it
-        Try
-            Process.Start(Application.StartupPath & "\Engine\PJ64.exe")
-        Catch ex As Exception
-            MsgBox("Couldn't find the required file... Is SM64FM correctly installed?")
-        End Try
+        If GetEmuProcess("Project64") = Nothing Then
+            Try
+                Dim EMUProcess As Process = Process.Start(Application.StartupPath & "\Core\Emu\Project64.exe", Chr(34) & Application.StartupPath & "\Core\ROM\SM64_NORMAL_WS.z64" + Chr(34))
+            Catch ex As Exception
+                MsgBox("Hold on, either the core ROM or the emulator failed to open.")
+            End Try
+        Else
+            Dim Question As DialogResult = MsgBox("It seems PJ64 is still running. If you can't see it, it means it has crashed or ghosted in the background." + vbCrLf + "Do you want to restart it?", MessageBoxButtons.YesNo + MsgBoxStyle.Information, "PJ64 is still running.")
+            If Question = DialogResult.Yes Then
+                For Each p As Process In Process.GetProcessesByName("project64")
+                    p.Kill()
+                Next
+                Dim EMUProcess As Process = Process.Start(Application.StartupPath & "\Core\Emu\Project64.exe", Chr(34) & Application.StartupPath & "\Core\ROM\SM64_NORMAL_WS.z64" + Chr(34))
+            End If
+        End If
     End Sub
 
     Private Sub btnEssentials_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
@@ -102,16 +115,6 @@ Public Class MainMenu
         'Show Cheat Search Mode Select
         cheatModeSel.Show()
     End Sub
-
-    Private Sub btnCC_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        'Search for Color Code Suite and start it
-        Try
-            Process.Start(Application.StartupPath & "\Engine\CCGEN.exe")
-        Catch ex As Exception
-            MsgBox("Couldn't find the required file... Is SM64FM correctly installed?")
-        End Try
-    End Sub
-
     Private Sub btnSC_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSC.Click
         'Do nothing... for now
     End Sub
@@ -127,8 +130,8 @@ Public Class MainMenu
     End Sub
 
     Private Sub ToolStripStatusLabel1_Click(sender As System.Object, e As System.EventArgs) Handles ToolStripStatusLabel1.Click
-        'Link (Not from Hyrule) Working. HitGub
-        Process.Start("http://starlight-project.github.io/SM64FM")
+        'Link (Not from Hyrule) Working. 64NeeNwork forums
+        Process.Start("http://sm64fm.officialytr.com/forum")
     End Sub
 
     Private Sub ShowChat(sender As System.Object, e As System.EventArgs) Handles btnChat.Click
@@ -178,5 +181,35 @@ Public Class MainMenu
 
     Private Sub AboutSM64FMToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutSM64FMToolStripMenuItem.Click
         AboutBox.Show()
+    End Sub
+
+    Protected Friend Sub MainMenu_FormClosing(sender As Object, e As FormClosingEventArgs, Optional ByVal closingtoken As Byte = 0) Handles Me.Closing
+        Me.WindowState = FormWindowState.Minimized
+        Me.Visible = False
+        e.Cancel = True
+        noticon.Visible = True
+        noticon.BalloonTipTitle = "64Filmmaker: Psst!"
+        noticon.BalloonTipText = "64FM has been minimized to the taskbar. Click this icon to see extra options!"
+        noticon.BalloonTipIcon = ToolTipIcon.Info
+        noticon.ShowBalloonTip(15000)
+    End Sub
+
+    Private Sub noticon_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles noticon.MouseDoubleClick, noticon.MouseClick
+        noticon_strip.Show(New Point(Cursor.Position.X, Cursor.Position.Y))
+    End Sub
+
+    Private Sub Show64FMToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Show64FMToolStripMenuItem.Click
+        Me.Visible = True
+        Me.WindowState = FormWindowState.Normal
+
+        noticon.Visible = False
+    End Sub
+
+    Private Sub Exit64FMToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Exit64FMToolStripMenuItem.Click
+        My.Application.gtfo()
+    End Sub
+
+    Private Sub noticon_strip_Opening(sender As Object, e As CancelEventArgs) Handles noticon_strip.Opening
+
     End Sub
 End Class

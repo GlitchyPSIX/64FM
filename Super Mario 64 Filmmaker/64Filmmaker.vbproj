@@ -43,13 +43,15 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>true</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <SupportUrl>http:\\starlightproject.url.ph</SupportUrl>
+    <SupportUrl>http://sm64fm.officialytr.com</SupportUrl>
     <MinimumRequiredVersion>0.0.1.0</MinimumRequiredVersion>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <TrustUrlParameters>true</TrustUrlParameters>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>0.0.1.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <ExcludeDeploymentUrl>true</ExcludeDeploymentUrl>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -61,7 +63,7 @@
     <DocumentationFile>64fm.xml</DocumentationFile>
     <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42353,42354,42355</NoWarn>
     <WarningsAsErrors>42025</WarningsAsErrors>
-    <PlatformTarget>x86</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <Prefer32Bit>false</Prefer32Bit>
@@ -227,6 +229,12 @@
     <Compile Include="extractSel.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmSoftwareForm.Designer.vb">
+      <DependentUpon>frmSoftwareForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmSoftwareForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="IntegrationForm.Designer.vb">
       <DependentUpon>IntegrationForm.vb</DependentUpon>
     </Compile>
@@ -360,6 +368,9 @@
       <DependentUpon>extractSel.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmSoftwareForm.resx">
+      <DependentUpon>frmSoftwareForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="IntegrationForm.resx">
       <DependentUpon>IntegrationForm.vb</DependentUpon>
     </EmbeddedResource>
@@ -426,9 +437,9 @@
     <None Include="SuPerMarioSixtyFouRFilmMaKer.pfx" />
   </ItemGroup>
   <ItemGroup>
-    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6">
       <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <ProductName>Microsoft .NET Framework 4.6 %28x86 and x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
@@ -454,7 +465,7 @@
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
       <Visible>False</Visible>
       <ProductName>.NET Framework 3.5 SP1</ProductName>
-      <Install>false</Install>
+      <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
       <Visible>False</Visible>
@@ -562,6 +573,18 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="M64MM2\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="WinFormsTransitions">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -71,6 +71,11 @@ Partial Class MainMenu
         Me.ExpandOrRetract = New System.Windows.Forms.PictureBox()
         Me.btnChat = New System.Windows.Forms.PictureBox()
         Me.btnCinema = New System.Windows.Forms.PictureBox()
+        Me.noticon = New System.Windows.Forms.NotifyIcon(Me.components)
+        Me.noticon_strip = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.Show64FMToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
+        Me.Exit64FMToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusStrip1.SuspendLayout()
         CType(Me.ImgPrw, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnSC, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -84,6 +89,7 @@ Partial Class MainMenu
         CType(Me.ExpandOrRetract, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnChat, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnCinema, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.noticon_strip.SuspendLayout()
         Me.SuspendLayout()
         '
         'OpenFileDlg
@@ -115,8 +121,8 @@ Partial Class MainMenu
         Me.ToolStripStatusLabel1.IsLink = True
         Me.ToolStripStatusLabel1.LinkColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
-        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(45, 17)
-        Me.ToolStripStatusLabel1.Text = "HitGub"
+        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(107, 17)
+        Me.ToolStripStatusLabel1.Text = "64Network Forums"
         '
         'ImgPrw
         '
@@ -469,6 +475,34 @@ Partial Class MainMenu
         Me.btnCinema.TabIndex = 29
         Me.btnCinema.TabStop = False
         '
+        'noticon
+        '
+        Me.noticon.Icon = CType(resources.GetObject("noticon.Icon"), System.Drawing.Icon)
+        Me.noticon.Text = "64Filmmaker"
+        '
+        'noticon_strip
+        '
+        Me.noticon_strip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Show64FMToolStripMenuItem, Me.ToolStripSeparator2, Me.Exit64FMToolStripMenuItem})
+        Me.noticon_strip.Name = "noticon_strip"
+        Me.noticon_strip.Size = New System.Drawing.Size(153, 76)
+        '
+        'Show64FMToolStripMenuItem
+        '
+        Me.Show64FMToolStripMenuItem.Name = "Show64FMToolStripMenuItem"
+        Me.Show64FMToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.Show64FMToolStripMenuItem.Text = "Show 64FM"
+        '
+        'ToolStripSeparator2
+        '
+        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(149, 6)
+        '
+        'Exit64FMToolStripMenuItem
+        '
+        Me.Exit64FMToolStripMenuItem.Name = "Exit64FMToolStripMenuItem"
+        Me.Exit64FMToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.Exit64FMToolStripMenuItem.Text = "Exit 64FM"
+        '
         'MainMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -500,7 +534,6 @@ Partial Class MainMenu
         Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = " Main Menu"
-        Me.TransparencyKey = System.Drawing.Color.LavenderBlush
         Me.StatusStrip1.ResumeLayout(False)
         Me.StatusStrip1.PerformLayout()
         CType(Me.ImgPrw, System.ComponentModel.ISupportInitialize).EndInit()
@@ -516,6 +549,7 @@ Partial Class MainMenu
         CType(Me.ExpandOrRetract, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnChat, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnCinema, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.noticon_strip.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -567,5 +601,9 @@ Partial Class MainMenu
     Friend WithEvents ExpandOrRetract As System.Windows.Forms.PictureBox
     Friend WithEvents btnChat As System.Windows.Forms.PictureBox
     Friend WithEvents btnCinema As System.Windows.Forms.PictureBox
-
+    Friend WithEvents noticon As NotifyIcon
+    Friend WithEvents noticon_strip As ContextMenuStrip
+    Friend WithEvents Show64FMToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
+    Friend WithEvents Exit64FMToolStripMenuItem As ToolStripMenuItem
 End Class
