@@ -27,12 +27,17 @@ Namespace My
             Me.IsSingleInstance = true
             Me.EnableVisualStyles = true
             Me.SaveMySettingsOnExit = true
-            Me.ShutDownStyle = Global.Microsoft.VisualBasic.ApplicationServices.ShutdownMode.AfterAllFormsClose
+            Me.ShutDownStyle = Global.Microsoft.VisualBasic.ApplicationServices.ShutdownMode.AfterMainFormCloses
         End Sub
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.Filmmaker.SplashScreen1
+            Me.MainForm = Global.Filmmaker.MainMenu
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
+        Protected Overrides Sub OnCreateSplashScreen()
+            Me.SplashScreen = Global.Filmmaker.SplashScreen1
         End Sub
     End Class
 End Namespace

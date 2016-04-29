@@ -21,6 +21,9 @@
 'LOL, doesn't matter a lot actually--
 'Thanks for reading this, and now let's begin.
 '© Starlight Project 2014-2016, All Rights Reserved.
+'--
+'About time.
+'--
 '------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -32,10 +35,12 @@ Imports Ionic.Zip
 Imports Transitions
 Imports Filmmaker.Extractor 'This is a class xD
 Imports System.ComponentModel
-
 Public Class MainMenu
+    Public VEProcess As Process
+    Public REProcess As Process
+    Public EMUProcess As Process
     Private Sub MainMenu_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        'Set the "Custom Settings" feature
+        'Set the "Custom Settings" feature and load the processes
         ApplyProfileSettings()
         AppVer.Text = "64Filmmaker v" + Application.ProductVersion.ToString + " (ALPHA) | Build Date: " + My.Settings.BuildDate.ToString
         TenthOfASecond.Interval = 100
@@ -67,40 +72,35 @@ Public Class MainMenu
         Me.Refresh()
     End Sub
 
-    Private Sub btnSV_Click(sender As Object, e As EventArgs) Handles btnSV.Click
+    Public Sub btnSV_Click(sender As Object, e As EventArgs) Handles btnSV.Click
         'Search for the video editor and start it
         If My.Settings.VideoEditorPath = "" Or My.Settings.RecorderPath = "" Then
             frmSoftwareForm.Show()
         Else
-            Dim VEProcess As Process = Process.Start(My.Settings.VideoEditorPath)
+            VEProcess = Process.Start(My.Settings.VideoEditorPath)
         End If
     End Sub
 
-    Private Sub btnFRPS_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnFRPS.Click
+    Public Sub btnFRPS_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnFRPS.Click
         'Search for the recorder and start it
         If My.Settings.VideoEditorPath = "" Or My.Settings.RecorderPath = "" Then
             frmSoftwareForm.Show()
         Else
-            Dim REProcess As Process = Process.Start(My.Settings.RecorderPath)
-
+            REProcess = Process.Start(My.Settings.RecorderPath)
         End If
     End Sub
 
-    Private Shared Sub btnGame_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnGame.Click
+    Public Sub btnGame_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnGame.Click
         'Search for PJ64 and start it
         If GetEmuProcess("Project64") = Nothing Then
             Try
-                Dim EMUProcess As Process = Process.Start(Application.StartupPath & "\Core\Emu\Project64.exe", Chr(34) & Application.StartupPath & "\Core\ROM\SM64_NORMAL_WS.z64" + Chr(34))
             Catch ex As Exception
                 MsgBox("Hold on, either the core ROM or the emulator failed to open.")
             End Try
         Else
             Dim Question As DialogResult = MsgBox("It seems PJ64 is still running. If you can't see it, it means it has crashed or ghosted in the background." + vbCrLf + "Do you want to restart it?", MessageBoxButtons.YesNo + MsgBoxStyle.Information, "PJ64 is still running.")
             If Question = DialogResult.Yes Then
-                For Each p As Process In Process.GetProcessesByName("project64")
-                    p.Kill()
-                Next
-                Dim EMUProcess As Process = Process.Start(Application.StartupPath & "\Core\Emu\Project64.exe", Chr(34) & Application.StartupPath & "\Core\ROM\SM64_NORMAL_WS.z64" + Chr(34))
+                Fixes.NoGhosts(True, True)
             End If
         End If
     End Sub
@@ -184,17 +184,21 @@ Public Class MainMenu
     End Sub
 
     Protected Friend Sub MainMenu_FormClosing(sender As Object, e As FormClosingEventArgs, Optional ByVal closingtoken As Byte = 0) Handles Me.Closing
-        Me.WindowState = FormWindowState.Minimized
-        Me.Visible = False
-        e.Cancel = True
-        noticon.Visible = True
-        noticon.BalloonTipTitle = "64Filmmaker: Psst!"
-        noticon.BalloonTipText = "64FM has been minimized to the taskbar. Click this icon to see extra options!"
-        noticon.BalloonTipIcon = ToolTipIcon.Info
-        noticon.ShowBalloonTip(15000)
+        If Me.Visible = True Then
+            Me.WindowState = FormWindowState.Minimized
+            Me.Visible = False
+            e.Cancel = True
+            noticon.Visible = True
+            noticon.BalloonTipTitle = "64Filmmaker: Psst!"
+            noticon.BalloonTipText = "64FM has been minimized to the taskbar. Click the icon to see extra options."
+            noticon.BalloonTipIcon = ToolTipIcon.Info
+            noticon.ShowBalloonTip(15000)
+        Else
+            Me.Dispose()
+        End If
     End Sub
 
-    Private Sub noticon_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles noticon.MouseDoubleClick, noticon.MouseClick
+    Private Sub noticon_MouseClick(sender As Object, e As MouseEventArgs) Handles noticon.MouseClick
         noticon_strip.Show(New Point(Cursor.Position.X, Cursor.Position.Y))
     End Sub
 
@@ -206,10 +210,12 @@ Public Class MainMenu
     End Sub
 
     Private Sub Exit64FMToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Exit64FMToolStripMenuItem.Click
-        My.Application.gtfo()
+        My.Application.Goodbye()
     End Sub
 
     Private Sub noticon_strip_Opening(sender As Object, e As CancelEventArgs) Handles noticon_strip.Opening
 
     End Sub
+
+
 End Class

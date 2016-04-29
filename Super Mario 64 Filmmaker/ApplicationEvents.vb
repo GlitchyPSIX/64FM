@@ -30,17 +30,17 @@
             ByVal e As Threading.ThreadExceptionEventArgs)
 
         Private Sub MyApplication_StartupNextInstance(sender As Object, e As ApplicationServices.StartupNextInstanceEventArgs) Handles Me.StartupNextInstance
-
+            MainMenu.Visible = True
+            MainMenu.WindowState = FormWindowState.Normal
         End Sub
 
         Private Sub ExceptionHandler(ByVal ex As Exception)
-            Form.ActiveForm.BackColor = Color.Red
             My.Computer.Audio.Play(My.Resources.Crit, AudioPlayMode.Background)
             ShakeVeryGently(10)
             UnhandledExceptionString = ex.ToString
             ExceptionUnhandledForm.Show()
             MainForm.Close()
-            MainMenu.Close()
+            MainMenu.Visible = False
             Chat.Close()
         End Sub
 
@@ -78,22 +78,39 @@
 
         End Sub
 
-        Protected Overrides Sub OnShutdown() Handles Me.Shutdown
+        Private Sub AppShutdown(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Shutdown
+            My.Settings.Save()
+            MainMenu.Close()
+        End Sub
+        Public Sub Goodbye()
             Dim Response As DialogResult = MsgBox("You're sure you want to exit 64Filmmaker?", MsgBoxStyle.YesNo + MsgBoxStyle.Exclamation, "You're sure?")
             If Response = DialogResult.No Then
                 'no
             ElseIf Response = DialogResult.Yes Then
+                Try 'try to kill the video editor process
+                    MainMenu.VEProcess.Kill()
+                Catch e As Exception
+                    'nobody can edit me lalalalala
+                End Try
+                Try 'try to kill the recorder process
+                    MainMenu.REProcess.Kill()
+                Catch e As Exception
+                    'dance the cha cha cha while there's no recorder
+                End Try
                 For Each p As Process In Process.GetProcessesByName("project64")
                     p.Kill()
                 Next
-                For Each p As Process In Process.GetProcessesByName((My.Settings.VideoEditorPath).Trim(Computer.FileSystem.SpecialDirectories.ToString))
-                    p.Kill()
-                Next
-                For Each p As Process In Process.GetProcessesByName((My.Settings.AudioEditorPath).Trim(Computer.FileSystem.SpecialDirectories.ToString))
-                    p.Kill()
-                Next
+                'close pj64 w/o confirmation
                 My.Settings.Save()
-                End
+                If My.Settings.IsSynchronized = True Then
+                    MainMenu.noticon.Visible = False
+                    MainMenu.Close()
+                Else
+                    'should happen if for some reasons the saved my.settings aren't in sync AFTER "saving"
+                    MsgBox("Practical Problemo")
+                End If
+                'TODO: close the app entirely while saving settings
+                'damn m9 i can't get to do so
             End If
         End Sub
 

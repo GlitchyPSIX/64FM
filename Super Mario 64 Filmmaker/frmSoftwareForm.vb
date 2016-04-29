@@ -3,6 +3,9 @@
         If My.Settings.VideoEditorPath = "" Or My.Settings.RecorderPath = "" Then
             MessageBox.Show("You don't have a recorder, or a video editor. Please set them.", "Practical Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Me.Show()
+            VideoEditortb.Text = My.Settings.VideoEditorPath
+            Recordertb.Text = My.Settings.RecorderPath
+            AudioEditortb.Text = My.Settings.AudioEditorPath
         Else
             Me.Show()
             VideoEditortb.Text = My.Settings.VideoEditorPath
@@ -30,8 +33,10 @@
     End Sub
 
     Private Sub IllegalStuff_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles IllegalStuff.LinkClicked
-        'It's not our fault. We can't give away just so publicly things like that.
+        'We can't give away just so publicly things like that.
         'I don't know how I'll get away with this.
         'Wish me luck~
+        'i do what i want because pirates are free
+        'i am a pirate
     End Sub
 End Class
