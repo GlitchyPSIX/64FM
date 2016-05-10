@@ -352,7 +352,7 @@
   <data name="Background7" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Background7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="64networklogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="_64networklogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\64networklogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

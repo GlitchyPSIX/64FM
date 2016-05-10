@@ -103,10 +103,10 @@ Namespace My
         
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("40")>  _
-        Public ReadOnly Property Build() As Integer
+         Global.System.Configuration.DefaultSettingValueAttribute("04/01/2016 20:26:00")>  _
+        Public ReadOnly Property BuildDate() As Date
             Get
-                Return CType(Me("Build"),Integer)
+                Return CType(Me("BuildDate"),Date)
             End Get
         End Property
         
@@ -125,24 +125,36 @@ Namespace My
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.DefaultSettingValueAttribute("")>  _
-        Public Property lastUsername() As String
+        Public Property VideoEditorPath() As String
             Get
-                Return CType(Me("lastUsername"),String)
+                Return CType(Me("VideoEditorPath"),String)
             End Get
             Set
-                Me("lastUsername") = value
+                Me("VideoEditorPath") = value
             End Set
         End Property
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.DefaultSettingValueAttribute("")>  _
-        Public Property lastPassword() As String
+        Public Property RecorderPath() As String
             Get
-                Return CType(Me("lastPassword"),String)
+                Return CType(Me("RecorderPath"),String)
             End Get
             Set
-                Me("lastPassword") = value
+                Me("RecorderPath") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property AudioEditorPath() As String
+            Get
+                Return CType(Me("AudioEditorPath"),String)
+            End Get
+            Set
+                Me("AudioEditorPath") = value
             End Set
         End Property
     End Class
