@@ -1,53 +1,33 @@
 ﻿'Welcome to my code... the Main Code in 64FM, formerly SM64FM.
-'It was started in 2014 under the same name, but with a whole different UI and Icon.
-'Both based in what was Source Filmmaker. (The name stays!)
-'The old icon and a screenshot from the old interface can be found laying there in the resources.
-'This was the second thing I did when I learnt Visual Basic in a weekend.
-'While I was coding this one, I was learning more... and more looking at another code examples.
-'This was always the thing I was doing when I always said to my mom: "I'm programming"...
-'The first thing I coded was a simple Windows Forms Application, that was based in a WebBrowser with many buttons.
-'It was a IM for my school, tho it has never been used and it's still in my PC.
-'This is my second, and my longest project in code, and that means this code, in its enterity, is my biggest achievement in my 
-'computer life since the installation of Windows 10 in a PC with an Intel Atom Processor... Heh.
-'This code means too much to me.
-'If somehow I lose it, My.Resources.Heart would be actually... broken.
-'This code will give me nostalgia sometimes because as I'm writing this, and the more code 
-'I write, more things in my life happen, and they are grateful.
-'I hope the best for this program.
-'and I hope I, and other developers help the whole SM64 Community, aswell other ... "mateys".
-'If you are reading this, you are a developer. Just by the fact I have enough trust in you,
-'to lend ya my code, means you're a really good person, or I saw something very nice in you.
-'Hold up just a second, I put this in Github! Means I have trust in everyone who has this code! :P
-'LOL, doesn't matter a lot actually--
-'Thanks for reading this, and now let's begin.
-'© Starlight Project 2014-2016, All Rights Reserved.
-'--
-'About time.
-'--
 '------------------------------------------------------------------------------------------------------------------------------------
 
 
-Imports System.Web
 Imports System.IO
 Imports System.Text
 Imports System.Runtime.InteropServices
 Imports Ionic.Zip
 Imports Transitions
-Imports Filmmaker.Extractor 'This is a class xD
+Imports Filmmaker.Extractor 'Cmon, this will make my life easier.
 Imports System.ComponentModel
 Public Class MainMenu
+    'This will help me close the processes that were opened without the need of scavenging a lot. (Except PJ64?)
     Public VEProcess As Process
     Public REProcess As Process
     Public EMUProcess As Process
     Private Sub MainMenu_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         'Set the "Custom Settings" feature and load the processes
         ApplyProfileSettings()
+        If My.Settings.Name.Contains("Zenon") Or My.Settings.Name.Contains("zenon") Or My.Settings.Name.Contains("Antipius") Or My.Settings.Name.Contains("antipius") Or My.Settings.Name.Contains("Raptor") Or My.Settings.Name.Contains("raptor") Or My.Settings.Name.Contains("Deinonychus") Or My.Settings.Name.Contains("deinonychus") Then
+            FORBIDDEN.Show()
+            Me.Hide()
+            Me.Close()
+        End If
         AppVer.Text = "64Filmmaker v" + Application.ProductVersion.ToString + " (ALPHA) | Build Date: " + My.Settings.BuildDate.ToString
         TenthOfASecond.Interval = 100
         TenthOfASecond.Start()
     End Sub
 
-    Public Sub ApplyProfileSettings()
+    Public Sub ApplyProfileSettings() 'the name says it
         If My.Settings.Background = 1 Then
             Me.BackgroundImage = My.Resources.Background
         ElseIf My.Settings.Background = 2 Then
@@ -91,40 +71,15 @@ Public Class MainMenu
     End Sub
 
     Public Sub btnGame_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnGame.Click
-        'Search for PJ64 and start it
-        If GetEmuProcess("Project64") = Nothing Then
-            Try
-            Catch ex As Exception
-                MsgBox("Hold on, either the core ROM or the emulator failed to open.")
-            End Try
-        Else
-            Dim Question As DialogResult = MsgBox("It seems PJ64 is still running. If you can't see it, it means it has crashed or ghosted in the background." + vbCrLf + "Do you want to restart it?", MessageBoxButtons.YesNo + MsgBoxStyle.Information, "PJ64 is still running.")
-            If Question = DialogResult.Yes Then
-                Fixes.NoGhosts(True, True)
-            End If
-        End If
-    End Sub
-
-    Private Sub btnEssentials_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        'Show "GlitchyPSIX's Essentials"
-        glitchyessentials.Show()
-        Me.Hide()
-    End Sub
-
-    Private Sub btnCHT_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCHT.Click
-        'Show Cheat Search Mode Select
-        cheatModeSel.Show()
-    End Sub
-    Private Sub btnSC_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSC.Click
-        'Do nothing... for now
+        ROMSelector.Show()
     End Sub
 
     Private Sub btnEXT_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEXT.Click
-        'Show Extras Menu
-        extractSel.Show()
+        'This was the Extras menu, but I'm thinking about changing it to the Hacker section.
     End Sub
 
     Private Sub btnCinema_Click(sender As Object, e As EventArgs) Handles btnCinema.Click
+        'Show M64MM2.0.x
         Dim CinematicForm As New MainForm()
         CinematicForm.Show()
     End Sub
@@ -135,12 +90,12 @@ Public Class MainMenu
     End Sub
 
     Private Sub ShowChat(sender As System.Object, e As System.EventArgs) Handles btnChat.Click
-        Chat.Show()
+        'I will scrap the chat to make it the core of the online functionality.
     End Sub
 
     Private Sub btnWorkshop_Click(sender As Object, e As EventArgs) Handles btnWorkshop.Click
-        ' Coming from Super_Mario_64_Filmmaker.Extractor, loads the OpenFileDialog to search a ZIP to extract. I have to change the extensions.
-        LoadAndDecompress("Project64", ".fmcht", "Super Mario 64 Filmmaker Cheat File (*.fmcht)|*.fmcht|Project64 Cheat File (*.cht)|*.cht")
+        'Shouldn't be directly like that, I have to design the UI.
+
     End Sub
 
     Private Sub ImgPrw_Click(sender As Object, e As EventArgs) Handles ImgPrw.Click
@@ -148,10 +103,13 @@ Public Class MainMenu
     End Sub
 
     Private Sub LoadAddonImporterToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LoadAddonImporterToolStripMenuItem.Click
-        'Does nothing for now
+        ' Coming from Filmmaker.Extractor, loads the OpenFileDialog to search a ZIP to extract. 
+        ' A direct method to add addons. 
+        LoadAndDecompress("*", ".64a", "64Filmmaker Addon (*.64a)|*.64a|")
     End Sub
 
     Private Sub ExpandOrRetract_Click(sender As Object, e As EventArgs) Handles ExpandOrRetract.Click
+        ' This expands the main menu.
         Dim FormWidth As Integer = Me.Width
         Dim Retract As New Transition(New TransitionType_Deceleration(800))
         Dim Expand As New Transition(New TransitionType_Acceleration(800))
@@ -175,15 +133,18 @@ Public Class MainMenu
     End Sub
 
     Private Sub ProfileToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ProfileToolStripMenuItem.Click
-        Me.Hide()
-        SetUpForm.Show()
+        ' ???? NOT YET
+        'Me.Hide()
+        'SetUpForm.Show()
     End Sub
 
-    Private Sub AboutSM64FMToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutSM64FMToolStripMenuItem.Click
+    Private Sub About64FMToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutSM64FMToolStripMenuItem.Click
+        'Show the about box.
         AboutBox.Show()
     End Sub
 
-    Protected Friend Sub MainMenu_FormClosing(sender As Object, e As FormClosingEventArgs, Optional ByVal closingtoken As Byte = 0) Handles Me.Closing
+    Protected Friend Sub MainMenu_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        'This is what happens when the main form is closed (While visible).
         If Me.Visible = True Then
             Me.WindowState = FormWindowState.Minimized
             Me.Visible = False
@@ -194,15 +155,19 @@ Public Class MainMenu
             noticon.BalloonTipIcon = ToolTipIcon.Info
             noticon.ShowBalloonTip(15000)
         Else
-            Me.Dispose()
+            'I don't have any idea on how to end the whole program without using End (to be honest it scares me since i don't know if I disposed
+            'everything properly...) so i'm taking an easier way.
+            e.Cancel = False
         End If
     End Sub
 
     Private Sub noticon_MouseClick(sender As Object, e As MouseEventArgs) Handles noticon.MouseClick
+        'Show the options strip in the notification area icon.
         noticon_strip.Show(New Point(Cursor.Position.X, Cursor.Position.Y))
     End Sub
 
     Private Sub Show64FMToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Show64FMToolStripMenuItem.Click
+        'Show 64FM  from the strip command
         Me.Visible = True
         Me.WindowState = FormWindowState.Normal
 
@@ -210,12 +175,7 @@ Public Class MainMenu
     End Sub
 
     Private Sub Exit64FMToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Exit64FMToolStripMenuItem.Click
-        My.Application.Goodbye()
+        My.Settings.Save()
+        Me.Close()
     End Sub
-
-    Private Sub noticon_strip_Opening(sender As Object, e As CancelEventArgs) Handles noticon_strip.Opening
-
-    End Sub
-
-
 End Class

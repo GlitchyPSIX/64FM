@@ -25,14 +25,14 @@ Partial Class IntegrationForm
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(IntegrationForm))
         Me.LogoPB = New System.Windows.Forms.PictureBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Loginlb = New System.Windows.Forms.Label()
-        Me.Usrnmlb = New System.Windows.Forms.Label()
-        Me.Pswdlb = New System.Windows.Forms.Label()
-        Me.Usernmtb = New System.Windows.Forms.TextBox()
-        Me.Pswdtb = New System.Windows.Forms.TextBox()
-        Me.Loginbtn = New System.Windows.Forms.Button()
-        Me.Newaccbtn = New System.Windows.Forms.Button()
         Me.forgotpassbtn = New System.Windows.Forms.Button()
+        Me.Newaccbtn = New System.Windows.Forms.Button()
+        Me.Loginbtn = New System.Windows.Forms.Button()
+        Me.Pswdtb = New System.Windows.Forms.TextBox()
+        Me.Usernmtb = New System.Windows.Forms.TextBox()
+        Me.Pswdlb = New System.Windows.Forms.Label()
+        Me.Usrnmlb = New System.Windows.Forms.Label()
+        Me.Loginlb = New System.Windows.Forms.Label()
         CType(Me.LogoPB, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -67,30 +67,51 @@ Partial Class IntegrationForm
         Me.Panel1.Size = New System.Drawing.Size(317, 445)
         Me.Panel1.TabIndex = 1
         '
-        'Loginlb
+        'forgotpassbtn
         '
-        Me.Loginlb.AutoSize = True
-        Me.Loginlb.BackColor = System.Drawing.Color.Transparent
-        Me.Loginlb.Font = New System.Drawing.Font("Segoe UI Light", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Loginlb.ForeColor = System.Drawing.Color.White
-        Me.Loginlb.Location = New System.Drawing.Point(29, 60)
-        Me.Loginlb.Name = "Loginlb"
-        Me.Loginlb.Size = New System.Drawing.Size(262, 80)
-        Me.Loginlb.TabIndex = 0
-        Me.Loginlb.Text = "Log in with your " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "64Network account."
-        Me.Loginlb.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.forgotpassbtn.Location = New System.Drawing.Point(118, 409)
+        Me.forgotpassbtn.Name = "forgotpassbtn"
+        Me.forgotpassbtn.Size = New System.Drawing.Size(88, 23)
+        Me.forgotpassbtn.TabIndex = 3
+        Me.forgotpassbtn.Text = "Forgot pass?"
+        Me.forgotpassbtn.UseVisualStyleBackColor = True
+        Me.forgotpassbtn.Visible = False
         '
-        'Usrnmlb
+        'Newaccbtn
         '
-        Me.Usrnmlb.AutoSize = True
-        Me.Usrnmlb.BackColor = System.Drawing.Color.Transparent
-        Me.Usrnmlb.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Usrnmlb.ForeColor = System.Drawing.Color.White
-        Me.Usrnmlb.Location = New System.Drawing.Point(115, 156)
-        Me.Usrnmlb.Name = "Usrnmlb"
-        Me.Usrnmlb.Size = New System.Drawing.Size(91, 15)
-        Me.Usrnmlb.TabIndex = 1
-        Me.Usrnmlb.Text = "Username/Mail:"
+        Me.Newaccbtn.Location = New System.Drawing.Point(212, 409)
+        Me.Newaccbtn.Name = "Newaccbtn"
+        Me.Newaccbtn.Size = New System.Drawing.Size(88, 23)
+        Me.Newaccbtn.TabIndex = 3
+        Me.Newaccbtn.Text = "Register!"
+        Me.Newaccbtn.UseVisualStyleBackColor = True
+        Me.Newaccbtn.Visible = False
+        '
+        'Loginbtn
+        '
+        Me.Loginbtn.Location = New System.Drawing.Point(100, 210)
+        Me.Loginbtn.Name = "Loginbtn"
+        Me.Loginbtn.Size = New System.Drawing.Size(120, 23)
+        Me.Loginbtn.TabIndex = 3
+        Me.Loginbtn.Text = "Continue to 64FM"
+        Me.Loginbtn.UseVisualStyleBackColor = True
+        '
+        'Pswdtb
+        '
+        Me.Pswdtb.Location = New System.Drawing.Point(24, 373)
+        Me.Pswdtb.Name = "Pswdtb"
+        Me.Pswdtb.PasswordChar = Global.Microsoft.VisualBasic.ChrW(9899)
+        Me.Pswdtb.Size = New System.Drawing.Size(276, 20)
+        Me.Pswdtb.TabIndex = 2
+        Me.Pswdtb.Visible = False
+        '
+        'Usernmtb
+        '
+        Me.Usernmtb.Location = New System.Drawing.Point(24, 323)
+        Me.Usernmtb.Name = "Usernmtb"
+        Me.Usernmtb.Size = New System.Drawing.Size(276, 20)
+        Me.Usernmtb.TabIndex = 2
+        Me.Usernmtb.Visible = False
         '
         'Pswdlb
         '
@@ -98,53 +119,37 @@ Partial Class IntegrationForm
         Me.Pswdlb.BackColor = System.Drawing.Color.Transparent
         Me.Pswdlb.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Pswdlb.ForeColor = System.Drawing.Color.White
-        Me.Pswdlb.Location = New System.Drawing.Point(133, 206)
+        Me.Pswdlb.Location = New System.Drawing.Point(133, 355)
         Me.Pswdlb.Name = "Pswdlb"
         Me.Pswdlb.Size = New System.Drawing.Size(60, 15)
         Me.Pswdlb.TabIndex = 1
         Me.Pswdlb.Text = "Password:"
+        Me.Pswdlb.Visible = False
         '
-        'Usernmtb
+        'Usrnmlb
         '
-        Me.Usernmtb.Location = New System.Drawing.Point(24, 174)
-        Me.Usernmtb.Name = "Usernmtb"
-        Me.Usernmtb.Size = New System.Drawing.Size(276, 20)
-        Me.Usernmtb.TabIndex = 2
+        Me.Usrnmlb.AutoSize = True
+        Me.Usrnmlb.BackColor = System.Drawing.Color.Transparent
+        Me.Usrnmlb.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Usrnmlb.ForeColor = System.Drawing.Color.White
+        Me.Usrnmlb.Location = New System.Drawing.Point(115, 305)
+        Me.Usrnmlb.Name = "Usrnmlb"
+        Me.Usrnmlb.Size = New System.Drawing.Size(91, 15)
+        Me.Usrnmlb.TabIndex = 1
+        Me.Usrnmlb.Text = "Username/Mail:"
+        Me.Usrnmlb.Visible = False
         '
-        'Pswdtb
+        'Loginlb
         '
-        Me.Pswdtb.Location = New System.Drawing.Point(24, 224)
-        Me.Pswdtb.Name = "Pswdtb"
-        Me.Pswdtb.PasswordChar = Global.Microsoft.VisualBasic.ChrW(9899)
-        Me.Pswdtb.Size = New System.Drawing.Size(276, 20)
-        Me.Pswdtb.TabIndex = 2
-        '
-        'Loginbtn
-        '
-        Me.Loginbtn.Location = New System.Drawing.Point(24, 260)
-        Me.Loginbtn.Name = "Loginbtn"
-        Me.Loginbtn.Size = New System.Drawing.Size(88, 23)
-        Me.Loginbtn.TabIndex = 3
-        Me.Loginbtn.Text = "Login!"
-        Me.Loginbtn.UseVisualStyleBackColor = True
-        '
-        'Newaccbtn
-        '
-        Me.Newaccbtn.Location = New System.Drawing.Point(212, 260)
-        Me.Newaccbtn.Name = "Newaccbtn"
-        Me.Newaccbtn.Size = New System.Drawing.Size(88, 23)
-        Me.Newaccbtn.TabIndex = 3
-        Me.Newaccbtn.Text = "Register!"
-        Me.Newaccbtn.UseVisualStyleBackColor = True
-        '
-        'forgotpassbtn
-        '
-        Me.forgotpassbtn.Location = New System.Drawing.Point(118, 260)
-        Me.forgotpassbtn.Name = "forgotpassbtn"
-        Me.forgotpassbtn.Size = New System.Drawing.Size(88, 23)
-        Me.forgotpassbtn.TabIndex = 3
-        Me.forgotpassbtn.Text = "Forgot pass?"
-        Me.forgotpassbtn.UseVisualStyleBackColor = True
+        Me.Loginlb.BackColor = System.Drawing.Color.Transparent
+        Me.Loginlb.Font = New System.Drawing.Font("Segoe UI Light", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Loginlb.ForeColor = System.Drawing.Color.White
+        Me.Loginlb.Location = New System.Drawing.Point(29, 60)
+        Me.Loginlb.Name = "Loginlb"
+        Me.Loginlb.Size = New System.Drawing.Size(262, 134)
+        Me.Loginlb.TabIndex = 0
+        Me.Loginlb.Text = "There is no need to link with 64Network now."
+        Me.Loginlb.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'IntegrationForm
         '
@@ -160,6 +165,7 @@ Partial Class IntegrationForm
         Me.Name = "IntegrationForm"
         Me.ShowIcon = False
         Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Log in to 64Network"
         CType(Me.LogoPB, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
