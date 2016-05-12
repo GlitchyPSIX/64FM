@@ -230,12 +230,19 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Fixes.vb" />
+    <Compile Include="FORBIDDEN.Designer.vb">
+      <DependentUpon>FORBIDDEN.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORBIDDEN.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmSoftwareForm.Designer.vb">
       <DependentUpon>frmSoftwareForm.vb</DependentUpon>
     </Compile>
     <Compile Include="frmSoftwareForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="hi.vb" />
     <Compile Include="IntegrationForm.Designer.vb">
       <DependentUpon>IntegrationForm.vb</DependentUpon>
     </Compile>
@@ -297,6 +304,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ReadWritingMemory.vb" />
+    <Compile Include="ROMSelector.Designer.vb">
+      <DependentUpon>ROMSelector.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ROMSelector.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Settings.vb" />
     <Compile Include="SetUpForm.Designer.vb">
       <DependentUpon>SetUpForm.vb</DependentUpon>
@@ -369,6 +382,9 @@
       <DependentUpon>extractSel.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="FORBIDDEN.resx">
+      <DependentUpon>FORBIDDEN.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmSoftwareForm.resx">
       <DependentUpon>frmSoftwareForm.vb</DependentUpon>
     </EmbeddedResource>
@@ -401,6 +417,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PreparingThings.resx">
       <DependentUpon>PreparingThings.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ROMSelector.resx">
+      <DependentUpon>ROMSelector.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SetUpForm.resx">
       <DependentUpon>SetUpForm.vb</DependentUpon>
@@ -523,15 +542,11 @@
     <None Include="Resources\Background6.png" />
     <None Include="Resources\Background7.png" />
     <None Include="Resources\About.png" />
-    <None Include="Resources\Addon.png" />
-    <None Include="Resources\Guides.png" />
     <None Include="Resources\LoadAddon.png" />
     <None Include="Resources\LoadCheatSht.png" />
     <None Include="Resources\LoadSpecialPkg.png" />
     <None Include="Resources\ProjectSF.png" />
     <None Include="Resources\Recorder.png" />
-    <None Include="Resources\Tutorials.png" />
-    <None Include="Resources\User.png" />
     <None Include="Resources\Vegas.png" />
     <None Include="Resources\WebHelp.png" />
     <None Include="Resources\Expand.png" />
@@ -562,6 +577,14 @@
     <None Include="Resources\ACC1.png" />
     <None Include="Resources\background8.png" />
     <None Include="Resources\64networklogo.png" />
+    <None Include="Resources\Addon.bmp" />
+    <None Include="Resources\Addon.png" />
+    <None Include="Resources\User.png" />
+    <None Include="Resources\64Clockwork.png" />
+    <None Include="Resources\Online.png" />
+    <None Include="Resources\Tutorials.png" />
+    <None Include="Resources\Guides.png" />
+    <None Include="Resources\%27sss nothing fur u.png" />
     <Content Include="SM64FMNormal.ico" />
   </ItemGroup>
   <ItemGroup>

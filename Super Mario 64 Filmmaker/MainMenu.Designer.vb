@@ -46,26 +46,14 @@ Partial Class MainMenu
         Me.SettingsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ProfileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AddonsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SonyVegasToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Project64ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.RecorderToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.OnlineHelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.GuidesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SonyVegasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.RecorderToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Project64ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.GeneratorsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CheatSearcherToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.UserInterfaceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TutorialsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.VegasEffectsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.VegasSettingsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.RecorderSettingsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.HowToUseVegasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.HowToUseTheRecorderToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.HowToLoadGreenScreensInProject64ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.HowToCatridgeTiltToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ClockworkToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.FirstRunSetupToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
+        Me.EmulatorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.VideoEditorsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MachinimaGuidelinesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.AboutSM64FMToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExpandOrRetract = New System.Windows.Forms.PictureBox()
@@ -269,7 +257,7 @@ Partial Class MainMenu
         '
         'SettingsToolStripMenuItem
         '
-        Me.SettingsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ProfileToolStripMenuItem, Me.AddonsToolStripMenuItem, Me.SonyVegasToolStripMenuItem1, Me.Project64ToolStripMenuItem1, Me.RecorderToolStripMenuItem1})
+        Me.SettingsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ProfileToolStripMenuItem, Me.AddonsToolStripMenuItem})
         Me.SettingsToolStripMenuItem.Name = "SettingsToolStripMenuItem"
         Me.SettingsToolStripMenuItem.Size = New System.Drawing.Size(61, 20)
         Me.SettingsToolStripMenuItem.Text = "Settings"
@@ -280,154 +268,72 @@ Partial Class MainMenu
         Me.ProfileToolStripMenuItem.Name = "ProfileToolStripMenuItem"
         Me.ProfileToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
             Or System.Windows.Forms.Keys.P), System.Windows.Forms.Keys)
-        Me.ProfileToolStripMenuItem.Size = New System.Drawing.Size(206, 22)
+        Me.ProfileToolStripMenuItem.Size = New System.Drawing.Size(189, 22)
         Me.ProfileToolStripMenuItem.Text = "Profile"
         '
         'AddonsToolStripMenuItem
         '
-        Me.AddonsToolStripMenuItem.Image = Global.Filmmaker.My.Resources.Resources.Addon
+        Me.AddonsToolStripMenuItem.Image = CType(resources.GetObject("AddonsToolStripMenuItem.Image"), System.Drawing.Image)
         Me.AddonsToolStripMenuItem.Name = "AddonsToolStripMenuItem"
         Me.AddonsToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
             Or System.Windows.Forms.Keys.A), System.Windows.Forms.Keys)
-        Me.AddonsToolStripMenuItem.Size = New System.Drawing.Size(206, 22)
+        Me.AddonsToolStripMenuItem.Size = New System.Drawing.Size(189, 22)
         Me.AddonsToolStripMenuItem.Text = "Addons"
-        '
-        'SonyVegasToolStripMenuItem1
-        '
-        Me.SonyVegasToolStripMenuItem1.Image = Global.Filmmaker.My.Resources.Resources.Vegas
-        Me.SonyVegasToolStripMenuItem1.Name = "SonyVegasToolStripMenuItem1"
-        Me.SonyVegasToolStripMenuItem1.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
-            Or System.Windows.Forms.Keys.V), System.Windows.Forms.Keys)
-        Me.SonyVegasToolStripMenuItem1.Size = New System.Drawing.Size(206, 22)
-        Me.SonyVegasToolStripMenuItem1.Text = "Sony Vegas"
-        '
-        'Project64ToolStripMenuItem1
-        '
-        Me.Project64ToolStripMenuItem1.Image = Global.Filmmaker.My.Resources.Resources.ProjectSF
-        Me.Project64ToolStripMenuItem1.Name = "Project64ToolStripMenuItem1"
-        Me.Project64ToolStripMenuItem1.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
-            Or System.Windows.Forms.Keys.G), System.Windows.Forms.Keys)
-        Me.Project64ToolStripMenuItem1.Size = New System.Drawing.Size(206, 22)
-        Me.Project64ToolStripMenuItem1.Text = "Project64"
-        '
-        'RecorderToolStripMenuItem1
-        '
-        Me.RecorderToolStripMenuItem1.Image = Global.Filmmaker.My.Resources.Resources.Recorder
-        Me.RecorderToolStripMenuItem1.Name = "RecorderToolStripMenuItem1"
-        Me.RecorderToolStripMenuItem1.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
-            Or System.Windows.Forms.Keys.R), System.Windows.Forms.Keys)
-        Me.RecorderToolStripMenuItem1.Size = New System.Drawing.Size(206, 22)
-        Me.RecorderToolStripMenuItem1.Text = "Recorder"
         '
         'HelpToolStripMenuItem
         '
-        Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OnlineHelpToolStripMenuItem, Me.GuidesToolStripMenuItem, Me.TutorialsToolStripMenuItem, Me.ToolStripSeparator1, Me.AboutSM64FMToolStripMenuItem})
+        Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OnlineHelpToolStripMenuItem, Me.ClockworkToolStripMenuItem, Me.ToolStripSeparator1, Me.AboutSM64FMToolStripMenuItem})
         Me.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
         Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(44, 20)
         Me.HelpToolStripMenuItem.Text = "Help"
         '
         'OnlineHelpToolStripMenuItem
         '
-        Me.OnlineHelpToolStripMenuItem.Image = Global.Filmmaker.My.Resources.Resources.WebHelp
+        Me.OnlineHelpToolStripMenuItem.Image = Global.Filmmaker.My.Resources.Resources.Online
         Me.OnlineHelpToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.TopLeft
         Me.OnlineHelpToolStripMenuItem.Name = "OnlineHelpToolStripMenuItem"
         Me.OnlineHelpToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.O), System.Windows.Forms.Keys)
         Me.OnlineHelpToolStripMenuItem.Size = New System.Drawing.Size(189, 22)
         Me.OnlineHelpToolStripMenuItem.Text = "Online Help..."
         '
-        'GuidesToolStripMenuItem
+        'ClockworkToolStripMenuItem
         '
-        Me.GuidesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SonyVegasToolStripMenuItem, Me.RecorderToolStripMenuItem, Me.Project64ToolStripMenuItem, Me.GeneratorsToolStripMenuItem, Me.CheatSearcherToolStripMenuItem, Me.UserInterfaceToolStripMenuItem})
-        Me.GuidesToolStripMenuItem.Image = Global.Filmmaker.My.Resources.Resources.Guides
-        Me.GuidesToolStripMenuItem.Name = "GuidesToolStripMenuItem"
-        Me.GuidesToolStripMenuItem.Size = New System.Drawing.Size(189, 22)
-        Me.GuidesToolStripMenuItem.Text = "Guides"
+        Me.ClockworkToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FirstRunSetupToolStripMenuItem, Me.ToolStripSeparator3, Me.EmulatorToolStripMenuItem, Me.VideoEditorsToolStripMenuItem, Me.MachinimaGuidelinesToolStripMenuItem})
+        Me.ClockworkToolStripMenuItem.Image = CType(resources.GetObject("ClockworkToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.ClockworkToolStripMenuItem.Name = "ClockworkToolStripMenuItem"
+        Me.ClockworkToolStripMenuItem.Size = New System.Drawing.Size(189, 22)
+        Me.ClockworkToolStripMenuItem.Text = "64Clockwork"
         '
-        'SonyVegasToolStripMenuItem
+        'FirstRunSetupToolStripMenuItem
         '
-        Me.SonyVegasToolStripMenuItem.Name = "SonyVegasToolStripMenuItem"
-        Me.SonyVegasToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
-        Me.SonyVegasToolStripMenuItem.Text = "Sony Vegas"
+        Me.FirstRunSetupToolStripMenuItem.Image = Global.Filmmaker.My.Resources.Resources.Tutorials
+        Me.FirstRunSetupToolStripMenuItem.Name = "FirstRunSetupToolStripMenuItem"
+        Me.FirstRunSetupToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
+        Me.FirstRunSetupToolStripMenuItem.Text = "First Run Setup Tutorial"
         '
-        'RecorderToolStripMenuItem
+        'ToolStripSeparator3
         '
-        Me.RecorderToolStripMenuItem.Name = "RecorderToolStripMenuItem"
-        Me.RecorderToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
-        Me.RecorderToolStripMenuItem.Text = "Recorder"
+        Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
+        Me.ToolStripSeparator3.Size = New System.Drawing.Size(194, 6)
         '
-        'Project64ToolStripMenuItem
+        'EmulatorToolStripMenuItem
         '
-        Me.Project64ToolStripMenuItem.Name = "Project64ToolStripMenuItem"
-        Me.Project64ToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
-        Me.Project64ToolStripMenuItem.Text = "Project64"
+        Me.EmulatorToolStripMenuItem.Name = "EmulatorToolStripMenuItem"
+        Me.EmulatorToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
+        Me.EmulatorToolStripMenuItem.Text = "Emulator"
         '
-        'GeneratorsToolStripMenuItem
+        'VideoEditorsToolStripMenuItem
         '
-        Me.GeneratorsToolStripMenuItem.Name = "GeneratorsToolStripMenuItem"
-        Me.GeneratorsToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
-        Me.GeneratorsToolStripMenuItem.Text = "Generators"
+        Me.VideoEditorsToolStripMenuItem.Name = "VideoEditorsToolStripMenuItem"
+        Me.VideoEditorsToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
+        Me.VideoEditorsToolStripMenuItem.Text = "Video Editors"
         '
-        'CheatSearcherToolStripMenuItem
+        'MachinimaGuidelinesToolStripMenuItem
         '
-        Me.CheatSearcherToolStripMenuItem.Name = "CheatSearcherToolStripMenuItem"
-        Me.CheatSearcherToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
-        Me.CheatSearcherToolStripMenuItem.Text = "Cheat Searcher"
-        '
-        'UserInterfaceToolStripMenuItem
-        '
-        Me.UserInterfaceToolStripMenuItem.Name = "UserInterfaceToolStripMenuItem"
-        Me.UserInterfaceToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
-        Me.UserInterfaceToolStripMenuItem.Text = "User Interface"
-        '
-        'TutorialsToolStripMenuItem
-        '
-        Me.TutorialsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.VegasEffectsToolStripMenuItem, Me.VegasSettingsToolStripMenuItem, Me.RecorderSettingsToolStripMenuItem, Me.HowToUseVegasToolStripMenuItem, Me.HowToUseTheRecorderToolStripMenuItem, Me.HowToLoadGreenScreensInProject64ToolStripMenuItem, Me.HowToCatridgeTiltToolStripMenuItem})
-        Me.TutorialsToolStripMenuItem.Image = Global.Filmmaker.My.Resources.Resources.Tutorials
-        Me.TutorialsToolStripMenuItem.Name = "TutorialsToolStripMenuItem"
-        Me.TutorialsToolStripMenuItem.Size = New System.Drawing.Size(189, 22)
-        Me.TutorialsToolStripMenuItem.Text = "Tutorials"
-        '
-        'VegasEffectsToolStripMenuItem
-        '
-        Me.VegasEffectsToolStripMenuItem.Name = "VegasEffectsToolStripMenuItem"
-        Me.VegasEffectsToolStripMenuItem.Size = New System.Drawing.Size(281, 22)
-        Me.VegasEffectsToolStripMenuItem.Text = "Vegas Effects"
-        '
-        'VegasSettingsToolStripMenuItem
-        '
-        Me.VegasSettingsToolStripMenuItem.Name = "VegasSettingsToolStripMenuItem"
-        Me.VegasSettingsToolStripMenuItem.Size = New System.Drawing.Size(281, 22)
-        Me.VegasSettingsToolStripMenuItem.Text = "Vegas Settings"
-        '
-        'RecorderSettingsToolStripMenuItem
-        '
-        Me.RecorderSettingsToolStripMenuItem.Name = "RecorderSettingsToolStripMenuItem"
-        Me.RecorderSettingsToolStripMenuItem.Size = New System.Drawing.Size(281, 22)
-        Me.RecorderSettingsToolStripMenuItem.Text = "Recorder Settings"
-        '
-        'HowToUseVegasToolStripMenuItem
-        '
-        Me.HowToUseVegasToolStripMenuItem.Name = "HowToUseVegasToolStripMenuItem"
-        Me.HowToUseVegasToolStripMenuItem.Size = New System.Drawing.Size(281, 22)
-        Me.HowToUseVegasToolStripMenuItem.Text = "How to use Vegas"
-        '
-        'HowToUseTheRecorderToolStripMenuItem
-        '
-        Me.HowToUseTheRecorderToolStripMenuItem.Name = "HowToUseTheRecorderToolStripMenuItem"
-        Me.HowToUseTheRecorderToolStripMenuItem.Size = New System.Drawing.Size(281, 22)
-        Me.HowToUseTheRecorderToolStripMenuItem.Text = "How to use the Recorder"
-        '
-        'HowToLoadGreenScreensInProject64ToolStripMenuItem
-        '
-        Me.HowToLoadGreenScreensInProject64ToolStripMenuItem.Name = "HowToLoadGreenScreensInProject64ToolStripMenuItem"
-        Me.HowToLoadGreenScreensInProject64ToolStripMenuItem.Size = New System.Drawing.Size(281, 22)
-        Me.HowToLoadGreenScreensInProject64ToolStripMenuItem.Text = "How to load Green Screens in Project64"
-        '
-        'HowToCatridgeTiltToolStripMenuItem
-        '
-        Me.HowToCatridgeTiltToolStripMenuItem.Name = "HowToCatridgeTiltToolStripMenuItem"
-        Me.HowToCatridgeTiltToolStripMenuItem.Size = New System.Drawing.Size(281, 22)
-        Me.HowToCatridgeTiltToolStripMenuItem.Text = "How to ""Catridge Tilt"""
+        Me.MachinimaGuidelinesToolStripMenuItem.Image = Global.Filmmaker.My.Resources.Resources.Guides
+        Me.MachinimaGuidelinesToolStripMenuItem.Name = "MachinimaGuidelinesToolStripMenuItem"
+        Me.MachinimaGuidelinesToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
+        Me.MachinimaGuidelinesToolStripMenuItem.Text = "Machinima Tips"
         '
         'ToolStripSeparator1
         '
@@ -484,23 +390,23 @@ Partial Class MainMenu
         '
         Me.noticon_strip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Show64FMToolStripMenuItem, Me.ToolStripSeparator2, Me.Exit64FMToolStripMenuItem})
         Me.noticon_strip.Name = "noticon_strip"
-        Me.noticon_strip.Size = New System.Drawing.Size(153, 76)
+        Me.noticon_strip.Size = New System.Drawing.Size(136, 54)
         '
         'Show64FMToolStripMenuItem
         '
         Me.Show64FMToolStripMenuItem.Name = "Show64FMToolStripMenuItem"
-        Me.Show64FMToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.Show64FMToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
         Me.Show64FMToolStripMenuItem.Text = "Show 64FM"
         '
         'ToolStripSeparator2
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(149, 6)
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(132, 6)
         '
         'Exit64FMToolStripMenuItem
         '
         Me.Exit64FMToolStripMenuItem.Name = "Exit64FMToolStripMenuItem"
-        Me.Exit64FMToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.Exit64FMToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
         Me.Exit64FMToolStripMenuItem.Text = "Exit 64FM"
         '
         'MainMenu
@@ -575,26 +481,8 @@ Partial Class MainMenu
     Friend WithEvents SettingsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ProfileToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AddonsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents SonyVegasToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents Project64ToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents RecorderToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents HelpToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents OnlineHelpToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents GuidesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents SonyVegasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents RecorderToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents Project64ToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents GeneratorsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents CheatSearcherToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents UserInterfaceToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents TutorialsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents VegasEffectsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents VegasSettingsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents RecorderSettingsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents HowToUseVegasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents HowToUseTheRecorderToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents HowToLoadGreenScreensInProject64ToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents HowToCatridgeTiltToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolStripSeparator1 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents AboutSM64FMToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ImportSpecialPackToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
@@ -606,4 +494,10 @@ Partial Class MainMenu
     Friend WithEvents Show64FMToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
     Friend WithEvents Exit64FMToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ClockworkToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents FirstRunSetupToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator3 As ToolStripSeparator
+    Friend WithEvents EmulatorToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents VideoEditorsToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents MachinimaGuidelinesToolStripMenuItem As ToolStripMenuItem
 End Class
