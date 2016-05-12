@@ -65,7 +65,7 @@ Namespace My.Resources
         '''</summary>
         Friend ReadOnly Property _64networklogo() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("64networklogo", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("_64networklogo", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

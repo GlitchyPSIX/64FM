@@ -657,4 +657,8 @@ Public Class ColorCodeStudio
     Private Sub UpdateNow_Click(sender As Object, e As EventArgs) Handles UpdateNow.Click
         UpdateList()
     End Sub
+
+    Private Sub CCListBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CCListBox.SelectedIndexChanged
+
+    End Sub
 End Class
