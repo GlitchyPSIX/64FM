@@ -562,7 +562,7 @@ Public Class Chat
         If User = "IRC" Then
             'LALALALALA I DONT WANT TO HEAR AN IRC BOT XD
         Else
-            If Me.WindowState = FormWindowState.Minimized Or ActiveForm Is Me = False Then
+            If Me.WindowState = FormWindowState.Minimized Or ActiveForm IsNot Me Then
                 Dim Notif As New NotiForm(User, Message)
                 Notif.Show()
             Else

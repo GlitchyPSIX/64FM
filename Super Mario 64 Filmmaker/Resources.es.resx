@@ -1,0 +1,377 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AboutCreatorDesc" xml:space="preserve">
+    <value>Creado por James "CaptainSwag101" Pelster.</value>
+  </data>
+  <data name="AboutText1" xml:space="preserve">
+    <value>Este programa está dedicado a la comunidad de Machinima de SM64, gracias por todo el esfuerzo que has puesto en tu trabajo, y espero que esta herramienta te ayude a crear vídeos geniales por los próximos años!</value>
+  </data>
+  <data name="AboutText2" xml:space="preserve">
+    <value>Gracias especiales a Matthew "MATTHEWGU4" Guerra por ayudar a que este proyecto se haya hecho realidad, y a difundirlo, y a José "GlitchyPSIX" Félix por el descubrimiento de el "fijado de cámara suave", y la traducción al español.</value>
+  </data>
+  <data name="AboutText3" xml:space="preserve">
+    <value>¿Hallaste errores, o quieres proponer una mejora? Mándame un correo (Inglés) a:</value>
+  </data>
+  <data name="BaseAddressIs" xml:space="preserve">
+    <value>Dirección base: </value>
+  </data>
+  <data name="BaseAddressNotFound" xml:space="preserve">
+    <value>No se pudo hallar la dirección base!</value>
+  </data>
+  <data name="BaseAddressOverwriteWarning" xml:space="preserve">
+    <value>¡AVISO!: Intentarás escribir los primeros 4 bytes de la memoria de SM64, los cuales contienen los valores que el programa necesita para encontrar la dirección base. Si haces clic en ""Sí"", tendrás que reiniciar el emulador para que el programa encuentre el emulador una vez más. ¿Seguro que quieres hacer esto?</value>
+  </data>
+  <data name="CameraLockDesc" xml:space="preserve">
+    <value>Posición de la cámara fijada. Presiona el botón de abajo para fijar la rotación.</value>
+  </data>
+  <data name="CameraUnlockDesc" xml:space="preserve">
+    <value>Editando la rotación. Presiona el botón de abajo para fijar la rotación.</value>
+  </data>
+  <data name="CCWarning" xml:space="preserve">
+    <value>AVISO: ¡Asegúrate de desactivar cualquier otro código de color (CC) en el Project64! De no hacerlo, evitará que los cambios hechos aquí sean visibles en el juego.</value>
+  </data>
+  <data name="ChangeCameraType" xml:space="preserve">
+    <value>Cambiar tipo de cámara.</value>
+  </data>
+  <data name="FreezeCamera" xml:space="preserve">
+    <value>Fijar cámara</value>
+  </data>
+  <data name="GotoNewArea" xml:space="preserve">
+    <value>Cambiar de área</value>
+  </data>
+  <data name="InvalidHexAddress" xml:space="preserve">
+    <value>La dirección ingresada no es un valor hexadecimal válido.</value>
+  </data>
+  <data name="InvalidHexValue" xml:space="preserve">
+    <value>El número ingresado no es un valor hexadecimal válido.</value>
+  </data>
+  <data name="MemDebugWarning" xml:space="preserve">
+    <value>Esta ventana es para editar la memoria activa de SM64 (Memoria RAM). Sólo deberías usar esto si sabes lo que haces. Los desarrolladores no se responsabilizan de caídas del emulador, o pérdida de datos causados por falla del sistema.</value>
+  </data>
+  <data name="SearchingForBaseAddress" xml:space="preserve">
+    <value>Escaneando la dirección base...</value>
+  </data>
+  <data name="UnfreezeCamera" xml:space="preserve">
+    <value>Liberar cámara</value>
+  </data>
+  <data name="PrecisionButtonLock" xml:space="preserve">
+    <value>Fijar ángulo</value>
+  </data>
+  <data name="PrecisionButtonUnlock" xml:space="preserve">
+    <value>Liberar ángulo</value>
+  </data>
+  <data name="PrecisionModeBoxName" xml:space="preserve">
+    <value>Controlador del Modo Precisión</value>
+  </data>
+  <data name="PrecisionStatusDisabled" xml:space="preserve">
+    <value>Modo Precisión apagado.
+Para habilitarlo, ve a Opciones -&gt; Modo Precisión</value>
+  </data>
+  <data name="PrecisionStatusFinish" xml:space="preserve">
+    <value>Cámara totalmente fijada. Presiona el botón de abajo para editar el ángulo.
+Para salir de este modo, desactívalo en Opciones -&gt; Modo Precisión</value>
+  </data>
+  <data name="PrecisionStatusNoEmu" xml:space="preserve">
+    <value>Modo Precisión apagado; el Project64 no está abierto.</value>
+  </data>
+  <data name="SoftFreezeCamera" xml:space="preserve">
+    <value>Fijar cámara (suave)</value>
+  </data>
+  <data name="SoftUnfreezeCamera" xml:space="preserve">
+    <value>Liberar cámara (suave)</value>
+  </data>
+  <data name="AboutBuildDate" xml:space="preserve">
+    <value>Fecha de publicación: </value>
+  </data>
+  <data name="AboutMenu" xml:space="preserve">
+    <value>Ayuda</value>
+  </data>
+  <data name="AboutStrip" xml:space="preserve">
+    <value>Acerca de Mario 64 Movie Maker 2.0...</value>
+  </data>
+  <data name="AnimationDataNotLoaded" xml:space="preserve">
+    <value>¡No se han cargado las animaciones!</value>
+  </data>
+  <data name="AnimationDataReadError" xml:space="preserve">
+    <value>No se pudo leer el archivo de animaciones:</value>
+  </data>
+  <data name="AnimationGroupName" xml:space="preserve">
+    <value>Controlador de animaciones</value>
+    <comment> </comment>
+  </data>
+  <data name="AnimationO1" xml:space="preserve">
+    <value>Cambia esta animación:</value>
+  </data>
+  <data name="AnimationO2" xml:space="preserve">
+    <value>por esta:</value>
+  </data>
+  <data name="CamControlName" xml:space="preserve">
+    <value>Controles de cámara normal</value>
+  </data>
+  <data name="CCSDefaultMB" xml:space="preserve">
+    <value>¿Quieres establecer este código de color como el código de color por omisión?</value>
+  </data>
+  <data name="CCSDefaults" xml:space="preserve">
+    <value>Por omisión</value>
+  </data>
+  <data name="CCSDMBTitle" xml:space="preserve">
+    <value>Pregunta</value>
+  </data>
+  <data name="CCSEXbtn" xml:space="preserve">
+    <value>Cerrar</value>
+  </data>
+  <data name="CCSEXCancel" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="CCSEXLabel" xml:space="preserve">
+    <value>¡Aquí esta lo que pediste!</value>
+    <comment>export label</comment>
+  </data>
+  <data name="CCSExport" xml:space="preserve">
+    <value>Exportar CC...</value>
+  </data>
+  <data name="CCSFormTitle" xml:space="preserve">
+    <value>Estudio de códigos de color</value>
+  </data>
+  <data name="CCSGloves" xml:space="preserve">
+    <value>Guantes</value>
+  </data>
+  <data name="CCSHair" xml:space="preserve">
+    <value>Pelo</value>
+  </data>
+  <data name="CCSHat" xml:space="preserve">
+    <value>Camisa y gorra</value>
+  </data>
+  <data name="CCSIMLabel" xml:space="preserve">
+    <value>Pega el código de color en la caja de texto debajo, luego presiona OK.</value>
+    <comment>import label</comment>
+  </data>
+  <data name="CCSImport" xml:space="preserve">
+    <value>Importar CC...</value>
+  </data>
+  <data name="CCSImportError" xml:space="preserve">
+    <value>Algo pasó y el código de color no fue importado. Asegúrate de que esté bien escrito!</value>
+  </data>
+  <data name="CCSLoad" xml:space="preserve">
+    <value>Cargar del juego</value>
+  </data>
+  <data name="CCSOveralls" xml:space="preserve">
+    <value>Overoles</value>
+  </data>
+  <data name="CCSShoes" xml:space="preserve">
+    <value>Zapatos</value>
+  </data>
+  <data name="CCSSkin" xml:space="preserve">
+    <value>Piel</value>
+  </data>
+  <data name="ForceCameraC" xml:space="preserve">
+    <value>Forzar a que la cámara sea movible con los Botones C</value>
+  </data>
+  <data name="ForceCameraCTooltip" xml:space="preserve">
+    <value>Te permite usar los Botones C (controlan la rotación y el zoom de la cámara) en lugares que generalmente no lo permiten, como dentro del castillo.
+Sin embargo, esto puede no funcionar en ciertas partes del castillo ya que muchos niveles tienen sus valores de cámara dentro del código del juego.</value>
+  </data>
+  <data name="HelpStrip" xml:space="preserve">
+    <value>Ayuda...</value>
+  </data>
+  <data name="HoverControlName" xml:space="preserve">
+    <value>Control de flote</value>
+  </data>
+  <data name="HoverMax" xml:space="preserve">
+    <value>5 (ALTA!)</value>
+  </data>
+  <data name="HoverMin" xml:space="preserve">
+    <value>0 (Nada)</value>
+  </data>
+  <data name="HoverToolTip" xml:space="preserve">
+    <value>Cuidado: No todas las animaciones son afectadas por esto. El valor recomendado es 1.</value>
+  </data>
+  <data name="IOAddr" xml:space="preserve">
+    <value>Dirección:</value>
+  </data>
+  <data name="IOBadass" xml:space="preserve">
+    <value>Sé lo que hago.</value>
+  </data>
+  <data name="IOFormTitle" xml:space="preserve">
+    <value>Editor de memoria activa</value>
+  </data>
+  <data name="IOGroupName" xml:space="preserve">
+    <value>Controles de memoria</value>
+  </data>
+  <data name="IORead" xml:space="preserve">
+    <value>LEER</value>
+  </data>
+  <data name="IOValue" xml:space="preserve">
+    <value>Valor:</value>
+  </data>
+  <data name="IOWrite" xml:space="preserve">
+    <value>ESCR.</value>
+  </data>
+  <data name="NoPJPrecisionError" xml:space="preserve">
+    <value>No puedes activar el modo precisión sin el Project64 abierto.</value>
+  </data>
+  <data name="PJNotOpen" xml:space="preserve">
+    <value>Project64 no está abierto!</value>
+  </data>
+  <data name="PrecisionButtonDisabled" xml:space="preserve">
+    <value>Modo Precisión apag.</value>
+  </data>
+  <data name="PrecisionGroupName" xml:space="preserve">
+    <value>Controlador de precisión</value>
+  </data>
+  <data name="PrecisionModeStrip" xml:space="preserve">
+    <value>Modo Precisión</value>
+  </data>
+  <data name="PrecisionModeTooltip" xml:space="preserve">
+    <value>Habilita el modo de precisión, que permite fijar un ángulo para la cámara, y editarlo cuando te plazca.</value>
+  </data>
+  <data name="RememberPrevSwaps" xml:space="preserve">
+    <value>Recordar los cambios de animaciones</value>
+  </data>
+  <data name="RememberPrevSwapsTooltip" xml:space="preserve">
+    <value>Al seleccionar una nueva animación para cambiar, la anterior recordará el cambio que hiciste.</value>
+  </data>
+  <data name="ResetAllSwaps" xml:space="preserve">
+    <value>Restaurar todas las animaciones (No funciona.)</value>
+  </data>
+  <data name="ResetAllSwapsTooltip" xml:space="preserve">
+    <value>Esto reinicia TODAS las animaciones a su valor por omisión.
+Sin embargo, no funciona como se esperó, así que lo deshabilité hasta
+que pueda repararlo.</value>
+  </data>
+  <data name="SettingsMenu" xml:space="preserve">
+    <value>Opciones</value>
+  </data>
+  <data name="SmolExtrasName" xml:space="preserve">
+    <value>Extras pequeños</value>
+  </data>
+  <data name="SmolExtrasNOHUD" xml:space="preserve">
+    <value>Remover la IU</value>
+  </data>
+  <data name="ToolsMenu" xml:space="preserve">
+    <value>Herramientas</value>
+  </data>
+  <data name="UndoAllPrevSwaps" xml:space="preserve">
+    <value>Deshacer los cambios de animaciones</value>
+  </data>
+  <data name="UndoAllPrevSwapsTooltip" xml:space="preserve">
+    <value>Al seleccionar una nueva animación para cambiar, la anterior volverá a su animación por omisión.</value>
+  </data>
+</root>
