@@ -26,10 +26,10 @@ Public Class MainForm
 
     Private ReadOnly Property CB1AnimIndex As Integer
         Get
-            For Each anim As Animation In AnimList
-                If anim.Value = SelectedAnim1 Then Return anim.Index
-            Next
-            Return 0
+			For Each anim As Animation In AnimList
+				If anim.Value = SelectedAnim1 Then Return anim.Index
+			Next
+			Return 0
         End Get
     End Property
 
@@ -46,8 +46,8 @@ Public Class MainForm
         ' This call is required by the designer.
         InitializeComponent()
 
-        Dim AboutBox As New AboutForm
-        AddHandler ResetAnimationSwapsMenuItem.Click, AddressOf ResetAnimations
+		Dim AboutBox As New AboutCinematicControl
+		AddHandler ResetAnimationSwapsMenuItem.Click, AddressOf ResetAnimations
         AddHandler b_Freeze.Click, AddressOf Freeze
         AddHandler b_Unfreeze.Click, AddressOf Unfreeze
         AddHandler b_ChangeCameraType.Click, AddressOf ChangeCameraType
@@ -55,9 +55,19 @@ Public Class MainForm
         AddHandler b_SoftUnfreeze.Click, AddressOf SoftUnfreeze
         AddHandler AboutMenuItem.Click, AddressOf AboutBox.ShowDialog
         AddHandler ForceCameraPresetMenuItem.Click, AddressOf ForceCameraPreset
-        AddHandler Timer1.Tick, AddressOf Main
+		AddHandler Timer1.Tick, AddressOf Main
 
-        Try
+		b_Freeze.Text = My.Resources.FreezeCamera
+		b_Unfreeze.Text = My.Resources.UnfreezeCamera
+        b_ChangeCameraType.Text = My.Resources.ChangeCameraType
+        b_SoftFreeze.Text = My.Resources.SoftFreezeCamera
+        b_SoftUnfreeze.Text = My.Resources.SoftUnfreezeCamera
+
+        b_Freeze.Enabled = False
+		b_Unfreeze.Enabled = False
+		b_ChangeCameraType.Enabled = False
+
+		Try
             Using sr As New StreamReader("animation_data.txt")
                 Do While sr.Peek() >= 0
                     Dim rawLine As String
@@ -71,10 +81,10 @@ Public Class MainForm
                 Loop
             End Using
         Catch e As Exception
-            MessageBox.Show("Error reading animation data file:" & vbCrLf & e.Message)
+            MessageBox.Show(My.Resources.AnimationDataReadError & vbCrLf & e.Message)
             DisableAnimSwap = True
-            Label7.Text = "Animation data not loaded!"
-            Label6.Text = "Animation data not loaded!"
+            AnimOW1.Text = My.Resources.AnimationDataNotLoaded
+            AnimOW2.Text = My.Resources.AnimationDataNotLoaded
             ComboBox1.Refresh()
             ComboBox2.Refresh()
         End Try
@@ -162,14 +172,14 @@ Public Class MainForm
 
     Private Sub GetBase()
         ' Get the base RAM address of the emulated memory block by searching for the constant value of SM64's first RAM address
-        BaseAddressLabel.Text = "Scanning for base address..."
-        BaseAddressLabel.Refresh()
+        BaseAddressLabel.Text = My.Resources.SearchingForBaseAddress
+		BaseAddressLabel.Refresh()
         Base = GetBaseAddress("Project64")
         If Base > 0 Then
-            BaseAddressLabel.Text = "The base address is: " & Hex(Base)
-        Else
-            BaseAddressLabel.Text = "Base address not found!"
-        End If
+			BaseAddressLabel.Text = My.Resources.BaseAddressIs & Hex(Base)
+		Else
+			BaseAddressLabel.Text = My.Resources.BaseAddressNotFound
+		End If
     End Sub
 
     Private Sub Freeze()
@@ -184,8 +194,8 @@ Public Class MainForm
         If EmuOpen = True And Base > 0 Then
             ChangeCamera = False
             CameraUnfrozen = True
-            b_ChangeCameraType.Text = "Change Camera Type"
-            WriteInteger("Project64", Base + &H33C848, 0)
+			b_ChangeCameraType.Text = My.Resources.ChangeCameraType
+			WriteInteger("Project64", Base + &H33C848, 0)
         End If
     End Sub
 
@@ -194,8 +204,8 @@ Public Class MainForm
             ChangeCamera = Not ChangeCamera
             If ChangeCamera = True Then
                 CameraUnfrozen = False
-                b_ChangeCameraType.Text = "Go to new area"
-            Else
+				b_ChangeCameraType.Text = My.Resources.GotoNewArea
+			Else
                 Unfreeze()
             End If
         End If
@@ -245,7 +255,6 @@ Public Class MainForm
                     b_SoftFreeze.Enabled = False
                     b_SoftUnfreeze.Enabled = False
                     LevitateTrackBar.Enabled = False
-                    NoFallDmgCB.Enabled = False
                     DisableHudCB.Enabled = False
                     PrecisionModeOff(True)
                     If MemDebugWindow IsNot Nothing Then
@@ -275,7 +284,6 @@ Public Class MainForm
                 b_SoftUnfreeze.Enabled = True
                 LevitateTrackBar.Enabled = True
                 DisableHudCB.Enabled = True
-                NoFallDmgCB.Enabled = True
                 If MemDebugWindow IsNot Nothing Then
                     MemDebugWindow.CB_Accept.Enabled = True
                 End If
@@ -289,9 +297,8 @@ Public Class MainForm
                     ColorCodeWindow.RefreshColorCycle()
                 End If
                 If PrecisionStage = 0 Then
-                    PrecisionStatusLabel.Text = "Precision Mode is disabled." + vbCrLf +
-                                                "Enable it in Settings -> Enable Precision Mode"
-                    b_PrecisionPlusOne.Text = "Precision Mode Disabled"
+                    PrecisionStatusLabel.Text = My.Resources.PrecisionStatusDisabled
+                    b_PrecisionPlusOne.Text = My.Resources.PrecisionButtonDisabled
                 End If
 
 
@@ -315,13 +322,12 @@ Public Class MainForm
                 b_Freeze.Enabled = False
                 b_Unfreeze.Enabled = False
                 b_ChangeCameraType.Enabled = False
-                b_ChangeCameraType.Text = "Change Camera Type"
-                ComboBox1.Enabled = False
+				b_ChangeCameraType.Text = My.Resources.ChangeCameraType
+				ComboBox1.Enabled = False
                 ComboBox2.Enabled = False
                 b_SoftFreeze.Enabled = False
                 b_SoftUnfreeze.Enabled = False
                 LevitateTrackBar.Enabled = False
-                NoFallDmgCB.Enabled = False
                 DisableHudCB.Enabled = False
                 If MemDebugWindow IsNot Nothing Then
                     MemDebugWindow.CB_Accept.Checked = False
@@ -342,16 +348,15 @@ Public Class MainForm
             b_Freeze.Enabled = False
             b_Unfreeze.Enabled = False
             b_ChangeCameraType.Enabled = False
-            b_ChangeCameraType.Text = "Change Camera Type"
-            ComboBox1.Enabled = False
+			b_ChangeCameraType.Text = My.Resources.ChangeCameraType
+			ComboBox1.Enabled = False
             ComboBox2.Enabled = False
             b_SoftFreeze.Enabled = False
             b_SoftUnfreeze.Enabled = False
             LevitateTrackBar.Enabled = False
-            NoFallDmgCB.Enabled = False
             DisableHudCB.Enabled = False
-            BaseAddressLabel.Text = "Project64 isn't open!"
-            PrecisionStatusLabel.Text = "Precision mode is disabled. Reason: Project64 isn't open."
+            BaseAddressLabel.Text = My.Resources.PJNotOpen
+            PrecisionStatusLabel.Text = My.Resources.PrecisionStatusNoEmu
             If MemDebugWindow IsNot Nothing Then
                 MemDebugWindow.CB_Accept.Checked = False
                 MemDebugWindow.CB_Accept.Enabled = False
@@ -466,6 +471,34 @@ Public Class MainForm
     End Sub
 
     Private Sub MainForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        NormalCamControls.Text = My.Resources.CamControlName
+        PrecisionCamControls.Text = My.Resources.PrecisionGroupName
+        AnimSwapControls.Text = My.Resources.AnimationGroupName
+        AnimOW1.Text = My.Resources.AnimationO1
+        AnimOW2.Text = My.Resources.AnimationO2
+        ColorCodeStudioMenuItem.Text = My.Resources.CCSFormTitle
+        MemoryIODebugToolStripMenuItem.Text = My.Resources.IOFormTitle
+        AboutMenu.Text = My.Resources.AboutMenu
+        AboutMenuItem.Text = My.Resources.AboutStrip
+        HelpToolStripMenuItem1.Text = My.Resources.HelpStrip
+        RetainAnimationSwapsMenuItem.Text = My.Resources.RememberPrevSwaps
+        RetainAnimationSwapsMenuItem.ToolTipText = My.Resources.RememberPrevSwapsTooltip
+        UndoPreviousAnimationSwapsMenuItem.Text = My.Resources.UndoAllPrevSwaps
+        UndoPreviousAnimationSwapsMenuItem.ToolTipText = My.Resources.UndoAllPrevSwapsTooltip
+        ResetAnimationSwapsMenuItem.Text = My.Resources.ResetAllSwaps
+        ResetAnimationSwapsMenuItem.ToolTipText = My.Resources.ResetAllSwapsTooltip
+        ForceCameraPresetMenuItem.Text = My.Resources.ForceCameraC
+        ForceCameraPresetMenuItem.ToolTipText = My.Resources.ForceCameraCTooltip
+        PrecisionModeMenuItem.Text = My.Resources.PrecisionModeStrip
+        PrecisionModeMenuItem.ToolTipText = My.Resources.PrecisionModeTooltip
+        SettingsToolStripMenuItem.Text = My.Resources.SettingsMenu
+        ToolsToolStripMenuItem.Text = My.Resources.ToolsMenu
+        LevControls.Text = My.Resources.HoverControlName
+        MaxLeviHeight.Text = My.Resources.HoverMax
+        MinLeviHeight.Text = My.Resources.HoverMin
+        Info.SetToolTip(LevitateTrackBar, My.Resources.HoverToolTip)
+        SmallExtra.Text = My.Resources.SmolExtrasName
+        DisableHudCB.Text = My.Resources.SmolExtrasNOHUD
         'Make the timer tick every half of a second, to avoid unneccesary CPU use in some processors, but change to every tenth of a second once we have found the base address.
         Timer1.Interval = 500
         Timer1.Start()
@@ -485,19 +518,19 @@ Public Class MainForm
     ''' <param name="Reclick">True or false - Is a button reclick?</param>
     Private Sub PrecisionModeOn(Reclick As Boolean)
         If Reclick = False Then
-            PrecisionStatusLabel.Text = "Camera position locked. Click the button below to lock camera rotation."
-            NormalCamControls.Enabled = False
+			PrecisionStatusLabel.Text = My.Resources.CameraLockDesc
+			NormalCamControls.Enabled = False
             b_PrecisionPlusOne.Enabled = True
             PrecisionStage = 1
-            b_PrecisionPlusOne.Text = "Lock Camera Rotation"
+            b_PrecisionPlusOne.Text = My.Resources.PrecisionButtonUnlock
             SoftFreeze()
             WriteInteger("Project64", Base + &H33C848, &H60000000)
         ElseIf Reclick = True Then
-            PrecisionStatusLabel.Text = "Camera rotation unlocked. Click the button below to lock camera rotation."
-            b_PrecisionPlusOne.Enabled = True
+			PrecisionStatusLabel.Text = My.Resources.CameraUnlockDesc
+			b_PrecisionPlusOne.Enabled = True
             Unfreeze()
             PrecisionStage = 1
-            b_PrecisionPlusOne.Text = "Lock Camera Rotation"
+            b_PrecisionPlusOne.Text = My.Resources.PrecisionButtonLock
             SoftFreeze()
             WriteInteger("Project64", Base + &H33C848, &H60000000)
         End If
@@ -507,10 +540,9 @@ Public Class MainForm
     '''     Locks the angle of the camera in C-Up mode.
     ''' </summary>
     Private Sub LockAngle()
-        PrecisionStatusLabel.Text = "Camera locked. Press the button below to re-adjust camera angle." +
-                                    vbCrLf + "To disable precision mode, uncheck Settings -> Enable Precision Mode"
+        PrecisionStatusLabel.Text = My.Resources.PrecisionStatusFinish
         Freeze()
-        b_PrecisionPlusOne.Text = "Unlock Camera Rotation"
+        b_PrecisionPlusOne.Text = My.Resources.PrecisionButtonUnlock
         PrecisionStage = 2
     End Sub
 
@@ -525,8 +557,7 @@ Public Class MainForm
             PrecisionStage = 0
             Unfreeze()
             SoftUnfreeze()
-            PrecisionStatusLabel.Text = "Precision Mode is disabled." + vbCrLf +
-                                        "Enable it in Settings -> Enable Precision Mode"
+            PrecisionStatusLabel.Text = My.Resources.PrecisionStatusDisabled
             PrecisionModeMenuItem.Checked = False
             'Insert Here the WriteInteger for unforce C-Up mode
         Else
@@ -540,7 +571,7 @@ Public Class MainForm
         Handles PrecisionModeMenuItem.Click
         If PrecisionModeMenuItem.Checked = False Then
             If Base = 0 Then
-                MsgBox("Cannot use Precision Mode if Project64 with Super Mario 64 is not loaded.",
+                MsgBox(My.Resources.NoPJPrecisionError,
                        MsgBoxStyle.Exclamation, "sorry m9")
             Else
                 PrecisionModeOn(False)
@@ -576,16 +607,6 @@ Public Class MainForm
     Private Sub TrackBar1_Scroll(sender As Object, e As EventArgs) Handles LevitateTrackBar.Scroll
         WriteInteger("Project64", Base + &H33B223, LevitateTrackBar.Value)
     End Sub
-
-    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles NoFallDmgCB.CheckedChanged
-        If NoFallDmgCB.Checked = True Then
-            WriteInteger("Project64", Base + &H33B22C, &HE8E1)
-            WriteInteger("Project64", Base + &H33B178, &HFFFF)
-        ElseIf NoFallDmgCB.Checked = False Then
-            ' * nope.
-        End If
-    End Sub
-
     Private Sub CheckBox1_CheckedChanged_1(sender As Object, e As EventArgs) Handles DisableHudCB.CheckedChanged
         If DisableHudCB.Checked = True Then
             WriteInteger("Project64", Base + &H2E3DB0, 0)
@@ -597,6 +618,10 @@ Public Class MainForm
             DisableHudCB.Enabled = True
         End If
     End Sub
+
+	Private Sub AboutMenuItem_Click(sender As Object, e As EventArgs) Handles AboutMenuItem.Click
+
+	End Sub
 End Class
 
 Public Class Animation

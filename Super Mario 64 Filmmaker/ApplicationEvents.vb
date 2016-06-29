@@ -26,26 +26,24 @@
         End Sub
         'One of the global exceptions we are catching is not thread safe, 
         'so we need to make it thread safe first.
-        Private Delegate Sub SafeApplicationThreadException(ByVal sender As Object,
-            ByVal e As Threading.ThreadExceptionEventArgs)
+        Private Delegate Sub SafeApplicationThreadException(sender As Object, e As Threading.ThreadExceptionEventArgs)
 
         Private Sub MyApplication_StartupNextInstance(sender As Object, e As ApplicationServices.StartupNextInstanceEventArgs) Handles Me.StartupNextInstance
             MainMenu.Visible = True
             MainMenu.WindowState = FormWindowState.Normal
         End Sub
 
-        Private Sub ExceptionHandler(ByVal ex As Exception)
-            My.Computer.Audio.Play(My.Resources.Crit, AudioPlayMode.Background)
+        Private Sub ExceptionHandler(ex As Exception)
+            Computer.Audio.Play(Resources.Crit, AudioPlayMode.Background)
             ShakeVeryGently(10)
             UnhandledExceptionString = ex.ToString
-            ExceptionUnhandledForm.Show()
+            ExceptionUnhandledForm.ShowDialog()
             MainForm.Close()
             MainMenu.Visible = False
             Chat.Close()
         End Sub
 
-        Private Sub MyApplication_Startup(ByVal sender As Object,
-    ByVal e As Microsoft.VisualBasic.ApplicationServices.StartupEventArgs) Handles Me.Startup
+        Private Sub MyApplication_Startup(sender As Object, e As ApplicationServices.StartupEventArgs) Handles Me.Startup
 
             'There are three places to catch all global unhandled exceptions:
             'AppDomain.CurrentDomain.UnhandledException event.
@@ -57,8 +55,7 @@
             Settings.Upgrade()
         End Sub
 
-        Private Sub app_ThreadException(ByVal sender As Object,
-    ByVal e As Threading.ThreadExceptionEventArgs)
+        Private Sub app_ThreadException(sender As Object, e As Threading.ThreadExceptionEventArgs)
 
             'This is not thread safe, so make it thread safe.
             If MainForm.InvokeRequired Then
@@ -72,10 +69,8 @@
 
         End Sub
 
-        Private Sub AppDomain_UnhandledException(ByVal sender As Object,
-     ByVal e As UnhandledExceptionEventArgs)
+        Private Sub AppDomain_UnhandledException(sender As Object, e As UnhandledExceptionEventArgs)
             ExceptionHandler(DirectCast(e.ExceptionObject, Exception))
-
         End Sub
         Public Sub Goodbye()
             Dim Response As DialogResult = MsgBox("You're sure you want to exit 64Filmmaker?", MsgBoxStyle.YesNo + MsgBoxStyle.Exclamation, "You're sure?")
@@ -92,12 +87,11 @@
                 Catch e As Exception
                     'dance the cha cha cha while there's no recorder
                 End Try
-                For Each p As Process In Process.GetProcessesByName("project64")
-                    p.Kill()
-                Next
-                'close pj64 w/o confirmation
-                My.Settings.Save()
-                If My.Settings.IsSynchronized = True Then
+                'For Each p As Process In Process.GetProcessesByName("Project64")
+                '	p.Kill()
+                'Next
+                Settings.Save()
+                If Settings.IsSynchronized = True Then
                     MainMenu.noticon.Visible = False
                     MainMenu.Close()
                 Else

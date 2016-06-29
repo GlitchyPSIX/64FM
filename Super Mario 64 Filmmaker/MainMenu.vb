@@ -17,10 +17,10 @@ Public Class MainMenu
     Private Sub MainMenu_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         'Set the "Custom Settings" feature and load the processes
         ApplyProfileSettings()
-        If My.Settings.Name.Contains("Zenon") Or My.Settings.Name.Contains("zenon") Or My.Settings.Name.Contains("Antipius") Or My.Settings.Name.Contains("antipius") Or My.Settings.Name.Contains("Raptor") Or My.Settings.Name.Contains("raptor") Or My.Settings.Name.Contains("Deinonychus") Or My.Settings.Name.Contains("deinonychus") Then
-            FORBIDDEN.Show()
-            Me.Hide()
-            Me.Close()
+		Dim NameCheck As String = My.Settings.Name
+        If NameCheck.ToLower.Equals("zenon") Or NameCheck.ToLower.Equals("antipius") Or NameCheck.ToLower.Equals("raptor") Or NameCheck.ToLower.Equals("Deinonychus") Then
+			FORBIDDEN.ShowDialog()
+			Close()
         End If
         AppVer.Text = "64Filmmaker v" + Application.ProductVersion.ToString + " (ALPHA) | Build Date: " + My.Settings.BuildDate.ToString
         TenthOfASecond.Interval = 100

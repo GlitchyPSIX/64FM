@@ -9,10 +9,10 @@
     <OutputType>WinExe</OutputType>
     <StartupObject>Filmmaker.My.MyApplication</StartupObject>
     <RootNamespace>Filmmaker</RootNamespace>
-    <AssemblyName>64fm</AssemblyName>
+    <AssemblyName>64FM</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <OptionExplicit>On</OptionExplicit>
     <OptionCompare>Binary</OptionCompare>
     <OptionStrict>Off</OptionStrict>
@@ -60,14 +60,14 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Actual Enviroment\Deb\</OutputPath>
-    <DocumentationFile>64fm.xml</DocumentationFile>
+    <DocumentationFile>64FM.xml</DocumentationFile>
     <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42353,42354,42355</NoWarn>
     <WarningsAsErrors>42025</WarningsAsErrors>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <Prefer32Bit>false</Prefer32Bit>
-    <CodeAnalysisRuleSet>..\GlitchysRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <RunCodeAnalysis>false</RunCodeAnalysis>
     <CodeAnalysisIgnoreGeneratedCode>false</CodeAnalysisIgnoreGeneratedCode>
   </PropertyGroup>
@@ -77,7 +77,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Actual Enviroment\Rel\</OutputPath>
-    <DocumentationFile>64fm.xml</DocumentationFile>
+    <DocumentationFile>64FM.xml</DocumentationFile>
     <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42353,42354,42355</NoWarn>
     <WarningsAsErrors>42025</WarningsAsErrors>
     <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
@@ -143,12 +143,6 @@
       <DependentUpon>AboutCinematicControl.vb</DependentUpon>
     </Compile>
     <Compile Include="AboutCinematicControl.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AboutForm.Designer.vb">
-      <DependentUpon>AboutForm.vb</DependentUpon>
-    </Compile>
-    <Compile Include="AboutForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AddonLoginForm.Designer.vb">
@@ -336,9 +330,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AboutCinematicControl.resx">
       <DependentUpon>AboutCinematicControl.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AboutForm.resx">
-      <DependentUpon>AboutForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddonLoginForm.resx">
       <DependentUpon>AddonLoginForm.vb</DependentUpon>
@@ -585,6 +576,10 @@
     <None Include="Resources\Tutorials.png" />
     <None Include="Resources\Guides.png" />
     <None Include="Resources\%27sss nothing fur u.png" />
+    <None Include="Resources\M64MM2 CC Mario big.png" />
+    <Content Include="animation_data.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="SM64FMNormal.ico" />
   </ItemGroup>
   <ItemGroup>
@@ -595,9 +590,7 @@
       <DefaultIcon>SM64FMNormal.ico</DefaultIcon>
     </FileAssociation>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="M64MM2\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <PublishFile Include="WinFormsTransitions">
       <Visible>False</Visible>

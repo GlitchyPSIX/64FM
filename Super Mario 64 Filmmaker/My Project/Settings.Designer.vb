@@ -103,7 +103,7 @@ Namespace My
         
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("04/01/2016 20:26:00")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("06/28/2016 20:27:00")>  _
         Public ReadOnly Property BuildDate() As Date
             Get
                 Return CType(Me("BuildDate"),Date)
