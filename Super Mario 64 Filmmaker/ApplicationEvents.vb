@@ -77,11 +77,6 @@
             ExceptionHandler(DirectCast(e.ExceptionObject, Exception))
 
         End Sub
-
-        Private Sub AppShutdown(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Shutdown
-            My.Settings.Save()
-            MainMenu.Close()
-        End Sub
         Public Sub Goodbye()
             Dim Response As DialogResult = MsgBox("You're sure you want to exit 64Filmmaker?", MsgBoxStyle.YesNo + MsgBoxStyle.Exclamation, "You're sure?")
             If Response = DialogResult.No Then
@@ -112,10 +107,6 @@
                 'TODO: close the app entirely while saving settings
                 'damn m9 i can't get to do so
             End If
-        End Sub
-
-        Public Sub gtfo()
-            OnShutdown()
         End Sub
     End Class
 End Namespace
