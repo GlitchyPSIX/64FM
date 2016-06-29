@@ -155,8 +155,6 @@ Public Class MainMenu
             noticon.BalloonTipIcon = ToolTipIcon.Info
             noticon.ShowBalloonTip(15000)
         Else
-            'I don't have any idea on how to end the whole program without using End (to be honest it scares me since i don't know if I disposed
-            'everything properly...) so i'm taking an easier way.
             e.Cancel = False
         End If
     End Sub
@@ -176,6 +174,6 @@ Public Class MainMenu
 
     Private Sub Exit64FMToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Exit64FMToolStripMenuItem.Click
         My.Settings.Save()
-        Me.Close()
+        My.Application.Goodbye()
     End Sub
 End Class
