@@ -100,6 +100,8 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+    <None Include="SAMPLE FILES\autoscript.aus" />
+    <None Include="SAMPLE FILES\multifile.fma" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\64Parser\64Parser.vbproj">
