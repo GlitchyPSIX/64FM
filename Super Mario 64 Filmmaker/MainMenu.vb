@@ -2,13 +2,7 @@
 '------------------------------------------------------------------------------------------------------------------------------------
 
 
-Imports System.IO
-Imports System.Text
-Imports System.Runtime.InteropServices
-Imports Ionic.Zip
 Imports Transitions
-Imports Filmmaker.Extractor 'Cmon, this will make my life easier.
-Imports System.ComponentModel
 Public Class MainMenu
     'This will help me close the processes that were opened without the need of scavenging a lot. (Except PJ64?)
     Public VEProcess As Process
@@ -17,36 +11,32 @@ Public Class MainMenu
     Private Sub MainMenu_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         'Set the "Custom Settings" feature and load the processes
         ApplyProfileSettings()
-		Dim NameCheck As String = My.Settings.Name
-        If NameCheck.ToLower.Equals("zenon") Or NameCheck.ToLower.Equals("antipius") Or NameCheck.ToLower.Equals("raptor") Or NameCheck.ToLower.Equals("Deinonychus") Then
-			FORBIDDEN.ShowDialog()
-			Close()
-        End If
-        AppVer.Text = "64Filmmaker v" + Application.ProductVersion.ToString + " (ALPHA) | Build Date: " + My.Settings.BuildDate.ToString
+        'Forget the block below, it will be only when I forbid access to certain people.
+        'The next is Starman3, due to a license enforcement, where both him (his representant [CDROM1019]) and me agreed to.
+        'Does not mean you should do same with M64MM ;)
+        'Dim NameCheck As String = My.Settings.Name
+        '      If NameCheck.ToLower.Equals("starman3") Or NameCheck.ToLower.Equals("jacobthehero") Or NameCheck.ToLower.Equals("raptor") Or NameCheck.ToLower.Equals("Deinonychus") Then
+        '	FORBIDDEN.ShowDialog()
+        '	Close()
+        '      End If
+        Version_lb.Text = "64Filmmaker v" + Application.ProductVersion.ToString + " | Build Date: " + My.Settings.BuildDate.ToString
         TenthOfASecond.Interval = 100
         TenthOfASecond.Start()
     End Sub
 
     Public Sub ApplyProfileSettings() 'the name says it
+        MsgBox("Trying to load from: " + My.Settings.Image)
         If My.Settings.Background = 1 Then
-            Me.BackgroundImage = My.Resources.Background
+            Me.BackgroundImage = My.Resources.white_noise
         ElseIf My.Settings.Background = 2 Then
-            Me.BackgroundImage = My.Resources.Background2
-        ElseIf My.Settings.Background = 3 Then
-            Me.BackgroundImage = My.Resources.Background3
-        ElseIf My.Settings.Background = 4 Then
-            Me.BackgroundImage = My.Resources.Background4
-        ElseIf My.Settings.Background = 5 Then
-            Me.BackgroundImage = My.Resources.Background5
-        ElseIf My.Settings.Background = 6 Then
-            Me.BackgroundImage = My.Resources.Background6
-        ElseIf My.Settings.Background = 7 Then
-            Me.BackgroundImage = My.Resources.Background7
-        ElseIf My.Settings.Background = 8 Then
-            Me.BackgroundImage = My.Resources.Background8
+            Me.BackgroundImage = My.Resources.dark_noise
         End If
         ImgPrw.BackColor = Color.Transparent
-        ImgPrw.Image = Image.FromFile(My.Settings.Image)
+        Try
+            ImgPrw.Image = Image.FromFile(My.Settings.Image)
+        Catch ex As Exception
+            ImgPrw.Image = My.Resources.PIC_EXCEPTION
+        End Try
         WelcomeLabel.Text = ("Welcome back," + vbCrLf + My.Settings.Name)
         Me.BackColor = My.Settings.FavColor
         Me.Refresh()
@@ -74,14 +64,13 @@ Public Class MainMenu
         ROMSelector.Show()
     End Sub
 
-    Private Sub btnEXT_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEXT.Click
+    Private Sub btnEXT_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         'This was the Extras menu, but I'm thinking about changing it to the Hacker section.
     End Sub
 
     Private Sub btnCinema_Click(sender As Object, e As EventArgs) Handles btnCinema.Click
-        'Show M64MM2.0.x
-        Dim CinematicForm As New MainForm()
-        CinematicForm.Show()
+        'Show M64MM2.x
+        MainForm.Show()
     End Sub
 
     Private Sub ToolStripStatusLabel1_Click(sender As System.Object, e As System.EventArgs) Handles ToolStripStatusLabel1.Click
@@ -92,22 +81,6 @@ Public Class MainMenu
     Private Sub ShowChat(sender As System.Object, e As System.EventArgs) Handles btnChat.Click
         'I will scrap the chat to make it the core of the online functionality.
     End Sub
-
-    Private Sub btnWorkshop_Click(sender As Object, e As EventArgs) Handles btnWorkshop.Click
-        'Shouldn't be directly like that, I have to design the UI.
-
-    End Sub
-
-    Private Sub ImgPrw_Click(sender As Object, e As EventArgs) Handles ImgPrw.Click
-        ' This will open the Settings window... I haven't even designed it yet...
-    End Sub
-
-    Private Sub LoadAddonImporterToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LoadAddonImporterToolStripMenuItem.Click
-        ' Coming from Filmmaker.Extractor, loads the OpenFileDialog to search a ZIP to extract. 
-        ' A direct method to add addons. 
-        LoadAndDecompress("*", ".64a", "64Filmmaker Addon (*.64a)|*.64a|")
-    End Sub
-
     Private Sub ExpandOrRetract_Click(sender As Object, e As EventArgs) Handles ExpandOrRetract.Click
         ' This expands the main menu.
         Dim FormWidth As Integer = Me.Width
@@ -131,14 +104,7 @@ Public Class MainMenu
             'Next
         End If
     End Sub
-
-    Private Sub ProfileToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ProfileToolStripMenuItem.Click
-        ' ???? NOT YET
-        'Me.Hide()
-        'SetUpForm.Show()
-    End Sub
-
-    Private Sub About64FMToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutSM64FMToolStripMenuItem.Click
+    Private Sub About64FMToolStripMenuItem_Click(sender As Object, e As EventArgs)
         'Show the about box.
         AboutBox.Show()
     End Sub
@@ -175,5 +141,17 @@ Public Class MainMenu
     Private Sub Exit64FMToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Exit64FMToolStripMenuItem.Click
         My.Settings.Save()
         My.Application.Goodbye()
+    End Sub
+
+    Private Sub About64FilmmakerToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles About64FMToolStripMenuItem.Click
+        AboutBox.Show()
+    End Sub
+
+    Private Sub WebpageLink_lb_Click(sender As Object, e As EventArgs) Handles WebpageLink_lb.Click
+
+    End Sub
+
+    Private Sub btnWorkshop_Click(sender As Object, e As EventArgs) Handles Addon_btn.Click
+        AddonSettingsForm.Show()
     End Sub
 End Class

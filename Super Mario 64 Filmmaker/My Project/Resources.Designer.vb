@@ -156,36 +156,6 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property ACC() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("ACC", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Drawing.Bitmap.
-        '''</summary>
-        Friend ReadOnly Property ACC1() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("ACC1", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Drawing.Bitmap.
-        '''</summary>
-        Friend ReadOnly Property ADD() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("ADD", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Drawing.Bitmap.
-        '''</summary>
         Friend ReadOnly Property Addon() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("Addon", resourceCulture)
@@ -239,82 +209,11 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''  Looks up a localized string similar to Back.
         '''</summary>
-        Friend ReadOnly Property Background() As System.Drawing.Bitmap
+        Friend ReadOnly Property Back() As String
             Get
-                Dim obj As Object = ResourceManager.GetObject("Background", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Drawing.Bitmap.
-        '''</summary>
-        Friend ReadOnly Property Background2() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("Background2", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Drawing.Bitmap.
-        '''</summary>
-        Friend ReadOnly Property Background3() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("Background3", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Drawing.Bitmap.
-        '''</summary>
-        Friend ReadOnly Property Background4() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("Background4", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Drawing.Bitmap.
-        '''</summary>
-        Friend ReadOnly Property Background5() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("Background5", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Drawing.Bitmap.
-        '''</summary>
-        Friend ReadOnly Property Background6() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("Background6", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Drawing.Bitmap.
-        '''</summary>
-        Friend ReadOnly Property Background7() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("Background7", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Drawing.Bitmap.
-        '''</summary>
-        Friend ReadOnly Property Background8() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("Background8", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
+                Return ResourceManager.GetString("Back", resourceCulture)
             End Get
         End Property
         
@@ -342,16 +241,6 @@ Namespace My.Resources
         Friend ReadOnly Property BaseAddressOverwriteWarning() As String
             Get
                 Return ResourceManager.GetString("BaseAddressOverwriteWarning", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Drawing.Bitmap.
-        '''</summary>
-        Friend ReadOnly Property Bugged() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("Bugged", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
         
@@ -393,11 +282,74 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to CC Mode.
+        '''</summary>
+        Friend ReadOnly Property CCS_ColorMode() As String
+            Get
+                Return ResourceManager.GetString("CCS_ColorMode", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Restore Lighting.
+        '''</summary>
+        Friend ReadOnly Property CCS_RestoreSh() As String
+            Get
+                Return ResourceManager.GetString("CCS_RestoreSh", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Light point X.
+        '''</summary>
+        Friend ReadOnly Property CCS_ShadeX() As String
+            Get
+                Return ResourceManager.GetString("CCS_ShadeX", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Light point Y.
+        '''</summary>
+        Friend ReadOnly Property CCS_ShadeY() As String
+            Get
+                Return ResourceManager.GetString("CCS_ShadeY", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Light point Z.
+        '''</summary>
+        Friend ReadOnly Property CCS_ShadeZ() As String
+            Get
+                Return ResourceManager.GetString("CCS_ShadeZ", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Lighting Mode.
+        '''</summary>
+        Friend ReadOnly Property CCS_ShadingMode() As String
+            Get
+                Return ResourceManager.GetString("CCS_ShadingMode", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Want to set these colors as default?.
         '''</summary>
         Friend ReadOnly Property CCSDefaultMB() As String
             Get
                 Return ResourceManager.GetString("CCSDefaultMB", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Want to set these colors as default?.
+        '''</summary>
+        Friend ReadOnly Property CCSDefaultMB1() As String
+            Get
+                Return ResourceManager.GetString("CCSDefaultMB1", resourceCulture)
             End Get
         End Property
         
@@ -411,11 +363,29 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Restore Colors.
+        '''</summary>
+        Friend ReadOnly Property CCSDefaults1() As String
+            Get
+                Return ResourceManager.GetString("CCSDefaults1", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Set as default?.
         '''</summary>
         Friend ReadOnly Property CCSDMBTitle() As String
             Get
                 Return ResourceManager.GetString("CCSDMBTitle", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Set as default?.
+        '''</summary>
+        Friend ReadOnly Property CCSDMBTitle1() As String
+            Get
+                Return ResourceManager.GetString("CCSDMBTitle1", resourceCulture)
             End Get
         End Property
         
@@ -429,11 +399,29 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Close.
+        '''</summary>
+        Friend ReadOnly Property CCSEXbtn1() As String
+            Get
+                Return ResourceManager.GetString("CCSEXbtn1", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Cancel.
         '''</summary>
         Friend ReadOnly Property CCSEXCancel() As String
             Get
                 Return ResourceManager.GetString("CCSEXCancel", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Cancel.
+        '''</summary>
+        Friend ReadOnly Property CCSEXCancel1() As String
+            Get
+                Return ResourceManager.GetString("CCSEXCancel1", resourceCulture)
             End Get
         End Property
         
@@ -447,11 +435,29 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Here&apos;s that color code you asked for!.
+        '''</summary>
+        Friend ReadOnly Property CCSEXLabel1() As String
+            Get
+                Return ResourceManager.GetString("CCSEXLabel1", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Export color code....
         '''</summary>
         Friend ReadOnly Property CCSExport() As String
             Get
                 Return ResourceManager.GetString("CCSExport", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Export color code....
+        '''</summary>
+        Friend ReadOnly Property CCSExport1() As String
+            Get
+                Return ResourceManager.GetString("CCSExport1", resourceCulture)
             End Get
         End Property
         
@@ -465,11 +471,29 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Color Code Studio.
+        '''</summary>
+        Friend ReadOnly Property CCSFormTitle1() As String
+            Get
+                Return ResourceManager.GetString("CCSFormTitle1", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Gloves.
         '''</summary>
         Friend ReadOnly Property CCSGloves() As String
             Get
                 Return ResourceManager.GetString("CCSGloves", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Gloves.
+        '''</summary>
+        Friend ReadOnly Property CCSGloves1() As String
+            Get
+                Return ResourceManager.GetString("CCSGloves1", resourceCulture)
             End Get
         End Property
         
@@ -483,11 +507,29 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Hair.
+        '''</summary>
+        Friend ReadOnly Property CCSHair1() As String
+            Get
+                Return ResourceManager.GetString("CCSHair1", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Hat/Shirt.
         '''</summary>
         Friend ReadOnly Property CCSHat() As String
             Get
                 Return ResourceManager.GetString("CCSHat", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Hat/Shirt.
+        '''</summary>
+        Friend ReadOnly Property CCSHat1() As String
+            Get
+                Return ResourceManager.GetString("CCSHat1", resourceCulture)
             End Get
         End Property
         
@@ -501,11 +543,29 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Paste your color code into the textbox below, then click &quot;OK&quot;..
+        '''</summary>
+        Friend ReadOnly Property CCSIMLabel1() As String
+            Get
+                Return ResourceManager.GetString("CCSIMLabel1", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Import color code....
         '''</summary>
         Friend ReadOnly Property CCSImport() As String
             Get
                 Return ResourceManager.GetString("CCSImport", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Import color code....
+        '''</summary>
+        Friend ReadOnly Property CCSImport1() As String
+            Get
+                Return ResourceManager.GetString("CCSImport1", resourceCulture)
             End Get
         End Property
         
@@ -519,11 +579,29 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to An error occurred while trying to import the color code. Make sure you entered a valid code!.
+        '''</summary>
+        Friend ReadOnly Property CCSImportError1() As String
+            Get
+                Return ResourceManager.GetString("CCSImportError1", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Load from game.
         '''</summary>
         Friend ReadOnly Property CCSLoad() As String
             Get
                 Return ResourceManager.GetString("CCSLoad", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Load from game.
+        '''</summary>
+        Friend ReadOnly Property CCSLoad1() As String
+            Get
+                Return ResourceManager.GetString("CCSLoad1", resourceCulture)
             End Get
         End Property
         
@@ -537,11 +615,29 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Overalls.
+        '''</summary>
+        Friend ReadOnly Property CCSOveralls1() As String
+            Get
+                Return ResourceManager.GetString("CCSOveralls1", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Shoes.
         '''</summary>
         Friend ReadOnly Property CCSShoes() As String
             Get
                 Return ResourceManager.GetString("CCSShoes", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Shoes.
+        '''</summary>
+        Friend ReadOnly Property CCSShoes1() As String
+            Get
+                Return ResourceManager.GetString("CCSShoes1", resourceCulture)
             End Get
         End Property
         
@@ -555,11 +651,29 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Skin.
+        '''</summary>
+        Friend ReadOnly Property CCSSkin1() As String
+            Get
+                Return ResourceManager.GetString("CCSSkin1", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to IMPORTANT: Make sure to uncheck any color codes currently enabled in Project64. Otherwise, they will prevent this program from modifying Mario&apos;s colors..
         '''</summary>
         Friend ReadOnly Property CCWarning() As String
             Get
                 Return ResourceManager.GetString("CCWarning", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to IMPORTANT: Make sure to uncheck any color codes currently enabled in Project64. Otherwise, they will prevent this program from modifying Mario&apos;s colors..
+        '''</summary>
+        Friend ReadOnly Property CCWarning1() As String
+            Get
+                Return ResourceManager.GetString("CCWarning1", resourceCulture)
             End Get
         End Property
         
@@ -622,9 +736,9 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property Death() As System.Drawing.Bitmap
+        Friend ReadOnly Property dark_noise() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("Death", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("dark_noise", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -717,16 +831,6 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized resource of type System.Drawing.Bitmap.
-        '''</summary>
-        Friend ReadOnly Property Flying() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("Flying", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
         '''  Looks up a localized string similar to Force Camera to be movable with C-Buttons.
         '''</summary>
         Friend ReadOnly Property ForceCameraC() As String
@@ -769,6 +873,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Front.
+        '''</summary>
+        Friend ReadOnly Property Front() As String
+            Get
+                Return ResourceManager.GetString("Front", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
         Friend ReadOnly Property froze() As System.Drawing.Bitmap
@@ -793,16 +906,6 @@ Namespace My.Resources
         Friend ReadOnly Property GiveCrit() As System.IO.UnmanagedMemoryStream
             Get
                 Return ResourceManager.GetStream("GiveCrit", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Drawing.Bitmap.
-        '''</summary>
-        Friend ReadOnly Property Glitch() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("Glitch", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
         
@@ -835,12 +938,11 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''  Looks up a localized string similar to Heal Mario.
         '''</summary>
-        Friend ReadOnly Property Hang() As System.Drawing.Bitmap
+        Friend ReadOnly Property Heal_Extra() As String
             Get
-                Dim obj As Object = ResourceManager.GetObject("Hang", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
+                Return ResourceManager.GetString("Heal_Extra", resourceCulture)
             End Get
         End Property
         
@@ -850,6 +952,15 @@ Namespace My.Resources
         Friend ReadOnly Property HelpStrip() As String
             Get
                 Return ResourceManager.GetString("HelpStrip", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Higher.
+        '''</summary>
+        Friend ReadOnly Property Higher() As String
+            Get
+                Return ResourceManager.GetString("Higher", resourceCulture)
             End Get
         End Property
         
@@ -868,16 +979,6 @@ Namespace My.Resources
         Friend ReadOnly Property Hit() As System.IO.UnmanagedMemoryStream
             Get
                 Return ResourceManager.GetStream("Hit", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Drawing.Bitmap.
-        '''</summary>
-        Friend ReadOnly Property Hold() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("Hold", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
         
@@ -914,6 +1015,66 @@ Namespace My.Resources
         Friend ReadOnly Property HoverToolTip() As String
             Get
                 Return ResourceManager.GetString("HoverToolTip", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property ic_64p() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("ic_64p", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property ic_add() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("ic_add", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property ic_cfg() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("ic_cfg", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property ic_rec() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("ic_rec", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property ic_tut() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("ic_tut", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property ic_ve() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("ic_ve", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
         
@@ -1028,12 +1189,11 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''  Looks up a localized string similar to Left.
         '''</summary>
-        Friend ReadOnly Property Jump() As System.Drawing.Bitmap
+        Friend ReadOnly Property Left() As String
             Get
-                Dim obj As Object = ResourceManager.GetObject("Jump", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
+                Return ResourceManager.GetString("Left", resourceCulture)
             End Get
         End Property
         
@@ -1098,6 +1258,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Lower.
+        '''</summary>
+        Friend ReadOnly Property Lower() As String
+            Get
+                Return ResourceManager.GetString("Lower", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
         Friend ReadOnly Property M64MM2_CC_Mario_big() As System.Drawing.Bitmap
@@ -1136,26 +1305,6 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized resource of type System.Drawing.Bitmap.
-        '''</summary>
-        Friend ReadOnly Property MoveRoute() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("MoveRoute", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Drawing.Bitmap.
-        '''</summary>
-        Friend ReadOnly Property Multipart() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("Multipart", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
         '''  Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         '''</summary>
         Friend ReadOnly Property No() As System.IO.UnmanagedMemoryStream
@@ -1186,16 +1335,6 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property OK() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("OK", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Drawing.Bitmap.
-        '''</summary>
         Friend ReadOnly Property Online() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("Online", resourceCulture)
@@ -1216,9 +1355,9 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property PJ6A() As System.Drawing.Bitmap
+        Friend ReadOnly Property PIC_EXCEPTION() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("PJ6A", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("PIC_EXCEPTION", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -1355,6 +1494,33 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Randomizer: X.
+        '''</summary>
+        Friend ReadOnly Property RandomX() As String
+            Get
+                Return ResourceManager.GetString("RandomX", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Randomizer: Y.
+        '''</summary>
+        Friend ReadOnly Property RandomY() As String
+            Get
+                Return ResourceManager.GetString("RandomY", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Randomizer: Z.
+        '''</summary>
+        Friend ReadOnly Property RandomZ() As String
+            Get
+                Return ResourceManager.GetString("RandomZ", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
         Friend ReadOnly Property Recorder() As System.Drawing.Bitmap
@@ -1410,6 +1576,15 @@ Namespace My.Resources
             Get
                 Dim obj As Object = ResourceManager.GetObject("Retract", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Right.
+        '''</summary>
+        Friend ReadOnly Property Right() As String
+            Get
+                Return ResourceManager.GetString("Right", resourceCulture)
             End Get
         End Property
         
@@ -1498,6 +1673,16 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property splashlogo() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("splashlogo", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         '''</summary>
         Friend ReadOnly Property Surprise() As System.IO.UnmanagedMemoryStream
@@ -1576,9 +1761,9 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property Vegas10() As System.Drawing.Bitmap
+        Friend ReadOnly Property VFX() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("Vegas10", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("VFX", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -1586,9 +1771,9 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property VFX() As System.Drawing.Bitmap
+        Friend ReadOnly Property white_noise() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("VFX", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("white_noise", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -1599,16 +1784,6 @@ Namespace My.Resources
         Friend ReadOnly Property Yes() As System.IO.UnmanagedMemoryStream
             Get
                 Return ResourceManager.GetStream("Yes", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Drawing.Bitmap.
-        '''</summary>
-        Friend ReadOnly Property YouDontSay() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("YouDontSay", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
         

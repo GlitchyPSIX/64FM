@@ -69,7 +69,7 @@ Partial Class NotiForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = Global.Filmmaker.My.Resources.Resources.Background
+        Me.BackgroundImage = Global.Filmmaker.My.Resources.Resources.white_noise
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.ClientSize = New System.Drawing.Size(186, 185)
         Me.Controls.Add(Me.btnDismiss)

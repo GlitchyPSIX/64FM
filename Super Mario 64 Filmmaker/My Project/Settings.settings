@@ -15,7 +15,7 @@
       <Value Profile="(Default)">1</Value>
     </Setting>
     <Setting Name="BuildDate" Type="System.DateTime" Scope="Application">
-      <Value Profile="(Default)">06/28/2016 20:27:00</Value>
+      <Value Profile="(Default)">10/05/2016 19:45:00</Value>
     </Setting>
     <Setting Name="Frozen" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>

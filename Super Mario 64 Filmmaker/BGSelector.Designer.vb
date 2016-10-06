@@ -22,210 +22,126 @@ Partial Class BGSelector
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim ListViewItem1 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("In progress.")
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(BGSelector))
-        Me.Skysoarer = New System.Windows.Forms.PictureBox()
-        Me.Harmony = New System.Windows.Forms.PictureBox()
-        Me.Fade = New System.Windows.Forms.PictureBox()
-        Me.Classic = New System.Windows.Forms.PictureBox()
-        Me.Clockwork = New System.Windows.Forms.PictureBox()
-        Me.Loveup = New System.Windows.Forms.PictureBox()
-        Me.Starlight = New System.Windows.Forms.PictureBox()
+        Me.whitenoise = New System.Windows.Forms.PictureBox()
+        Me.darknoise = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        CType(Me.Skysoarer, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Harmony, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Fade, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Classic, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Clockwork, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Loveup, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Starlight, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.CustomList_lw = New System.Windows.Forms.ListView()
+        Me.OK_btn = New System.Windows.Forms.Button()
+        CType(Me.whitenoise, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.darknoise, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'Skysoarer
+        'whitenoise
         '
-        Me.Skysoarer.Image = Global.Filmmaker.My.Resources.Resources.Background4
-        Me.Skysoarer.Location = New System.Drawing.Point(417, 12)
-        Me.Skysoarer.Name = "Skysoarer"
-        Me.Skysoarer.Size = New System.Drawing.Size(129, 122)
-        Me.Skysoarer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.Skysoarer.TabIndex = 0
-        Me.Skysoarer.TabStop = False
+        Me.whitenoise.Image = Global.Filmmaker.My.Resources.Resources.white_noise
+        Me.whitenoise.Location = New System.Drawing.Point(11, 11)
+        Me.whitenoise.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.whitenoise.Name = "whitenoise"
+        Me.whitenoise.Size = New System.Drawing.Size(115, 115)
+        Me.whitenoise.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.whitenoise.TabIndex = 0
+        Me.whitenoise.TabStop = False
         '
-        'Harmony
+        'darknoise
         '
-        Me.Harmony.Image = Global.Filmmaker.My.Resources.Resources.Background2
-        Me.Harmony.Location = New System.Drawing.Point(282, 12)
-        Me.Harmony.Name = "Harmony"
-        Me.Harmony.Size = New System.Drawing.Size(129, 122)
-        Me.Harmony.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.Harmony.TabIndex = 0
-        Me.Harmony.TabStop = False
-        '
-        'Fade
-        '
-        Me.Fade.Image = Global.Filmmaker.My.Resources.Resources.Background3
-        Me.Fade.Location = New System.Drawing.Point(147, 12)
-        Me.Fade.Name = "Fade"
-        Me.Fade.Size = New System.Drawing.Size(129, 122)
-        Me.Fade.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.Fade.TabIndex = 0
-        Me.Fade.TabStop = False
-        '
-        'Classic
-        '
-        Me.Classic.Image = Global.Filmmaker.My.Resources.Resources.Background
-        Me.Classic.Location = New System.Drawing.Point(12, 12)
-        Me.Classic.Name = "Classic"
-        Me.Classic.Size = New System.Drawing.Size(129, 122)
-        Me.Classic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.Classic.TabIndex = 0
-        Me.Classic.TabStop = False
-        '
-        'Clockwork
-        '
-        Me.Clockwork.Image = Global.Filmmaker.My.Resources.Resources.Background5
-        Me.Clockwork.Location = New System.Drawing.Point(12, 172)
-        Me.Clockwork.Name = "Clockwork"
-        Me.Clockwork.Size = New System.Drawing.Size(129, 122)
-        Me.Clockwork.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.Clockwork.TabIndex = 0
-        Me.Clockwork.TabStop = False
-        '
-        'Loveup
-        '
-        Me.Loveup.Image = Global.Filmmaker.My.Resources.Resources.Background6
-        Me.Loveup.Location = New System.Drawing.Point(219, 172)
-        Me.Loveup.Name = "Loveup"
-        Me.Loveup.Size = New System.Drawing.Size(129, 122)
-        Me.Loveup.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.Loveup.TabIndex = 0
-        Me.Loveup.TabStop = False
-        '
-        'Starlight
-        '
-        Me.Starlight.Image = Global.Filmmaker.My.Resources.Resources.Background7
-        Me.Starlight.Location = New System.Drawing.Point(417, 172)
-        Me.Starlight.Name = "Starlight"
-        Me.Starlight.Size = New System.Drawing.Size(129, 122)
-        Me.Starlight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.Starlight.TabIndex = 0
-        Me.Starlight.TabStop = False
+        Me.darknoise.Image = Global.Filmmaker.My.Resources.Resources.dark_noise
+        Me.darknoise.Location = New System.Drawing.Point(11, 163)
+        Me.darknoise.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.darknoise.Name = "darknoise"
+        Me.darknoise.Size = New System.Drawing.Size(115, 115)
+        Me.darknoise.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.darknoise.TabIndex = 0
+        Me.darknoise.TabStop = False
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(42, 137)
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(26, 129)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(68, 18)
+        Me.Label1.Size = New System.Drawing.Size(90, 20)
         Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Classical"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(185, 137)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(49, 18)
-        Me.Label2.TabIndex = 2
-        Me.Label2.Text = "Faded"
+        Me.Label1.Text = "White Noise"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(306, 137)
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(254, 9)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(69, 18)
+        Me.Label3.Size = New System.Drawing.Size(59, 20)
         Me.Label3.TabIndex = 3
-        Me.Label3.Text = "Harmony"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(444, 139)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(76, 18)
-        Me.Label4.TabIndex = 4
-        Me.Label4.Text = "Skysoarer"
+        Me.Label3.Text = "Custom"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(36, 296)
+        Me.Label5.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(26, 281)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(80, 18)
+        Me.Label5.Size = New System.Drawing.Size(82, 20)
         Me.Label5.TabIndex = 5
-        Me.Label5.Text = "Clockwork"
+        Me.Label5.Text = "Dark Noise"
         '
-        'Label6
+        'CustomList_lw
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(254, 297)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(56, 18)
-        Me.Label6.TabIndex = 6
-        Me.Label6.Text = "Loveup"
+        Me.CustomList_lw.Items.AddRange(New System.Windows.Forms.ListViewItem() {ListViewItem1})
+        Me.CustomList_lw.Location = New System.Drawing.Point(149, 33)
+        Me.CustomList_lw.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.CustomList_lw.Name = "CustomList_lw"
+        Me.CustomList_lw.Size = New System.Drawing.Size(266, 245)
+        Me.CustomList_lw.TabIndex = 6
+        Me.CustomList_lw.UseCompatibleStateImageBehavior = False
+        Me.CustomList_lw.View = System.Windows.Forms.View.Tile
         '
-        'Label7
+        'OK_btn
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(452, 297)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(61, 18)
-        Me.Label7.TabIndex = 7
-        Me.Label7.Text = "Starlight"
+        Me.OK_btn.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.OK_btn.Location = New System.Drawing.Point(149, 281)
+        Me.OK_btn.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.OK_btn.Name = "OK_btn"
+        Me.OK_btn.Size = New System.Drawing.Size(266, 27)
+        Me.OK_btn.TabIndex = 7
+        Me.OK_btn.Text = "OK"
+        Me.OK_btn.UseVisualStyleBackColor = True
         '
         'BGSelector
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 18.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(558, 331)
-        Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.Label6)
+        Me.BackColor = System.Drawing.Color.DodgerBlue
+        Me.ClientSize = New System.Drawing.Size(434, 333)
+        Me.Controls.Add(Me.OK_btn)
+        Me.Controls.Add(Me.CustomList_lw)
         Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.Skysoarer)
-        Me.Controls.Add(Me.Harmony)
-        Me.Controls.Add(Me.Fade)
-        Me.Controls.Add(Me.Starlight)
-        Me.Controls.Add(Me.Loveup)
-        Me.Controls.Add(Me.Clockwork)
-        Me.Controls.Add(Me.Classic)
-        Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Controls.Add(Me.darknoise)
+        Me.Controls.Add(Me.whitenoise)
+        Me.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
+        Me.Margin = New System.Windows.Forms.Padding(2, 5, 2, 5)
         Me.Name = "BGSelector"
         Me.Text = "Select your background"
-        CType(Me.Skysoarer, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Harmony, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Fade, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Classic, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Clockwork, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Loveup, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Starlight, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.whitenoise, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.darknoise, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents Classic As System.Windows.Forms.PictureBox
-    Friend WithEvents Fade As System.Windows.Forms.PictureBox
-    Friend WithEvents Harmony As System.Windows.Forms.PictureBox
-    Friend WithEvents Skysoarer As System.Windows.Forms.PictureBox
-    Friend WithEvents Clockwork As System.Windows.Forms.PictureBox
-    Friend WithEvents Loveup As System.Windows.Forms.PictureBox
-    Friend WithEvents Starlight As System.Windows.Forms.PictureBox
+    Friend WithEvents whitenoise As System.Windows.Forms.PictureBox
+    Friend WithEvents darknoise As System.Windows.Forms.PictureBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents CustomList_lw As ListView
+    Friend WithEvents OK_btn As Button
 End Class
