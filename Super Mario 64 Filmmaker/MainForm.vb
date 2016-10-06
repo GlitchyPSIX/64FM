@@ -2,10 +2,11 @@ Imports System.Globalization
 Imports System.IO
 
 Public Class MainForm
-    Private Declare Function GetKeyPress Lib "user32" Alias "GetAsyncKeyState" (key As Integer) As Integer
+    Private Declare Function GetKeyPress Lib "user32" Alias "GetAsyncKeyState" (key As Integer) As Short
 
     Public Shared Base As Long
     Public Shared EmuOpen As Boolean = False
+    Private IsPrecised As Boolean = False
     Private MemDebugWindow As MemDebugForm
     Private ColorCodeWindow As ColorCodeStudio
     Private ChangeCamera As Boolean = False
@@ -13,13 +14,10 @@ Public Class MainForm
     Private PrecisionStage As Byte = 0
     Private SoftCameraUnfrozen As Boolean = True
     Private Key3WasUp As Boolean = True
-    Private ctrlkey As Boolean
     Private AnimList As New List(Of Animation)
     Private AnimData As Dictionary(Of String, String) = New Dictionary(Of String, String)
     Private LastCBox1Index As Integer
-    Private TestOnce As Boolean = False
     Private DisableAnimSwap As Boolean = False
-    Private OriginalFuntionCall As String
     Private CameraControlFunction As String
     Private SelectedAnim1 As Object
     Private SelectedAnim2 As Object
@@ -272,7 +270,7 @@ Public Class MainForm
                     End If
                 End If
 
-                ' NOTE: I think we should have the previous block of code somehow exit or move to an are where it doesn't re-enable the form's controls for 1 update
+                ' NOTE: I think we should have the previous block of code somehow exit or move to an area where it doesn't re-enable the form's controls for 1 update
                 ' because I think that's what the current code is doing. (Bottom line, re-do the code at some point, maybe in C#.)
                 ' GlitchyPSIX: mmm, I don't think that issue would be in this file.
                 If Timer1.Interval <> 100 Then Timer1.Interval = 100
@@ -377,50 +375,52 @@ Public Class MainForm
     End Sub
 
     Private Sub HandleInput()
-        If GetKeyPress(Keys.ControlKey) And GetKeyPress(Keys.D1) Then
-            Freeze()
-        ElseIf GetKeyPress(Keys.ControlKey) And GetKeyPress(Keys.D2) Then
-            Unfreeze()
-        ElseIf GetKeyPress(Keys.ControlKey) And GetKeyPress(Keys.D3) And Key3WasUp Then
-            Key3WasUp = False
-            ChangeCameraType()
-        ElseIf GetKeyPress(Keys.ControlKey) And GetKeyPress(Keys.D4) Then
-            SoftFreeze()
-        ElseIf GetKeyPress(Keys.ControlKey) And GetKeyPress(Keys.D5) Then
-            SoftUnfreeze()
-        ElseIf GetKeyPress(Keys.ControlKey) And GetKeyPress(Keys.D6) Then
-            For x = 0 To 26
-                Dim partialFunction As Integer = ReadInteger("Project64", Base + &H290D90 + (4 * x))
-                WriteInteger("Project64", Base + &H33D2D0 + (4 * x), partialFunction)
-            Next
-            WriteInteger("Project64", Base + &H33D3D0, ReadInteger("Project64", Base + &H33CBD0))
-            WriteInteger("Project64", Base + &HEE060, &H8033D2D0)
-            'MsgBox(CameraControlFunction)
-        ElseIf GetKeyPress(Keys.ControlKey) And GetKeyPress(Keys.D7) Then
-            For x = 0 To 26
-                Dim partialFunction As String = Hex(ReadInteger("Project64", Base + &H290D90 + (4 * x)))
-                If partialFunction.Count < 7 Then
-                    For y = 0 To (7 - partialFunction.Count)
-                        partialFunction = "0" & partialFunction
-                    Next
+        If (GetKeyPress(Keys.LControlKey) Or GetKeyPress(Keys.RControlKey)) Then
+            If GetKeyPress(Keys.D1) Then
+                Freeze()
+            ElseIf GetKeyPress(Keys.D2) Then
+                Unfreeze()
+            ElseIf GetKeyPress(Keys.D3) And Key3WasUp Then
+                Key3WasUp = False
+                ChangeCameraType()
+            ElseIf GetKeyPress(Keys.D4) Then
+                SoftFreeze()
+            ElseIf GetKeyPress(Keys.D5) Then
+                SoftUnfreeze()
+            ElseIf GetKeyPress(Keys.D6) Then
+                For x = 0 To 26
+                    Dim partialFunction As Integer = ReadInteger("Project64", Base + &H290D90 + (4 * x))
+                    WriteInteger("Project64", Base + &H33D2D0 + (4 * x), partialFunction)
+                Next
+                WriteInteger("Project64", Base + &H33D3D0, ReadInteger("Project64", Base + &H33CBD0))
+                WriteInteger("Project64", Base + &HEE060, &H8033D2D0)
+                'MsgBox(CameraControlFunction)
+            ElseIf GetKeyPress(Keys.D7) Then
+                For x = 0 To 26
+                    Dim partialFunction As String = Hex(ReadInteger("Project64", Base + &H290D90 + (4 * x)))
+                    If partialFunction.Count < 7 Then
+                        For y = 0 To (7 - partialFunction.Count)
+                            partialFunction = "0" & partialFunction
+                        Next
 
+                    End If
+                    CameraControlFunction = CameraControlFunction & partialFunction
+                Next
+
+            ElseIf GetKeyPress(Keys.R) And DisableAnimSwap = False Then
+                ResetAnimations()
+            ElseIf GetKeyPress(Keys.F) Then
+                ForceCameraPreset()
+            ElseIf GetKeyPress(Keys.P) Then
+                If GetKeyPress(Keys.ShiftKey) Then
+                    b_PrecisionPlusOne.PerformClick()
+                Else
+                    If PrecisionStage = 2 Then
+                        PrecisionModeMenuItem.PerformClick()
+                    End If
                 End If
-                CameraControlFunction = CameraControlFunction & partialFunction
-            Next
-
-        ElseIf GetKeyPress(Keys.ControlKey) And GetKeyPress(Keys.R) And DisableAnimSwap = False Then
-            ResetAnimations()
-        ElseIf GetKeyPress(Keys.ControlKey) And GetKeyPress(Keys.F) Then
-            ForceCameraPreset()
-        ElseIf GetKeyPress(Keys.ControlKey) And GetKeyPress(Keys.P) Then
-            If PrecisionModeMenuItem.Checked = False Then
-                PrecisionModeOn(False)
-            ElseIf PrecisionModeMenuItem.Checked = True Then
-                PrecisionModeOff(False)
             End If
-
         End If
-
         If GetKeyPress(Keys.D3) = False Then
             Key3WasUp = True
         Else
@@ -456,8 +456,7 @@ Public Class MainForm
         End If
     End Sub
 
-    Private Sub RetainAnimationSwapsMenuItem_Click(sender As Object, e As EventArgs) _
-        Handles RetainAnimationSwapsMenuItem.Click
+    Private Sub RetainAnimationSwapsMenuItem_Click(sender As Object, e As EventArgs) Handles RetainAnimationSwapsMenuItem.Click
         RetainAnimationSwapsMenuItem.Checked = True
         RetainAnimationSwapsMenuItem.CheckState = CheckState.Checked
 
@@ -465,8 +464,7 @@ Public Class MainForm
         UndoPreviousAnimationSwapsMenuItem.CheckState = CheckState.Unchecked
     End Sub
 
-    Private Sub UndoPreviousAnimationSwapsMenuItem_Click(sender As Object, e As EventArgs) _
-        Handles UndoPreviousAnimationSwapsMenuItem.Click
+    Private Sub UndoPreviousAnimationSwapsMenuItem_Click(sender As Object, e As EventArgs) Handles UndoPreviousAnimationSwapsMenuItem.Click
         UndoPreviousAnimationSwapsMenuItem.Checked = True
         UndoPreviousAnimationSwapsMenuItem.CheckState = CheckState.Checked
 
@@ -572,8 +570,7 @@ Public Class MainForm
         End If
     End Sub
 
-    Private Sub PrecisionCameraModeToolStripMenuItem_Click(sender As Object, e As EventArgs) _
-        Handles PrecisionModeMenuItem.Click
+    Private Sub PrecisionCameraModeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PrecisionModeMenuItem.Click
         If PrecisionModeMenuItem.Checked = False Then
             If Base = 0 Then
                 MsgBox(My.Resources.NoPJPrecisionError,
@@ -612,19 +609,13 @@ Public Class MainForm
     Private Sub TrackBar1_Scroll(sender As Object, e As EventArgs) Handles LevitateTrackBar.Scroll
         WriteInteger("Project64", Base + &H33B223, LevitateTrackBar.Value)
     End Sub
-    Private Sub CheckBox1_CheckedChanged_1(sender As Object, e As EventArgs) Handles DisableHudBTN.Click
+
+    Private Sub DisableHudBTN_Click(sender As Object, e As EventArgs) Handles DisableHudBTN.Click
         WriteInteger("Project64", Base + &H2E3DB0, 0)
         WriteInteger("Project64", Base + &H2E3DE0, 0)
         WriteInteger("Project64", Base + &H2E3E18, 0)
         WriteInteger("Project64", Base + &H2E3DC8, 0)
         WriteInteger("Project64", Base + &H3325F4, &H1)
-    End Sub
-
-    Private Sub ResetAnimationSwapsMenuItem_Click(sender As Object, e As EventArgs) Handles ResetAnimationSwapsMenuItem.Click
-    End Sub
-
-    Private Sub ResetAnimationSwapsMenuItem_DoubleClick(sender As Object, e As EventArgs) Handles ResetAnimationSwapsMenuItem.DoubleClick
-
     End Sub
 
     Private Sub HealMarioCB_CheckedChanged(sender As Object, e As EventArgs) Handles HealBTN.Click
