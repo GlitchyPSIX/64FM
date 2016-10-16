@@ -18,7 +18,7 @@
     <OptionStrict>Off</OptionStrict>
     <OptionInfer>On</OptionInfer>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <ApplicationIcon>64filmmaker.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\64FM4.ico</ApplicationIcon>
     <SignManifests>false</SignManifests>
     <SignAssembly>false</SignAssembly>
     <ManifestCertificateThumbprint>67F95E9398B761427EF35D4A4020C1E1E4907152</ManifestCertificateThumbprint>
@@ -84,7 +84,8 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>Super Mario 64 Filmmaker_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <DelaySign>false</DelaySign>
@@ -175,18 +176,6 @@
       <DependentUpon>ChatPM.vb</DependentUpon>
     </Compile>
     <Compile Include="ChatPM.vb" />
-    <Compile Include="cheatEssentials.Designer.vb">
-      <DependentUpon>cheatEssentials.vb</DependentUpon>
-    </Compile>
-    <Compile Include="cheatEssentials.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="cheatModeSel.Designer.vb">
-      <DependentUpon>cheatModeSel.vb</DependentUpon>
-    </Compile>
-    <Compile Include="cheatModeSel.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="ColorCodeCopyPasteForm.Designer.vb">
       <DependentUpon>ColorCodeCopyPasteForm.vb</DependentUpon>
     </Compile>
@@ -229,6 +218,12 @@
       <DependentUpon>frmSoftwareForm.vb</DependentUpon>
     </Compile>
     <Compile Include="frmSoftwareForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GPLForm.Designer.vb">
+      <DependentUpon>GPLForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GPLForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="hi.vb" />
@@ -348,14 +343,6 @@
     <EmbeddedResource Include="ChatPM.resx">
       <DependentUpon>ChatPM.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="cheatEssentials.resx">
-      <DependentUpon>cheatEssentials.vb</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="cheatModeSel.resx">
-      <DependentUpon>cheatModeSel.vb</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="ColorCodeCopyPasteForm.resx">
       <DependentUpon>ColorCodeCopyPasteForm.vb</DependentUpon>
     </EmbeddedResource>
@@ -377,6 +364,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmSoftwareForm.resx">
       <DependentUpon>frmSoftwareForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GPLForm.resx">
+      <DependentUpon>GPLForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="IntegrationForm.resx">
       <DependentUpon>IntegrationForm.vb</DependentUpon>
@@ -446,8 +436,6 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
-    <None Include="Super Mario 64 Filmmaker_TemporaryKey.pfx" />
-    <None Include="SuPerMarioSixtyFouRFilmMaKer.pfx" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6">
@@ -487,7 +475,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="64filmmaker.ico" />
+    <Content Include="Ionic.Zip.dll" />
+    <Content Include="IrcClient.dll" />
+    <Content Include="M64MM2.ico" />
+    <Content Include="WinFormsTransitions.dll" />
     <None Include="app.config" />
     <None Include="My Project\app.manifest">
       <SubType>Designer</SubType>
@@ -503,10 +494,6 @@
     <None Include="Resources\PJ6A.png" />
     <None Include="Resources\SFX.png" />
     <None Include="Resources\SM64FM-Logo.png" />
-    <None Include="Resources\SM64FM-Pro-Logo.png" />
-    <None Include="Resources\Vegas10.png" />
-    <None Include="Resources\Vegas11.png" />
-    <None Include="Resources\Vegas12.png" />
     <None Include="Resources\VFX.png" />
     <None Include="Resources\ADD.png" />
     <None Include="Resources\DELADD.png" />
@@ -515,18 +502,14 @@
     <None Include="Resources\ACG.png" />
     <None Include="Resources\CC.png" />
     <None Include="Resources\SC.png" />
-    <None Include="Resources\SM64FMNormalIntro.png" />
     <None Include="Resources\Bugged.png" />
     <None Include="Resources\Flying.png" />
     <None Include="Resources\Glitch.png" />
-    <None Include="Resources\MoveRoute.png" />
-    <None Include="Resources\Multipart.png" />
     <None Include="Resources\OK.png" />
     <None Include="Resources\Death.png" />
     <None Include="Resources\Hang.png" />
     <None Include="Resources\ACC1.png" />
     <None Include="Resources\ACC.png" />
-    <None Include="Resources\YouDontSay.png" />
     <None Include="Resources\Background.png" />
     <None Include="Resources\Background2.png" />
     <None Include="Resources\Background3.png" />
@@ -593,6 +576,13 @@
     <None Include="Resources\Jump.png" />
     <None Include="Resources\dark_noise.png" />
     <None Include="Resources\white_noise.png" />
+    <Content Include="Resources\64FM4.ico" />
+    <None Include="Resources\ic_addadd.png" />
+    <None Include="Resources\ic_confadd.png" />
+    <None Include="Resources\ic_deladd.png" />
+    <None Include="Resources\ic_getadd.png" />
+    <Content Include="Resources\neomaker logo.png" />
+    <None Include="Resources\playerlogo.png" />
     <Content Include="SM64FMNormal.ico" />
   </ItemGroup>
   <ItemGroup>

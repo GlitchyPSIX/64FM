@@ -1,12 +1,11 @@
-﻿Imports System.Diagnostics
-Imports System.IO
+﻿Imports System.IO
 Public Class AddonLister
     Public Shared Sub RepopulateFromDefault(ListViewToPopulate As ListView)
-        ListViewToPopulate.Clear()
-        Dim Name As String
-        Dim Type As String
-        Dim ReadingEntrypoint As String
-        Dim Entrypoint As String
+        ListViewToPopulate.Items.Clear()
+        Dim Name As String = ""
+        Dim Type As String = ""
+        Dim ReadingEntrypoint As String = ""
+        Dim Entrypoint As String = ""
         Dim IsCustomEP As Boolean
         Dim LoadedAddonsList As New StreamReader(Application.StartupPath + "\addonlist.cfg")
         Dim EveryLine As String() = LoadedAddonsList.ReadToEnd().Split(vbLf)
@@ -22,26 +21,26 @@ Public Class AddonLister
                 End If
                 If ReadingMetadataMode = True And Line.StartsWith(";") = False Then
                     If Line.StartsWith("name=") Then
-                        Name = Line.Replace("name=", "")
+                        Name = Line.Replace("name=", "").Replace(vbLf, "")
                     ElseIf Line.StartsWith("type=") Then
-                        Type = Line.Replace("type=", "")
+                        Type = Line.Replace("type=", "").Replace(vbLf, "")
                     ElseIf Line.StartsWith("entrypoint=") Then
-                        ReadingEntrypoint = Line.Replace("entrypoint=", "")
+                        ReadingEntrypoint = Line.Replace("entrypoint=", "").Replace(vbLf, "")
                         If ReadingEntrypoint.StartsWith("/custom/=") Then
                             IsCustomEP = True
-                            Entrypoint = ReadingEntrypoint.Replace("/custom/=", "")
+                            Entrypoint = ReadingEntrypoint.Replace("/custom/=", "").Replace(vbLf, "")
                         Else
-                            Entrypoint = Line.Replace("entrypoint=", "")
+                            Entrypoint = Line.Replace("entrypoint=", "").Replace(vbLf, "")
                         End If
                     End If
                 ElseIf ReadingMetadataMode = False And Line.StartsWith(";") = False Then
                     Dim ListItem As New ListViewItem
                     ListItem.Text = Name
-                    If Type = "eyepak" Then 'TODO: make this work
+                    If Type.Equals("eyepak") Then 'TODO: make this work
                         ListItem.SubItems.Add("Eyepack")
-                    ElseIf Type = "rom" Then
+                    ElseIf Type.Equals("rom") Then
                         ListItem.SubItems.Add("ROM")
-                    ElseIf Type = "tex" Then
+                    ElseIf Type.Equals("tex") Then
                         ListItem.SubItems.Add("Texture Pack")
                     Else
                         ListItem.SubItems.Add("File")
@@ -59,7 +58,6 @@ Public Class AddonLister
                 End If
             Next
             LoadedAddonsList.Dispose()
-
         Catch ex As Exception
             'Return to the console: ERROR <exception>
             MsgBox("Could not load addon file. Exception: " + ex.ToString, MsgBoxStyle.OkOnly, "OOPS!")

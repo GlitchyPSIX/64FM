@@ -705,4 +705,28 @@ Enable it in Settings -&gt; Precision Mode</value>
   <data name="white_noise" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\white_noise.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="LicenseStrip" xml:space="preserve">
+    <value>Licensing Info...</value>
+  </data>
+  <data name="neomaker_logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\neomaker logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="playerlogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\playerlogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_64FM4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\64FM4.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_addadd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ic_addadd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_confadd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ic_confadd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_deladd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ic_deladd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_getadd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ic_getadd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
