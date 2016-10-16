@@ -26,16 +26,19 @@ Public Class ROMSelector
                 file = file.Replace(Application.StartupPath + "\ROMs\", "")
                 romselLB.Items.Add(file)
             Next
+            If Z64ROMS.Count = 0 And N64ROMS.Count = 0 And V64ROMS.Count Then
+                OKbtn.Enabled = False
+            End If
         Else
             Directory.CreateDirectory(Application.StartupPath + "\ROMs\")
-        End If
+            End If
     End Sub
 
     Private Sub OKbtn_Click(sender As Object, e As EventArgs) Handles OKbtn.Click
         'Search for PJ64 and start it
-        If GetEmuProcess("Project64") = Nothing Then
-            MainMenu.EMUProcess = Process.Start(Application.StartupPath & "\Core\Emu\Project64.exe", Chr(34) & Application.StartupPath & "\ROMs\" + romselLB.SelectedItem + Chr(34))
+        If GetEmuProcess("64Player") = Nothing Then
             Try
+                MainMenu.EMUProcess = Process.Start(Application.StartupPath & "\Engine\64Player.exe", Chr(34) & Application.StartupPath & "\ROMs\" + romselLB.SelectedItem + Chr(34))
             Catch ex As Exception
                 MsgBox("Hold on, either the core ROM or the emulator failed to open.")
             End Try

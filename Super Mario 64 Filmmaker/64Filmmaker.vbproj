@@ -139,22 +139,23 @@
     <Compile Include="AboutBox.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AboutCinematicControl.Designer.vb">
-      <DependentUpon>AboutCinematicControl.vb</DependentUpon>
+    <Compile Include="AboutForm.Designer.vb">
+      <DependentUpon>AboutForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="AboutCinematicControl.vb">
+    <Compile Include="AboutForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="AddonLister.vb" />
     <Compile Include="AddonLoginForm.Designer.vb">
       <DependentUpon>AddonLoginForm.vb</DependentUpon>
     </Compile>
     <Compile Include="AddonLoginForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="animCodeGen.Designer.vb">
-      <DependentUpon>animCodeGen.vb</DependentUpon>
+    <Compile Include="AddonSettingsForm.Designer.vb">
+      <DependentUpon>AddonSettingsForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="animCodeGen.vb">
+    <Compile Include="AddonSettingsForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ApplicationEvents.vb" />
@@ -184,12 +185,6 @@
       <DependentUpon>cheatModeSel.vb</DependentUpon>
     </Compile>
     <Compile Include="cheatModeSel.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CinematicControl.Designer.vb">
-      <DependentUpon>CinematicControl.vb</DependentUpon>
-    </Compile>
-    <Compile Include="CinematicControl.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ColorCodeCopyPasteForm.Designer.vb">
@@ -245,6 +240,12 @@
     </Compile>
     <Compile Include="Globals.vb" />
     <Compile Include="HelloWorld.vb" />
+    <Compile Include="MainForm.Designer.vb">
+      <DependentUpon>MainForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MainMenu.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -311,6 +312,7 @@
     <Compile Include="SetUpForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ShadowFunctions.vb" />
     <Compile Include="SplashScreen1.Designer.vb">
       <DependentUpon>SplashScreen1.vb</DependentUpon>
     </Compile>
@@ -328,14 +330,14 @@
     <EmbeddedResource Include="AboutBox.resx">
       <DependentUpon>AboutBox.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AboutCinematicControl.resx">
-      <DependentUpon>AboutCinematicControl.vb</DependentUpon>
+    <EmbeddedResource Include="AboutForm.resx">
+      <DependentUpon>AboutForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddonLoginForm.resx">
       <DependentUpon>AddonLoginForm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="animCodeGen.resx">
-      <DependentUpon>animCodeGen.vb</DependentUpon>
+    <EmbeddedResource Include="AddonSettingsForm.resx">
+      <DependentUpon>AddonSettingsForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BGSelector.resx">
       <DependentUpon>BGSelector.vb</DependentUpon>
@@ -353,9 +355,6 @@
     <EmbeddedResource Include="cheatModeSel.resx">
       <DependentUpon>cheatModeSel.vb</DependentUpon>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CinematicControl.resx">
-      <DependentUpon>CinematicControl.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ColorCodeCopyPasteForm.resx">
       <DependentUpon>ColorCodeCopyPasteForm.vb</DependentUpon>
@@ -381,6 +380,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="IntegrationForm.resx">
       <DependentUpon>IntegrationForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MemDebugForm.resx">
       <DependentUpon>MemDebugForm.vb</DependentUpon>
@@ -522,8 +524,8 @@
     <None Include="Resources\OK.png" />
     <None Include="Resources\Death.png" />
     <None Include="Resources\Hang.png" />
-    <None Include="Resources\Hold.png" />
-    <None Include="Resources\Jump.png" />
+    <None Include="Resources\ACC1.png" />
+    <None Include="Resources\ACC.png" />
     <None Include="Resources\YouDontSay.png" />
     <None Include="Resources\Background.png" />
     <None Include="Resources\Background2.png" />
@@ -561,11 +563,9 @@
     <None Include="Resources\Disconnect.wav" />
     <None Include="Resources\DeepFreeze.wav" />
     <None Include="Resources\M64MM2 Icon.png" />
-    <None Include="Resources\ACC.png" />
     <None Include="Resources\LoadingBalls.gif" />
     <None Include="Resources\Exception.png" />
     <None Include="Resources\Injector2.png" />
-    <None Include="Resources\ACC1.png" />
     <None Include="Resources\background8.png" />
     <None Include="Resources\64networklogo.png" />
     <None Include="Resources\Addon.bmp" />
@@ -576,10 +576,23 @@
     <None Include="Resources\Tutorials.png" />
     <None Include="Resources\Guides.png" />
     <None Include="Resources\%27sss nothing fur u.png" />
-    <None Include="Resources\M64MM2 CC Mario big.png" />
     <Content Include="animation_data.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\M64MM2 CC Mario big.png" />
+    <None Include="Resources\PIC_EXCEPTION.png" />
+    <None Include="Resources\splashlogo.png" />
+    <None Include="Resources\ic_acc.png" />
+    <None Include="Resources\ic_add.png" />
+    <None Include="Resources\ic_ve.png" />
+    <None Include="Resources\ic_64p.png" />
+    <None Include="Resources\ic_cfg.png" />
+    <None Include="Resources\ic_rec.png" />
+    <None Include="Resources\ic_tut.png" />
+    <None Include="Resources\Hold.png" />
+    <None Include="Resources\Jump.png" />
+    <None Include="Resources\dark_noise.png" />
+    <None Include="Resources\white_noise.png" />
     <Content Include="SM64FMNormal.ico" />
   </ItemGroup>
   <ItemGroup>

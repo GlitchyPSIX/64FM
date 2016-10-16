@@ -2,34 +2,32 @@ Imports System.Globalization
 Imports System.IO
 
 Public Class MainForm
-    Private Declare Function GetKeyPress Lib "user32" Alias "GetAsyncKeyState" (key As Integer) As Integer
+    Private Declare Function GetKeyPress Lib "user32" Alias "GetAsyncKeyState" (key As Integer) As Short
 
     Public Shared Base As Long
     Public Shared EmuOpen As Boolean = False
-	Private MemDebugWindow As MemDebugForm
-	Private ColorCodeWindow As ColorCodeStudio
-	Private ChangeCamera As Boolean = False
+    Private IsPrecised As Boolean = False
+    Private MemDebugWindow As MemDebugForm
+    Private ColorCodeWindow As ColorCodeStudio
+    Private ChangeCamera As Boolean = False
     Private CameraUnfrozen As Boolean = True
     Private PrecisionStage As Byte = 0
     Private SoftCameraUnfrozen As Boolean = True
     Private Key3WasUp As Boolean = True
-    Private ctrlkey As Boolean
     Private AnimList As New List(Of Animation)
     Private AnimData As Dictionary(Of String, String) = New Dictionary(Of String, String)
     Private LastCBox1Index As Integer
-    Private TestOnce As Boolean = False
     Private DisableAnimSwap As Boolean = False
-    Private OriginalFuntionCall As String
     Private CameraControlFunction As String
     Private SelectedAnim1 As Object
     Private SelectedAnim2 As Object
 
     Private ReadOnly Property CB1AnimIndex As Integer
         Get
-			For Each anim As Animation In AnimList
-				If anim.Value = SelectedAnim1 Then Return anim.Index
-			Next
-			Return 0
+            For Each anim As Animation In AnimList
+                If anim.Value = SelectedAnim1 Then Return anim.Index
+            Next
+            Return 0
         End Get
     End Property
 
@@ -46,8 +44,8 @@ Public Class MainForm
         ' This call is required by the designer.
         InitializeComponent()
 
-		Dim AboutBox As New AboutCinematicControl
-		AddHandler ResetAnimationSwapsMenuItem.Click, AddressOf ResetAnimations
+        Dim AboutBox As New AboutForm
+        AddHandler ResetAnimationSwapsMenuItem.Click, AddressOf ResetAnimations
         AddHandler b_Freeze.Click, AddressOf Freeze
         AddHandler b_Unfreeze.Click, AddressOf Unfreeze
         AddHandler b_ChangeCameraType.Click, AddressOf ChangeCameraType
@@ -55,19 +53,19 @@ Public Class MainForm
         AddHandler b_SoftUnfreeze.Click, AddressOf SoftUnfreeze
         AddHandler AboutMenuItem.Click, AddressOf AboutBox.ShowDialog
         AddHandler ForceCameraPresetMenuItem.Click, AddressOf ForceCameraPreset
-		AddHandler Timer1.Tick, AddressOf Main
+        AddHandler Timer1.Tick, AddressOf Main
 
-		b_Freeze.Text = My.Resources.FreezeCamera
-		b_Unfreeze.Text = My.Resources.UnfreezeCamera
+        b_Freeze.Text = My.Resources.FreezeCamera
+        b_Unfreeze.Text = My.Resources.UnfreezeCamera
         b_ChangeCameraType.Text = My.Resources.ChangeCameraType
         b_SoftFreeze.Text = My.Resources.SoftFreezeCamera
         b_SoftUnfreeze.Text = My.Resources.SoftUnfreezeCamera
 
         b_Freeze.Enabled = False
-		b_Unfreeze.Enabled = False
-		b_ChangeCameraType.Enabled = False
+        b_Unfreeze.Enabled = False
+        b_ChangeCameraType.Enabled = False
 
-		Try
+        Try
             Using sr As New StreamReader("animation_data.txt")
                 Do While sr.Peek() >= 0
                     Dim rawLine As String
@@ -173,13 +171,13 @@ Public Class MainForm
     Private Sub GetBase()
         ' Get the base RAM address of the emulated memory block by searching for the constant value of SM64's first RAM address
         BaseAddressLabel.Text = My.Resources.SearchingForBaseAddress
-		BaseAddressLabel.Refresh()
+        BaseAddressLabel.Refresh()
         Base = GetBaseAddress("Project64")
         If Base > 0 Then
-			BaseAddressLabel.Text = My.Resources.BaseAddressIs & Hex(Base)
-		Else
-			BaseAddressLabel.Text = My.Resources.BaseAddressNotFound
-		End If
+            BaseAddressLabel.Text = My.Resources.BaseAddressIs & Hex(Base)
+        Else
+            BaseAddressLabel.Text = My.Resources.BaseAddressNotFound
+        End If
     End Sub
 
     Private Sub Freeze()
@@ -194,8 +192,8 @@ Public Class MainForm
         If EmuOpen = True And Base > 0 Then
             ChangeCamera = False
             CameraUnfrozen = True
-			b_ChangeCameraType.Text = My.Resources.ChangeCameraType
-			WriteInteger("Project64", Base + &H33C848, 0)
+            b_ChangeCameraType.Text = My.Resources.ChangeCameraType
+            WriteInteger("Project64", Base + &H33C848, 0)
         End If
     End Sub
 
@@ -204,8 +202,8 @@ Public Class MainForm
             ChangeCamera = Not ChangeCamera
             If ChangeCamera = True Then
                 CameraUnfrozen = False
-				b_ChangeCameraType.Text = My.Resources.GotoNewArea
-			Else
+                b_ChangeCameraType.Text = My.Resources.GotoNewArea
+            Else
                 Unfreeze()
             End If
         End If
@@ -255,7 +253,8 @@ Public Class MainForm
                     b_SoftFreeze.Enabled = False
                     b_SoftUnfreeze.Enabled = False
                     LevitateTrackBar.Enabled = False
-                    DisableHudCB.Enabled = False
+                    DisableHudBTN.Enabled = False
+                    HealBTN.Enabled = False
                     PrecisionModeOff(True)
                     If MemDebugWindow IsNot Nothing Then
                         MemDebugWindow.CB_Accept.Checked = False
@@ -271,7 +270,7 @@ Public Class MainForm
                     End If
                 End If
 
-                ' NOTE: I think we should have the previous block of code somehow exit or move to an are where it doesn't re-enable the form's controls for 1 update
+                ' NOTE: I think we should have the previous block of code somehow exit or move to an area where it doesn't re-enable the form's controls for 1 update
                 ' because I think that's what the current code is doing. (Bottom line, re-do the code at some point, maybe in C#.)
                 ' GlitchyPSIX: mmm, I don't think that issue would be in this file.
                 If Timer1.Interval <> 100 Then Timer1.Interval = 100
@@ -283,7 +282,8 @@ Public Class MainForm
                 b_SoftFreeze.Enabled = True
                 b_SoftUnfreeze.Enabled = True
                 LevitateTrackBar.Enabled = True
-                DisableHudCB.Enabled = True
+                DisableHudBTN.Enabled = True
+                HealBTN.Enabled = True
                 If MemDebugWindow IsNot Nothing Then
                     MemDebugWindow.CB_Accept.Enabled = True
                 End If
@@ -294,7 +294,7 @@ Public Class MainForm
                             foundButton.Enabled = True
                         End If
                     Next
-                    ColorCodeWindow.RefreshColorCycle()
+                    ColorCodeWindow.RefreshCycles()
                 End If
                 If PrecisionStage = 0 Then
                     PrecisionStatusLabel.Text = My.Resources.PrecisionStatusDisabled
@@ -322,13 +322,14 @@ Public Class MainForm
                 b_Freeze.Enabled = False
                 b_Unfreeze.Enabled = False
                 b_ChangeCameraType.Enabled = False
-				b_ChangeCameraType.Text = My.Resources.ChangeCameraType
-				ComboBox1.Enabled = False
+                b_ChangeCameraType.Text = My.Resources.ChangeCameraType
+                ComboBox1.Enabled = False
                 ComboBox2.Enabled = False
                 b_SoftFreeze.Enabled = False
                 b_SoftUnfreeze.Enabled = False
                 LevitateTrackBar.Enabled = False
-                DisableHudCB.Enabled = False
+                DisableHudBTN.Enabled = False
+                HealBTN.Enabled = False
                 If MemDebugWindow IsNot Nothing Then
                     MemDebugWindow.CB_Accept.Checked = False
                     MemDebugWindow.CB_Accept.Enabled = False
@@ -348,13 +349,14 @@ Public Class MainForm
             b_Freeze.Enabled = False
             b_Unfreeze.Enabled = False
             b_ChangeCameraType.Enabled = False
-			b_ChangeCameraType.Text = My.Resources.ChangeCameraType
-			ComboBox1.Enabled = False
+            b_ChangeCameraType.Text = My.Resources.ChangeCameraType
+            ComboBox1.Enabled = False
             ComboBox2.Enabled = False
             b_SoftFreeze.Enabled = False
             b_SoftUnfreeze.Enabled = False
             LevitateTrackBar.Enabled = False
-            DisableHudCB.Enabled = False
+            DisableHudBTN.Enabled = False
+            HealBTN.Enabled = False
             BaseAddressLabel.Text = My.Resources.PJNotOpen
             PrecisionStatusLabel.Text = My.Resources.PrecisionStatusNoEmu
             If MemDebugWindow IsNot Nothing Then
@@ -373,50 +375,52 @@ Public Class MainForm
     End Sub
 
     Private Sub HandleInput()
-        If GetKeyPress(Keys.ControlKey) And GetKeyPress(Keys.D1) Then
-            Freeze()
-        ElseIf GetKeyPress(Keys.ControlKey) And GetKeyPress(Keys.D2) Then
-            Unfreeze()
-        ElseIf GetKeyPress(Keys.ControlKey) And GetKeyPress(Keys.D3) And Key3WasUp Then
-            Key3WasUp = False
-            ChangeCameraType()
-        ElseIf GetKeyPress(Keys.ControlKey) And GetKeyPress(Keys.D4) Then
-            SoftFreeze()
-        ElseIf GetKeyPress(Keys.ControlKey) And GetKeyPress(Keys.D5) Then
-            SoftUnfreeze()
-        ElseIf GetKeyPress(Keys.ControlKey) And GetKeyPress(Keys.D6) Then
-            For x = 0 To 26
-                Dim partialFunction As Integer = ReadInteger("Project64", Base + &H290D90 + (4 * x))
-                WriteInteger("Project64", Base + &H33D2D0 + (4 * x), partialFunction)
-            Next
-            WriteInteger("Project64", Base + &H33D3D0, ReadInteger("Project64", Base + &H33CBD0))
-            WriteInteger("Project64", Base + &HEE060, &H8033D2D0)
-            'MsgBox(CameraControlFunction)
-        ElseIf GetKeyPress(Keys.ControlKey) And GetKeyPress(Keys.D7) Then
-            For x = 0 To 26
-                Dim partialFunction As String = Hex(ReadInteger("Project64", Base + &H290D90 + (4 * x)))
-                If partialFunction.Count < 7 Then
-                    For y = 0 To (7 - partialFunction.Count)
-                        partialFunction = "0" & partialFunction
-                    Next
+        If (GetKeyPress(Keys.LControlKey) Or GetKeyPress(Keys.RControlKey)) Then
+            If GetKeyPress(Keys.D1) Then
+                Freeze()
+            ElseIf GetKeyPress(Keys.D2) Then
+                Unfreeze()
+            ElseIf GetKeyPress(Keys.D3) And Key3WasUp Then
+                Key3WasUp = False
+                ChangeCameraType()
+            ElseIf GetKeyPress(Keys.D4) Then
+                SoftFreeze()
+            ElseIf GetKeyPress(Keys.D5) Then
+                SoftUnfreeze()
+            ElseIf GetKeyPress(Keys.D6) Then
+                For x = 0 To 26
+                    Dim partialFunction As Integer = ReadInteger("Project64", Base + &H290D90 + (4 * x))
+                    WriteInteger("Project64", Base + &H33D2D0 + (4 * x), partialFunction)
+                Next
+                WriteInteger("Project64", Base + &H33D3D0, ReadInteger("Project64", Base + &H33CBD0))
+                WriteInteger("Project64", Base + &HEE060, &H8033D2D0)
+                'MsgBox(CameraControlFunction)
+            ElseIf GetKeyPress(Keys.D7) Then
+                For x = 0 To 26
+                    Dim partialFunction As String = Hex(ReadInteger("Project64", Base + &H290D90 + (4 * x)))
+                    If partialFunction.Count < 7 Then
+                        For y = 0 To (7 - partialFunction.Count)
+                            partialFunction = "0" & partialFunction
+                        Next
 
+                    End If
+                    CameraControlFunction = CameraControlFunction & partialFunction
+                Next
+
+            ElseIf GetKeyPress(Keys.R) And DisableAnimSwap = False Then
+                ResetAnimations()
+            ElseIf GetKeyPress(Keys.F) Then
+                ForceCameraPreset()
+            ElseIf GetKeyPress(Keys.P) Then
+                If GetKeyPress(Keys.ShiftKey) Then
+                    b_PrecisionPlusOne.PerformClick()
+                Else
+                    If PrecisionStage = 2 Then
+                        PrecisionModeMenuItem.PerformClick()
+                    End If
                 End If
-                CameraControlFunction = CameraControlFunction & partialFunction
-            Next
-
-        ElseIf GetKeyPress(Keys.ControlKey) And GetKeyPress(Keys.R) And DisableAnimSwap = False Then
-            ResetAnimations()
-        ElseIf GetKeyPress(Keys.ControlKey) And GetKeyPress(Keys.F) Then
-            ForceCameraPreset()
-        ElseIf GetKeyPress(Keys.ControlKey) And GetKeyPress(Keys.P) Then
-            If PrecisionModeMenuItem.Checked = False Then
-                PrecisionModeOn(False)
-            ElseIf PrecisionModeMenuItem.Checked = True Then
-                PrecisionModeOff(False)
             End If
-
         End If
-
         If GetKeyPress(Keys.D3) = False Then
             Key3WasUp = True
         Else
@@ -452,8 +456,7 @@ Public Class MainForm
         End If
     End Sub
 
-    Private Sub RetainAnimationSwapsMenuItem_Click(sender As Object, e As EventArgs) _
-        Handles RetainAnimationSwapsMenuItem.Click
+    Private Sub RetainAnimationSwapsMenuItem_Click(sender As Object, e As EventArgs) Handles RetainAnimationSwapsMenuItem.Click
         RetainAnimationSwapsMenuItem.Checked = True
         RetainAnimationSwapsMenuItem.CheckState = CheckState.Checked
 
@@ -461,8 +464,7 @@ Public Class MainForm
         UndoPreviousAnimationSwapsMenuItem.CheckState = CheckState.Unchecked
     End Sub
 
-    Private Sub UndoPreviousAnimationSwapsMenuItem_Click(sender As Object, e As EventArgs) _
-        Handles UndoPreviousAnimationSwapsMenuItem.Click
+    Private Sub UndoPreviousAnimationSwapsMenuItem_Click(sender As Object, e As EventArgs) Handles UndoPreviousAnimationSwapsMenuItem.Click
         UndoPreviousAnimationSwapsMenuItem.Checked = True
         UndoPreviousAnimationSwapsMenuItem.CheckState = CheckState.Checked
 
@@ -498,7 +500,8 @@ Public Class MainForm
         MinLeviHeight.Text = My.Resources.HoverMin
         Info.SetToolTip(LevitateTrackBar, My.Resources.HoverToolTip)
         SmallExtra.Text = My.Resources.SmolExtrasName
-        DisableHudCB.Text = My.Resources.SmolExtrasNOHUD
+        DisableHudBTN.Text = My.Resources.SmolExtrasNOHUD
+        HealBTN.Text = My.Resources.Heal_Extra
         'Make the timer tick every half of a second, to avoid unneccesary CPU use in some processors, but change to every tenth of a second once we have found the base address.
         Timer1.Interval = 500
         Timer1.Start()
@@ -518,16 +521,16 @@ Public Class MainForm
     ''' <param name="Reclick">True or false - Is a button reclick?</param>
     Private Sub PrecisionModeOn(Reclick As Boolean)
         If Reclick = False Then
-			PrecisionStatusLabel.Text = My.Resources.CameraLockDesc
-			NormalCamControls.Enabled = False
+            PrecisionStatusLabel.Text = My.Resources.CameraLockDesc
+            NormalCamControls.Enabled = False
             b_PrecisionPlusOne.Enabled = True
             PrecisionStage = 1
             b_PrecisionPlusOne.Text = My.Resources.PrecisionButtonUnlock
             SoftFreeze()
             WriteInteger("Project64", Base + &H33C848, &H60000000)
         ElseIf Reclick = True Then
-			PrecisionStatusLabel.Text = My.Resources.CameraUnlockDesc
-			b_PrecisionPlusOne.Enabled = True
+            PrecisionStatusLabel.Text = My.Resources.CameraUnlockDesc
+            b_PrecisionPlusOne.Enabled = True
             Unfreeze()
             PrecisionStage = 1
             b_PrecisionPlusOne.Text = My.Resources.PrecisionButtonLock
@@ -567,8 +570,7 @@ Public Class MainForm
         End If
     End Sub
 
-    Private Sub PrecisionCameraModeToolStripMenuItem_Click(sender As Object, e As EventArgs) _
-        Handles PrecisionModeMenuItem.Click
+    Private Sub PrecisionCameraModeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PrecisionModeMenuItem.Click
         If PrecisionModeMenuItem.Checked = False Then
             If Base = 0 Then
                 MsgBox(My.Resources.NoPJPrecisionError,
@@ -582,46 +584,43 @@ Public Class MainForm
         End If
     End Sub
 
-	Private Sub OpenMemDebugWindow(sender As Object, e As EventArgs) Handles MemoryIODebugToolStripMenuItem.Click
-		If IsNothing(MemDebugWindow) Then
-			MemDebugWindow = New MemDebugForm()
-			MemDebugWindow.Show()
-		ElseIf Not MemDebugWindow.WindowState = FormWindowState.Normal Then
-			MemDebugWindow.WindowState = FormWindowState.Normal
-		ElseIf Not MemDebugWindow.Focused Then
-			MemDebugWindow.Focus()
-		End If
-	End Sub
+    Private Sub OpenMemDebugWindow(sender As Object, e As EventArgs) Handles MemoryIODebugToolStripMenuItem.Click
+        If IsNothing(MemDebugWindow) Then
+            MemDebugWindow = New MemDebugForm()
+            MemDebugWindow.Show()
+        ElseIf Not MemDebugWindow.WindowState = FormWindowState.Normal Then
+            MemDebugWindow.WindowState = FormWindowState.Normal
+        ElseIf Not MemDebugWindow.Focused Then
+            MemDebugWindow.Focus()
+        End If
+    End Sub
 
-	Private Sub OpenColorCodeStudio(sender As Object, e As EventArgs) Handles ColorCodeStudioMenuItem.Click
-		If IsNothing(ColorCodeWindow) OrElse ColorCodeWindow.IsDisposed Then
-			ColorCodeWindow = New ColorCodeStudio
-			ColorCodeWindow.Show()
-		ElseIf Not ColorCodeWindow.WindowState = FormWindowState.Normal Then
-			ColorCodeWindow.WindowState = FormWindowState.Normal
-		ElseIf Not ColorCodeWindow.Focused Then
-			ColorCodeWindow.Focus()
-		End If
-	End Sub
+    Private Sub OpenColorCodeStudio(sender As Object, e As EventArgs) Handles ColorCodeStudioMenuItem.Click
+        If IsNothing(ColorCodeWindow) OrElse ColorCodeWindow.IsDisposed Then
+            ColorCodeWindow = New ColorCodeStudio
+            ColorCodeWindow.Show()
+        ElseIf Not ColorCodeWindow.WindowState = FormWindowState.Normal Then
+            ColorCodeWindow.WindowState = FormWindowState.Normal
+        ElseIf Not ColorCodeWindow.Focused Then
+            ColorCodeWindow.Focus()
+        End If
+    End Sub
 
     Private Sub TrackBar1_Scroll(sender As Object, e As EventArgs) Handles LevitateTrackBar.Scroll
         WriteInteger("Project64", Base + &H33B223, LevitateTrackBar.Value)
     End Sub
-    Private Sub CheckBox1_CheckedChanged_1(sender As Object, e As EventArgs) Handles DisableHudCB.CheckedChanged
-        If DisableHudCB.Checked = True Then
-            WriteInteger("Project64", Base + &H2E3DB0, 0)
-            WriteInteger("Project64", Base + &H2E3DE0, 0)
-            WriteInteger("Project64", Base + &H2E3E18, 0)
-            WriteInteger("Project64", Base + &H2E3DC8, 0)
-            DisableHudCB.Enabled = False
-        Else
-            DisableHudCB.Enabled = True
-        End If
+
+    Private Sub DisableHudBTN_Click(sender As Object, e As EventArgs) Handles DisableHudBTN.Click
+        WriteInteger("Project64", Base + &H2E3DB0, 0)
+        WriteInteger("Project64", Base + &H2E3DE0, 0)
+        WriteInteger("Project64", Base + &H2E3E18, 0)
+        WriteInteger("Project64", Base + &H2E3DC8, 0)
+        WriteInteger("Project64", Base + &H3325F4, &H1)
     End Sub
 
-	Private Sub AboutMenuItem_Click(sender As Object, e As EventArgs) Handles AboutMenuItem.Click
-
-	End Sub
+    Private Sub HealMarioCB_CheckedChanged(sender As Object, e As EventArgs) Handles HealBTN.Click
+        MsgBox("Not working.")
+    End Sub
 End Class
 
 Public Class Animation

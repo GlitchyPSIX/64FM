@@ -158,7 +158,7 @@ Partial Class SetUpForm
         '
         'PanelControl.Panel2
         '
-        Me.PanelControl.Panel2.BackgroundImage = Global.Filmmaker.My.Resources.Resources.Background2
+        Me.PanelControl.Panel2.BackgroundImage = Global.Filmmaker.My.Resources.Resources.dark_noise
         Me.PanelControl.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.PanelControl.Panel2.Controls.Add(Me.NickLabel)
         Me.PanelControl.Panel2.Controls.Add(Me.ColorLabel)
@@ -176,7 +176,7 @@ Partial Class SetUpForm
         'ImgPrw
         '
         Me.ImgPrw.BackColor = System.Drawing.Color.Transparent
-        Me.ImgPrw.BackgroundImage = Global.Filmmaker.My.Resources.Resources.Background3
+        Me.ImgPrw.BackgroundImage = Global.Filmmaker.My.Resources.Resources.dark_noise
         Me.ImgPrw.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.ImgPrw.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.ImgPrw.Location = New System.Drawing.Point(109, 14)

@@ -1,5 +1,4 @@
-﻿Imports System.Text
-Imports Transitions
+﻿Imports Transitions
 Imports System.IO
 Imports System.Text.RegularExpressions
 
@@ -20,11 +19,20 @@ Public Class SetUpForm
         If result = True Then
             If PressedButton = True Then
                 Try
-                    ImgPrw.Image = Image.FromFile(OpenFileDlg.FileName) 'Set the image to a preview Picture Box called ImgPrw
+                    If OpenFileDlg.SafeFileName.EndsWith(".png") Then
+                        File.Copy(OpenFileDlg.FileName, Application.StartupPath + "/Profile/user/picture.png")
+                        ImageS = Application.StartupPath + "/Profile/user/picture.png"
+                        ImgPrw.Image = Image.FromFile(Application.StartupPath + "/Profile/user/picture.png") 'Set the image to a preview Picture Box called ImgPrw
+                    ElseIf OpenFileDlg.SafeFileName.EndsWith(".jpg") Then
+                        File.Copy(OpenFileDlg.FileName, Application.StartupPath + "/Profile/user/picture.jpg")
+                        ImageS = Application.StartupPath + "/Profile/user/picture.png"
+                        ImgPrw.Image = Image.FromFile(Application.StartupPath + "/Profile/user/picture.jpg") 'Set the image to a preview Picture Box called ImgPrw
+                    Else
+                        MsgBox("PNG or JPG please.", MsgBoxStyle.OkOnly, "Type mismatch!")
+                    End If
                 Catch ex As Exception
                     MsgBox("Unable to load the file. Maybe it was deleted?") 'Exception
                 End Try
-                ImageS = OpenFileDlg.FileName 'Set the placeholder variable for Image.
                 If Debug Then
                     Tooltipo.ToolTipTitle = "Image's path:"
                     Tooltipo.ToolTipIcon = ToolTipIcon.Info
@@ -46,27 +54,26 @@ Public Class SetUpForm
             Tooltipo.ToolTipTitle = "???"
             Tooltipo.ToolTipIcon = ToolTipIcon.Error
             Tooltipo.Show(String.Empty, NameLabel)
-            Tooltipo.Show("you seem upset.\nCome and fill the forms please", NameLabel)
-        ElseIf ImageS = ""Then
+            Tooltipo.Show("you seem upset." + vbCrLf + "Come and fill the forms please", NameLabel)
+        ElseIf ImageS = "" Then
             NameLabel.Text = NameBox.Text
             NameLabel.ForeColor = Color.Red
             Tooltipo.ToolTipTitle = "???"
             Tooltipo.ToolTipIcon = ToolTipIcon.Error
             Tooltipo.Show(String.Empty, ImgPrw)
-            Tooltipo.Show("show us your face\nPlease put in an image.", NameLabel)
-        ElseIf NameBox.Text = ""Then
+            Tooltipo.Show("show us your face" + vbCrLf + "Please put in an image.", NameLabel)
+        ElseIf NameBox.Text = "" Then
             NameLabel.Text = NameBox.Text
             NameLabel.ForeColor = Color.Red
             Tooltipo.ToolTipTitle = "???"
             Tooltipo.ToolTipIcon = ToolTipIcon.Error
             Tooltipo.Show(String.Empty, NameLabel)
-            Tooltipo.Show("NaN\nPlease tell us your nickname.", NameLabel)
+            Tooltipo.Show("NaN" + vbCrLf + "Please tell us your nickname.", NameLabel)
         Else
             My.Settings.Name = NameBox.Text 'Make M.S.Name have what it said in the TextBox called NameBox
-            My.Settings.Image = ImageS ' Set the ImageS Placeholder to M.S.Image
             My.Settings.FavColor = ColorZ
+            My.Settings.Image = ImageS
             My.Settings.Save()
-            MainMenu.ApplyProfileSettings()
             MainMenu.Show() 'Show the main menu
             Me.Close() 'Say goodbye
         End If
@@ -76,7 +83,7 @@ Public Class SetUpForm
         If Regex.IsMatch(NameBox.Text, "^[A-Za-z0-9]+$") Then
             NameLabel.Text = NameBox.Text
             NameLabel.ForeColor = Color.Black
-        ElseIf NameBox.Text = ""
+        ElseIf NameBox.Text = "" Then
             NameLabel.Text = NameBox.Text
             My.Computer.Audio.Play(My.Resources.Message, AudioPlayMode.Background)
             Tooltipo.ToolTipTitle = "Empty name"
@@ -121,6 +128,15 @@ Public Class SetUpForm
         Panel2Fade.add(Me.PanelControl.Panel2, "BackColor", ColorZ)
         Panel2Fade.add(Me.ImgPrw, "BackColor", ColorZ)
         Panel2Fade.run()
+        If File.Exists(Application.StartupPath + "/Profile/user/profile.png") = True Then
+            File.Delete(Application.StartupPath + "/Profile/user/profile.png")
+        ElseIf File.Exists(Application.StartupPath + "/Profile/user/profile.jpg") = True Then
+            File.Delete(Application.StartupPath + "/Profile/user/profile.jpg")
+        End If
+
+        If Directory.Exists(Application.StartupPath + "/Profile/user/") = False Then
+            Directory.CreateDirectory(Application.StartupPath + "/Profile/user/")
+        End If
     End Sub
 
     Private Sub SelBGBTN_Click(sender As Object, e As EventArgs) Handles SelBGBTN.Click
@@ -129,23 +145,11 @@ Public Class SetUpForm
 
     Public Sub SetBackground()
         If My.Settings.Background = 1 Then
-            PanelControl.Panel2.BackgroundImage = My.Resources.Background
+            PanelControl.Panel2.BackgroundImage = My.Resources.white_noise
         ElseIf My.Settings.Background = 2 Then
-            PanelControl.Panel2.BackgroundImage = My.Resources.Background2
-        ElseIf My.Settings.Background = 3 Then
-            PanelControl.Panel2.BackgroundImage = My.Resources.Background3
-        ElseIf My.Settings.Background = 4 Then
-            PanelControl.Panel2.BackgroundImage = My.Resources.Background4
-        ElseIf My.Settings.Background = 5 Then
-            PanelControl.Panel2.BackgroundImage = My.Resources.Background5
-        ElseIf My.Settings.Background = 6 Then
-            PanelControl.Panel2.BackgroundImage = My.Resources.Background6
-        ElseIf My.Settings.Background = 7 Then
-            PanelControl.Panel2.BackgroundImage = My.Resources.Background7
-        ElseIf My.Settings.Background = 8 Then
-            PanelControl.Panel2.BackgroundImage = My.Resources.Background8
+            PanelControl.Panel2.BackgroundImage = My.Resources.dark_noise
         Else
-            PanelControl.Panel2.BackgroundImage = My.Resources.Background
+            PanelControl.Panel2.BackgroundImage = My.Resources.dark_noise
         End If
     End Sub
 End Class

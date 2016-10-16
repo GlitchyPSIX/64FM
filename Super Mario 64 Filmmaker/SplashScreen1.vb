@@ -1,5 +1,4 @@
 ﻿Imports Transitions 'Helps me a lot.
-Imports System.IO
 Public Class SplashScreen1
     'This will be checked lotsa times.
     Dim Percentage As Integer = 0
@@ -15,10 +14,11 @@ Public Class SplashScreen1
         Dim t1 As New Transition(New TransitionType_EaseInEaseOut(1000))
         Dim t2 As New Transition(New TransitionType_Linear(800))
         t2.add(TitleLabel, "ForeColor", Color.White)
-        t1.add(TitleLabel, "Top", 20)
+        t1.add(TitleLabel, "Left", Me.Width - TitleLabel.Width - 5)
         'Run transitions
         t1.run()
         t2.run()
+        STATUS_RTB.AppendText("Initializing..." + vbCrLf)
     End Sub
 
     Private Sub PercentagedTime_Tick(sender As Object, e As EventArgs) Handles PercentagedTime.Tick
@@ -29,7 +29,7 @@ Public Class SplashScreen1
                 SetUpForm.Show()
                 Me.Close()
             Else
-                IntegrationForm.Show()
+                MainMenu.Show()
                 Me.Close()
             End If
         End If
@@ -38,8 +38,8 @@ Public Class SplashScreen1
     Private Sub TitleLabel_Click(sender As Object, e As EventArgs) Handles TitleLabel.Click
         'DEBUG FEATURE: Reset "Custom Greeting" data.
         If Debug Then
-            My.Settings.Name = ""
-            My.Settings.Image = ""
+            My.Settings.Reset()
+            STATUS_RTB.AppendText("DEBUG: User data reinitialized!" + vbCrLf)
         End If
     End Sub
 

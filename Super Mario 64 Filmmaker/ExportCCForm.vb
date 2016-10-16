@@ -52,17 +52,19 @@ Public Class ExportCCForm
 
                         output.Write(colorcode)
                         MsgBox("Exported!", MsgBoxStyle.Information, "Yay.")
-                        If Directory.Exists(Application.StartupPath + "\CCs\") Then
-                            ColorCodeStudio.CCListBox.Items.Clear()
-                            Dim ColorCodeFiles As String()
-                            ColorCodeFiles = System.IO.Directory.GetFiles(Application.StartupPath + "\CCs\", "*.64cc")
-                            For Each file As String In ColorCodeFiles
-                                file = file.Replace(Application.StartupPath + "\CCs\", "")
-                                ColorCodeStudio.CCListBox.Items.Add(file.Replace(".64cc", ""))
-                            Next
-                        Else
-                            Directory.CreateDirectory(Application.StartupPath + "\CCs\")
-                        End If
+
+                        'TODO: Make a new form for the CC mode addon type so we don't need to edit the CC form
+                        'to make them. Instead, from that form edit the controls of the CC form.
+
+                        'If Directory.Exists(Application.StartupPath + "\CCs\") Then
+                        '    Dim ColorCodeFiles As String()
+                        '    ColorCodeFiles = System.IO.Directory.GetFiles(Application.StartupPath + "\CCs\", "*.64cc")
+                        '    For Each file As String In ColorCodeFiles
+                        '        file = file.Replace(Application.StartupPath + "\CCs\", "")
+                        '    Next
+                        'Else
+                        '    Directory.CreateDirectory(Application.StartupPath + "\CCs\")
+                        'End If
                         Me.Close()
 
                     End Using
