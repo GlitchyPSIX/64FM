@@ -22,28 +22,28 @@ Partial Class AddonSettingsForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim ListViewItem1 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"Sample Item", "DATA", "HERE"}, -1)
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AddonSettingsForm))
-        Dim ListViewItem4 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"Sample Item", "DATA", "HERE"}, -1)
         Me.AddAddon_pb = New System.Windows.Forms.PictureBox()
         Me.RemAddon_pb = New System.Windows.Forms.PictureBox()
-        Me.RunAddon_pb = New System.Windows.Forms.PictureBox()
+        Me.ConfigureAddon_pb = New System.Windows.Forms.PictureBox()
         Me.AddonListView_lv = New System.Windows.Forms.ListView()
-        Me.AddonConsole_pb = New System.Windows.Forms.PictureBox()
         Me.NameColumn = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.TypeColumn = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.EntryPointColumn = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.GetAddons_pb = New System.Windows.Forms.PictureBox()
         Me.UpdateList_btn = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.AddAddon_pb, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RemAddon_pb, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RunAddon_pb, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.AddonConsole_pb, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ConfigureAddon_pb, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GetAddons_pb, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'AddAddon_pb
         '
         Me.AddAddon_pb.BackColor = System.Drawing.Color.Transparent
-        Me.AddAddon_pb.Image = CType(resources.GetObject("AddAddon_pb.Image"), System.Drawing.Image)
+        Me.AddAddon_pb.Image = Global.Filmmaker.My.Resources.Resources.ic_addadd
         Me.AddAddon_pb.Location = New System.Drawing.Point(12, 12)
         Me.AddAddon_pb.Name = "AddAddon_pb"
         Me.AddAddon_pb.Size = New System.Drawing.Size(151, 160)
@@ -54,7 +54,7 @@ Partial Class AddonSettingsForm
         'RemAddon_pb
         '
         Me.RemAddon_pb.BackColor = System.Drawing.Color.Transparent
-        Me.RemAddon_pb.Image = CType(resources.GetObject("RemAddon_pb.Image"), System.Drawing.Image)
+        Me.RemAddon_pb.Image = Global.Filmmaker.My.Resources.Resources.ic_deladd
         Me.RemAddon_pb.Location = New System.Drawing.Point(12, 181)
         Me.RemAddon_pb.Name = "RemAddon_pb"
         Me.RemAddon_pb.Size = New System.Drawing.Size(151, 160)
@@ -62,25 +62,25 @@ Partial Class AddonSettingsForm
         Me.RemAddon_pb.TabIndex = 30
         Me.RemAddon_pb.TabStop = False
         '
-        'RunAddon_pb
+        'ConfigureAddon_pb
         '
-        Me.RunAddon_pb.BackColor = System.Drawing.Color.Transparent
-        Me.RunAddon_pb.Image = CType(resources.GetObject("RunAddon_pb.Image"), System.Drawing.Image)
-        Me.RunAddon_pb.Location = New System.Drawing.Point(169, 12)
-        Me.RunAddon_pb.Name = "RunAddon_pb"
-        Me.RunAddon_pb.Size = New System.Drawing.Size(151, 160)
-        Me.RunAddon_pb.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.RunAddon_pb.TabIndex = 30
-        Me.RunAddon_pb.TabStop = False
+        Me.ConfigureAddon_pb.BackColor = System.Drawing.Color.Transparent
+        Me.ConfigureAddon_pb.Image = Global.Filmmaker.My.Resources.Resources.ic_confadd
+        Me.ConfigureAddon_pb.Location = New System.Drawing.Point(169, 12)
+        Me.ConfigureAddon_pb.Name = "ConfigureAddon_pb"
+        Me.ConfigureAddon_pb.Size = New System.Drawing.Size(151, 160)
+        Me.ConfigureAddon_pb.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.ConfigureAddon_pb.TabIndex = 30
+        Me.ConfigureAddon_pb.TabStop = False
         '
         'AddonListView_lv
         '
         Me.AddonListView_lv.Activation = System.Windows.Forms.ItemActivation.OneClick
         Me.AddonListView_lv.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.AddonListView_lv.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.NameColumn, Me.TypeColumn, Me.EntryPointColumn})
-        ListViewItem4.Tag = "EEE"
-        ListViewItem4.UseItemStyleForSubItems = False
-        Me.AddonListView_lv.Items.AddRange(New System.Windows.Forms.ListViewItem() {ListViewItem4})
+        ListViewItem1.Tag = "EEE"
+        ListViewItem1.UseItemStyleForSubItems = False
+        Me.AddonListView_lv.Items.AddRange(New System.Windows.Forms.ListViewItem() {ListViewItem1})
         Me.AddonListView_lv.Location = New System.Drawing.Point(326, 35)
         Me.AddonListView_lv.MultiSelect = False
         Me.AddonListView_lv.Name = "AddonListView_lv"
@@ -90,17 +90,6 @@ Partial Class AddonSettingsForm
         Me.AddonListView_lv.TabIndex = 31
         Me.AddonListView_lv.UseCompatibleStateImageBehavior = False
         Me.AddonListView_lv.View = System.Windows.Forms.View.Details
-        '
-        'AddonConsole_pb
-        '
-        Me.AddonConsole_pb.BackColor = System.Drawing.Color.Transparent
-        Me.AddonConsole_pb.Image = CType(resources.GetObject("AddonConsole_pb.Image"), System.Drawing.Image)
-        Me.AddonConsole_pb.Location = New System.Drawing.Point(169, 181)
-        Me.AddonConsole_pb.Name = "AddonConsole_pb"
-        Me.AddonConsole_pb.Size = New System.Drawing.Size(151, 160)
-        Me.AddonConsole_pb.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.AddonConsole_pb.TabIndex = 30
-        Me.AddonConsole_pb.TabStop = False
         '
         'NameColumn
         '
@@ -118,6 +107,17 @@ Partial Class AddonSettingsForm
         Me.EntryPointColumn.Text = "Entry Point"
         Me.EntryPointColumn.Width = 156
         '
+        'GetAddons_pb
+        '
+        Me.GetAddons_pb.BackColor = System.Drawing.Color.Transparent
+        Me.GetAddons_pb.Image = Global.Filmmaker.My.Resources.Resources.ic_getadd
+        Me.GetAddons_pb.Location = New System.Drawing.Point(169, 181)
+        Me.GetAddons_pb.Name = "GetAddons_pb"
+        Me.GetAddons_pb.Size = New System.Drawing.Size(151, 160)
+        Me.GetAddons_pb.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.GetAddons_pb.TabIndex = 30
+        Me.GetAddons_pb.TabStop = False
+        '
         'UpdateList_btn
         '
         Me.UpdateList_btn.Location = New System.Drawing.Point(326, 318)
@@ -132,9 +132,9 @@ Partial Class AddonSettingsForm
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(326, 19)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(228, 13)
+        Me.Label1.Size = New System.Drawing.Size(272, 13)
         Me.Label1.TabIndex = 33
-        Me.Label1.Text = "ignore those pics for now, they're placeholders."
+        Me.Label1.Text = "The buttons aren't working yet, it's part of the UI update."
         '
         'AddonSettingsForm
         '
@@ -144,16 +144,17 @@ Partial Class AddonSettingsForm
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.UpdateList_btn)
         Me.Controls.Add(Me.AddonListView_lv)
-        Me.Controls.Add(Me.AddonConsole_pb)
-        Me.Controls.Add(Me.RunAddon_pb)
+        Me.Controls.Add(Me.GetAddons_pb)
+        Me.Controls.Add(Me.ConfigureAddon_pb)
         Me.Controls.Add(Me.RemAddon_pb)
         Me.Controls.Add(Me.AddAddon_pb)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "AddonSettingsForm"
-        Me.Text = "AddonSettingsForm"
+        Me.Text = "Addon Dashboard"
         CType(Me.AddAddon_pb, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RemAddon_pb, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RunAddon_pb, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.AddonConsole_pb, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ConfigureAddon_pb, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GetAddons_pb, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -161,9 +162,9 @@ Partial Class AddonSettingsForm
 
     Friend WithEvents AddAddon_pb As PictureBox
     Friend WithEvents RemAddon_pb As PictureBox
-    Friend WithEvents RunAddon_pb As PictureBox
+    Friend WithEvents ConfigureAddon_pb As PictureBox
     Friend WithEvents AddonListView_lv As ListView
-    Friend WithEvents AddonConsole_pb As PictureBox
+    Friend WithEvents GetAddons_pb As PictureBox
     Friend WithEvents NameColumn As ColumnHeader
     Friend WithEvents TypeColumn As ColumnHeader
     Friend WithEvents EntryPointColumn As ColumnHeader

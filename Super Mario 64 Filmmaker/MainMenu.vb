@@ -11,15 +11,7 @@ Public Class MainMenu
     Private Sub MainMenu_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         'Set the "Custom Settings" feature and load the processes
         ApplyProfileSettings()
-        'Forget the block below, it will be only when I forbid access to certain people.
-        'The next is Starman3, due to a license enforcement, where both him (his representant [CDROM1019]) and me agreed to.
-        'Does not mean you should do same with M64MM ;)
-        'Dim NameCheck As String = My.Settings.Name
-        '      If NameCheck.ToLower.Equals("starman3") Or NameCheck.ToLower.Equals("jacobthehero") Or NameCheck.ToLower.Equals("raptor") Or NameCheck.ToLower.Equals("Deinonychus") Then
-        '	FORBIDDEN.ShowDialog()
-        '	Close()
-        '      End If
-        Version_lb.Text = "64Filmmaker v" + Application.ProductVersion.ToString + " | Build Date: " + My.Settings.BuildDate.ToString
+        'Version_lb.Text = "64Filmmaker v" + Application.ProductVersion.ToString + " | Build Date: " + My.Settings.BuildDate.ToString
         TenthOfASecond.Interval = 100
         TenthOfASecond.Start()
     End Sub
@@ -73,10 +65,8 @@ Public Class MainMenu
         MainForm.Show()
     End Sub
 
-    Private Sub ToolStripStatusLabel1_Click(sender As System.Object, e As System.EventArgs) Handles ToolStripStatusLabel1.Click
-        'Link (Not from Hyrule) Working. 64NeeNwork forums
-        Process.Start("http://sm64fm.officialytr.com/forum")
-    End Sub
+    ''Link (Not from Hyrule) Working. 64NeeNwork forums
+    'Process.Start("http://sm64fm.officialytr.com/forum")
 
     Private Sub ShowChat(sender As System.Object, e As System.EventArgs) Handles btnChat.Click
         'I will scrap the chat to make it the core of the online functionality.
@@ -141,14 +131,6 @@ Public Class MainMenu
     Private Sub Exit64FMToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Exit64FMToolStripMenuItem.Click
         My.Settings.Save()
         My.Application.Goodbye()
-    End Sub
-
-    Private Sub About64FilmmakerToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles About64FMToolStripMenuItem.Click
-        AboutBox.Show()
-    End Sub
-
-    Private Sub WebpageLink_lb_Click(sender As Object, e As EventArgs) Handles WebpageLink_lb.Click
-
     End Sub
 
     Private Sub btnWorkshop_Click(sender As Object, e As EventArgs) Handles Addon_btn.Click

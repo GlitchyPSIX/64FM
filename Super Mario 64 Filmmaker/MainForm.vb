@@ -7,6 +7,7 @@ Public Class MainForm
     Public Shared Base As Long
     Public Shared EmuOpen As Boolean = False
     Private IsPrecised As Boolean = False
+    Private LicenseWindow As GPLForm
     Private MemDebugWindow As MemDebugForm
     Private ColorCodeWindow As ColorCodeStudio
     Private ChangeCamera As Boolean = False
@@ -482,7 +483,7 @@ Public Class MainForm
         MemoryIODebugToolStripMenuItem.Text = My.Resources.IOFormTitle
         AboutMenu.Text = My.Resources.AboutMenu
         AboutMenuItem.Text = My.Resources.AboutStrip
-        HelpToolStripMenuItem1.Text = My.Resources.HelpStrip
+        LicenseToolStripMenuItem1.Text = My.Resources.LicenseStrip
         RetainAnimationSwapsMenuItem.Text = My.Resources.RememberPrevSwaps
         RetainAnimationSwapsMenuItem.ToolTipText = My.Resources.RememberPrevSwapsTooltip
         UndoPreviousAnimationSwapsMenuItem.Text = My.Resources.UndoAllPrevSwaps
@@ -501,6 +502,8 @@ Public Class MainForm
         Info.SetToolTip(LevitateTrackBar, My.Resources.HoverToolTip)
         SmallExtra.Text = My.Resources.SmolExtrasName
         DisableHudBTN.Text = My.Resources.SmolExtrasNOHUD
+        DisableHudBTN.Enabled = False
+        LevitateTrackBar.Enabled = False
         HealBTN.Text = My.Resources.Heal_Extra
         'Make the timer tick every half of a second, to avoid unneccesary CPU use in some processors, but change to every tenth of a second once we have found the base address.
         Timer1.Interval = 500
@@ -621,16 +624,26 @@ Public Class MainForm
     Private Sub HealMarioCB_CheckedChanged(sender As Object, e As EventArgs) Handles HealBTN.Click
         MsgBox("Not working.")
     End Sub
+
+    Private Sub HelpToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles LicenseToolStripMenuItem1.Click
+        If LicenseWindow IsNot Nothing AndAlso Not LicenseWindow.IsDisposed Then
+            LicenseWindow.Show()
+        Else
+            LicenseWindow = New GPLForm()
+            LicenseWindow.Show()
+        End If
+    End Sub
+
 End Class
 
 Public Class Animation
-    Public Value As String
-    Public Description As String
-    Public Index As Integer
+	Public Value As String
+	Public Description As String
+	Public Index As Integer
 
-    Public Sub New(val As String, desc As String, ind As Integer)
-        Value = val
-        Description = desc
-        Index = ind
-    End Sub
+	Public Sub New(val As String, desc As String, ind As Integer)
+		Value = val
+		Description = desc
+		Index = ind
+	End Sub
 End Class

@@ -46,7 +46,7 @@ Partial Class MainForm
         Me.MemoryIODebugToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutMenu = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.HelpToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LicenseToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         Me.AnimOW2 = New System.Windows.Forms.Label()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
@@ -236,7 +236,7 @@ Partial Class MainForm
         '
         'AboutMenu
         '
-        Me.AboutMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AboutMenuItem, Me.HelpToolStripMenuItem1})
+        Me.AboutMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AboutMenuItem, Me.LicenseToolStripMenuItem1})
         Me.AboutMenu.Name = "AboutMenu"
         Me.AboutMenu.Size = New System.Drawing.Size(52, 20)
         Me.AboutMenu.Text = "About"
@@ -248,12 +248,11 @@ Partial Class MainForm
         Me.AboutMenuItem.Size = New System.Drawing.Size(297, 22)
         Me.AboutMenuItem.Text = "About Mario 64 Movie Maker 2.0..."
         '
-        'HelpToolStripMenuItem1
+        'LicenseToolStripMenuItem1
         '
-        Me.HelpToolStripMenuItem1.Enabled = False
-        Me.HelpToolStripMenuItem1.Name = "HelpToolStripMenuItem1"
-        Me.HelpToolStripMenuItem1.Size = New System.Drawing.Size(297, 22)
-        Me.HelpToolStripMenuItem1.Text = "Help..."
+        Me.LicenseToolStripMenuItem1.Name = "LicenseToolStripMenuItem1"
+        Me.LicenseToolStripMenuItem1.Size = New System.Drawing.Size(297, 22)
+        Me.LicenseToolStripMenuItem1.Text = "Licensing Info..."
         '
         'ComboBox2
         '
@@ -494,7 +493,7 @@ Partial Class MainForm
         Me.MaximizeBox = False
         Me.Name = "MainForm"
         Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
-        Me.Text = "Mario 64 Movie Maker 2.0.5"
+        Me.Text = "Mario 64 Movie Maker 2.0.5.1"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         Me.NormalCamControls.ResumeLayout(False)
@@ -521,7 +520,7 @@ Partial Class MainForm
     Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
     Friend WithEvents AboutMenu As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AboutMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents HelpToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents LicenseToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ComboBox2 As System.Windows.Forms.ComboBox
     Friend WithEvents AnimOW2 As System.Windows.Forms.Label
     Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox

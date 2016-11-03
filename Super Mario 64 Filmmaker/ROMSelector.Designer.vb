@@ -26,13 +26,15 @@ Partial Class ROMSelector
         Me.romselLB = New System.Windows.Forms.ListBox()
         Me.Cancelbtn = New System.Windows.Forms.Button()
         Me.OKbtn = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'romselLB
         '
         Me.romselLB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.romselLB.FormattingEnabled = True
-        Me.romselLB.Location = New System.Drawing.Point(12, 12)
+        Me.romselLB.Location = New System.Drawing.Point(12, 145)
         Me.romselLB.Name = "romselLB"
         Me.romselLB.ScrollAlwaysVisible = True
         Me.romselLB.Size = New System.Drawing.Size(358, 171)
@@ -41,7 +43,7 @@ Partial Class ROMSelector
         '
         'Cancelbtn
         '
-        Me.Cancelbtn.Location = New System.Drawing.Point(295, 189)
+        Me.Cancelbtn.Location = New System.Drawing.Point(295, 322)
         Me.Cancelbtn.Name = "Cancelbtn"
         Me.Cancelbtn.Size = New System.Drawing.Size(75, 23)
         Me.Cancelbtn.TabIndex = 1
@@ -50,18 +52,29 @@ Partial Class ROMSelector
         '
         'OKbtn
         '
-        Me.OKbtn.Location = New System.Drawing.Point(214, 189)
+        Me.OKbtn.Location = New System.Drawing.Point(12, 322)
         Me.OKbtn.Name = "OKbtn"
         Me.OKbtn.Size = New System.Drawing.Size(75, 23)
         Me.OKbtn.TabIndex = 1
         Me.OKbtn.Text = "Start!"
         Me.OKbtn.UseVisualStyleBackColor = True
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.Filmmaker.My.Resources.Resources.playerlogo
+        Me.PictureBox1.Location = New System.Drawing.Point(12, 12)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(358, 127)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 2
+        Me.PictureBox1.TabStop = False
+        '
         'ROMSelector
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(382, 217)
+        Me.ClientSize = New System.Drawing.Size(382, 357)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.OKbtn)
         Me.Controls.Add(Me.Cancelbtn)
         Me.Controls.Add(Me.romselLB)
@@ -71,6 +84,7 @@ Partial Class ROMSelector
         Me.MinimizeBox = False
         Me.Name = "ROMSelector"
         Me.Text = "Select the ROM you wish to start."
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -78,4 +92,5 @@ Partial Class ROMSelector
     Friend WithEvents romselLB As ListBox
     Friend WithEvents Cancelbtn As Button
     Friend WithEvents OKbtn As Button
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

@@ -29,15 +29,18 @@ Partial Class AboutBox
         Me.OKButton = New System.Windows.Forms.Button()
         Me.TextBoxDescription = New System.Windows.Forms.TextBox()
         Me.MemoryNumber = New System.Windows.Forms.Label()
+        Me.LICENSEbtn = New System.Windows.Forms.Button()
+        Me.GHbtn = New System.Windows.Forms.Button()
+        Me.NTWKbtn = New System.Windows.Forms.Button()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PictureBox2
         '
-        Me.PictureBox2.Image = Global.Filmmaker.My.Resources.Resources.SM64FM_Logo
+        Me.PictureBox2.Image = Global.Filmmaker.My.Resources.Resources.neomaker_logo
         Me.PictureBox2.Location = New System.Drawing.Point(11, 9)
         Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(529, 135)
+        Me.PictureBox2.Size = New System.Drawing.Size(367, 135)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox2.TabIndex = 11
         Me.PictureBox2.TabStop = False
@@ -54,7 +57,7 @@ Partial Class AboutBox
         '
         Me.OKButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.OKButton.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.OKButton.Location = New System.Drawing.Point(237, 418)
+        Me.OKButton.Location = New System.Drawing.Point(210, 418)
         Me.OKButton.Name = "OKButton"
         Me.OKButton.Size = New System.Drawing.Size(63, 23)
         Me.OKButton.TabIndex = 13
@@ -62,13 +65,13 @@ Partial Class AboutBox
         '
         'TextBoxDescription
         '
-        Me.TextBoxDescription.Location = New System.Drawing.Point(9, 230)
+        Me.TextBoxDescription.Location = New System.Drawing.Point(6, 237)
         Me.TextBoxDescription.Margin = New System.Windows.Forms.Padding(6, 3, 3, 3)
         Me.TextBoxDescription.Multiline = True
         Me.TextBoxDescription.Name = "TextBoxDescription"
         Me.TextBoxDescription.ReadOnly = True
         Me.TextBoxDescription.ScrollBars = System.Windows.Forms.ScrollBars.Both
-        Me.TextBoxDescription.Size = New System.Drawing.Size(531, 182)
+        Me.TextBoxDescription.Size = New System.Drawing.Size(476, 155)
         Me.TextBoxDescription.TabIndex = 14
         Me.TextBoxDescription.TabStop = False
         Me.TextBoxDescription.Text = resources.GetString("TextBoxDescription.Text")
@@ -82,13 +85,46 @@ Partial Class AboutBox
         Me.MemoryNumber.TabIndex = 15
         Me.MemoryNumber.Text = "Label1"
         '
+        'LICENSEbtn
+        '
+        Me.LICENSEbtn.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.LICENSEbtn.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.LICENSEbtn.Location = New System.Drawing.Point(384, 9)
+        Me.LICENSEbtn.Name = "LICENSEbtn"
+        Me.LICENSEbtn.Size = New System.Drawing.Size(98, 23)
+        Me.LICENSEbtn.TabIndex = 13
+        Me.LICENSEbtn.Text = "&License"
+        '
+        'GHbtn
+        '
+        Me.GHbtn.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GHbtn.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.GHbtn.Location = New System.Drawing.Point(384, 38)
+        Me.GHbtn.Name = "GHbtn"
+        Me.GHbtn.Size = New System.Drawing.Size(98, 23)
+        Me.GHbtn.TabIndex = 13
+        Me.GHbtn.Text = "&Github"
+        '
+        'NTWKbtn
+        '
+        Me.NTWKbtn.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.NTWKbtn.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.NTWKbtn.Location = New System.Drawing.Point(384, 67)
+        Me.NTWKbtn.Name = "NTWKbtn"
+        Me.NTWKbtn.Size = New System.Drawing.Size(98, 23)
+        Me.NTWKbtn.TabIndex = 13
+        Me.NTWKbtn.Text = "&64Network"
+        '
         'AboutBox
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(549, 453)
+        Me.ClientSize = New System.Drawing.Size(494, 453)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.AssignedTo)
+        Me.Controls.Add(Me.NTWKbtn)
+        Me.Controls.Add(Me.GHbtn)
+        Me.Controls.Add(Me.LICENSEbtn)
         Me.Controls.Add(Me.OKButton)
         Me.Controls.Add(Me.TextBoxDescription)
         Me.Controls.Add(Me.MemoryNumber)
@@ -111,5 +147,7 @@ Partial Class AboutBox
     Friend WithEvents OKButton As System.Windows.Forms.Button
     Friend WithEvents TextBoxDescription As System.Windows.Forms.TextBox
     Friend WithEvents MemoryNumber As System.Windows.Forms.Label
-
+    Friend WithEvents LICENSEbtn As Button
+    Friend WithEvents GHbtn As Button
+    Friend WithEvents NTWKbtn As Button
 End Class
