@@ -12,7 +12,7 @@ Imports System.Runtime.InteropServices
 
 <Assembly: AssemblyTitle("64Filmmaker")>
 <Assembly: AssemblyDescription("Super Mario 64 Videomaking software.")>
-<Assembly: AssemblyCompany("64Stellar")>
+<Assembly: AssemblyCompany("64Network")>
 <Assembly: AssemblyProduct("64Filmmaker")>
 <Assembly: AssemblyCopyright("Copyright © 2014-2016 64Network.")>
 <Assembly: AssemblyTrademark("")> 
@@ -33,7 +33,7 @@ Imports System.Runtime.InteropServices
 ' mediante el asterisco ('*'), como se muestra a continuación:
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("0.2.13.0")>
-<Assembly: AssemblyFileVersion("0.2.13.0")>
+<Assembly: AssemblyVersion("0.3.2.7")>
+<Assembly: AssemblyFileVersion("0.3.2.7")>
 
 <Assembly: NeutralResourcesLanguageAttribute("en-US")> 

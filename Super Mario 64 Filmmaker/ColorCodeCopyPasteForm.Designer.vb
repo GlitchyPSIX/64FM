@@ -27,7 +27,6 @@ Partial Class ColorCodeCopyPasteForm
         Me.B_Cancel = New System.Windows.Forms.Button()
         Me.B_OK = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.ToFilebtn = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'TextBox1
@@ -42,7 +41,7 @@ Partial Class ColorCodeCopyPasteForm
         Me.TextBox1.Multiline = True
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.TextBox1.Size = New System.Drawing.Size(238, 295)
+        Me.TextBox1.Size = New System.Drawing.Size(232, 295)
         Me.TextBox1.TabIndex = 0
         '
         'B_Cancel
@@ -59,7 +58,7 @@ Partial Class ColorCodeCopyPasteForm
         'B_OK
         '
         Me.B_OK.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.B_OK.Location = New System.Drawing.Point(82, 337)
+        Me.B_OK.Location = New System.Drawing.Point(158, 337)
         Me.B_OK.Name = "B_OK"
         Me.B_OK.Size = New System.Drawing.Size(75, 23)
         Me.B_OK.TabIndex = 2
@@ -75,24 +74,13 @@ Partial Class ColorCodeCopyPasteForm
         Me.Label1.Text = "This message will change based on whether you're importing or exporting a color c" &
     "ode."
         '
-        'ToFilebtn
-        '
-        Me.ToFilebtn.Location = New System.Drawing.Point(163, 337)
-        Me.ToFilebtn.Name = "ToFilebtn"
-        Me.ToFilebtn.Size = New System.Drawing.Size(75, 23)
-        Me.ToFilebtn.TabIndex = 4
-        Me.ToFilebtn.Text = "To File..."
-        Me.ToFilebtn.UseVisualStyleBackColor = True
-        Me.ToFilebtn.Visible = False
-        '
         'ColorCodeCopyPasteForm
         '
         Me.AcceptButton = Me.B_OK
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.B_Cancel
-        Me.ClientSize = New System.Drawing.Size(240, 361)
-        Me.Controls.Add(Me.ToFilebtn)
+        Me.ClientSize = New System.Drawing.Size(234, 361)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.B_OK)
         Me.Controls.Add(Me.B_Cancel)
@@ -110,5 +98,4 @@ Partial Class ColorCodeCopyPasteForm
     Friend WithEvents B_Cancel As Button
     Friend WithEvents B_OK As Button
     Friend WithEvents Label1 As Label
-    Friend WithEvents ToFilebtn As Button
 End Class

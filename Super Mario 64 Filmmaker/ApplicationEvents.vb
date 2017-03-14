@@ -1,5 +1,6 @@
 ﻿Namespace My
     Partial Friend Class MyApplication
+
         Private Sub ShakeVeryGently(Speed As Integer) 'lel forgot to edit this commentary
             'Thanks to LeSaN
             'Easy code to make a form shake
@@ -34,7 +35,6 @@
         End Sub
 
         Private Sub ExceptionHandler(ex As Exception)
-            Computer.Audio.Play(Resources.Crit, AudioPlayMode.Background)
             ShakeVeryGently(10)
             UnhandledExceptionString = ex.ToString
             ExceptionUnhandledForm.ShowDialog()

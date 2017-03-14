@@ -68,6 +68,10 @@ Partial Class MainForm
         Me.SmallExtra = New System.Windows.Forms.GroupBox()
         Me.HealBTN = New System.Windows.Forms.Button()
         Me.DisableHudBTN = New System.Windows.Forms.Button()
+        Me.ComboBox3 = New System.Windows.Forms.ComboBox()
+        Me.CurrentCameraAdvice_lb = New System.Windows.Forms.Label()
+        Me.ChangeCam_btn = New System.Windows.Forms.Button()
+        Me.CameraType_gb = New System.Windows.Forms.GroupBox()
         Me.MenuStrip1.SuspendLayout()
         Me.NormalCamControls.SuspendLayout()
         Me.AnimSwapControls.SuspendLayout()
@@ -75,6 +79,7 @@ Partial Class MainForm
         Me.LevControls.SuspendLayout()
         CType(Me.LevitateTrackBar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SmallExtra.SuspendLayout()
+        Me.CameraType_gb.SuspendLayout()
         Me.SuspendLayout()
         '
         'b_Freeze
@@ -101,7 +106,7 @@ Partial Class MainForm
         Me.b_ChangeCameraType.Name = "b_ChangeCameraType"
         Me.b_ChangeCameraType.Size = New System.Drawing.Size(144, 23)
         Me.b_ChangeCameraType.TabIndex = 2
-        Me.b_ChangeCameraType.Text = "Change Camera Type"
+        Me.b_ChangeCameraType.Text = "Prepare Camera"
         Me.b_ChangeCameraType.UseVisualStyleBackColor = True
         '
         'BaseAddressLabel
@@ -262,7 +267,7 @@ Partial Class MainForm
         Me.ComboBox2.FormattingEnabled = True
         Me.ComboBox2.Location = New System.Drawing.Point(7, 76)
         Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(440, 21)
+        Me.ComboBox2.Size = New System.Drawing.Size(234, 21)
         Me.ComboBox2.TabIndex = 13
         '
         'AnimOW2
@@ -283,7 +288,7 @@ Partial Class MainForm
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Location = New System.Drawing.Point(7, 32)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(440, 21)
+        Me.ComboBox1.Size = New System.Drawing.Size(234, 21)
         Me.ComboBox1.TabIndex = 11
         '
         'AnimOW1
@@ -299,7 +304,7 @@ Partial Class MainForm
         'b_SoftFreeze
         '
         Me.b_SoftFreeze.Enabled = False
-        Me.b_SoftFreeze.Location = New System.Drawing.Point(92, 69)
+        Me.b_SoftFreeze.Location = New System.Drawing.Point(15, 69)
         Me.b_SoftFreeze.Name = "b_SoftFreeze"
         Me.b_SoftFreeze.Size = New System.Drawing.Size(128, 23)
         Me.b_SoftFreeze.TabIndex = 14
@@ -309,7 +314,7 @@ Partial Class MainForm
         'b_SoftUnfreeze
         '
         Me.b_SoftUnfreeze.Enabled = False
-        Me.b_SoftUnfreeze.Location = New System.Drawing.Point(235, 69)
+        Me.b_SoftUnfreeze.Location = New System.Drawing.Point(312, 69)
         Me.b_SoftUnfreeze.Name = "b_SoftUnfreeze"
         Me.b_SoftUnfreeze.Size = New System.Drawing.Size(128, 23)
         Me.b_SoftUnfreeze.TabIndex = 14
@@ -319,7 +324,7 @@ Partial Class MainForm
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(136, 95)
+        Me.Label5.Location = New System.Drawing.Point(60, 95)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(40, 13)
         Me.Label5.TabIndex = 4
@@ -328,7 +333,7 @@ Partial Class MainForm
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(279, 95)
+        Me.Label8.Location = New System.Drawing.Point(356, 95)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(40, 13)
         Me.Label8.TabIndex = 4
@@ -362,7 +367,7 @@ Partial Class MainForm
         Me.AnimSwapControls.Controls.Add(Me.AnimOW2)
         Me.AnimSwapControls.Location = New System.Drawing.Point(10, 264)
         Me.AnimSwapControls.Name = "AnimSwapControls"
-        Me.AnimSwapControls.Size = New System.Drawing.Size(454, 109)
+        Me.AnimSwapControls.Size = New System.Drawing.Size(247, 109)
         Me.AnimSwapControls.TabIndex = 16
         Me.AnimSwapControls.TabStop = False
         Me.AnimSwapControls.Text = "Animation Swap Control"
@@ -460,7 +465,7 @@ Partial Class MainForm
         '
         Me.HealBTN.Location = New System.Drawing.Point(6, 49)
         Me.HealBTN.Name = "HealBTN"
-        Me.HealBTN.Size = New System.Drawing.Size(105, 24)
+        Me.HealBTN.Size = New System.Drawing.Size(99, 24)
         Me.HealBTN.TabIndex = 2
         Me.HealBTN.Text = "Heal Mario"
         Me.HealBTN.UseVisualStyleBackColor = True
@@ -470,16 +475,58 @@ Partial Class MainForm
         '
         Me.DisableHudBTN.Location = New System.Drawing.Point(6, 19)
         Me.DisableHudBTN.Name = "DisableHudBTN"
-        Me.DisableHudBTN.Size = New System.Drawing.Size(105, 24)
+        Me.DisableHudBTN.Size = New System.Drawing.Size(99, 24)
         Me.DisableHudBTN.TabIndex = 2
         Me.DisableHudBTN.Text = "Remove HUD"
         Me.DisableHudBTN.UseVisualStyleBackColor = True
+        '
+        'ComboBox3
+        '
+        Me.ComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox3.Enabled = False
+        Me.ComboBox3.FormattingEnabled = True
+        Me.ComboBox3.Location = New System.Drawing.Point(15, 47)
+        Me.ComboBox3.Name = "ComboBox3"
+        Me.ComboBox3.Size = New System.Drawing.Size(172, 21)
+        Me.ComboBox3.TabIndex = 0
+        '
+        'CurrentCameraAdvice_lb
+        '
+        Me.CurrentCameraAdvice_lb.AutoSize = True
+        Me.CurrentCameraAdvice_lb.Location = New System.Drawing.Point(12, 28)
+        Me.CurrentCameraAdvice_lb.Name = "CurrentCameraAdvice_lb"
+        Me.CurrentCameraAdvice_lb.Size = New System.Drawing.Size(178, 13)
+        Me.CurrentCameraAdvice_lb.TabIndex = 1
+        Me.CurrentCameraAdvice_lb.Text = "Change the current camera style for:"
+        '
+        'ChangeCam_btn
+        '
+        Me.ChangeCam_btn.Enabled = False
+        Me.ChangeCam_btn.Location = New System.Drawing.Point(59, 74)
+        Me.ChangeCam_btn.Name = "ChangeCam_btn"
+        Me.ChangeCam_btn.Size = New System.Drawing.Size(75, 23)
+        Me.ChangeCam_btn.TabIndex = 2
+        Me.ChangeCam_btn.Text = "Change!"
+        Me.ChangeCam_btn.UseVisualStyleBackColor = True
+        '
+        'CameraType_gb
+        '
+        Me.CameraType_gb.Controls.Add(Me.ChangeCam_btn)
+        Me.CameraType_gb.Controls.Add(Me.CurrentCameraAdvice_lb)
+        Me.CameraType_gb.Controls.Add(Me.ComboBox3)
+        Me.CameraType_gb.Location = New System.Drawing.Point(263, 264)
+        Me.CameraType_gb.Name = "CameraType_gb"
+        Me.CameraType_gb.Size = New System.Drawing.Size(201, 109)
+        Me.CameraType_gb.TabIndex = 20
+        Me.CameraType_gb.TabStop = False
+        Me.CameraType_gb.Text = "Camera Style Control"
         '
         'MainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(593, 385)
+        Me.Controls.Add(Me.CameraType_gb)
         Me.Controls.Add(Me.SmallExtra)
         Me.Controls.Add(Me.LevControls)
         Me.Controls.Add(Me.PrecisionCamControls)
@@ -493,7 +540,7 @@ Partial Class MainForm
         Me.MaximizeBox = False
         Me.Name = "MainForm"
         Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
-        Me.Text = "Mario 64 Movie Maker 2.0.5.1"
+        Me.Text = "Mario 64 Movie Maker 2.0.6"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         Me.NormalCamControls.ResumeLayout(False)
@@ -505,6 +552,8 @@ Partial Class MainForm
         Me.LevControls.PerformLayout()
         CType(Me.LevitateTrackBar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SmallExtra.ResumeLayout(False)
+        Me.CameraType_gb.ResumeLayout(False)
+        Me.CameraType_gb.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -553,4 +602,8 @@ Partial Class MainForm
     Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
     Friend WithEvents HealBTN As Button
     Friend WithEvents DisableHudBTN As Button
+    Friend WithEvents ComboBox3 As ComboBox
+    Friend WithEvents CurrentCameraAdvice_lb As Label
+    Friend WithEvents ChangeCam_btn As Button
+    Friend WithEvents CameraType_gb As GroupBox
 End Class

@@ -90,7 +90,6 @@ Public Class SetUpForm
             Tooltipo.ToolTipIcon = ToolTipIcon.Info
             Tooltipo.Show(String.Empty, NameLabel)
         Else
-            My.Computer.Audio.Play(My.Resources.Idea, AudioPlayMode.Background)
             NameLabel.Text = NameBox.Text
             NameLabel.ForeColor = Color.Red
             Tooltipo.ToolTipTitle = "Hey, look here."

@@ -5,12 +5,15 @@ Public Class MainFunctions
     ''' </summary>
     ''' <param name="filepath">The path to the file to load.</param>
     ''' <param name="Type">The analyzing type.
-    ''' 1: Addon Name
-    ''' 2: Author Name
-    ''' 3: Addon Description
-    ''' 4: Addon Version</param>
+    ''' 0: Addon Name
+    ''' 1: Author Name
+    ''' 2: Addon Description
+    ''' 3: Addon Version
+    ''' 4: Addon Safename
+    ''' 5: Addon's specified entrypoint (If file)
+    ''' 6: Addon's ID dependencies</param>
     ''' <returns>What was requested in Type</returns>
-    Public Shared Function ReadMetadata(filepath As String, Type As Byte)
+    Public Shared Function ReadMetadata(filepath As String, ByVal Type As Byte)
         Try
             Using SelectedFile As New StreamReader(filepath) 'Declare the selected file as the file path specified
                 Dim SplittedFile As String() = SelectedFile.ReadToEnd.Split(vbLf)
@@ -46,7 +49,48 @@ Public Class MainFunctions
                         End If
                     Next
                 End If
-                If Type > 4 Or Type < 0 Then
+                If Type = 4 Then
+                    ' Get Version and return the addon's safe name (Used for the folder's name and addon ID).
+                    For Each Line As String In SplittedFile
+                        If Line.StartsWith("safename=") Then
+                            Return Line.Replace("safename=""", "").TrimEnd(vbCrLf).Replace(ControlChars.Quote, "")
+                        End If
+                    Next
+                End If
+                If Type = 5 Then
+                    ' Get Entrypoint, check the type, if it's a files type, return entrypoint. (Used for the place the uninstaller will erase from).
+                    Dim isItFile As Boolean = False
+                    Dim addonType As String = ""
+                    For Each Line As String In SplittedFile
+                        If Line.StartsWith("type=") Then
+                            addonType = Line.Replace("type=""", "").TrimEnd(vbCrLf).Replace(ControlChars.Quote, "")
+                            If addonType.ToLower.StartsWith("file") Then
+                                isItFile = True
+                            Else
+                                Return ""
+                            End If
+                        End If
+                        If Line.StartsWith("entrypoint=") Then
+                            If isItFile = True Then
+                                Return Line.Replace("entrypoint=""", "").TrimEnd(vbCrLf).Replace(ControlChars.Quote, "")
+                            Else
+                                Return ""
+                                'Yes, because I'm that paranoid.
+                            End If
+                        End If
+                    Next
+                End If
+                If Type = 6 Then
+                    ' Get the dependencies and return a string() for them (Used for DLC and multipart installs).
+                    Dim Dependencies As String()
+                    For Each Line As String In SplittedFile
+                        If Line.StartsWith("dependencies=") Then
+                            Dependencies = Line.Replace("dependencies=""", "").TrimEnd(vbCrLf).Replace(ControlChars.Quote, "").Split(",")
+                            Return Dependencies
+                        End If
+                    Next
+                End If
+                If Type > 6 Or Type < 0 Then
                     Return "Invalid Instruction" 'Invalid
                 End If
             End Using
@@ -103,7 +147,7 @@ Public Class MainFunctions
                                 Commandlist.Add(line)
                             End If
                         End If
-                        If String.Equals("[/content]", line) Then 'if we hit the end tag for [content] simply not take it (will reach end of file and streamreader will end)
+                        If String.Equals("[/content]", line) Or String.Equals("end", line) Then 'if we hit the end tag for [content] simply not take it (will reach end of file and streamreader will end)
                             take = False
                         End If
                         line = File.ReadLine()
@@ -111,7 +155,7 @@ Public Class MainFunctions
                 End Using
                 Return Commandlist
             Catch ex As Exception
-                Return ex 'WHAT IS THIS, EXCEPTION? HERESY!!!!1!!!!
+                Return ex.ToString 'WHAT IS THIS, EXCEPTION? HERESY!!!!1!!!!
             End Try
         ElseIf FileContentMode = True Then 'In case it's the FMA mode
             Dim Filelist = New List(Of String)
@@ -132,7 +176,7 @@ Public Class MainFunctions
                                 Filelist.Add(line.Replace("file ", ""))
                             End If
                         End If
-                        If String.Equals("[/content]", line) Then
+                        If String.Equals("[/content]", line) Or String.Equals("end", line) Then
                             take = False
                         End If
                         line = File.ReadLine()

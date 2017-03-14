@@ -140,12 +140,7 @@
     <Compile Include="AboutBox.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AboutForm.Designer.vb">
-      <DependentUpon>AboutForm.vb</DependentUpon>
-    </Compile>
-    <Compile Include="AboutForm.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="AddonModule.vb" />
     <Compile Include="AddonLister.vb" />
     <Compile Include="AddonLoginForm.Designer.vb">
       <DependentUpon>AddonLoginForm.vb</DependentUpon>
@@ -169,9 +164,7 @@
     <Compile Include="Chat.Designer.vb">
       <DependentUpon>Chat.vb</DependentUpon>
     </Compile>
-    <Compile Include="Chat.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Chat.vb" />
     <Compile Include="ChatPM.Designer.vb">
       <DependentUpon>ChatPM.vb</DependentUpon>
     </Compile>
@@ -192,6 +185,12 @@
       <DependentUpon>ExceptionUnhandledForm.vb</DependentUpon>
     </Compile>
     <Compile Include="ExceptionUnhandledForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EXMemDebugForm.Designer.vb">
+      <DependentUpon>EXMemDebugForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EXMemDebugForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ExportCCForm.Designer.vb">
@@ -227,6 +226,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="hi.vb" />
+    <Compile Include="inb4beta.Designer.vb">
+      <DependentUpon>inb4beta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="inb4beta.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="IntegrationForm.Designer.vb">
       <DependentUpon>IntegrationForm.vb</DependentUpon>
     </Compile>
@@ -262,9 +267,7 @@
     <Compile Include="NotiForm.Designer.vb">
       <DependentUpon>NotiForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="NotiForm.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="NotiForm.vb" />
     <Compile Include="preferences.Designer.vb">
       <DependentUpon>preferences.vb</DependentUpon>
     </Compile>
@@ -325,9 +328,6 @@
     <EmbeddedResource Include="AboutBox.resx">
       <DependentUpon>AboutBox.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AboutForm.resx">
-      <DependentUpon>AboutForm.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="AddonLoginForm.resx">
       <DependentUpon>AddonLoginForm.vb</DependentUpon>
     </EmbeddedResource>
@@ -352,6 +352,9 @@
     <EmbeddedResource Include="ExceptionUnhandledForm.resx">
       <DependentUpon>ExceptionUnhandledForm.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EXMemDebugForm.resx">
+      <DependentUpon>EXMemDebugForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ExportCCForm.resx">
       <DependentUpon>ExportCCForm.vb</DependentUpon>
     </EmbeddedResource>
@@ -367,6 +370,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GPLForm.resx">
       <DependentUpon>GPLForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inb4beta.resx">
+      <DependentUpon>inb4beta.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="IntegrationForm.resx">
       <DependentUpon>IntegrationForm.vb</DependentUpon>
@@ -393,7 +399,7 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
-      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <Generator>PublicVbMyResourcesResXFileCodeGenerator</Generator>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -593,7 +599,12 @@
       <DefaultIcon>SM64FMNormal.ico</DefaultIcon>
     </FileAssociation>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\64Parser\64Parser.vbproj">
+      <Project>{27244a42-efda-4ce5-b2f1-408ad738a7f9}</Project>
+      <Name>64Parser</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <PublishFile Include="WinFormsTransitions">
       <Visible>False</Visible>
