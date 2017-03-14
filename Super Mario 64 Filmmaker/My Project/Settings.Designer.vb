@@ -103,23 +103,11 @@ Namespace My
         
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("10/06/2016 19:21:00")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("03/14/2017 02:18:00")>  _
         Public ReadOnly Property BuildDate() As Date
             Get
                 Return CType(Me("BuildDate"),Date)
             End Get
-        End Property
-        
-        <Global.System.Configuration.UserScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
-        Public Property Frozen() As Boolean
-            Get
-                Return CType(Me("Frozen"),Boolean)
-            End Get
-            Set
-                Me("Frozen") = value
-            End Set
         End Property
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _

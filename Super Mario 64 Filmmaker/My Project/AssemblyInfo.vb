@@ -11,7 +11,7 @@ Imports System.Runtime.InteropServices
 ' Revisar los valores de los atributos del ensamblado
 
 <Assembly: AssemblyTitle("64Filmmaker")>
-<Assembly: AssemblyDescription("Super Mario 64 Videomaking software.")>
+<Assembly: AssemblyDescription("AIO for SM64 videomaking.")>
 <Assembly: AssemblyCompany("64Network")>
 <Assembly: AssemblyProduct("64Filmmaker")>
 <Assembly: AssemblyCopyright("Copyright © 2014-2016 64Network.")>
@@ -33,7 +33,7 @@ Imports System.Runtime.InteropServices
 ' mediante el asterisco ('*'), como se muestra a continuación:
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("0.3.2.7")>
-<Assembly: AssemblyFileVersion("0.3.2.7")>
+<Assembly: AssemblyVersion("0.3.2.11")>
+<Assembly: AssemblyFileVersion("0.3.2.11")>
 
 <Assembly: NeutralResourcesLanguageAttribute("en-US")> 
