@@ -1,5 +1,4 @@
-﻿Imports System.IO
-Public Class ColorCodeCopyPasteForm
+﻿Public Class ColorCodeCopyPasteForm
     Private ParentWindow As ColorCodeStudio
 
     Public Sub New(OutputOnly As Boolean, ByRef parent As ColorCodeStudio, Optional cc As String = "")
@@ -11,13 +10,12 @@ Public Class ColorCodeCopyPasteForm
 
         If OutputOnly = True Then
             B_Cancel.Visible = False
-            ToFilebtn.Visible = True
-            B_OK.Text = "Close"
-            Label1.Text = "Here's that color code you asked for!"
+            B_OK.Text = My.Resources.CCSEXbtn
+            Label1.Text = My.Resources.CCSEXLabel
             TextBox1.Text = cc
             TextBox1.ReadOnly = True
         Else
-            Label1.Text = "Paste your color code into the textbox below, then click ""OK""."
+            Label1.Text = My.Resources.CCSIMLabel
         End If
     End Sub
 
@@ -43,8 +41,7 @@ Public Class ColorCodeCopyPasteForm
         End If
     End Sub
 
-    Private Sub ToFilebtn_Click(sender As Object, e As EventArgs) Handles ToFilebtn.Click
-        Dim ExportWindows As New ExportCCForm(TextBox1.Text)
-        ExportWindows.Show()
+    Private Sub ColorCodeCopyPasteForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        B_Cancel.Text = My.Resources.CCSEXCancel
     End Sub
 End Class

@@ -26,24 +26,25 @@ Partial Class MemDebugForm
         Me.LB_Disclaimer = New System.Windows.Forms.Label()
         Me.CB_Accept = New System.Windows.Forms.CheckBox()
         Me.GB_DebugControls = New System.Windows.Forms.GroupBox()
+        Me.AAFirst_btn = New System.Windows.Forms.Button()
         Me.B_Write4 = New System.Windows.Forms.Button()
         Me.B_Read4 = New System.Windows.Forms.Button()
         Me.IN_Value4 = New System.Windows.Forms.TextBox()
         Me.IN_Address4 = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
+        Me.LB_Value4 = New System.Windows.Forms.Label()
+        Me.LB_Address4 = New System.Windows.Forms.Label()
         Me.B_Write3 = New System.Windows.Forms.Button()
         Me.B_Read3 = New System.Windows.Forms.Button()
         Me.IN_Value3 = New System.Windows.Forms.TextBox()
         Me.IN_Address3 = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
+        Me.LB_Value3 = New System.Windows.Forms.Label()
+        Me.LB_Address3 = New System.Windows.Forms.Label()
         Me.B_Write2 = New System.Windows.Forms.Button()
         Me.B_Read2 = New System.Windows.Forms.Button()
         Me.IN_Value2 = New System.Windows.Forms.TextBox()
         Me.IN_Address2 = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.LB_Value2 = New System.Windows.Forms.Label()
+        Me.LB_Address2 = New System.Windows.Forms.Label()
         Me.B_Write1 = New System.Windows.Forms.Button()
         Me.B_Read1 = New System.Windows.Forms.Button()
         Me.IN_Value1 = New System.Windows.Forms.TextBox()
@@ -79,24 +80,25 @@ Partial Class MemDebugForm
         Me.GB_DebugControls.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GB_DebugControls.Controls.Add(Me.AAFirst_btn)
         Me.GB_DebugControls.Controls.Add(Me.B_Write4)
         Me.GB_DebugControls.Controls.Add(Me.B_Read4)
         Me.GB_DebugControls.Controls.Add(Me.IN_Value4)
         Me.GB_DebugControls.Controls.Add(Me.IN_Address4)
-        Me.GB_DebugControls.Controls.Add(Me.Label5)
-        Me.GB_DebugControls.Controls.Add(Me.Label6)
+        Me.GB_DebugControls.Controls.Add(Me.LB_Value4)
+        Me.GB_DebugControls.Controls.Add(Me.LB_Address4)
         Me.GB_DebugControls.Controls.Add(Me.B_Write3)
         Me.GB_DebugControls.Controls.Add(Me.B_Read3)
         Me.GB_DebugControls.Controls.Add(Me.IN_Value3)
         Me.GB_DebugControls.Controls.Add(Me.IN_Address3)
-        Me.GB_DebugControls.Controls.Add(Me.Label3)
-        Me.GB_DebugControls.Controls.Add(Me.Label4)
+        Me.GB_DebugControls.Controls.Add(Me.LB_Value3)
+        Me.GB_DebugControls.Controls.Add(Me.LB_Address3)
         Me.GB_DebugControls.Controls.Add(Me.B_Write2)
         Me.GB_DebugControls.Controls.Add(Me.B_Read2)
         Me.GB_DebugControls.Controls.Add(Me.IN_Value2)
         Me.GB_DebugControls.Controls.Add(Me.IN_Address2)
-        Me.GB_DebugControls.Controls.Add(Me.Label1)
-        Me.GB_DebugControls.Controls.Add(Me.Label2)
+        Me.GB_DebugControls.Controls.Add(Me.LB_Value2)
+        Me.GB_DebugControls.Controls.Add(Me.LB_Address2)
         Me.GB_DebugControls.Controls.Add(Me.B_Write1)
         Me.GB_DebugControls.Controls.Add(Me.B_Read1)
         Me.GB_DebugControls.Controls.Add(Me.IN_Value1)
@@ -106,10 +108,20 @@ Partial Class MemDebugForm
         Me.GB_DebugControls.Enabled = False
         Me.GB_DebugControls.Location = New System.Drawing.Point(13, 103)
         Me.GB_DebugControls.Name = "GB_DebugControls"
-        Me.GB_DebugControls.Size = New System.Drawing.Size(308, 275)
+        Me.GB_DebugControls.Size = New System.Drawing.Size(308, 303)
         Me.GB_DebugControls.TabIndex = 2
         Me.GB_DebugControls.TabStop = False
         Me.GB_DebugControls.Text = "Debug Controls"
+        '
+        'AAFirst_btn
+        '
+        Me.AAFirst_btn.Location = New System.Drawing.Point(92, 270)
+        Me.AAFirst_btn.Name = "AAFirst_btn"
+        Me.AAFirst_btn.Size = New System.Drawing.Size(125, 23)
+        Me.AAFirst_btn.TabIndex = 25
+        Me.AAFirst_btn.Text = "don't mind me yet"
+        Me.AAFirst_btn.UseVisualStyleBackColor = True
+        Me.AAFirst_btn.Visible = False
         '
         'B_Write4
         '
@@ -145,23 +157,23 @@ Partial Class MemDebugForm
         Me.IN_Address4.Size = New System.Drawing.Size(125, 20)
         Me.IN_Address4.TabIndex = 21
         '
-        'Label5
+        'LB_Value4
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(169, 198)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(37, 13)
-        Me.Label5.TabIndex = 20
-        Me.Label5.Text = "Value:"
+        Me.LB_Value4.AutoSize = True
+        Me.LB_Value4.Location = New System.Drawing.Point(169, 198)
+        Me.LB_Value4.Name = "LB_Value4"
+        Me.LB_Value4.Size = New System.Drawing.Size(37, 13)
+        Me.LB_Value4.TabIndex = 20
+        Me.LB_Value4.Text = "Value:"
         '
-        'Label6
+        'LB_Address4
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(169, 155)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(48, 13)
-        Me.Label6.TabIndex = 19
-        Me.Label6.Text = "Address:"
+        Me.LB_Address4.AutoSize = True
+        Me.LB_Address4.Location = New System.Drawing.Point(169, 155)
+        Me.LB_Address4.Name = "LB_Address4"
+        Me.LB_Address4.Size = New System.Drawing.Size(48, 13)
+        Me.LB_Address4.TabIndex = 19
+        Me.LB_Address4.Text = "Address:"
         '
         'B_Write3
         '
@@ -197,23 +209,23 @@ Partial Class MemDebugForm
         Me.IN_Address3.Size = New System.Drawing.Size(125, 20)
         Me.IN_Address3.TabIndex = 15
         '
-        'Label3
+        'LB_Value3
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(6, 198)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(37, 13)
-        Me.Label3.TabIndex = 14
-        Me.Label3.Text = "Value:"
+        Me.LB_Value3.AutoSize = True
+        Me.LB_Value3.Location = New System.Drawing.Point(6, 198)
+        Me.LB_Value3.Name = "LB_Value3"
+        Me.LB_Value3.Size = New System.Drawing.Size(37, 13)
+        Me.LB_Value3.TabIndex = 14
+        Me.LB_Value3.Text = "Value:"
         '
-        'Label4
+        'LB_Address3
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(6, 155)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(48, 13)
-        Me.Label4.TabIndex = 13
-        Me.Label4.Text = "Address:"
+        Me.LB_Address3.AutoSize = True
+        Me.LB_Address3.Location = New System.Drawing.Point(6, 155)
+        Me.LB_Address3.Name = "LB_Address3"
+        Me.LB_Address3.Size = New System.Drawing.Size(48, 13)
+        Me.LB_Address3.TabIndex = 13
+        Me.LB_Address3.Text = "Address:"
         '
         'B_Write2
         '
@@ -249,23 +261,23 @@ Partial Class MemDebugForm
         Me.IN_Address2.Size = New System.Drawing.Size(125, 20)
         Me.IN_Address2.TabIndex = 9
         '
-        'Label1
+        'LB_Value2
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(169, 64)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(37, 13)
-        Me.Label1.TabIndex = 8
-        Me.Label1.Text = "Value:"
+        Me.LB_Value2.AutoSize = True
+        Me.LB_Value2.Location = New System.Drawing.Point(169, 64)
+        Me.LB_Value2.Name = "LB_Value2"
+        Me.LB_Value2.Size = New System.Drawing.Size(37, 13)
+        Me.LB_Value2.TabIndex = 8
+        Me.LB_Value2.Text = "Value:"
         '
-        'Label2
+        'LB_Address2
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(169, 21)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(48, 13)
-        Me.Label2.TabIndex = 7
-        Me.Label2.Text = "Address:"
+        Me.LB_Address2.AutoSize = True
+        Me.LB_Address2.Location = New System.Drawing.Point(169, 21)
+        Me.LB_Address2.Name = "LB_Address2"
+        Me.LB_Address2.Size = New System.Drawing.Size(48, 13)
+        Me.LB_Address2.TabIndex = 7
+        Me.LB_Address2.Text = "Address:"
         '
         'B_Write1
         '
@@ -323,7 +335,7 @@ Partial Class MemDebugForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(333, 390)
+        Me.ClientSize = New System.Drawing.Size(333, 418)
         Me.Controls.Add(Me.GB_DebugControls)
         Me.Controls.Add(Me.CB_Accept)
         Me.Controls.Add(Me.LB_Disclaimer)
@@ -352,18 +364,19 @@ Partial Class MemDebugForm
     Friend WithEvents B_Read4 As Button
     Friend WithEvents IN_Value4 As TextBox
     Friend WithEvents IN_Address4 As TextBox
-    Friend WithEvents Label5 As Label
-    Friend WithEvents Label6 As Label
+    Friend WithEvents LB_Value4 As Label
+    Friend WithEvents LB_Address4 As Label
     Friend WithEvents B_Write3 As Button
     Friend WithEvents B_Read3 As Button
     Friend WithEvents IN_Value3 As TextBox
     Friend WithEvents IN_Address3 As TextBox
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label4 As Label
+    Friend WithEvents LB_Value3 As Label
+    Friend WithEvents LB_Address3 As Label
     Friend WithEvents B_Write2 As Button
     Friend WithEvents B_Read2 As Button
     Friend WithEvents IN_Value2 As TextBox
     Friend WithEvents IN_Address2 As TextBox
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
+    Friend WithEvents LB_Value2 As Label
+    Friend WithEvents LB_Address2 As Label
+    Friend WithEvents AAFirst_btn As Button
 End Class

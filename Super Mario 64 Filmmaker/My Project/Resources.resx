@@ -117,31 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="PrecisionModeTooltip" xml:space="preserve">
-    <value>Enables Precision Camera Mode, which lets you
-control the angle of the camera from Mario's first-person
-view and lock it wherever you want, and then readjust the camera at will.</value>
-  </data>
-  <data name="IOAddr" xml:space="preserve">
-    <value>Address:</value>
-  </data>
-  <data name="ResetAllSwapsTooltip" xml:space="preserve">
-    <value>This resets all animations to their original sequences.
-However, it currently does not work as intended, so
-I have disabled it until I determine how to fix it.</value>
-  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Punch" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Punch.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="CHT" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CHT.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_64Clockwork" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\64Clockwork.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="AboutCreatorDesc" xml:space="preserve">
-    <value>Created by James "CaptainSwag101" Pelster</value>
   </data>
   <data name="LoadingBalls" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LoadingBalls.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -149,41 +130,11 @@ I have disabled it until I determine how to fix it.</value>
   <data name="ic_64p" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ic_64p.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="UnfreezeCamera" xml:space="preserve">
-    <value>Unfreeze Camera</value>
-  </data>
-  <data name="CCSIMLabel1" xml:space="preserve">
-    <value>Paste your color code into the textbox below, then click "OK".</value>
-    <comment>import label</comment>
-  </data>
-  <data name="CCWarning" xml:space="preserve">
-    <value>IMPORTANT: Make sure to uncheck any color codes currently enabled in Project64. Otherwise, they will prevent this program from modifying Mario's colors.</value>
-  </data>
-  <data name="CCSImport" xml:space="preserve">
-    <value>Import color code...</value>
-  </data>
-  <data name="UndoAllPrevSwapsTooltip" xml:space="preserve">
-    <value>When you select a new animation to be overwritten, the previous one
-will be returned to its default animation.</value>
-  </data>
   <data name="ic_rec" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ic_rec.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Left" xml:space="preserve">
-    <value>Left</value>
-    <comment>shading</comment>
-  </data>
-  <data name="CCSImport1" xml:space="preserve">
-    <value>Import color code...</value>
-  </data>
-  <data name="CCSDefaults1" xml:space="preserve">
-    <value>Restore Colors</value>
-  </data>
   <data name="Message" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Message.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="Disconnect" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Disconnect.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="Nudge" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Nudge.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -191,98 +142,32 @@ will be returned to its default animation.</value>
   <data name="OST" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\OST.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="CCSExport" xml:space="preserve">
-    <value>Export color code...</value>
-  </data>
   <data name="Vegas" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Vegas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="PIC_EXCEPTION" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PIC_EXCEPTION.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="AboutText1" xml:space="preserve">
-    <value>This program is dedicated to the Super Mario 64 Bloopers/Machinima community, thanks for all the effort you've put into your work, and I hope this tool will help you create awesome videos for years to come!</value>
-  </data>
-  <data name="RememberPrevSwaps" xml:space="preserve">
-    <value>Remember previous animation swaps</value>
-  </data>
   <data name="froze" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\froze.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Lower" xml:space="preserve">
-    <value>Lower</value>
-    <comment>shading</comment>
   </data>
   <data name="LIADD" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LIADD.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="CCSHat" xml:space="preserve">
-    <value>Hat/Shirt</value>
-  </data>
-  <data name="PrecisionGroupName" xml:space="preserve">
-    <value>Precision Camera Control</value>
-  </data>
-  <data name="IOWrite" xml:space="preserve">
-    <value>Write</value>
-  </data>
-  <data name="AnimationDataNotLoaded" xml:space="preserve">
-    <value>Animation data not loaded!</value>
-  </data>
   <data name="SC" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SC.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Front" xml:space="preserve">
-    <value>Front</value>
-    <comment>shading</comment>
-  </data>
-  <data name="PrecisionButtonDisabled" xml:space="preserve">
-    <value>Precision Mode is off.</value>
   </data>
   <data name="ic_ve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ic_ve.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Explosion" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Explosion.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="IOValue" xml:space="preserve">
-    <value>Value:</value>
-  </data>
-  <data name="IOGroupName" xml:space="preserve">
-    <value>Memory Controls</value>
-  </data>
-  <data name="GotoNewArea" xml:space="preserve">
-    <value>Go to new area</value>
-  </data>
-  <data name="CCSHair" xml:space="preserve">
-    <value>Hair</value>
-  </data>
-  <data name="Heal_Extra" xml:space="preserve">
-    <value>Heal Mario</value>
-    <comment>extras</comment>
-  </data>
   <data name="CC" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CC.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="SearchingForBaseAddress" xml:space="preserve">
-    <value>Scanning for base address...</value>
   </data>
   <data name="EYE" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ACG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="HoverMax" xml:space="preserve">
-    <value>5 (Highest)</value>
-  </data>
-  <data name="AboutText3" xml:space="preserve">
-    <value>Found any bugs, need help, or want to suggest a feature? Email me at:</value>
-  </data>
-  <data name="HelpStrip" xml:space="preserve">
-    <value>Help...</value>
-  </data>
   <data name="Guides" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Guides.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Hit" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Hit.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="About" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\About.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -290,59 +175,14 @@ will be returned to its default animation.</value>
   <data name="splashlogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\splashlogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BaseAddressNotFound" xml:space="preserve">
-    <value>Base address not found!</value>
-  </data>
   <data name="User" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\User.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="PrecisionButtonLock" xml:space="preserve">
-    <value>Lock Camera Rotation</value>
-  </data>
-  <data name="PrecisionButtonUnlock" xml:space="preserve">
-    <value>Unlock Camera Rotation</value>
-  </data>
-  <data name="IORead" xml:space="preserve">
-    <value>Read</value>
-  </data>
-  <data name="CCSShoes" xml:space="preserve">
-    <value>Shoes</value>
-  </data>
-  <data name="AnimationO1" xml:space="preserve">
-    <value>Overwrite this animation...</value>
-  </data>
-  <data name="CamControlName" xml:space="preserve">
-    <value>Normal Camera Controls</value>
   </data>
   <data name="Extras" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Extras.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="CCSEXCancel1" xml:space="preserve">
-    <value>Cancel</value>
-  </data>
-  <data name="DeepFreeze" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\DeepFreeze.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="CCSIMLabel" xml:space="preserve">
-    <value>Paste your color code into the textbox below, then click "OK".</value>
-    <comment>import label</comment>
-  </data>
-  <data name="Back" xml:space="preserve">
-    <value>Back</value>
-    <comment>shading</comment>
-  </data>
-  <data name="AboutStrip" xml:space="preserve">
-    <value>About Advanced Cinematic Control...</value>
-  </data>
-  <data name="InvalidHexValue" xml:space="preserve">
-    <value>The number you have entered is not a valid Hexadecimal value.</value>
-  </data>
   <data name="LOADD" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LOADD.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="RememberPrevSwapsTooltip" xml:space="preserve">
-    <value>When you select a new animation to be overwritten, any previous animations
-will remain swapped until you manually change or reset them.</value>
   </data>
   <data name="ic_cfg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ic_cfg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -350,87 +190,20 @@ will remain swapped until you manually change or reset them.</value>
   <data name="ic_tut" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ic_tut.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="CCSEXLabel" xml:space="preserve">
-    <value>Here's that color code you asked for!</value>
-    <comment>export label</comment>
-  </data>
-  <data name="HoverMin" xml:space="preserve">
-    <value>0 (None)</value>
-  </data>
-  <data name="CCSHat1" xml:space="preserve">
-    <value>Hat/Shirt</value>
-  </data>
-  <data name="CCS_ColorMode" xml:space="preserve">
-    <value>CC Mode</value>
-    <comment>when in shading mode</comment>
-  </data>
-  <data name="CCSSkin" xml:space="preserve">
-    <value>Skin</value>
-  </data>
-  <data name="CCSHair1" xml:space="preserve">
-    <value>Hair</value>
-  </data>
   <data name="CHK" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CHK.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="LoadCheatSht" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LoadCheatSht.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Higher" xml:space="preserve">
-    <value>Higher</value>
-    <comment>shading</comment>
-  </data>
-  <data name="SettingsMenu" xml:space="preserve">
-    <value>Settings</value>
-  </data>
-  <data name="CCSFormTitle1" xml:space="preserve">
-    <value>Color Code Studio</value>
-  </data>
   <data name="Connected" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Connected.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="RandomZ" xml:space="preserve">
-    <value>Randomizer: Z</value>
-    <comment>shading</comment>
-  </data>
-  <data name="AnimationO2" xml:space="preserve">
-    <value>...with this one!</value>
-  </data>
-  <data name="FreezeCamera" xml:space="preserve">
-    <value>Freeze Camera</value>
-  </data>
-  <data name="HoverToolTip" xml:space="preserve">
-    <value>Reminder: Some animations won't be affected by this. Recommended value is 1.</value>
-  </data>
-  <data name="CCSDefaultMB" xml:space="preserve">
-    <value>Want to set these colors as default?</value>
-  </data>
-  <data name="SmolExtrasNOHUD" xml:space="preserve">
-    <value>Remove HUD</value>
-  </data>
-  <data name="AnimationGroupName" xml:space="preserve">
-    <value>Animation Swap Control</value>
-  </data>
-  <data name="CCS_ShadeZ" xml:space="preserve">
-    <value>Light point Z</value>
-  </data>
-  <data name="IOFormTitle" xml:space="preserve">
-    <value>Memory I/O Editor</value>
-  </data>
-  <data name="CCSShoes1" xml:space="preserve">
-    <value>Shoes</value>
   </data>
   <data name="No" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\No.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="IOBadass" xml:space="preserve">
-    <value>I know what I'm doing.</value>
-  </data>
   <data name="VFX" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\VFX.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CCSEXCancel" xml:space="preserve">
-    <value>Cancel</value>
   </data>
   <data name="SFX" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SFX.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -438,37 +211,11 @@ will remain swapped until you manually change or reset them.</value>
   <data name="M64MM2_Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\M64MM2 Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Gotcha" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Gotcha.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="CCSEXbtn1" xml:space="preserve">
-    <value>Close</value>
-  </data>
-  <data name="CCSLoad1" xml:space="preserve">
-    <value>Load from game</value>
-  </data>
   <data name="Addon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Addon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ResetAllSwaps" xml:space="preserve">
-    <value>Reset all animations to default (Malfunctioning)</value>
-  </data>
   <data name="Exception" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Exception.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CCSEXLabel1" xml:space="preserve">
-    <value>Here's that color code you asked for!</value>
-    <comment>export label</comment>
-  </data>
-  <data name="BaseAddressIs" xml:space="preserve">
-    <value>The base address is: </value>
-  </data>
-  <data name="BaseAddressOverwriteWarning" xml:space="preserve">
-    <value>You are attempting to write to the first four bytes of Super Mario 64's memory, which contains the value this program uses to find the game's base address. If you click ""Yes"", you will need to reset the emulator before this program will be able to find Super Mario 64 again. Are you sure you want to do this?</value>
-  </data>
-  <data name="PrecisionStatusFinish" xml:space="preserve">
-    <value>Camera locked. Press the button below to re-adjust camera angle.
-To disable precision mode, uncheck Settings -&gt; Precision Mode</value>
   </data>
   <data name="Online" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Online.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -476,111 +223,20 @@ To disable precision mode, uncheck Settings -&gt; Precision Mode</value>
   <data name="_64networklogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\64networklogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="SoftUnfreezeCamera" xml:space="preserve">
-    <value>Soft-Unfreeze Camera</value>
-  </data>
-  <data name="UndoAllPrevSwaps" xml:space="preserve">
-    <value>Undo previous animation swaps</value>
-  </data>
-  <data name="ForceCameraCTooltip" xml:space="preserve">
-    <value>Click this whenever you are in an area that does not allow
-the camera to be rotated with the C-buttons (such as the
-inside of the castle) and the camera will be temporarily allowed
-to be manually rotated in the usual manner. However, this
-does not always work in all areas of the castle, as sometimes
-camera behaviors are hardcoded into specific parts of levels.</value>
-  </data>
-  <data name="MemDebugWarning" xml:space="preserve">
-    <value>This window is for testing reading from/writing to SM64's memory (RAM). You should only use this if you know what you're doing. The developers accept no responsibility for lost save data, program crashes, or system crashes.</value>
-  </data>
-  <data name="PrecisionModeBoxName" xml:space="preserve">
-    <value>Precision Camera Control</value>
-  </data>
-  <data name="Question" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Question.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="CCSOveralls" xml:space="preserve">
-    <value>Overalls</value>
-  </data>
-  <data name="CCSImportError" xml:space="preserve">
-    <value>An error occurred while trying to import the color code. Make sure you entered a valid code!</value>
-  </data>
-  <data name="AboutMenu" xml:space="preserve">
-    <value>Help</value>
-  </data>
   <data name="FR4PS" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FR4PS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="AnimationDataReadError" xml:space="preserve">
-    <value>Error reading animation data file:</value>
-  </data>
-  <data name="PrecisionModeStrip" xml:space="preserve">
-    <value>Precision Mode</value>
-  </data>
-  <data name="CCS_ShadeY" xml:space="preserve">
-    <value>Light point Y</value>
-  </data>
-  <data name="CCSImportError1" xml:space="preserve">
-    <value>An error occurred while trying to import the color code. Make sure you entered a valid code!</value>
-  </data>
-  <data name="CCSLoad" xml:space="preserve">
-    <value>Load from game</value>
   </data>
   <data name="ProjectSF" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ProjectSF.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="SmolExtrasName" xml:space="preserve">
-    <value>Small Extras</value>
-  </data>
-  <data name="GiveCrit" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\GiveCrit.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="Frozen" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\frozen.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="Expand" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Expand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ChangeCameraType" xml:space="preserve">
-    <value>Change Camera Type</value>
   </data>
   <data name="M64MM2_CC_Mario_big" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\M64MM2 CC Mario big.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="HoverControlName" xml:space="preserve">
-    <value>Hover Control</value>
-  </data>
-  <data name="SoftFreezeCamera" xml:space="preserve">
-    <value>Soft-Freeze Camera</value>
-  </data>
-  <data name="CCSEXbtn" xml:space="preserve">
-    <value>Close</value>
-  </data>
-  <data name="PJNotOpen" xml:space="preserve">
-    <value>Project64 isn't open!</value>
-  </data>
-  <data name="Crit" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Crit.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="CameraUnlockDesc" xml:space="preserve">
-    <value>Camera rotation unlocked. Click the button below to lock camera rotation.</value>
-  </data>
-  <data name="CCS_ShadingMode" xml:space="preserve">
-    <value>Lighting Mode</value>
-    <comment>when in color mode</comment>
-  </data>
   <data name="Tutorials" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Tutorials.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="HighScore" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\HighScore.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="Surprise" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Surprise.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="RandomY" xml:space="preserve">
-    <value>Randomizer: Y</value>
-    <comment>shading</comment>
   </data>
   <data name="ic_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ic_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -588,43 +244,14 @@ camera behaviors are hardcoded into specific parts of levels.</value>
   <data name="IM" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IM.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PrecisionStatusDisabled" xml:space="preserve">
-    <value>Precision Mode is disabled.
-Enable it in Settings -&gt; Precision Mode</value>
-  </data>
-  <data name="CCWarning1" xml:space="preserve">
-    <value>IMPORTANT: Make sure to uncheck any color codes currently enabled in Project64. Otherwise, they will prevent this program from modifying Mario's colors.</value>
-  </data>
-  <data name="Idea" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Idea.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="zenonbye" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\'sss nothing fur u.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Right" xml:space="preserve">
-    <value>Right</value>
-    <comment>shading</comment>
   </data>
   <data name="Recorder" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Recorder.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Explode" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Explode.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CCSDMBTitle1" xml:space="preserve">
-    <value>Set as default?</value>
-  </data>
-  <data name="CCSGloves" xml:space="preserve">
-    <value>Gloves</value>
-  </data>
-  <data name="CCSExport1" xml:space="preserve">
-    <value>Export color code...</value>
-  </data>
-  <data name="CCS_ShadeX" xml:space="preserve">
-    <value>Light point X</value>
-  </data>
-  <data name="CCSGloves1" xml:space="preserve">
-    <value>Gloves</value>
   </data>
   <data name="Retract" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Retract.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -635,78 +262,20 @@ Enable it in Settings -&gt; Precision Mode</value>
   <data name="DELADD" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\DELADD.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="CameraLockDesc" xml:space="preserve">
-    <value>Camera position locked. Click the button below to lock camera rotation.</value>
-  </data>
-  <data name="CCS_RestoreSh" xml:space="preserve">
-    <value>Restore Lighting</value>
-  </data>
-  <data name="Critical" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Critical.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="ToolsMenu" xml:space="preserve">
-    <value>Tools</value>
-  </data>
-  <data name="Yes" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Yes.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="CCSOveralls1" xml:space="preserve">
-    <value>Overalls</value>
-  </data>
-  <data name="PrecisionStatusNoEmu" xml:space="preserve">
-    <value>Precision mode is disabled. Reason: Project64 isn't open.</value>
-  </data>
-  <data name="CCSSkin1" xml:space="preserve">
-    <value>Skin</value>
-  </data>
-  <data name="CCSDefaultMB1" xml:space="preserve">
-    <value>Want to set these colors as default?</value>
-  </data>
-  <data name="CCSFormTitle" xml:space="preserve">
-    <value>Color Code Studio</value>
-  </data>
-  <data name="ForceCameraC" xml:space="preserve">
-    <value>Force Camera to be movable with C-Buttons</value>
-  </data>
-  <data name="CCSDMBTitle" xml:space="preserve">
-    <value>Set as default?</value>
-  </data>
-  <data name="AboutBuildDate" xml:space="preserve">
-    <value>Build Date: </value>
-  </data>
-  <data name="RandomX" xml:space="preserve">
-    <value>Randomizer: X</value>
-    <comment>shading</comment>
-  </data>
   <data name="Injector2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Injector2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="InvalidHexAddress" xml:space="preserve">
-    <value>The value you have entered is not a valid Hexadecimal address.</value>
   </data>
   <data name="LoadSpecialPkg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LoadSpecialPkg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="CCSDefaults" xml:space="preserve">
-    <value>Defaults</value>
-  </data>
-  <data name="NoPJPrecisionError" xml:space="preserve">
-    <value>You cannot turn on the Precision Mode because Project64 isn't open.</value>
-  </data>
   <data name="SM64FM_Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SM64FM-Logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="AboutText2" xml:space="preserve">
-    <value>Special thanks to Matthew "MATTHEWGU4" Guerra for helping me make this project a reality and for spreading the word, and to GlitchyPSIX for his discovery of the "Soft-Freeze" feature.</value>
   </data>
   <data name="dark_noise" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dark_noise.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="white_noise" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\white_noise.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="LicenseStrip" xml:space="preserve">
-    <value>Licensing Info...</value>
   </data>
   <data name="neomaker_logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\neomaker logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -728,5 +297,348 @@ Enable it in Settings -&gt; Precision Mode</value>
   </data>
   <data name="ic_getadd" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ic_getadd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AboutBuildDate" xml:space="preserve">
+    <value>Build Date: </value>
+  </data>
+  <data name="AboutCreatorDesc" xml:space="preserve">
+    <value>Created by James "CaptainSwag101" Pelster &amp; GlitchyPSIX</value>
+  </data>
+  <data name="AboutMenu" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="AboutStrip" xml:space="preserve">
+    <value>About Mario 64 Movie Maker 2.0.6...</value>
+  </data>
+  <data name="AboutText1" xml:space="preserve">
+    <value>This program is dedicated to the Super Mario 64 Bloopers/Machinima community, thanks for all the effort you've put into your work, and I hope this tool will help you create awesome videos for years to come!</value>
+  </data>
+  <data name="AboutText2" xml:space="preserve">
+    <value>Special thanks to Matthew "MATTHEWGU4" Guerra for helping me make this project a reality and for spreading the word, and to GlitchyPSIX for his attributions to the program.</value>
+  </data>
+  <data name="AboutText3" xml:space="preserve">
+    <value>Found any bugs, need help, or want to suggest a feature? Email me at:</value>
+  </data>
+  <data name="AnimationDataNotLoaded" xml:space="preserve">
+    <value>Animation data not loaded!</value>
+  </data>
+  <data name="AnimationDataReadError" xml:space="preserve">
+    <value>Error reading animation data file:</value>
+  </data>
+  <data name="AnimationGroupName" xml:space="preserve">
+    <value>Animation Swap Control</value>
+  </data>
+  <data name="AnimationO1" xml:space="preserve">
+    <value>Overwrite this animation...</value>
+  </data>
+  <data name="AnimationO2" xml:space="preserve">
+    <value>...with this one!</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Back</value>
+    <comment>shading</comment>
+  </data>
+  <data name="BaseAddressIs" xml:space="preserve">
+    <value>The base address is: </value>
+  </data>
+  <data name="BaseAddressNotFound" xml:space="preserve">
+    <value>Base address not found!</value>
+  </data>
+  <data name="BaseAddressOverwriteWarning" xml:space="preserve">
+    <value>You are attempting to write to the first four bytes of Super Mario 64's memory, which contains the value this program uses to find the game's base address. If you click ""Yes"", you will need to reset the emulator before this program will be able to find Super Mario 64 again. Are you sure you want to do this?</value>
+  </data>
+  <data name="CamControlName" xml:space="preserve">
+    <value>Normal Camera Controls</value>
+  </data>
+  <data name="CameraLockDesc" xml:space="preserve">
+    <value>Camera position locked. Click the button below or use CTRL+SHIFT+P to lock the camera rotation.</value>
+  </data>
+  <data name="CameraStylesChangeNow" xml:space="preserve">
+    <value>Apply</value>
+    <comment>camera style</comment>
+  </data>
+  <data name="CameraStylesFileError" xml:space="preserve">
+    <value>Could not load the camera data file:</value>
+    <comment>camera style</comment>
+  </data>
+  <data name="CameraStylesLabel" xml:space="preserve">
+    <value>Change the current cam. style for:</value>
+    <comment>camera style</comment>
+  </data>
+  <data name="CameraStylesNoCam" xml:space="preserve">
+    <value>-- no cameras available --</value>
+    <comment>camera style</comment>
+  </data>
+  <data name="CameraStylesText" xml:space="preserve">
+    <value>Camera Style Control</value>
+    <comment>camera style</comment>
+  </data>
+  <data name="CameraUnlockDesc" xml:space="preserve">
+    <value>Camera rotation unlocked. Click the button below or use CTRL+SHIFT+P to lock camera rotation.</value>
+  </data>
+  <data name="CCSDefaultMB" xml:space="preserve">
+    <value>Want to set these colors as default?</value>
+  </data>
+  <data name="CCSDefaults" xml:space="preserve">
+    <value>Restore Colors</value>
+  </data>
+  <data name="CCSDMBTitle" xml:space="preserve">
+    <value>Set as default?</value>
+  </data>
+  <data name="CCSEXbtn" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="CCSEXCancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="CCSEXLabel" xml:space="preserve">
+    <value>Here's that color code you asked for!</value>
+    <comment>export label</comment>
+  </data>
+  <data name="CCSExport" xml:space="preserve">
+    <value>Export color code...</value>
+  </data>
+  <data name="CCSFormTitle" xml:space="preserve">
+    <value>Color Code Studio</value>
+  </data>
+  <data name="CCSGloves" xml:space="preserve">
+    <value>Gloves</value>
+  </data>
+  <data name="CCSHair" xml:space="preserve">
+    <value>Hair</value>
+  </data>
+  <data name="CCSHat" xml:space="preserve">
+    <value>Hat/Shirt</value>
+  </data>
+  <data name="CCSIMLabel" xml:space="preserve">
+    <value>Paste your color code into the textbox below, then click "OK".</value>
+    <comment>import label</comment>
+  </data>
+  <data name="CCSImport" xml:space="preserve">
+    <value>Import color code...</value>
+  </data>
+  <data name="CCSImportError" xml:space="preserve">
+    <value>An error occurred while trying to import the color code. Make sure you entered a valid code!</value>
+  </data>
+  <data name="CCSLoad" xml:space="preserve">
+    <value>Load from game</value>
+  </data>
+  <data name="CCSOveralls" xml:space="preserve">
+    <value>Overalls</value>
+  </data>
+  <data name="CCSShoes" xml:space="preserve">
+    <value>Shoes</value>
+  </data>
+  <data name="CCSSkin" xml:space="preserve">
+    <value>Skin</value>
+  </data>
+  <data name="CCS_ColorMode" xml:space="preserve">
+    <value>CC Mode</value>
+    <comment>when in shading mode</comment>
+  </data>
+  <data name="CCS_RestoreSh" xml:space="preserve">
+    <value>Restore Lighting</value>
+  </data>
+  <data name="CCS_ShadeX" xml:space="preserve">
+    <value>Light point X</value>
+  </data>
+  <data name="CCS_ShadeY" xml:space="preserve">
+    <value>Light point Y</value>
+  </data>
+  <data name="CCS_ShadeZ" xml:space="preserve">
+    <value>Light point Z</value>
+  </data>
+  <data name="CCS_ShadingMode" xml:space="preserve">
+    <value>Lighting Mode</value>
+    <comment>when in color mode</comment>
+  </data>
+  <data name="CCWarning" xml:space="preserve">
+    <value>IMPORTANT: Make sure to uncheck any color codes currently enabled in Project64. Otherwise, they will prevent this program from modifying Mario's colors.</value>
+  </data>
+  <data name="ChangeCameraType" xml:space="preserve">
+    <value>Prepare Camera</value>
+  </data>
+  <data name="ForceCameraC" xml:space="preserve">
+    <value>Force Camera to be movable with C-Buttons</value>
+  </data>
+  <data name="ForceCameraCTooltip" xml:space="preserve">
+    <value>Click this whenever you are in an area that does not allow
+the camera to be rotated with the C-buttons (such as the
+inside of the castle) and the camera will be temporarily allowed
+to be manually rotated in the usual manner. However, this
+does not always work in all areas of the castle, as sometimes
+camera behaviors are hardcoded into specific parts of levels.</value>
+  </data>
+  <data name="FreezeCamera" xml:space="preserve">
+    <value>Freeze Camera</value>
+  </data>
+  <data name="Front" xml:space="preserve">
+    <value>Front</value>
+    <comment>shading</comment>
+  </data>
+  <data name="GotoNewArea" xml:space="preserve">
+    <value>We're here!</value>
+  </data>
+  <data name="Heal_Extra" xml:space="preserve">
+    <value>Heal Mario (nonfunctional)</value>
+  </data>
+  <data name="Higher" xml:space="preserve">
+    <value>Higher</value>
+    <comment>shading</comment>
+  </data>
+  <data name="HoverControlName" xml:space="preserve">
+    <value>Hover Control</value>
+  </data>
+  <data name="HoverMax" xml:space="preserve">
+    <value>5 (Highest)</value>
+  </data>
+  <data name="HoverMin" xml:space="preserve">
+    <value>0 (None)</value>
+  </data>
+  <data name="HoverToolTip" xml:space="preserve">
+    <value>Reminder: Some animations won't be affected by this. Recommended value is 1.</value>
+  </data>
+  <data name="InvalidHexAddress" xml:space="preserve">
+    <value>The value you have entered is not a valid Hexadecimal address.</value>
+  </data>
+  <data name="InvalidHexValue" xml:space="preserve">
+    <value>The number you have entered is not a valid Hexadecimal value.</value>
+  </data>
+  <data name="IOAddr" xml:space="preserve">
+    <value>Address:</value>
+  </data>
+  <data name="IOBadass" xml:space="preserve">
+    <value>I know what I'm doing.</value>
+  </data>
+  <data name="IOFormTitle" xml:space="preserve">
+    <value>Memory I/O Editor</value>
+  </data>
+  <data name="IOGroupName" xml:space="preserve">
+    <value>Memory Controls</value>
+  </data>
+  <data name="IORead" xml:space="preserve">
+    <value>Read</value>
+  </data>
+  <data name="IOValue" xml:space="preserve">
+    <value>Value:</value>
+  </data>
+  <data name="IOWrite" xml:space="preserve">
+    <value>Write</value>
+  </data>
+  <data name="Left" xml:space="preserve">
+    <value>Left</value>
+    <comment>shading</comment>
+  </data>
+  <data name="LicenseStrip" xml:space="preserve">
+    <value>Licensing Info...</value>
+  </data>
+  <data name="Lower" xml:space="preserve">
+    <value>Lower</value>
+    <comment>shading</comment>
+  </data>
+  <data name="MemDebugWarning" xml:space="preserve">
+    <value>This window is for testing reading from/writing to SM64's memory (RAM). You should only use this if you know what you're doing. The developers accept no responsibility for lost save data, program crashes, or system crashes.</value>
+  </data>
+  <data name="NoPJPrecisionError" xml:space="preserve">
+    <value>You cannot turn on the Precision Mode because Project64 isn't open.</value>
+  </data>
+  <data name="PJNotOpen" xml:space="preserve">
+    <value>Project64 isn't open!</value>
+  </data>
+  <data name="PrecisionButtonDisabled" xml:space="preserve">
+    <value>Precision Mode is off.</value>
+  </data>
+  <data name="PrecisionButtonLock" xml:space="preserve">
+    <value>Lock Camera Rotation</value>
+  </data>
+  <data name="PrecisionButtonUnlock" xml:space="preserve">
+    <value>Unlock Camera Rotation</value>
+  </data>
+  <data name="PrecisionGroupName" xml:space="preserve">
+    <value>Precision Camera Control</value>
+  </data>
+  <data name="PrecisionModeBoxName" xml:space="preserve">
+    <value>Precision Camera Control</value>
+  </data>
+  <data name="PrecisionModeStrip" xml:space="preserve">
+    <value>Precision Mode</value>
+  </data>
+  <data name="PrecisionModeTooltip" xml:space="preserve">
+    <value>Enables Precision Camera Mode, which lets you
+control the angle of the camera from Mario's first-person
+view and lock it wherever you want, and then readjust the camera at will.</value>
+  </data>
+  <data name="PrecisionStatusDisabled" xml:space="preserve">
+    <value>Precision Mode is disabled.
+Enable it in Settings -&gt; Precision Mode or use CTRL+P</value>
+  </data>
+  <data name="PrecisionStatusFinish" xml:space="preserve">
+    <value>Camera locked. Press the button below or use CTRL+SHIFT+P to re-adjust camera angle.
+To disable precision mode, uncheck Settings -&gt; Precision Mode or use CTRL+P</value>
+  </data>
+  <data name="PrecisionStatusNoEmu" xml:space="preserve">
+    <value>Precision mode is disabled. Reason: Project64 isn't open.</value>
+  </data>
+  <data name="RandomX" xml:space="preserve">
+    <value>Randomizer: X</value>
+    <comment>shading</comment>
+  </data>
+  <data name="RandomY" xml:space="preserve">
+    <value>Randomizer: Y</value>
+    <comment>shading</comment>
+  </data>
+  <data name="RandomZ" xml:space="preserve">
+    <value>Randomizer: Z</value>
+    <comment>shading</comment>
+  </data>
+  <data name="RememberPrevSwaps" xml:space="preserve">
+    <value>Remember previous animation swaps</value>
+  </data>
+  <data name="RememberPrevSwapsTooltip" xml:space="preserve">
+    <value>When you select a new animation to be overwritten, any previous animations
+will remain swapped until you manually change or reset them.</value>
+  </data>
+  <data name="ResetAllSwaps" xml:space="preserve">
+    <value>Reset all animations to default (Malfunctioning)</value>
+  </data>
+  <data name="ResetAllSwapsTooltip" xml:space="preserve">
+    <value>This resets all animations to their original sequences.
+However, it currently does not work as intended, so
+I have disabled it until I determine how to fix it.</value>
+  </data>
+  <data name="Right" xml:space="preserve">
+    <value>Right</value>
+    <comment>shading</comment>
+  </data>
+  <data name="SearchingForBaseAddress" xml:space="preserve">
+    <value>Scanning for base address...</value>
+  </data>
+  <data name="SettingsMenu" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="SmolExtrasName" xml:space="preserve">
+    <value>Small Extras</value>
+  </data>
+  <data name="SmolExtrasNOHUD" xml:space="preserve">
+    <value>Remove HUD</value>
+  </data>
+  <data name="SoftFreezeCamera" xml:space="preserve">
+    <value>Soft-Freeze Camera</value>
+  </data>
+  <data name="SoftUnfreezeCamera" xml:space="preserve">
+    <value>Soft-Unfreeze Camera</value>
+  </data>
+  <data name="ToolsMenu" xml:space="preserve">
+    <value>Tools</value>
+  </data>
+  <data name="UndoAllPrevSwaps" xml:space="preserve">
+    <value>Undo previous animation swaps</value>
+  </data>
+  <data name="UndoAllPrevSwapsTooltip" xml:space="preserve">
+    <value>When you select a new animation to be overwritten, the previous one
+will be returned to its default animation.</value>
+  </data>
+  <data name="UnfreezeCamera" xml:space="preserve">
+    <value>Unfreeze Camera</value>
   </data>
 </root>

@@ -307,7 +307,7 @@ Partial Class ColorCodeStudio
         '
         'MarioSprite
         '
-        Me.MarioSprite.Image = Global.Filmmaker.My.Resources.Resources.M64MM2_CC_Mario_big
+        Me.MarioSprite.Image = My.Resources.Resources.M64MM2_CC_Mario_big
         Me.MarioSprite.Location = New System.Drawing.Point(130, 111)
         Me.MarioSprite.Name = "MarioSprite"
         Me.MarioSprite.Size = New System.Drawing.Size(256, 256)

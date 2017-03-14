@@ -1,4 +1,5 @@
 ﻿Imports Transitions 'Helps me a lot.
+Imports Filmmaker.AddonModule
 Public Class SplashScreen1
     'This will be checked lotsa times.
     Dim Percentage As Integer = 0
@@ -9,7 +10,7 @@ Public Class SplashScreen1
 #End If
         'Start the timer and make every tick be less than a second.
         PercentagedTime.Interval = 50
-        PercentagedTime.Start()
+
         'Declare the transition for the TitleLabel
         Dim t1 As New Transition(New TransitionType_EaseInEaseOut(1000))
         Dim t2 As New Transition(New TransitionType_Linear(800))
@@ -19,6 +20,11 @@ Public Class SplashScreen1
         t1.run()
         t2.run()
         STATUS_RTB.AppendText("Initializing..." + vbCrLf)
+        STATUS_RTB.AppendText("Loading Addons..." + vbCrLf)
+        AddonData.RepopulateFromDefault()
+        STATUS_RTB.AppendText("You have " + AddonData.Addonlist.Count.ToString + " addons installed.")
+        STATUS_RTB.ScrollToCaret()
+        PercentagedTime.Start()
     End Sub
 
     Private Sub PercentagedTime_Tick(sender As Object, e As EventArgs) Handles PercentagedTime.Tick

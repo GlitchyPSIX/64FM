@@ -130,11 +130,11 @@ Partial Class AddonSettingsForm
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(326, 19)
+        Me.Label1.Location = New System.Drawing.Point(367, 19)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(272, 13)
+        Me.Label1.Size = New System.Drawing.Size(282, 13)
         Me.Label1.TabIndex = 33
-        Me.Label1.Text = "The buttons aren't working yet, it's part of the UI update."
+        Me.Label1.Text = "The only button working right now is the Install addon one."
         '
         'AddonSettingsForm
         '

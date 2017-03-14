@@ -7,7 +7,6 @@ Public Class MainForm
     Public Shared Base As Long
     Public Shared EmuOpen As Boolean = False
     Private IsPrecised As Boolean = False
-    Private LicenseWindow As GPLForm
     Private MemDebugWindow As MemDebugForm
     Private ColorCodeWindow As ColorCodeStudio
     Private ChangeCamera As Boolean = False
@@ -17,8 +16,11 @@ Public Class MainForm
     Private Key3WasUp As Boolean = True
     Private AnimList As New List(Of Animation)
     Private AnimData As Dictionary(Of String, String) = New Dictionary(Of String, String)
+    Private CamList As New List(Of CamStyle)
+    Private CamNames As Dictionary(Of String, String) = New Dictionary(Of String, String)
     Private LastCBox1Index As Integer
     Private DisableAnimSwap As Boolean = False
+    Private DisableCamSwap As Boolean = False
     Private CameraControlFunction As String
     Private SelectedAnim1 As Object
     Private SelectedAnim2 As Object
@@ -45,14 +47,12 @@ Public Class MainForm
         ' This call is required by the designer.
         InitializeComponent()
 
-        Dim AboutBox As New AboutForm
         AddHandler ResetAnimationSwapsMenuItem.Click, AddressOf ResetAnimations
         AddHandler b_Freeze.Click, AddressOf Freeze
         AddHandler b_Unfreeze.Click, AddressOf Unfreeze
         AddHandler b_ChangeCameraType.Click, AddressOf ChangeCameraType
         AddHandler b_SoftFreeze.Click, AddressOf SoftFreeze
         AddHandler b_SoftUnfreeze.Click, AddressOf SoftUnfreeze
-        AddHandler AboutMenuItem.Click, AddressOf AboutBox.ShowDialog
         AddHandler ForceCameraPresetMenuItem.Click, AddressOf ForceCameraPreset
         AddHandler Timer1.Tick, AddressOf Main
 
@@ -87,6 +87,34 @@ Public Class MainForm
             ComboBox1.Refresh()
             ComboBox2.Refresh()
         End Try
+
+        Try
+            Using sr As New StreamReader("camera_data.txt")
+                Do While sr.Peek() >= 0
+                    Dim rawLine As String
+                    rawLine = sr.ReadLine()
+                    Dim step1 As String = rawLine.Trim()
+                    Dim step2 As String = step1.TrimStart("0")
+                    Dim step3 As String = step2.TrimStart("x")
+                    Dim splitLine() As String = Split(step3, " = ")
+                    CamNames.Add(splitLine(0), splitLine(1))
+                    CamList.Add(New CamStyle(splitLine(1), splitLine(0)))
+                Loop
+            End Using
+        Catch e As Exception
+            MessageBox.Show(My.Resources.CameraStylesFileError & vbCrLf & e.Message)
+            DisableCamSwap = True
+            CameraType_gb.Text = My.Resources.CameraStylesNoCam
+            ComboBox3.Refresh()
+        End Try
+
+        If CamList.Count > 0 And DisableCamSwap = False Then
+            ComboBox3.DataSource = New BindingSource(CamNames, Nothing)
+            ComboBox3.DisplayMember = "Value"
+            ComboBox3.ValueMember = "Key"
+            ComboBox3.SelectedIndex = 0
+            ComboBox3.Refresh()
+        End If
 
         If AnimData.Count > 0 And DisableAnimSwap = False Then
             ComboBox1.DataSource = New BindingSource(AnimData, Nothing)
@@ -271,15 +299,14 @@ Public Class MainForm
                     End If
                 End If
 
-                ' NOTE: I think we should have the previous block of code somehow exit or move to an area where it doesn't re-enable the form's controls for 1 update
-                ' because I think that's what the current code is doing. (Bottom line, re-do the code at some point, maybe in C#.)
-                ' GlitchyPSIX: mmm, I don't think that issue would be in this file.
                 If Timer1.Interval <> 100 Then Timer1.Interval = 100
                 b_ChangeCameraType.Enabled = True
                 b_Freeze.Enabled = True
                 b_Unfreeze.Enabled = True
                 ComboBox1.Enabled = Not DisableAnimSwap
                 ComboBox2.Enabled = Not DisableAnimSwap
+                ComboBox3.Enabled = Not DisableCamSwap
+                ChangeCam_btn.Enabled = Not DisableCamSwap
                 b_SoftFreeze.Enabled = True
                 b_SoftUnfreeze.Enabled = True
                 LevitateTrackBar.Enabled = True
@@ -326,9 +353,11 @@ Public Class MainForm
                 b_ChangeCameraType.Text = My.Resources.ChangeCameraType
                 ComboBox1.Enabled = False
                 ComboBox2.Enabled = False
+                ComboBox3.Enabled = False
                 b_SoftFreeze.Enabled = False
                 b_SoftUnfreeze.Enabled = False
                 LevitateTrackBar.Enabled = False
+                ChangeCam_btn.Enabled = False
                 DisableHudBTN.Enabled = False
                 HealBTN.Enabled = False
                 If MemDebugWindow IsNot Nothing Then
@@ -353,6 +382,7 @@ Public Class MainForm
             b_ChangeCameraType.Text = My.Resources.ChangeCameraType
             ComboBox1.Enabled = False
             ComboBox2.Enabled = False
+            ComboBox3.Enabled = False
             b_SoftFreeze.Enabled = False
             b_SoftUnfreeze.Enabled = False
             LevitateTrackBar.Enabled = False
@@ -505,6 +535,9 @@ Public Class MainForm
         DisableHudBTN.Enabled = False
         LevitateTrackBar.Enabled = False
         HealBTN.Text = My.Resources.Heal_Extra
+        CameraType_gb.Text = My.Resources.CameraStylesText
+        CurrentCameraAdvice_lb.Text = My.Resources.CameraStylesLabel
+        ChangeCam_btn.Text = My.Resources.CameraStylesChangeNow
         'Make the timer tick every half of a second, to avoid unneccesary CPU use in some processors, but change to every tenth of a second once we have found the base address.
         Timer1.Interval = 500
         Timer1.Start()
@@ -624,16 +657,31 @@ Public Class MainForm
     Private Sub HealMarioCB_CheckedChanged(sender As Object, e As EventArgs) Handles HealBTN.Click
         MsgBox("Not working.")
     End Sub
+    '13/december/2016
+    'one thing
+    'i'm in exams so i'm going to keep some things in barebones for now
+    'like, still going to make the extra new section I just added to get out whenever PJ64 ain't on
+    'for now things work as expected...
+    'good.
 
-    Private Sub HelpToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles LicenseToolStripMenuItem1.Click
-        If LicenseWindow IsNot Nothing AndAlso Not LicenseWindow.IsDisposed Then
-            LicenseWindow.Show()
-        Else
-            LicenseWindow = New GPLForm()
-            LicenseWindow.Show()
+    Private Sub ChangeCam_btn_Click(sender As Object, e As EventArgs) Handles ChangeCam_btn.Click
+        If EmuOpen = True And Base > 0 And DisableCamSwap = False Then
+            For Each cam As CamStyle In CamList
+                If cam.Value.StartsWith(ComboBox3.Text) Then
+                    'TODO: Guess the byte order this is in o_o
+                    'cuz I honestly have no idea and I gotta make sure the values for the
+                    'next feature i'm going to work in are accurate (working with human readable floats)
+                    'My guess is DCBA
+                    'did I win?
+                    WriteXBytes("Project64", Base + &H33C6D6, cam.Name)
+                    WriteXBytes("Project64", Base + &H33C6D7, cam.Name)
+                    Exit For
+                End If
+            Next
         End If
-    End Sub
 
+
+    End Sub
 End Class
 
 Public Class Animation
@@ -646,4 +694,14 @@ Public Class Animation
 		Description = desc
 		Index = ind
 	End Sub
+End Class
+
+Public Class CamStyle
+    Public Name As String
+    Public Value As String
+
+    Public Sub New(val As String, nam As String)
+        Value = val
+        Name = nam
+    End Sub
 End Class

@@ -42,6 +42,8 @@ Partial Class MainMenu
         Me.Show64FMToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.Exit64FMToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.username_lb = New System.Windows.Forms.Label()
         CType(Me.ImgPrw, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.settings_btn, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tut_btn, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -62,9 +64,9 @@ Partial Class MainMenu
         'ImgPrw
         '
         Me.ImgPrw.BackColor = System.Drawing.Color.Transparent
-        Me.ImgPrw.Location = New System.Drawing.Point(192, 82)
+        Me.ImgPrw.Location = New System.Drawing.Point(31, 60)
         Me.ImgPrw.Name = "ImgPrw"
-        Me.ImgPrw.Size = New System.Drawing.Size(112, 112)
+        Me.ImgPrw.Size = New System.Drawing.Size(160, 160)
         Me.ImgPrw.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.ImgPrw.TabIndex = 24
         Me.ImgPrw.TabStop = False
@@ -142,11 +144,11 @@ Partial Class MainMenu
         Me.WelcomeLabel.BackColor = System.Drawing.Color.Transparent
         Me.WelcomeLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.WelcomeLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.WelcomeLabel.Location = New System.Drawing.Point(188, 197)
+        Me.WelcomeLabel.Location = New System.Drawing.Point(197, 60)
         Me.WelcomeLabel.Name = "WelcomeLabel"
-        Me.WelcomeLabel.Size = New System.Drawing.Size(119, 20)
+        Me.WelcomeLabel.Size = New System.Drawing.Size(142, 20)
         Me.WelcomeLabel.TabIndex = 25
-        Me.WelcomeLabel.Text = "Welcome Back,"
+        Me.WelcomeLabel.Text = "WELCOME BACK,"
         Me.WelcomeLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'ExpandOrRetract
@@ -210,6 +212,30 @@ Partial Class MainMenu
         Me.Exit64FMToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
         Me.Exit64FMToolStripMenuItem.Text = "Exit 64FM"
         '
+        'Label1
+        '
+        Me.Label1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label1.BackColor = System.Drawing.Color.Black
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(0, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(519, 37)
+        Me.Label1.TabIndex = 30
+        Me.Label1.Text = "64Filmmaker 0.3.1a"
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'username_lb
+        '
+        Me.username_lb.BackColor = System.Drawing.Color.Transparent
+        Me.username_lb.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.username_lb.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.username_lb.Location = New System.Drawing.Point(193, 80)
+        Me.username_lb.Name = "username_lb"
+        Me.username_lb.Size = New System.Drawing.Size(317, 86)
+        Me.username_lb.TabIndex = 25
+        Me.username_lb.Text = "USERNAME"
+        '
         'MainMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -217,8 +243,10 @@ Partial Class MainMenu
         Me.BackColor = System.Drawing.Color.MidnightBlue
         Me.BackgroundImage = Global.Filmmaker.My.Resources.Resources.dark_noise
         Me.ClientSize = New System.Drawing.Size(519, 639)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnCinema)
         Me.Controls.Add(Me.ExpandOrRetract)
+        Me.Controls.Add(Me.username_lb)
         Me.Controls.Add(Me.WelcomeLabel)
         Me.Controls.Add(Me.ImgPrw)
         Me.Controls.Add(Me.settings_btn)
@@ -271,4 +299,6 @@ Partial Class MainMenu
     Friend WithEvents Show64FMToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
     Friend WithEvents Exit64FMToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Label1 As Label
+    Friend WithEvents username_lb As Label
 End Class

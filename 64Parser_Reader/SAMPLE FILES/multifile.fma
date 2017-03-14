@@ -3,6 +3,7 @@ name="Paper Mario Color Splash 64"
 author="glitchypsi"
 description="FIRST RICEVIDEO ADDON (Addon) [nl] This will copy the texture pack to the default emulator's folder."
 version="1.0"
+safename="pmcs64"
 [/metadata]
 [content]
 type=ricevideo

@@ -29,7 +29,7 @@ Public Class MainMenu
         Catch ex As Exception
             ImgPrw.Image = My.Resources.PIC_EXCEPTION
         End Try
-        WelcomeLabel.Text = ("Welcome back," + vbCrLf + My.Settings.Name)
+        username_lb.Text = (My.Settings.Name)
         Me.BackColor = My.Settings.FavColor
         Me.Refresh()
     End Sub
