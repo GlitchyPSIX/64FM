@@ -80,12 +80,12 @@
                 Try 'try to kill the video editor process
                     MainMenu.VEProcess.Kill()
                 Catch e As Exception
-                    'nobody can edit me lalalalala
+                    'no video editor found
                 End Try
                 Try 'try to kill the recorder process
                     MainMenu.REProcess.Kill()
                 Catch e As Exception
-                    'dance the cha cha cha while there's no recorder
+                    'no recorder process found
                 End Try
                 'For Each p As Process In Process.GetProcessesByName("Project64")
                 '	p.Kill()

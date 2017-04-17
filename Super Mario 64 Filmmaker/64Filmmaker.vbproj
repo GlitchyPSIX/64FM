@@ -142,12 +142,6 @@
     </Compile>
     <Compile Include="AddonModule.vb" />
     <Compile Include="AddonLister.vb" />
-    <Compile Include="AddonLoginForm.Designer.vb">
-      <DependentUpon>AddonLoginForm.vb</DependentUpon>
-    </Compile>
-    <Compile Include="AddonLoginForm.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="AddonSettingsForm.Designer.vb">
       <DependentUpon>AddonSettingsForm.vb</DependentUpon>
     </Compile>
@@ -327,9 +321,6 @@
   <ItemGroup>
     <EmbeddedResource Include="AboutBox.resx">
       <DependentUpon>AboutBox.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AddonLoginForm.resx">
-      <DependentUpon>AddonLoginForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddonSettingsForm.resx">
       <DependentUpon>AddonSettingsForm.vb</DependentUpon>

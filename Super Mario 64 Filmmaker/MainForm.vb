@@ -668,11 +668,6 @@ Public Class MainForm
         If EmuOpen = True And Base > 0 And DisableCamSwap = False Then
             For Each cam As CamStyle In CamList
                 If cam.Value.StartsWith(ComboBox3.Text) Then
-                    'TODO: Guess the byte order this is in o_o
-                    'cuz I honestly have no idea and I gotta make sure the values for the
-                    'next feature i'm going to work in are accurate (working with human readable floats)
-                    'My guess is DCBA
-                    'did I win?
                     WriteXBytes("Project64", Base + &H33C6D6, cam.Name)
                     WriteXBytes("Project64", Base + &H33C6D7, cam.Name)
                     Exit For
