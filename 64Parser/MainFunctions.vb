@@ -1,5 +1,9 @@
 ﻿Imports System.IO
 Public Class MainFunctions
+    
+    Private Dim metadataTable As New Dictionary(Of Integer, String)
+    Private Dim tableInited As Boolean = False
+    
     ''' <summary>
     ''' Reads the metadata from an addon/autoscript file.
     ''' </summary>
@@ -14,49 +18,18 @@ Public Class MainFunctions
     ''' 6: Addon's ID dependencies</param>
     ''' <returns>What was requested in Type</returns>
     Public Shared Function ReadMetadata(filepath As String, ByVal Type As Byte)
+        If Not tableInited Then
+            tableInited = True
+            metadataTable.Add(0, "name")
+            metadataTable.Add(1, "author")
+            metadataTable.Add(3, "version")
+            metadataTable.Add(4, "safename")
+        EndIf
+        
         Try
             Using SelectedFile As New StreamReader(filepath) 'Declare the selected file as the file path specified
                 Dim SplittedFile As String() = SelectedFile.ReadToEnd.Split(vbLf)
-                If Type = 0 Then
-                    ' Get Name and return name.
-                    For Each Line As String In SplittedFile
-                        If Line.StartsWith("name=") Then
-                            Return Line.Replace("name=""", "").Replace(ControlChars.Quote, "")
-                        End If
-                    Next
-                End If
-                If Type = 1 Then
-                    ' Get Author and return the author's nick.
-                    For Each Line As String In SplittedFile
-                        If Line.StartsWith("author=") Then
-                            Return Line.Replace("author=""", "").Replace(ControlChars.Quote, "")
-                        End If
-                    Next
-                End If
-                If Type = 2 Then
-                    ' Get Description and return the addon's description.
-                    For Each Line As String In SplittedFile
-                        If Line.StartsWith("description=") Then
-                            Return Line.Replace("description=""", "").Replace(" [nl] ", vbCrLf).Replace(ControlChars.Quote, "")
-                        End If
-                    Next
-                End If
-                If Type = 3 Then
-                    ' Get Version and return the addon's version.
-                    For Each Line As String In SplittedFile
-                        If Line.StartsWith("version=") Then
-                            Return Line.Replace("version=""", "").Replace(ControlChars.Quote, "")
-                        End If
-                    Next
-                End If
-                If Type = 4 Then
-                    ' Get Version and return the addon's safe name (Used for the folder's name and addon ID).
-                    For Each Line As String In SplittedFile
-                        If Line.StartsWith("safename=") Then
-                            Return Line.Replace("safename=""", "").TrimEnd(vbCrLf).Replace(ControlChars.Quote, "")
-                        End If
-                    Next
-                End If
+                
                 If Type = 5 Then
                     ' Get Entrypoint, check the type, if it's a files type, return entrypoint. (Used for the place the uninstaller will erase from).
                     Dim isItFile As Boolean = False
@@ -80,6 +53,16 @@ Public Class MainFunctions
                         End If
                     Next
                 End If
+            
+                If Type = 2 Then
+                    ' Get Description and return the addon's description.
+                    For Each Line As String In SplittedFile
+                        If Line.StartsWith("description=") Then
+                            Return Line.Replace("description=""", "").Replace(" [nl] ", vbCrLf).Replace(ControlChars.Quote, "")
+                        End If
+                    Next
+                End If
+                
                 If Type = 6 Then
                     ' Get the dependencies and return a string() for them (Used for DLC and multipart installs).
                     Dim Dependencies As String()
@@ -90,9 +73,26 @@ Public Class MainFunctions
                         End If
                     Next
                 End If
+    
+                If Type = 4 Then
+                    ' Get Version and return the addon's safe name (Used for the folder's name and addon ID).
+                    For Each Line As String In SplittedFile
+                        If Line.StartsWith("safename=") Then
+                            Return Line.Replace("safename=""", "").TrimEnd(vbCrLf).Replace(ControlChars.Quote, "")
+                        End If
+                    Next
+                End If
+    
                 If Type > 6 Or Type < 0 Then
                     Return "Invalid Instruction" 'Invalid
                 End If
+
+                Dim value As String = metadataTable.Item(type)
+                For Each Line As String In SplittedFile
+                    If Line.StartsWith(value + "=") Then
+                        Return Line.Replace(value + "=""", "").TrimEnd(vbCrLf).Replace(ControlChars.Quote, "")
+                    End If
+                Next
             End Using
         Catch ex As Exception
             Return "ERROR404_NOTFOUND"
