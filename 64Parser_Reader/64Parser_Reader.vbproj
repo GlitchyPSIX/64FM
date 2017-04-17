@@ -103,12 +103,6 @@
     <None Include="SAMPLE FILES\autoscript.aus" />
     <None Include="SAMPLE FILES\multifile.fma" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\64Parser\64Parser.vbproj">
-      <Project>{27244a42-efda-4ce5-b2f1-408ad738a7f9}</Project>
-      <Name>64Parser</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

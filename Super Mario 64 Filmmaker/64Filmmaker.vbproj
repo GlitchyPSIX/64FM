@@ -481,6 +481,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="camera_data.txt" />
     <Content Include="Ionic.Zip.dll" />
     <Content Include="IrcClient.dll" />
     <Content Include="M64MM2.ico" />
@@ -598,12 +599,6 @@
       <Progid>01247</Progid>
       <DefaultIcon>SM64FMNormal.ico</DefaultIcon>
     </FileAssociation>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\64Parser\64Parser.vbproj">
-      <Project>{27244a42-efda-4ce5-b2f1-408ad738a7f9}</Project>
-      <Name>64Parser</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <PublishFile Include="WinFormsTransitions">
