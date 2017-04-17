@@ -90,7 +90,7 @@ Public Class MainFunctions
                 Dim value As String = metadataTable.Item(type)
                 For Each Line As String In SplittedFile
                     If Line.StartsWith(value + "=") Then
-                        Return Line.Replace(value + "=""", "").TrimEnd(vbCrLf).Replace(ControlChars.Quote, "")
+                        Return Line.Replace(value + "=", "").TrimEnd(vbCrLf).Replace(ControlChars.Quote, "")
                     End If
                 Next
             End Using
