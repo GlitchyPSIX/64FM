@@ -238,6 +238,7 @@
     </Compile>
     <Compile Include="Globals.vb" />
     <Compile Include="HelloWorld.vb" />
+    <Compile Include="JsonDeSeserializerTest.vb" />
     <Compile Include="MainForm.Designer.vb">
       <DependentUpon>MainForm.vb</DependentUpon>
     </Compile>
